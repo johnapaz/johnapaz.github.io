@@ -2,7 +2,7 @@
 layout: page
 title:  "How to make Cuban Coffee"
 date:   2020-04-20 20:06:16 -0700
-categories: tutorial
+categories: tutorials
 ---
 
 If you've ever been to Miami, Florida you've no doubt seen locals walking around with those tiny cups of coffee. If you're adventurous and tried one then you've also tasted the bitter-sweet combination of what some refer to as Rocket Fuel, and others The Nectar of The Gods.
