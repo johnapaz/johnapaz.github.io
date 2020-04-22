@@ -2107,13 +2107,13 @@
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #f56a6a;
+		color: #B47762;
 		text-decoration: none;
 	}
 
 		a:hover {
 			border-bottom-color: #f56a6a;
-			color: #f56a6a !important;
+			color: #141A26 !important;
 		}
 
 			a:hover strong {
@@ -3147,7 +3147,7 @@
 			}
 
 				.features article .icon:before {
-					color: #f56a6a;
+					color: #B47762;
 					font-size: 2.75rem;
 					position: relative;
 					top: 0.05em;
