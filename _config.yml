@@ -1,0 +1,29 @@
+# Site settings
+title: John Paz
+subtitle: Content Designer
+email: johnapaz@gmail.com
+description: Just because you haven't heard of it, doesn't mean it's not awesome.
+baseurl: "/" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+author: John Paz
+street_address: 
+city: San Francisco
+state: CA
+zip_code: 55555
+country: United States of America
+phone: (716) 555-5555
+
+# Social settings
+500px_url:
+facebook_url: https://www.facebook.com/johnapaz/
+github_url: https://github.com/johnapaz
+gitlab_url: 
+googleplus_url: 
+instagram_url: https://www.instagram.com/techwriterninja/
+linkedin_url: https://www.linkedin.com/in/johnapaz
+pinterest_url:
+slack_url:
+twitter_url: https://twitter.com/techwriterninja
+
+# Build settings
+markdown: kramdown

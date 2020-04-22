@@ -1,0 +1,93 @@
+<!-- Sidebar -->
+  <div id="sidebar">
+    <div class="inner">
+
+      <!-- Search -->
+        <section id="search" class="alt">
+          <form method="post" action="#">
+            <input type="text" name="query" id="query" placeholder="Search my site" />
+          </form>
+        </section>
+
+      <!-- Menu -->
+        <nav id="menu">
+          <header class="major">
+            <h2>Nav</h2>
+          </header>
+          <ul>
+            <li><a href="{{ '' | absolute_url }}">Home</a></li>
+            <li><a href="{{ 'resume.html' | absolute_url }}">Resume</a></li>
+            <li><a href="{{ 'portfolio.html' | absolute_url }}">Portfolio</a></li>
+            <li><a href="{{ 'mystory.html' | absolute_url }}">My Story</a></li>
+            <li>
+              <span class="opener">Tutorials</span>
+              <ul>
+                <li><a href="#">How to: Tech</a></li>
+                <li><a href="#">How to: Writing</a></li>
+                <li><a href="#">How to: Parenting</a></li>
+                <li><a href="#">How to: Leadership</a></li>
+              </ul>
+            </li>
+            <li>
+              <span class="opener">Reviews</span>
+              <ul>
+                <li><a href="#">Book reviews</a></li>
+                <li><a href="#">Movie reviews</a></li>
+                <li><a href="#">TV show reviews</a></li>
+                <li><a href="#">Product reviews</a></li>
+              </ul>
+            </li>
+            <li><a href="https://medium.com/@techwriterninja">Blog</a></li>
+          </ul>
+        </nav>
+
+      <!-- Section -->
+        <section>
+          <header class="major">
+            <h2>About me</h2>
+          </header>
+          <div class="mini-posts">
+            <article>
+              <a href="/tutorial/2020/04/20/how-to-make-cuban-coffee.html" class="image"><img src="{{ 'assets/images/colada-rul-damage.jpg' | absolute_url }}" alt="My resume." /></a>
+              <h3>I LOVE COFFEE!</h3>
+                <p>Read my tutorial about how to make it my <i>favorite</i> way: Miami-Cuban style!</p>
+              <ul class="actions">
+                <li><a href="/_posts/2020-04-20-how-to-make-cuban-coffee.html" class="button">Read it</a></li>
+              </ul>
+            </article>
+            <article>
+              <a href="#" class="image"><img src="assets/images/pic08.jpg" alt="" /></a>
+              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+            </article>
+            <article>
+              <a href="#" class="image"><img src="assets/images/pic09.jpg" alt="" /></a>
+              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+            </article>
+          </div>
+          <ul class="actions">
+            <li><a href="#" class="button">More</a></li>
+          </ul>
+        </section>
+
+      <!-- Section -->
+        <section>
+          <header class="major">
+            <h2>Get in touch</h2>
+          </header>
+          <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+          <ul class="contact">
+            <li class="fa-envelope-o"><a href="#">{{ site.email }}</a></li>
+            <li class="fa-phone">{{ site.phone }}</li>
+            <li class="fa-home">{{ site.street_address }}<br />
+            {{ site.city }}, {{ site.state }} {{ site.zip_code }}<br />
+            {{ site.country }}</li>
+          </ul>
+        </section>
+
+      <!-- Footer -->
+        <footer id="footer">
+          <p class="copyright">&copy; {{ site.title }}. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>. Jekyll integration: <a href="https://andrewbanchi.ch">Andrew Banchich</a>.</p>
+        </footer>
+
+    </div>
+  </div>
