@@ -5,12 +5,10 @@ email: johnapaz@gmail.com
 description: Just because you haven't heard of it, doesn't mean it's not awesome.
 url: "https://johnapaz.com" # the base hostname & protocol for your site
 author: John Paz
-street_address: 
 city: San Francisco
 state: CA
-zip_code: 55555
-country: United States of America
-phone: (716) 555-5555
+country: USA
+phone: (510) 707-7494
 
 # Social settings
 500px_url:
@@ -26,3 +24,7 @@ twitter_url: https://twitter.com/techwriterninja
 
 # Build settings
 markdown: kramdown
+collections: 
+  - about
+  - reviews
+  - tutorials

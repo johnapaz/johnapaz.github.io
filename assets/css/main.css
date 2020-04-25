@@ -2880,7 +2880,7 @@
 	}
 
 		table tbody tr {
-			border: solid 1px rgba(210, 215, 217, 0.75);
+			border: solid 0px rgba(210, 215, 217, 0.75);
 			border-left: 0;
 			border-right: 0;
 		}

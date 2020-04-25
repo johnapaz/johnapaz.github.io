@@ -16,9 +16,17 @@
           </header>
           <ul>
             <li><a href="{{ '' | absolute_url }}">Home</a></li>
-            <li><a href="{{ 'resume.html' | absolute_url }}">Resume</a></li>
-            <li><a href="{{ 'portfolio.html' | absolute_url }}">Portfolio</a></li>
-            <li><a href="{{ 'mystory.html' | absolute_url }}">My Story</a></li>
+            <li>
+              <span class="opener">About</span>
+              <ul>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Resume</a></li>
+                <li><a href="#">Portfolio</a></li>
+              </ul>
+            </li>
+            <li><a href="{{ '/resume' | absolute_url }}">Resume</a></li>
+            <li><a href="{{ '/portfolio/' | absolute_url }}">Portfolio</a></li>
+            <li><a href="{{ '/about/' | absolute_url }}">About</a></li>
             <li>
               <span class="opener">Tutorials</span>
               <ul>
@@ -51,9 +59,6 @@
               <a href="{{'/tutorials/how-to-make-cuban-coffee.html' | absolute_url }}" class="image"><img src="{{ 'assets/images/colada-rul-damage.jpg' | absolute_url }}" alt="Cafe Cubano" /></a>
               <h3>I LOVE COFFEE!</h3>
                 <p>Read my tutorial about how to make it my <i>favorite</i> way: Miami-Cuban style!</p>
-              <ul class="actions">
-                <li><a href="{{'/tutorials/how-to-make-cuban-coffee.html' | absolute_url }}" class="button special fit small">Read it</a></li>
-              </ul>
             </article>
             <article>
               <a href="#" class="image"><img src="{{ 'assets/images/pic08.jpg' | absolute_url }}" alt="" /></a>
