@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Resume
-permalink: /resume
+permalink: /resume/
 categories: about
 ---
 <style type="text/css">
