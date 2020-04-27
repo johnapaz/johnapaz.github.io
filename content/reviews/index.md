@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Reviews
+image: assets/images/goat-heads-beach.jpg
 permalink: /reviews/
 categories: reviews
 ---
