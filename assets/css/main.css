@@ -3296,7 +3296,7 @@
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			margin: 0 0 6em 1em;
+			margin: 0 0 6em 6em;
 			position: relative;
 			width: calc(33.33333% - 6em);
 		}
