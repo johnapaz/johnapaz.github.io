@@ -2681,8 +2681,8 @@
 
 			ul.contact li {
 				text-decoration: none;
-				border-top: solid 1px rgba(210, 215, 217, 0.75);
-				margin: 1.5em 0 0 0;
+				border-top: none;
+				margin: 0.5em 0 0 0;
 				padding: 1.5em 0 0 3em;
 				position: relative;
 			}
@@ -2697,7 +2697,7 @@
 				}
 
 				ul.contact li:before {
-					color: #f56a6a;
+					color: #b47762;
 					display: inline-block;
 					font-size: 1.5em;
 					height: 1.125em;
