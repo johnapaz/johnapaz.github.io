@@ -11,15 +11,11 @@ country: USA
 phone: (510) 707-7494
 
 # Social settings
-500px_url:
 facebook_url: https://www.facebook.com/johnapaz/
 github_url: https://github.com/johnapaz
-gitlab_url: 
-googleplus_url: 
+gitlab_url: https://gitlab.com/johnapaz
 instagram_url: https://www.instagram.com/techwriterninja/
 linkedin_url: https://www.linkedin.com/in/johnapaz
-pinterest_url:
-slack_url:
 twitter_url: https://twitter.com/techwriterninja
 
 # Build settings
@@ -28,3 +24,4 @@ collections:
   - about
   - reviews
   - tutorials
+collections_dir: content

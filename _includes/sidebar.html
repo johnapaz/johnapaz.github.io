@@ -19,26 +19,27 @@
             <li>
               <span class="opener">About</span>
               <ul>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Portfolio</a></li>
+                <li><a href="{{'/about/' | absolute_url }}">About Me</a></li>
+                <li><a href="{{'/resume/' | absolute_url }}">My Resume</a></li>
+                <li><a href="{{'/portfolio/' | absolute_url }}">My Portfolio</a></li>
+                <li><a href="{{'/my-story/' | absolute_url }}">My Story</a></li>
               </ul>
             </li>
-            <li><a href="{{ '/resume' | absolute_url }}">Resume</a></li>
-            <li><a href="{{ '/portfolio/' | absolute_url }}">Portfolio</a></li>
-            <li><a href="{{ '/about/' | absolute_url }}">About</a></li>
             <li>
               <span class="opener">Tutorials</span>
               <ul>
-                <li><a href="#">How to: Tech</a></li>
-                <li><a href="#">How to: Writing</a></li>
-                <li><a href="#">How to: Parenting</a></li>
-                <li><a href="#">How to: Leadership</a></li>
+                <li><a href="{{'/tutorials/' | absolute_url }}">All Tutorials</a></li>
+                <li><a href="{{'/tutorials/tech/' | absolute_url }}">How to: Tech</a></li>
+                <li><a href="{{'/tutorials/writing/' | absolute_url }}">How to: Writing</a></li>
+                <li><a href="{{'/tutorials/parenting/' | absolute_url }}">How to: Parenting</a></li>
+                <li><a href="{{'/tutorials/leadership/' | absolute_url }}">How to: Leadership</a></li>
+                <li><a href="{{'/tutorials/content-design/' | absolute_url }}">How to: Content Design</a></li>
               </ul>
             </li>
             <li>
               <span class="opener">Reviews</span>
               <ul>
+                <li><a href="{{'/reviews/' | absolute_url }}">All Reviews</a></li>
                 <li><a href="#">Book reviews</a></li>
                 <li><a href="#">Movie reviews</a></li>
                 <li><a href="#">TV show reviews</a></li>
@@ -56,22 +57,21 @@
           </header>
           <div class="mini-posts">
             <article>
-              <a href="{{'/tutorials/how-to-make-cuban-coffee.html' | absolute_url }}" class="image"><img src="{{ 'assets/images/colada-rul-damage.jpg' | absolute_url }}" alt="Cafe Cubano" /></a>
-              <h3>I LOVE COFFEE!</h3>
-                <p>Read my tutorial about how to make it my <i>favorite</i> way: Miami-Cuban style!</p>
+              <h3>My story</h3>
+              <a href="{{'/my-story/' | absolute_url }}" class="image"><img src="{{ 'assets/images/john-points.jpg' | absolute_url }}" alt="Picture: John Points" /></a>
+              <p>I'm not the typical techie. I didn't take a traditional path to working in tech, and I openly share my story to inspire others to find their place working in technology.</p>
             </article>
             <article>
-              <a href="#" class="image"><img src="{{ 'assets/images/pic08.jpg' | absolute_url }}" alt="" /></a>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+              <h3>My resume</h3>
+              <a href="{{'/resume/' | absolute_url }}" class="image"><img src="{{ 'assets/images/john-frac.jpg' | absolute_url }}" alt="Picture: John Fractal Portrait" /></a>
+                <p>Read about my work history, education, the tools I've used, and projects I've worked on during my career.</p>
             </article>
             <article>
-              <a href="#" class="image"><img src="{{ 'assets/images/pic09.jpg' | absolute_url }}" alt="" /></a>
-              <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+              <h3>My portfolio</h3>
+              <a href="{{'/portfolio/' | absolute_url }}" class="image"><img src="{{ 'assets/images/santa-cruz-boardwalk-sunset.jpg' | absolute_url }}" alt="Picture: Sunset at Santa Cruz" /></a>
+              <p>See examples of my work, including UX writing projects, and videos of my presentations.</p>
             </article>
           </div>
-          <ul class="actions">
-            <li><a href="#" class="button">More</a></li>
-          </ul>
         </section>
 
       <!-- Section -->
@@ -82,15 +82,15 @@
           <ul class="contact">
             <li class="fa-envelope-o"><a href="#">{{ site.email }}</a></li>
             <li class="fa-phone">{{ site.phone }}</li>
-            <li class="fa-home">{{ site.street_address }}<br />
-            {{ site.city }}, {{ site.state }} {{ site.zip_code }}<br />
-            {{ site.country }}</li>
+            <li class="fa-home">{{ site.city }}, {{ site.state }} {{ site.zip_code }}, {{ site.country }}</li>
           </ul>
         </section>
 
       <!-- Footer -->
         <footer id="footer">
-          <p class="copyright">&copy; {{ site.title }}. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>. Jekyll integration: <a href="https://andrewbanchi.ch">Andrew Banchich</a>.</p>
+          <p class="copyright">&copy; {{ site.title }}. All rights reserved.
+            <br/>Design: <a href="https://html5up.net">HTML5 UP</a>. 
+            <br/>Jekyll integration: <a href="https://andrewbanchi.ch">Andrew Banchich</a></p>
         </footer>
 
     </div>
