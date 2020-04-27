@@ -2284,7 +2284,7 @@
 	header.major > :last-child {
 		border-bottom: solid 3px #B47762;
 		display: inline-block;
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 		padding: 0 0.75em 0.5em 0;
 	}
 
@@ -3296,7 +3296,7 @@
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			margin: 0 0 6em 6em;
+			margin: 0 0 6em 1em;
 			position: relative;
 			width: calc(33.33333% - 6em);
 		}
@@ -3792,8 +3792,8 @@
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		border-bottom: solid 5px #B47762;
-		padding: 6em 0 1em 0;
+		border-bottom: solid 4px #B47762;
+		padding: 1em 0 1em 0;
 		position: relative;
 	}
 

@@ -25,3 +25,10 @@ collections:
   - reviews
   - tutorials
 collections_dir: content
+permalink: /:categories/:title:/
+
+# Breadcrumbs
+breadcrumbs:
+  root:
+    hide: true  # show breadcrumbs on root/home page
+    image: false # Show image or title text
