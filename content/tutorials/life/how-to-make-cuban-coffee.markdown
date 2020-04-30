@@ -2,6 +2,7 @@
 layout: page
 title:  "How to make Cuban Coffee"
 date:   2020-04-20 20:06:16 -0700
+permalink: /tutorials/how-to-make-cuban-coffee
 categories: tutorials
 ---
 
