@@ -26,6 +26,7 @@ collections:
   - tutorials
 collections_dir: content
 permalink: /:categories/:title:/
+google_analytics: UA-165031992-2
 
 # Breadcrumbs
 breadcrumbs:
