@@ -1,22 +1,22 @@
 # Site settings
 title: John Paz
-subtitle: Content Designer
+subtitle: Señor Content Design
 email: johnapaz@gmail.com
 description: Just because you haven't heard of it, doesn't mean it's not awesome.
 url: "https://johnapaz.com" # the base hostname & protocol for your site
 author: John Paz
-city: San Francisco
-state: CA
+city: Orlando
+state: FL
 country: USA
 phone: (510) 707-7494
 
 # Social settings
-facebook_url: https://www.facebook.com/johnapaz/
-github_url: https://github.com/johnapaz
-gitlab_url: https://gitlab.com/johnapaz
-instagram_url: https://www.instagram.com/techwriterninja/
 linkedin_url: https://www.linkedin.com/in/johnapaz
 twitter_url: https://twitter.com/SrContentDesign
+github_url: https://github.com/johnapaz
+instagram_url: https://www.instagram.com/techwriterninja/
+
+
 
 # Build settings
 markdown: kramdown
