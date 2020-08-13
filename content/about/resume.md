@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Resume
+image: /assets/images/cocoa-beach-sunrise-narrow.png
 permalink: /resume/
 categories: about
 ---
@@ -15,7 +16,7 @@ categories: about
 .tg .tg-dvpl{border-color:inherit;text-align:right;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
----------------------------------------
+
 ## Career Summary
 <table class="tg">
     <tr>
@@ -68,7 +69,7 @@ Atlassian suite: Jira, Trello, Confluence, Bitbucket, Fisheye+Crucible, Sourcetr
 
 <table class="tg">
   <tr>
-    <td class="tg-lboi"><span style="font-weight:bold">Senior Technical Writer</span>: <a href="http://atlassian.com/" target="blank">Atlassian</a></td>
+    <td class="tg-lboi"><span style="font-weight:bold">Senior Technical Writer/Senior Content Designer/Content Development Specialist</span>: <a href="http://atlassian.com/" target="blank">Atlassian</a></td>
     <td class="tg-yz93">Jan 2015 – Present</td>
   </tr>
   <tr>

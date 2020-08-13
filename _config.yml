@@ -3,7 +3,7 @@ title: John Paz
 subtitle: Señor Content Design
 email: johnapaz@gmail.com
 description: Just because you haven't heard of it, doesn't mean it's not awesome.
-url: "https://johnapaz.com" # the base hostname & protocol for your site
+url: "http://127.0.0.1:4000" # the base hostname & protocol for your site
 author: John Paz
 city: Orlando
 state: FL
@@ -14,7 +14,7 @@ phone: (510) 707-7494
 linkedin_url: https://www.linkedin.com/in/johnapaz
 twitter_url: https://twitter.com/SrContentDesign
 github_url: https://github.com/johnapaz
-instagram_url: https://www.instagram.com/techwriterninja/
+instagram_url: https://www.instagram.com/SrContentDesign/
 
 
 

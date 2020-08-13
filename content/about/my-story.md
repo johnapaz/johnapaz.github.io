@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My Story
+title: My story
 permalink: /my-story/
 categories: about
 ---
