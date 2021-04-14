@@ -17,7 +17,13 @@ categories: about
 .tg .tg-0lax{text-align:left;vertical-align:top}
 </style>
 
+<ul class="actions fit small">
+  <li><a target="blank" href="/assets/docs/John_Paz_resume_04092021.pdf" class="button special fit small icon fa-download">Download in PDF</a></li>
+</ul>
+
+---------------------------------------
 ## Career Summary
+Content Designer and Technical Writer with 15 years of experience who specializes in simplifying complex information experiences with powerful storytelling and has a track record of success working on Agile teams (member and scrum master).
 <table class="tg">
     <tr>
         <td style="width:25%" class="tg-lboi">
@@ -25,8 +31,23 @@ categories: about
         </td>
         <td>
         <table class="tg">
+        <tr>
+                    <td class="tg-lboi" colspan="2"><span style="font-weight:bold">Technical Writing</span>: 15+ years of professional writing/editing, and project management experience.</td>
+                </tr>
                 <tr>
-                    <td class="tg-lboi" colspan="2"><span style="font-weight:bold">UX Writing/Content Design</span></td>
+                    <td style="width:1%"></td>
+                    <td class="tg-lboi">
+                        <ul>
+                            <li>Seasoned technical writing professional with 15+ years of professional writing/editing experience.</li>
+                            <li>Experience working as a liaison and moderator between multiple departments to resolve gaps in knowledge.</li>
+                            <li>Proven ability to conduct professional-level training to classes large and small, both in-person and virtually.</li>
+                            <li>Familiar contributing in all phases of the SDLC and working with all members of high-performing software teams.</li>
+                            <li>Believer in the sharing of knowledge and the diligent maintenance of the almighty knowledge base.</li>
+                        </ul>
+                    </td>
+                </tr> 
+                <tr>
+                    <td class="tg-lboi" colspan="2"><span style="font-weight:bold">Content Design/UX Writing</span>: 6+ years working alongside PMs, designers, and developers to improve in-app copy.</td>
                 </tr>
                 <tr>
                     <td style="width:1%" class="tg-yz93"></td>
@@ -39,29 +60,64 @@ categories: about
                             <li>Tireless user advocate dedicated to enriching product UX with great doc that gets users the information they need.</li>
                         </ul>
                     </td>
-                </tr>
-                <tr>
-                    <td class="tg-lboi" colspan="2"><span style="font-weight:bold">Technical Writing</span></td>
-                </tr>
-                <tr>
-                    <td style="width:1%"></td>
-                    <td class="tg-lboi">
-                        <ul>
-                            <li>Seasoned technical writing professional with 10+ years of professional writing/editing experience.</li>
-                            <li>Experience working as a liaison and moderator between multiple departments to resolve gaps in knowledge.</li>
-                            <li>Proven ability to conduct professional-level training to classes large and small, both in-person and virtually.</li>
-                            <li>Familiar contributing in all phases of the SDLC and working with all members of high-performing software teams.</li>
-                            <li>Believer in the sharing of knowledge and the diligent maintenance of the almighty knowledge base.</li>
-                        </ul>
-                    </td>
-                </tr>
+                </tr>                               
             </table>
         </td>
     </tr>
+    <tr>
+     <td class="tg-lboi" colspan="2"><span style="font-weight:bold">Developer Experience Writing</span>: 6+ years writing for highly technical audiences like software developers.</td>
+    </tr>
+    <tr>
+      <td class="tg-lboi" colspan="2">
+       <ul>
+         <li>Software-focused UX writing and content driven design professional, with 8+ years working on Agile teams.</li>
+         <li>Proponent of the value and practice of dedicated and thoughtful UX writing as a component of an application.</li>
+         <li>Proven ability delivering high-quality content that enhances users&#39; information experience using software.</li>
+         <li>Able to create/maintain content design systems and guidelines, and a champion of product voice and tone consistency.</li>
+         <li>Tireless user advocate dedicated to enriching product UX with great doc that gets users the information they need.</li>
+        </ul>
+      </td>
+    </tr>
 </table>
 
+---------------------------------------
 ## Tools and Skills
-Atlassian suite: Jira, Trello, Confluence, Bitbucket, Fisheye+Crucible, Sourcetree, information architecture, Python, HTML, XML, DITA, Git, REST, cURL, static site generators (Jekyll, Hugo), continuous integration, Agile software development, Scrum, blogging, social media marketing, Google Docs, Google Analytics, wiki development.
+<table class="tg">
+  <tr>
+    <td style="width:15%" class="tg-yz93"></td>
+    <td class="tg-lboi">
+      <span style="font-weight:bold">Tools</span>
+      <ul>
+         <li>Jira, Trello, Confluence, Sharepoint</li>
+         <li>Git/Bitbucket/GitHub/Docs as code</li>
+         <li>DITA/XML/Static site generators</li>
+         <li>Basic coding: HTML, CSS, Python</li>
+         <li>Sketch, Figma, InVision, Mural, Adobe</li>
+      </ul>
+    </td>
+    <td class="tg-lboi">
+      <span style="font-weight:bold">Skills</span>
+      <ul>
+         <li>Creating organizational voice and tone style guides</li>
+         <li>Information architecture and wiki development</li>
+         <li>Creating and editing visual graphics and videos</li>
+         <li>Public speaking, presentations, slide creation</li>
+         <li>UX Design: User research, design thinking</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
+---------------------------------------
+## Education
+
+<table class="tg">
+  <tr>
+    <td class="tg-0lax"><a href="http://catalog.ucf.edu/content/documents/programs/English_Technical_Communication_BA.pdf" target="blank">B.A., English, Technical Writing Track</a> – <a href="http://ucf.edu" target="blank">University of Central Florida</a>: Orlando, FL, USA </td>
+    <td class="tg-lqy6">2008</td>
+  </tr>
+</table>
 
 ---------------------------------------
 ## Professional Experience
@@ -69,8 +125,15 @@ Atlassian suite: Jira, Trello, Confluence, Bitbucket, Fisheye+Crucible, Sourcetr
 
 <table class="tg">
   <tr>
-    <td class="tg-lboi"><span style="font-weight:bold">Senior Technical Writer/Senior Content Designer/Content Development Specialist</span>: <a href="http://atlassian.com/" target="blank">Atlassian</a></td>
-    <td class="tg-yz93">Jan 2015 – Present</td>
+    <td class="tg-lboi"><span style="font-weight:bold">Training and Knowledge Technical Writer</span>: <a href="https://www.menlosecurity.com/" target="blank">Menlo Security</a></td>
+    <td class="tg-yz93">Jan 2021 – Present</td>
+  </tr>
+  <tr>
+    <td class="tg-lboi" colspan="2">Write end-user documentation for new features and product improvements. Contribute to improving user interface on new features and product improvement. Create organizational style guides. Documentation department staffing coordination. </td>
+  </tr>
+  <tr>
+    <td class="tg-lboi"><span style="font-weight:bold">Senior Content Designer</span>: <a href="http://atlassian.com/" target="blank">Atlassian</a></td>
+    <td class="tg-yz93">Jan 2015 – Dec 2020</td>
   </tr>
   <tr>
     <td class="tg-lboi" colspan="2">Contribute to improving user interface on new features and product improvement. Write end-user documentation for new features and product improvements. Continually install and test Atlassian products locally. Manage, design, and improve wiki for end-user consumption. Develop and test content development prototypes for information experience department. Plan, write, review and edit developer documentation for Bitbucket Cloud. Participate in departmental planning. Assess and improve the information experience for installing, using, and maintain Bitbucket Server.</td>
@@ -139,13 +202,3 @@ Atlassian suite: Jira, Trello, Confluence, Bitbucket, Fisheye+Crucible, Sourcetr
     <td class="tg-0lax" colspan="2">Managed, edited, published and delivered engineering reports spanning multiple ongoing projects.</td>
   </tr>
   </table>
-
----------------------------------------
-## Education
-
-<table class="tg">
-  <tr>
-    <td class="tg-0lax"><a href="http://catalog.ucf.edu/content/documents/programs/English_Technical_Communication_BA.pdf" target="blank">B.A., English, Technical Writing Track</a> – <a href="http://ucf.edu" target="blank">University of Central Florida</a>: Orlando, FL, USA </td>
-    <td class="tg-lqy6">2008</td>
-  </tr>
-</table>

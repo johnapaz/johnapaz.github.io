@@ -33,3 +33,9 @@ breadcrumbs:
   root:
     hide: true  # show breadcrumbs on root/home page
     image: false # Show image or title text
+
+#Excludes
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js

@@ -1,0 +1,23 @@
+{
+  "name": "johnapaz.github.io",
+  "version": "1.0.0",
+  "description": "Code base for John Paz's website.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnapaz/johnapaz.github.io.git"
+  },
+  "author": "John A. Paz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnapaz/johnapaz.github.io/issues"
+  },
+  "homepage": "https://github.com/johnapaz/johnapaz.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
