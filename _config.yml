@@ -1,6 +1,6 @@
 # Site settings
 title: John Paz
-subtitle: Señor Content Design
+subtitle: Mr. Content Design
 email: johnapaz@gmail.com
 description: Just because you haven't heard of it, doesn't mean it's not awesome.
 url: "https://johnapaz.com/" # the base hostname & protocol for your site
@@ -12,7 +12,7 @@ phone: (510) 707-7494
 
 # Social settings
 linkedin_url: https://www.linkedin.com/in/johnapaz
-twitter_url: https://twitter.com/SrContentDesign
+twitter_url: https://twitter.com/MrContentDesign
 github_url: https://github.com/johnapaz
 instagram_url: https://www.instagram.com/SrContentDesign/
 
