@@ -18,7 +18,7 @@ categories: about
 </style>
 
 <ul class="actions fit small">
-  <li><a target="blank" href="/assets/docs/John_Paz_Content_Design_Manager_resume_02282022.pdf" class="button special fit small icon fa-download">Download in PDF</a></li>
+  <li><a target="blank" href="/assets/docs/John_Paz_Content_Design_Manager_resume_10272022.pdf" class="button special fit small icon fa-download">Download in PDF</a></li>
 </ul>
 
 ---------------------------------------
