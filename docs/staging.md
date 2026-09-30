@@ -26,7 +26,7 @@ Public repository Actions/Pages usage is subject to GitHub's current limits.
 ## Build behavior
 
 The workflow uses the current Jekyll Pages dependency family and safe mode to match Pages.
-The inherited lockfile does not match Gemfile. CI resolves dependencies temporarily; a corrected committed lockfile is required before claiming reproducible builds.
+The theme's obsolete development dependencies were removed, Gemfile was aligned with the inherited Pages 204 dependency family, and the lockfile was retained with Bundler 2.4.22. Verify a successful CI build before claiming build validation.
 Ruby 2.7 is a temporary legacy compatibility choice and should be upgraded with the dependency refresh.
 Staging config overrides the site URL and disables analytics. Generated CNAME is staging-only.
 All HTML receives noindex through the shared head include; robots.txt discourages crawling.
