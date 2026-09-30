@@ -18,7 +18,7 @@ Removed the competing `index.markdown` homepage source; `index.md` now explicitl
 
 | Area | Prototype choice | Decision still needed |
 | --- | --- | --- |
-| Palette | Charcoal background, warm white text, lime accent | Final palette and light/dark presentation |
+| Palette | Canyon palette: pale sand, deep espresso, warm stone, rust accents | Final color roles, contrast, and surface treatment |
 | Typography | System sans; large three-line headline | Final typefaces, scale, line breaks |
 | Cards | Six square cards, real links; existing images and typographic motifs | Imagery, grouping, card details, number, order |
 | Curation | Automation, UI copy, learning, Cuban coffee, portfolio, personal story | Which content best serves the homepage purpose |
@@ -70,3 +70,7 @@ These eight additional foldable viewports passed the same overflow, square-card,
 Keep these cases in prototype and subsequent page reviews. Physical Z Fold6 testing in Samsung Internet and Chrome, opening/closing transitions, browser toolbar changes, display/font scaling, split-window use, and keyboard operation remain to be checked on a device.
 
 [Fold6 cover simulation](images/v2-homepage-fold6-cover.webp) · [Fold6 unfolded simulation](images/v2-homepage-fold6-unfolded.webp)
+
+The wiki gained an accepted canyon color direction during this session. The reviewed prototype now applies that direction; the earlier dark/lime exploration was superseded before final review. Primary and secondary card text use deep espresso for legibility on warm stone. Final roles remain subject to review.
+
+Canyon text contrast checks: deep espresso on pale sand 12.43:1; rust on pale sand 6.01:1; deep espresso on warm stone 7.05:1. Card hover retains deep espresso text and adds an underline; rust on warm stone is limited to the decorative arrow/focus indicator (3.40:1), not small body text.

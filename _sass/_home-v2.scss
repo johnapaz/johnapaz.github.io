@@ -1,8 +1,8 @@
 // Homepage-only prototype tokens. Existing Editorial styles remain on other pages.
-$background: #141516;
-$foreground: #f4f2ed;
-$muted: #b9bbb8;
-$accent: #bfe58b;
+$background: #F2D8A8;
+$foreground: #2B1605;
+$muted: #754116;
+$accent: #754116;
 * { box-sizing: border-box; }
 html { scroll-padding-top: 7rem; }
 body.v2-home { margin: 0; background: $background; color: $foreground; font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
@@ -15,13 +15,13 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
 .v2-skip { position: fixed; top: -6rem; left: 1rem; z-index: 10; padding: .75rem 1rem; background: $foreground; color: $background !important; }
 .v2-skip:focus { top: .5rem; }
-.v2-topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 2rem; padding: 1.1rem clamp(1.25rem, 4vw, 4rem); background: $background; border-bottom: 1px solid #303233;
+.v2-topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 2rem; padding: 1.1rem clamp(1.25rem, 4vw, 4rem); background: $background; border-bottom: 1px solid #BEA17F;
   a { text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
   nav { display: flex; gap: 1.75rem; margin-left: auto; font-size: .9rem; }
-  [aria-current] { color: $accent; }
+  [aria-current] { color: $accent; text-decoration: underline; }
 }
 .v2-home-link { font-weight: 750; font-size: 1.4rem; letter-spacing: -.04em; span { color: $accent; } }
-.v2-download { border: 1px solid #62675e; border-radius: 2rem; padding: .4rem 1.1rem; gap: .65rem; font-size: .85rem; }
+.v2-download { border: 1px solid #92795D; border-radius: 2rem; padding: .4rem 1.1rem; gap: .65rem; font-size: .85rem; }
 .v2-shell { display: grid; grid-template-columns: minmax(290px, .82fr) minmax(0, 1.45fr); gap: clamp(3rem, 6vw, 7rem); max-width: 1520px; margin: auto; padding: 3.5rem clamp(1.25rem, 4vw, 4rem) 2rem; align-items: start; }
 .v2-introduction { position: sticky; top: 7.5rem; }
 .v2-identity { display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;
@@ -40,8 +40,9 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-eyebrow { color: $muted; text-transform: uppercase; font-size: .66rem; font-weight: 650; letter-spacing: .13em; }
 .v2-content-heading h2 { font-size: clamp(1.5rem, 2vw, 2rem); letter-spacing: -.035em; margin-top: .35rem; }
 .v2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.v2-card { background: #202224; border-radius: 12px; overflow: hidden;
+.v2-card { background: #BEA17F; border-radius: 12px; overflow: hidden;
   > a { display: flex; flex-direction: column; height: 100%; min-height: 100%; aspect-ratio: 1 / 1; text-decoration: none; }
+  > a:hover { color: $foreground; h3 { text-decoration: underline; text-underline-offset: .2em; } }
   &:focus-within { outline: 3px solid $accent; outline-offset: 4px; }
   a:focus-visible { outline: none; }
 }
@@ -49,12 +50,13 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; }
   > span { font: italic 4rem/1 Georgia, serif; letter-spacing: -.07em; }
 }
-.v2-card--toolkit .v2-card-art { background: #bfe58b; color: #263522; }
-.v2-card--coffee .v2-card-art { background: #ccaa84; color: #36281e; }
-.v2-card--portfolio .v2-card-art { background: #b4b6dc; color: #292a48; }
+.v2-card--toolkit .v2-card-art { background: #754116; color: #F2D8A8; }
+.v2-card--coffee .v2-card-art { background: #92795D; color: #2B1605; }
+.v2-card--portfolio .v2-card-art { background: #F2D8A8; color: #2B1605; }
+.v2-card-text .v2-eyebrow { color: $foreground; }
 .v2-card-text { padding: 1rem 1.2rem 1.2rem;
   h3 { font-size: 1.07rem; line-height: 1.25; letter-spacing: -.02em; margin: .5rem 0; }
-  > p:last-child { font-size: .8rem; line-height: 1.5; color: $muted; }
+  > p:last-child { font-size: .8rem; line-height: 1.5; color: $foreground; }
 }
 .v2-arrow { float: right; margin-left: .4rem; color: $accent; }
 .v2-bottom { padding: 3rem 0 1rem; color: $muted; font-size: .9rem; a { font-size: 1.3rem; font-weight: 650; color: $foreground; } }
@@ -73,6 +75,7 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-shell { padding-top: 2rem; }
   .v2-identity { margin-bottom: 1.5rem; }
   .v2-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .v2-card-text { padding: 1.1rem 1.4rem 1.4rem; h3 { font-size: 1.25rem; } > p:last-child { font-size: .9rem; } }
+  .v2-card-text .v2-eyebrow { color: $foreground; }
+.v2-card-text { padding: 1.1rem 1.4rem 1.4rem; h3 { font-size: 1.25rem; } > p:last-child { font-size: .9rem; } }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
