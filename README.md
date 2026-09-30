@@ -31,20 +31,11 @@ Open [http://localhost:4000](http://localhost:4000) to preview the site. Jekyll 
 
 ## Publishing
 
-GitHub Pages currently builds the repository root from the default branch and publishes it to [johnapaz.com](https://johnapaz.com).
-
-The deployment, release, and CI process is being formalized in [issue #21](https://github.com/johnapaz/johnapaz.github.io/issues/21). The default branch is also scheduled to change from `master` to `main` in [issue #20](https://github.com/johnapaz/johnapaz.github.io/issues/20), so check the repository settings before following branch-specific instructions.
+GitHub Pages builds the repository root from the default branch and publishes it to [johnapaz.com](https://johnapaz.com). Changes to the deployment, release, CI, and branch strategy are tracked in the repository backlog.
 
 ## Roadmap and backlog
 
-Work is tracked in [GitHub Issues](https://github.com/johnapaz/johnapaz.github.io/issues). Current priorities include:
-
-- [Version 2 redesign and implementation](https://github.com/johnapaz/johnapaz.github.io/issues/22)
-- [Version 2 design exploration — in progress](https://github.com/johnapaz/johnapaz.github.io/issues/23)
-- [Deployment, release, and CI strategy](https://github.com/johnapaz/johnapaz.github.io/issues/21)
-- [Automated link validation and broken-link fixes](https://github.com/johnapaz/johnapaz.github.io/issues/19)
-- [Analytics, public status page, and outage alerts](https://github.com/johnapaz/johnapaz.github.io/issues/24)
-- [Default-branch rename](https://github.com/johnapaz/johnapaz.github.io/issues/20)
+The live backlog is maintained in [GitHub Issues](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc). That view updates automatically as issues are created, prioritized, and completed.
 
 New bugs, content problems, and proposed improvements should be documented as issues with enough context to reproduce or evaluate them.
 
