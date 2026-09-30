@@ -136,3 +136,15 @@ Spacing proposal: center the entire toolbar group and page in a shared 1200px ma
 Recommendation: use Bootstrap conventions (button vs. badge semantics, shared radii, spacing scale, centered containers) now. A framework-wide import would overlap Editorial's global styles; evaluate a scoped Bootstrap Sass component layer if later pages need many reusable components. No platform/theme replacement or production configuration change. References: https://getbootstrap.com/docs/5.3/components/badge/ , https://getbootstrap.com/docs/5.3/components/buttons/ , https://getbootstrap.com/docs/5.3/layout/grid/ .
 
 Validation: safe Jekyll build and 17 viewport checks passed, including Fold 6 dimensions, sticky behavior, single-line tagline, text zoom and overflow. Dropdowns are centered against the joined button group to stay onscreen on narrow layouts; eight downloads and all date/type badges are checked at seven widths. Physical-device review remains pending.
+
+## Actual Bootstrap control groups and single-line downloads — September 30, 2026
+
+Review screenshot showed mismatched standalone navigation shapes, a heavier download group, character chevrons, left-aligned social icons, and stacked file metadata. This revision uses a homepage-scoped subset of official Bootstrap 5.3.8 button, button-group and dropdown CSS (vendored locally with MIT license). Legacy pages retain Editorial; no global Bootstrap reset or theme replacement.
+
+Primary navigation is a joined outlined button group; Resume/Portfolio are a smaller, right-aligned solid button group. Dropdown toggles are real buttons with SVG chevrons, aria-expanded/aria-controls, Escape/outside dismissal, arrow-key navigation and mutually exclusive open panels. Social icons form a centered outlined group with shared borders and only outer corners rounded.
+
+Download rows display label, file type and date on a single line. Menus are wider on desktop; narrow screens truncate long labels with ellipsis while preserving badges. Full filenames/options and combined-packet context remain in accessible text and hover titles. Touch pointers retain at least 44px interaction heights; desktop controls are visually smaller. Exact styling and grid order remain review choices.
+
+Bootstrap source: https://github.com/twbs/bootstrap/tree/v5.3.8 and button-group conventions: https://getbootstrap.com/docs/5.3/components/button-group/ . The scoped CSS is in assets/css/bootstrap-controls-v2.css and its license accompanies it.
+
+Validation: safe Jekyll build and 17 responsive sizes passed, including Fold 6 simulations, sticky behavior, single-line headline, keyboard skip and text zoom. Seven-width dropdown checks passed for single-line rows, centered socials, on-screen panels, date/type badges and eight downloads. Arrow keys, Escape focus restoration, right alignment and coarse-pointer 44px targets also passed. Physical-device verification remains pending.
