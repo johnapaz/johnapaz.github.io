@@ -1,0 +1,15 @@
+# Applied after _config.yml; production never loads this file.
+url: "https://staging.johnapaz.com"
+baseurl: ""
+google_analytics: null
+staging: true
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - gulpfile.js
+  - docs
+  - scripts

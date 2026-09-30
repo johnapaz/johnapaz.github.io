@@ -1,0 +1,65 @@
+name: Deploy staging
+on:
+  push:
+    branches: [v2]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: staging
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    env:
+      JEKYLL_ENV: staging
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+          bundler: '2.4.22'
+      - name: Install dependencies
+        run: |
+          # The inherited lockfile does not match Gemfile; resolve in CI only.
+          rm Gemfile.lock
+          bundle install
+      - name: Build staging
+        run: |
+          bundle exec jekyll build --safe --config _config.yml,_config.staging.yml
+          printf 'staging.johnapaz.com\n' > _site/CNAME
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          printf '{"branch":"v2","commit":"%s","run":"%s"}\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > _site/build-info.json
+          python3 scripts/check-staging.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staging-site
+          path: _site
+          include-hidden-files: true
+      - name: Publish generated files
+        env:
+          STAGING_DEPLOY_KEY: ${{ secrets.STAGING_DEPLOY_KEY }}
+        run: |
+          test -n "$STAGING_DEPLOY_KEY" || { echo "Missing STAGING_DEPLOY_KEY; see docs/staging.md"; exit 1; }
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$STAGING_DEPLOY_KEY" > ~/.ssh/staging_key
+          chmod 600 ~/.ssh/staging_key
+          # GitHub runner's trusted known_hosts is used; do not disable host verification.
+          export GIT_SSH_COMMAND="ssh -i $HOME/.ssh/staging_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes"
+          git clone --branch gh-pages --depth 1 git@github.com:johnapaz/johnapaz-staging.git staging-publish
+          rsync -a --delete --exclude=.git _site/ staging-publish/
+          cd staging-publish
+          touch .nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Stage source $GITHUB_SHA"
+            git push origin gh-pages
+          fi
+      - name: Deployment summary
+        run: |
+          echo "Published staging files for source commit $GITHUB_SHA. Pages publishing and domain readiness must be verified separately." >> "$GITHUB_STEP_SUMMARY"
+          echo "https://staging.johnapaz.com" >> "$GITHUB_STEP_SUMMARY"
