@@ -116,3 +116,13 @@ User directed use of latest matching Drive documents. Selection prioritizes date
 Developer and coding options explicitly indicate Combined packet. Dedicated exports can replace these mappings under #27. Role-document refreshes remain open; finding the newest existing file does not mean its content is current. Public Speaker/Presenter needs a file.
 
 Validation: safe Jekyll build; 17 responsive sizes including Fold6 simulations, keyboard skip navigation, text zoom, local assets/destinations; dropdown placement at seven widths, keyboard opening/Escape/outside dismissal, mutually exclusive open state, and all eight available PDF/DOCX downloads. Physical-device verification remains pending. Production configuration untouched.
+
+## Compact Material-inspired controls — September 30, 2026
+
+Supersedes the earlier all-pill navigation treatment at John's request. Primary navigation now uses compact text actions; only the joined Resume/Portfolio download action has a tonal surface. Social icons use transparent icon-action surfaces with the same accent, 8px corner shape, and subtle hover state layer as toolbar actions. All controls retain 44px minimum interaction targets while reducing gaps and visible padding. Dropdowns use compact elevated surfaces; their file-type badges remain small pills. The separate Professional overview action is removed at John’s follow-up request; Resume and Portfolio remain in the toolbar.
+
+“Clear Communication” is removed. Welcome copy, one-line expressive headline, desktop sticky introduction, downloads, and 80/20 tiles remain. This is a Material-inspired native HTML/CSS treatment, retaining Jekyll and the existing brand palette, rather than importing a component framework. References: https://github.com/material-components/material-web/blob/main/docs/components/button.md and https://github.com/material-components/material-web/blob/main/docs/components/icon-button.md .
+
+Review: compactness, text-action emphasis, and unified interaction styling are the current proposal; grid order/grouping, final tokens, and Work wording remain open. Physical Galaxy Z Fold 6 verification is still pending.
+
+Validation: safe Jekyll build and 17 responsive viewport checks passed after both removals, including Fold 6 cover/unfolded/landscape and desktop sticky behavior. Dropdown positioning, keyboard dismissal, and eight downloads passed at seven widths during this styling iteration.
