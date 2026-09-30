@@ -87,3 +87,32 @@ John requested a smaller toolbar without a dividing line, less space above the m
 Threads now links to `https://www.threads.com/@john.paz.stories`, using the handle supplied by John. Automated external profile retrieval was unavailable, so account ownership was not independently verified. Instagram, LinkedIn, and GitHub use the existing bundled Font Awesome assets; Threads uses a small inline @ symbol. Visible link labels remain available.
 
 Safe Jekyll build and responsive checks at 17 viewport sizes passed, including Fold 6 cover/unfolded simulations and resize transitions. Physical Samsung Internet/Chrome review remains pending. Staging is the review destination; HTTPS remains tracked in #28. Production configuration is untouched.
+
+
+## Pill links, downloads, and 80/20 tiles — September 30, 2026
+
+John prefers standard-height pill links and two-tone social icons without visible words. Navigation, professional overview, and footer contact links now use 44px minimum-height pills; social links use 44px two-tone circles with accessible names. The inline welcome contact link preserves the exact welcome copy. The toolbar has a joined Resume | Portfolio control, with native dropdowns, real file-type badges, direct same-origin downloads, keyboard support, Escape/outside dismissal, and only one open menu. The visible “A few things to explore” heading is removed; an accessible section heading remains.
+
+**Superseding tile decision:** image/artwork occupies 80% of each square tile; metadata occupies 20%. Article title dominates that metadata section, category is much smaller, and the description is available to assistive technology without crowding the tile face. This supersedes the earlier fixed-height metadata rows.
+
+Desktop stickiness previously stopped below 760px viewport height. The condensed introduction now stays sticky down to 451px; at exceptionally short heights it scrolls to keep all links reachable. Mobile/stacked layouts scroll normally. Tests include a 1440×600 desktop window.
+
+### Drive download mappings
+
+User directed use of latest matching Drive documents. Selection prioritizes dated content versions over later timestamps on copied older files; source files are copied intact with actual PDF/DOCX types, without changing Drive sharing. The table records the source dates rather than implying these old documents were rewritten.
+
+| Menu option | Selected document | Type | Content date |
+| --- | --- | --- | --- |
+| Developer/API Tech Writer | John_Paz_Developer_API_Technical_Writer_resume_09292026 | PDF | September 2026 |
+| Knowledge Manager | John_Paz_Knowledge_Manager-Technical_Writer_09122025 | DOCX | September 2025 |
+| Content Designer | John_Paz_Content_Designer_01082025 | PDF | January 2025 |
+| People Leader | John_Paz_Documentation_Manager_resume_02092024 | DOCX | February 2024 |
+| Public Speaker/Presenter | No matching dedicated resume located; disabled Pending entry | — | — |
+| Developer Documentation Samples | John_Paz_API_Technical_Writer_work-samples_09152026_Bloomberg | DOCX | September 2026 |
+| Technical Writing Samples | John Paz - Sr. Content Designer - documentation writing samples_03032021 | DOCX | March 2021 |
+| Content Design Samples | John Paz - Sr. Content Designer Portfolio_042424 | PDF | April 2024 |
+| Coding/Automation Samples | Same September 2026 combined packet; includes Confluence Automation Toolkit case study | DOCX | September 2026 |
+
+Developer and coding options explicitly indicate Combined packet. Dedicated exports can replace these mappings under #27. Role-document refreshes remain open; finding the newest existing file does not mean its content is current. Public Speaker/Presenter needs a file.
+
+Validation: safe Jekyll build; 17 responsive sizes including Fold6 simulations, keyboard skip navigation, text zoom, local assets/destinations; dropdown placement at seven widths, keyboard opening/Escape/outside dismissal, mutually exclusive open state, and all eight available PDF/DOCX downloads. Physical-device verification remains pending. Production configuration untouched.

@@ -6,5 +6,27 @@
     <a href="{{ '/resume/' | relative_url }}">Work</a>
     <a href="{{ '/my-story/' | relative_url }}">About</a>
   </nav>
-  <a class="v2-download" href="{{ '/assets/docs/John_Paz_Senior_Technical_Writer_resume_03062025_Wise.pdf' | relative_url }}" download>Resume <span aria-hidden="true">↓</span><span class="v2-sr-only"> (PDF, March 2025)</span></a>
+  <div class="v2-downloads" aria-label="Download resumes and portfolios">
+    {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
+    {% for group in download_groups %}
+    {% assign group_key = group | downcase %}
+    <details class="v2-download-menu">
+      <summary>{{ group }} <span aria-hidden="true">⌄</span></summary>
+      <ul class="v2-download-options" aria-label="{{ group }} versions">
+        {% for document in site.data.downloads[group_key] %}
+        <li>
+          {% if document.url %}
+          <a href="{{ document.url | relative_url }}" download>
+            <span>{{ document.label }}<small>{{ document.updated }}</small></span>
+            <span class="v2-file-type">{{ document.type }}<span class="v2-sr-only"> download</span></span>
+          </a>
+          {% else %}
+          <span class="v2-download-pending" aria-disabled="true"><span>{{ document.label }}</span><span class="v2-file-type">Pending</span></span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endfor %}
+  </div>
 </header>

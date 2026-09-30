@@ -18,7 +18,7 @@
     <section class="v2-content" id="writing" aria-labelledby="content-title">
       <header class="v2-content-heading">
         <p class="v2-eyebrow">Projects · Writing · Life</p>
-        <h2 id="content-title">A few things to explore</h2>
+        <h2 id="content-title" class="v2-sr-only">Projects, writing, and life</h2>
       </header>
       <div class="v2-grid">
         {% for card in site.data.home.cards %}
@@ -30,7 +30,7 @@
             <div class="v2-card-text">
               <p class="v2-eyebrow">{{ card.category }}</p>
               <h3>{{ card.title }} <span class="v2-arrow" aria-hidden="true">↗</span></h3>
-              <p>{{ card.description }}</p>
+              <p class="v2-sr-only">{{ card.description }}</p>
             </div>
           </a>
         </article>
@@ -39,5 +39,6 @@
       <footer class="v2-bottom"><p>Have something in mind?</p><a href="mailto:{{ site.email }}">Let’s talk <span aria-hidden="true">↗</span></a></footer>
     </section>
   </main>
+  <script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
 </body>
 </html>
