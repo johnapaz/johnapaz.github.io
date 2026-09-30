@@ -74,3 +74,7 @@ Keep these cases in prototype and subsequent page reviews. Physical Z Fold6 test
 The wiki gained an accepted canyon color direction during this session. The reviewed prototype now applies that direction; the earlier dark/lime exploration was superseded before final review. Primary and secondary card text use deep espresso for legibility on warm stone. Final roles remain subject to review.
 
 Canyon text contrast checks: deep espresso on pale sand 12.43:1; rust on pale sand 6.01:1; deep espresso on warm stone 7.05:1. Card hover retains deep espresso text and adds an underline; rust on warm stone is limited to the decorative arrow/focus indicator (3.40:1), not small body text.
+
+## Review revision — September 30, 2026
+
+John requested a single-line “Curious, Creative, Clever,” a larger desktop identity name, and a lighter nonwhite background. Removed forced headline line breaks; size the headline against its introduction column to keep one line across desktop, mobile, and Fold layouts. Desktop identity name is now 1.75rem (mobile 1.2rem). The shared page/navigation background is a lighter pale-sand tint, `#F8EBD3`; original canyon accents remain. Staging publication is part of this review revision; verify its served build-info commit and HTTPS independently rather than treating a source commit or screenshot as deployment.

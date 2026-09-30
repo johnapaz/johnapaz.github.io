@@ -1,5 +1,5 @@
 // Homepage-only prototype tokens. Existing Editorial styles remain on other pages.
-$background: #F2D8A8;
+$background: #F8EBD3; // Lighter pale-sand tint; deliberately not white.
 $foreground: #2B1605;
 $muted: #754116;
 $accent: #754116;
@@ -23,13 +23,13 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-home-link { font-weight: 750; font-size: 1.4rem; letter-spacing: -.04em; span { color: $accent; } }
 .v2-download { border: 1px solid #92795D; border-radius: 2rem; padding: .4rem 1.1rem; gap: .65rem; font-size: .85rem; }
 .v2-shell { display: grid; grid-template-columns: minmax(290px, .82fr) minmax(0, 1.45fr); gap: clamp(3rem, 6vw, 7rem); max-width: 1520px; margin: auto; padding: 3.5rem clamp(1.25rem, 4vw, 4rem) 2rem; align-items: start; }
-.v2-introduction { position: sticky; top: 7.5rem; }
+.v2-introduction { position: sticky; top: 7.5rem; container-type: inline-size; }
 .v2-identity { display: flex; gap: 1rem; align-items: center; margin-bottom: 2rem;
   img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; }
 }
-.v2-name { font-weight: 700; font-size: 1.05rem; }
+.v2-name { font-weight: 700; font-size: 1.75rem; line-height: 1.25; }
 .v2-role { font-size: .85rem; color: $muted; }
-.v2-introduction h1 { font-size: clamp(3.25rem, 4.9vw, 5rem); line-height: 1.08; letter-spacing: -.055em; font-weight: 750; span { color: $accent; } }
+.v2-introduction h1 { font-size: clamp(1rem, 7.3cqw, 2.5rem); white-space: nowrap; line-height: 1.15; letter-spacing: -.055em; font-weight: 750; span { color: $accent; } }
 .v2-supporting { font-size: 1.25rem; margin-top: 1.3rem !important; font-weight: 600; }
 .v2-welcome { color: $muted; max-width: 39ch; margin-top: 1.25rem !important; font-size: .98rem; a { color: $foreground; white-space: nowrap; } }
 .v2-socials { display: flex; flex-wrap: wrap; gap: .2rem 1.15rem; list-style: none; padding: 0; margin: 1.4rem 0 .75rem; font-size: .8rem; a { display: inline-flex; align-items: center; min-height: 44px; } }
@@ -65,7 +65,6 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 @media (max-width: 1000px) {
   .v2-shell { grid-template-columns: 1fr; gap: 3rem; max-width: 780px; padding-top: 2.5rem; }
   .v2-introduction { position: static; }
-  .v2-introduction h1 { font-size: clamp(3.5rem, 8vw, 5rem); }
   .v2-welcome { max-width: 55ch; }
 }
 @media (max-width: 600px) {
@@ -74,6 +73,7 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-download { margin-left: auto; }
   .v2-shell { padding-top: 2rem; }
   .v2-identity { margin-bottom: 1.5rem; }
+  .v2-name { font-size: 1.2rem; }
   .v2-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .v2-card-text .v2-eyebrow { color: $foreground; }
 .v2-card-text { padding: 1.1rem 1.4rem 1.4rem; h3 { font-size: 1.25rem; } > p:last-child { font-size: .9rem; } }
