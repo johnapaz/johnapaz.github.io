@@ -78,3 +78,12 @@ Canyon text contrast checks: deep espresso on pale sand 12.43:1; rust on pale sa
 ## Review revision — September 30, 2026
 
 John requested a single-line “Curious, Creative, Clever,” a larger desktop identity name, and a lighter nonwhite background. Removed forced headline line breaks; size the headline against its introduction column to keep one line across desktop, mobile, and Fold layouts. Desktop identity name is now 1.75rem (mobile 1.2rem). The shared page/navigation background is a lighter pale-sand tint, `#F8EBD3`; original canyon accents remain. Staging publication is part of this review revision; verify its served build-info commit and HTTPS independently rather than treating a source commit or screenshot as deployment.
+
+
+## Compact navigation and introduction review — September 30, 2026
+
+John requested a smaller toolbar without a dividing line, less space above the main content, a more condensed introduction, expressive tagline typography, a larger supporting line ending near “Clever,” working social icons, and consistent tile title spacing. This iteration uses centered primary navigation in the existing system font, a locally available Georgia italic headline, tightly paired tagline lines, and reduced identity/welcome/social gaps. Centering and the serif choice are prototype options for review, not final design tokens. Card text sections share a fixed height, equal top/bottom padding, and a reserved two-line title row so neighboring tile labels and descriptions align.
+
+Threads now links to `https://www.threads.com/@john.paz.stories`, using the handle supplied by John. Automated external profile retrieval was unavailable, so account ownership was not independently verified. Instagram, LinkedIn, and GitHub use the existing bundled Font Awesome assets; Threads uses a small inline @ symbol. Visible link labels remain available.
+
+Safe Jekyll build and responsive checks at 17 viewport sizes passed, including Fold 6 cover/unfolded simulations and resize transitions. Physical Samsung Internet/Chrome review remains pending. Staging is the review destination; HTTPS remains tracked in #28. Production configuration is untouched.
