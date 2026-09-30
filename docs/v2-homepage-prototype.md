@@ -148,3 +148,13 @@ Download rows display label, file type and date on a single line. Menus are wide
 Bootstrap source: https://github.com/twbs/bootstrap/tree/v5.3.8 and button-group conventions: https://getbootstrap.com/docs/5.3/components/button-group/ . The scoped CSS is in assets/css/bootstrap-controls-v2.css and its license accompanies it.
 
 Validation: safe Jekyll build and 17 responsive sizes passed, including Fold 6 simulations, sticky behavior, single-line headline, keyboard skip and text zoom. Seven-width dropdown checks passed for single-line rows, centered socials, on-screen panels, date/type badges and eight downloads. Arrow keys, Escape focus restoration, right alignment and coarse-pointer 44px targets also passed. Physical-device verification remains pending.
+
+## Narrow menus, page-centered navigation and borderless social icons — September 30, 2026
+
+John requested narrower dropdown options, primary navigation centered against the page, and borderless two-tone social icons using Bootstrap's icon library. Menus are now at most 390px wide (previously 460px), retaining one-line rows, visible type/date badges and narrow-screen label ellipsis. The toolbar uses equal flexible left/right grid columns around the navigation group; the downloads remain right aligned independently. On narrow screens, navigation centers on its own row.
+
+All four social logos now use locally included official Bootstrap Icons 1.13.1 SVGs, including Threads (replaces @ approximation), Instagram, LinkedIn and GitHub. The icon MIT license is included. Social links have pale-sand tonal circular surfaces and rust glyphs, without borders/dividers; hover reverses those tones. Their group centers within the welcome text's width, not the wider introduction column, including stacked layouts. Font Awesome is no longer loaded by the homepage.
+
+Existing Jekyll/Editorial pages, download mappings and production configuration remain unchanged. Exact visual tokens and grouping/order remain review choices; physical Galaxy Z Fold6 checks remain pending.
+
+Validation: safe Jekyll build and 17 responsive viewport checks passed. Seven-width checks confirm page-centered navigation, socials centered against welcome/contact block, borderless social surfaces, four Bootstrap SVGs, single-line rows, on-screen menus, badges, keyboard dismissal and all eight downloads. Fold6 simulations and text zoom remain covered.

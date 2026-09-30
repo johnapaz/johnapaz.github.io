@@ -35,18 +35,18 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .btn-primary { --bs-btn-color: #F8EBD3; --bs-btn-bg: #754116; --bs-btn-border-color: #754116; --bs-btn-hover-color: #F8EBD3; --bs-btn-hover-bg: #2B1605; --bs-btn-hover-border-color: #2B1605; --bs-btn-active-bg: #2B1605; --bs-btn-active-border-color: #2B1605; }
   .btn-outline-primary { --bs-btn-color: #754116; --bs-btn-border-color: #92795D; --bs-btn-hover-color: #F8EBD3; --bs-btn-hover-bg: #754116; --bs-btn-hover-border-color: #754116; --bs-btn-active-color: #F8EBD3; --bs-btn-active-bg: #754116; --bs-btn-active-border-color: #754116; }
 }
-.v2-topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: .75rem; max-width: $page-width; margin: auto; padding: .25rem $page-gutter; background: $background;
+.v2-topbar { position: sticky; top: 0; z-index: 5; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: .75rem; max-width: $page-width; margin: auto; padding: .25rem $page-gutter; background: $background;
   a { text-decoration: none; min-height: 36px; display: inline-flex; align-items: center; }
-  nav { display: flex; margin: 0; font: inherit; }
+  nav { grid-column: 2; display: flex; justify-content: center; margin: 0; font: inherit; }
   nav .btn { font-size: .85rem; padding: .25rem .6rem; font-weight: 500; }
   [aria-current] { color: $background; background: $accent; border-color: $accent; }
 }
-.v2-downloads { position: relative; flex-shrink: 0; margin-left: auto; }
+.v2-downloads { grid-column: 3; justify-self: end; position: relative; margin-left: auto; }
 .v2-home .v2-download-menu { position: static;
   .btn { display: inline-flex; align-items: center; gap: .3rem; min-height: 32px; font-size: .75rem; padding: .2rem .5rem; font-weight: 500; }
 }
 .v2-chevron { width: .8rem; height: .8rem; }
-.v2-home .v2-download-options { position: absolute; inset: auto 0 auto auto; top: calc(100% + .25rem); width: min(460px, calc(100vw - 2.5rem)); max-height: 65vh; overflow-y: auto; margin: 0; padding: .25rem; background: $background; color: $foreground; border: 1px solid #92795D; box-shadow: 0 3px 12px rgba(43,22,5,.15);
+.v2-home .v2-download-options { position: absolute; inset: auto 0 auto auto; top: calc(100% + .25rem); width: min(390px, calc(100vw - 2.5rem)); max-height: 65vh; overflow-y: auto; margin: 0; padding: .25rem; background: $background; color: $foreground; border: 1px solid #92795D; box-shadow: 0 3px 12px rgba(43,22,5,.15);
   &[hidden] { display: none; }
   a, .v2-download-pending { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 36px; padding: .35rem .5rem; font-size: .8rem; line-height: 1.3; white-space: nowrap; }
   a:hover, a:focus { background: $state-layer; color: $foreground; }
@@ -66,14 +66,13 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-role { font-size: .85rem; color: $muted; }
 .v2-introduction h1 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 7.1cqw; white-space: nowrap; line-height: 1.15; letter-spacing: -.045em; font-weight: 700; span { color: $accent; } }
 .v2-welcome { color: $muted; max-width: 39ch; margin-top: .35rem !important; font-size: .92rem; a { color: $foreground; white-space: nowrap; } }
-.v2-socials { display: flex; justify-content: center; width: max-content; max-width: 100%; list-style: none; padding: 0; margin: .5rem auto 0; font-size: 1.1rem;
+.v2-intro-contact { max-width: 39ch; font-size: .92rem; }
+.v2-socials { display: flex; justify-content: center; width: max-content; max-width: 100%; gap: .35rem; list-style: none; padding: 0; margin: .5rem auto 0;
   li { display: flex; }
-  a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: .25rem; text-decoration: none; border-radius: 0; }
-  li + li a { margin-left: -1px; }
-  li:first-child a { border-radius: $control-radius 0 0 $control-radius; }
-  li:last-child a { border-radius: 0 $control-radius $control-radius 0; }
+  a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: .25rem; text-decoration: none; border: 0; border-radius: 50%; background: $tonal-surface; color: $accent; }
+  a:hover { background: $accent; color: $background; }
 }
-.v2-social-icon { width: 1em; height: 1em; fill: currentColor; }
+.v2-social-icon { width: 20px; height: 20px; fill: currentColor; }
 .v2-pending { color: $muted; display: inline-flex; flex-direction: column; justify-content: center; min-height: 44px; line-height: 1.5; }
 .v2-pending-note { font-size: .65rem; }
 .v2-content-heading { margin-bottom: .75rem; }
@@ -106,10 +105,11 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-shell { grid-template-columns: 1fr; gap: 1.5rem; max-width: 780px; padding-top: .5rem; }
   .v2-introduction { position: static; }
   .v2-welcome { max-width: 55ch; }
+  .v2-intro-contact { max-width: 55ch; }
 }
 @media (max-width: 600px) {
-  .v2-topbar { flex-wrap: wrap; gap: 0 .5rem; padding: .15rem 1.25rem; }
-  .v2-topbar nav { order: 0; width: 100%; justify-content: flex-start; gap: 0; margin: 0; }
+  .v2-topbar { gap: .25rem; padding: .15rem 1.25rem; }
+  .v2-topbar nav { grid-column: 1 / -1; width: 100%; justify-content: center; gap: 0; margin: 0; }
   .v2-downloads { margin-left: auto; }
   .v2-shell { padding-top: .35rem; }
   .v2-identity { margin-bottom: .65rem; }
@@ -120,18 +120,19 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
-@media (min-width: 601px) and (max-width: 780px) { .v2-topbar { flex-wrap: wrap; gap: .25rem; } .v2-topbar nav { order: 0; width: 100%; } .v2-downloads { margin-left: auto; } }
+@media (min-width: 601px) and (max-width: 780px) { .v2-topbar { gap: .25rem; } .v2-topbar nav { grid-column: 1 / -1; width: 100%; } .v2-downloads { margin-left: auto; } }
 
 @media (max-width: 380px) { .v2-topbar nav a { padding-inline: .55rem; font-size: .8rem; } }
 
 @media (pointer: coarse) { .v2-topbar a, .v2-download-menu .btn, .v2-download-options a, .v2-socials a { min-height: 44px; } .v2-socials a { width: 44px; } }
 // Match Bootstrap group geometry even with list and dropdown-panel children.
-.v2-home .v2-socials { display: flex; }
-.v2-home .v2-socials a { border-radius: 0; }
-.v2-home .v2-socials li:first-child a { border-radius: $control-radius 0 0 $control-radius; }
-.v2-home .v2-socials li:last-child a { border-radius: 0 $control-radius $control-radius 0; }
 .v2-home .v2-downloads .btn { border-radius: 0; }
 .v2-home .v2-download-menu:first-child > .btn { border-radius: .25rem 0 0 .25rem; }
 .v2-home .v2-download-menu:last-child > .btn { border-radius: 0 .25rem .25rem 0; }
 .v2-home a.btn:hover { color: var(--bs-btn-hover-color); }
 @media (pointer: coarse) { .v2-home .v2-download-menu .btn { min-height: 44px; } }
+@media (max-width: 780px) {
+  .v2-topbar { grid-template-columns: minmax(0, 1fr); }
+  .v2-topbar nav { grid-column: 1; }
+  .v2-downloads { grid-column: 1; margin-left: 0; justify-self: end; }
+}
