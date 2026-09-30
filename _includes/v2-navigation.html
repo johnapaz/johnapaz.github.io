@@ -1,9 +1,9 @@
 <header class="v2-topbar">
-  <nav aria-label="Primary navigation"><div class="btn-group v2-primary-group" role="group" aria-label="Page links">
-    <a class="btn btn-outline-primary" href="{{ '/' | relative_url }}" aria-current="page">Home</a>
-    <a class="btn btn-outline-primary" href="#writing">Writing</a>
-    <a class="btn btn-outline-primary" href="{{ '/resume/' | relative_url }}">Work</a>
-    <a class="btn btn-outline-primary" href="{{ '/my-story/' | relative_url }}">About</a>
+  <nav aria-label="Primary navigation"><div class="v2-primary-group" role="group" aria-label="Page links">
+    <a class="v2-nav-link" href="{{ '/' | relative_url }}" aria-current="page">Home</a>
+    <a class="v2-nav-link" href="#writing">Writing</a>
+    <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}">Work</a>
+    <a class="v2-nav-link" href="{{ '/my-story/' | relative_url }}">About</a>
   </div></nav>
   <div class="btn-group btn-group-sm v2-downloads" role="group" aria-label="Download resumes and portfolios">
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}

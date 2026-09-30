@@ -158,3 +158,11 @@ All four social logos now use locally included official Bootstrap Icons 1.13.1 S
 Existing Jekyll/Editorial pages, download mappings and production configuration remain unchanged. Exact visual tokens and grouping/order remain review choices; physical Galaxy Z Fold6 checks remain pending.
 
 Validation: safe Jekyll build and 17 responsive viewport checks passed. Seven-width checks confirm page-centered navigation, socials centered against welcome/contact block, borderless social surfaces, four Bootstrap SVGs, single-line rows, on-screen menus, badges, keyboard dismissal and all eight downloads. Fold6 simulations and text zoom remain covered.
+
+## Text navigation, left-aligned socials, consistent corners — September 30, 2026
+
+John requested no borders on primary navigation, just text; social icons return to left alignment; Resume/Portfolio outer corners must be consistent. Navbar links now use plain text styles (current page indicated by weight), retaining page centering and right-aligned downloads. Socials align with the welcome text's left edge, superseding the centered social group. The two-tone borderless Bootstrap Icons remain.
+
+Corrected dropdown button corner selectors to override Bootstrap's nested group rules: Resume rounds only its left corners and Portfolio only its right corners, all at 4px; inner corners remain square. The previous right-hand selector lost to Bootstrap specificity, producing the screenshot's square right edge. No production configuration changes.
+
+Validation: safe Jekyll build and seven-width menu checks passed, including exact four-corner values, borderless nav/social links, left social alignment, page-centered navigation, badges and all eight downloads. Physical-device verification remains pending.

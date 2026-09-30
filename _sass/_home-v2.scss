@@ -38,8 +38,9 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-topbar { position: sticky; top: 0; z-index: 5; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: .75rem; max-width: $page-width; margin: auto; padding: .25rem $page-gutter; background: $background;
   a { text-decoration: none; min-height: 36px; display: inline-flex; align-items: center; }
   nav { grid-column: 2; display: flex; justify-content: center; margin: 0; font: inherit; }
-  nav .btn { font-size: .85rem; padding: .25rem .6rem; font-weight: 500; }
-  [aria-current] { color: $background; background: $accent; border-color: $accent; }
+  nav .v2-nav-link { font-size: .85rem; padding: .25rem .6rem; font-weight: 500; border: 0; background: transparent; }
+  .v2-primary-group { display: flex; }
+  [aria-current] { color: $accent; font-weight: 700 !important; }
 }
 .v2-downloads { grid-column: 3; justify-self: end; position: relative; margin-left: auto; }
 .v2-home .v2-download-menu { position: static;
@@ -67,7 +68,7 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-introduction h1 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 7.1cqw; white-space: nowrap; line-height: 1.15; letter-spacing: -.045em; font-weight: 700; span { color: $accent; } }
 .v2-welcome { color: $muted; max-width: 39ch; margin-top: .35rem !important; font-size: .92rem; a { color: $foreground; white-space: nowrap; } }
 .v2-intro-contact { max-width: 39ch; font-size: .92rem; }
-.v2-socials { display: flex; justify-content: center; width: max-content; max-width: 100%; gap: .35rem; list-style: none; padding: 0; margin: .5rem auto 0;
+.v2-socials { display: flex; justify-content: center; width: max-content; max-width: 100%; gap: .35rem; list-style: none; padding: 0; margin: .5rem 0 0;
   li { display: flex; }
   a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; padding: .25rem; text-decoration: none; border: 0; border-radius: 50%; background: $tonal-surface; color: $accent; }
   a:hover { background: $accent; color: $background; }
@@ -127,8 +128,8 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 @media (pointer: coarse) { .v2-topbar a, .v2-download-menu .btn, .v2-download-options a, .v2-socials a { min-height: 44px; } .v2-socials a { width: 44px; } }
 // Match Bootstrap group geometry even with list and dropdown-panel children.
 .v2-home .v2-downloads .btn { border-radius: 0; }
-.v2-home .v2-download-menu:first-child > .btn { border-radius: .25rem 0 0 .25rem; }
-.v2-home .v2-download-menu:last-child > .btn { border-radius: 0 .25rem .25rem 0; }
+.v2-home .v2-downloads .v2-download-menu:first-child > .btn { border-radius: .25rem 0 0 .25rem; }
+.v2-home .v2-downloads .v2-download-menu:last-child > .btn { border-radius: 0 .25rem .25rem 0; }
 .v2-home a.btn:hover { color: var(--bs-btn-hover-color); }
 @media (pointer: coarse) { .v2-home .v2-download-menu .btn { min-height: 44px; } }
 @media (max-width: 780px) {
