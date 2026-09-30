@@ -1,21 +1,18 @@
 # Staging workflow — issue #25
 
-Status: prepared; deployment, DNS, and review validation pending.
+Status: workflow setup, build, and Pages deployment verified; custom-domain HTTPS and browser review remain pending.
 
 Source: johnapaz/johnapaz.github.io, branch v2.
 Destination: johnapaz/johnapaz-staging, main holds the deployment workflow; generated files are uploaded as a Pages artifact.
-URL: https://staging.johnapaz.com.
+Custom preview hostname: staging.johnapaz.com (HTTPS is not ready until the GitHub Pages certificate is active).
 Production continues using its current publishing branch. Coordinate master → main via #20.
 
 ## Account setup and deployment
 
 Public staging repository created. Pages source: GitHub Actions.
-Custom domain saved: staging.johnapaz.com. DNS/HTTPS pending.
-No deploy key or repository secret is needed: staging Actions reads the public v2
-branch and uses its own temporary GITHUB_TOKEN/OIDC to publish only staging Pages.
-The workflow runs on changes to staging main, manually from Actions, and every
-30 minutes (GitHub schedules may be delayed). Source v2 pushes run build checks
-but do not instantly publish staging. Use the staging manual run for immediate review.
+Custom domain saved: staging.johnapaz.com. DNS recognition and HTTPS certificate are pending under #28.
+No deploy key or repository secret is needed: staging Actions reads the public v2 branch and uses its own temporary GITHUB_TOKEN/OIDC to publish only staging Pages.
+The workflow runs on changes to staging main, manually from Actions, and every 30 minutes (GitHub schedules may be delayed). Source v2 pushes run build checks but do not instantly publish staging. Use the staging manual run for immediate review.
 The previously created gh-pages branch is unused.
 
 Required DNS: CNAME staging → johnapaz.github.io.
@@ -26,22 +23,25 @@ Public repository Actions/Pages usage is subject to GitHub's current limits.
 ## Build behavior
 
 The workflow uses the current Jekyll Pages dependency family and safe mode to match Pages.
-The theme's obsolete development dependencies were removed, Gemfile was aligned with the inherited Pages 204 dependency family, and the lockfile was retained with Bundler 2.4.22. Verify a successful CI build before claiming build validation.
+The theme's obsolete development dependencies were removed, Gemfile was aligned with the inherited Pages 204 dependency family, and the lockfile was retained with Bundler 2.4.22.
 Ruby 2.7 is a temporary legacy compatibility choice and should be upgraded with the dependency refresh.
 Staging config overrides the site URL and disables analytics. Generated CNAME is staging-only.
 All HTML receives noindex through the shared head include; robots.txt discourages crawling.
 build-info.json identifies source commit, branch, and run.
-Source configuration lives here; the wiki should link this guide and record the decision.
+The source configuration and executable build checks live here. The Development-Workflow wiki page records the workflow decision and links to this guide.
+
+## Verification record
+
+Successful build and Pages deployment: https://github.com/johnapaz/johnapaz-staging/actions/runs/36763836078 (attempt 2), source commit 6c36bb3e1c886f9b04b8662162df8e9d1ca1d6f7.
+The staging checker passed for 21 generated HTML pages, including noindex/analytics assertions. build-info.json records the source branch, commit, and workflow run.
+
+Source v2 pushes run build validation. The staging repository publishes the public source branch manually or on its 30-minute schedule. Staging does not change production DNS, branch, or publishing configuration.
 
 ## Review and promotion
 
-Push changes to v2; source Actions validates the build. Run the staging workflow manually or wait for the scheduled refresh to publish.
-John approves the exact source commit shown in build-info.json.
-Review responsive layouts, keyboard navigation/accessibility, internal links, redirects,
-canonical URLs, images, navigation, and downloads. Compare production behavior.
+After HTTPS is valid, review the deployed site for links, redirects, canonical URLs, images, navigation, downloads, responsive layouts, and keyboard accessibility. Compare production behavior.
 Automated comprehensive link checking remains #19; broader CI/release policy remains #21.
-Before promotion, freeze v2 updates, record the reviewed commit and current production SHA,
-and open a PR from v2 to the current production branch.
+Before promotion, freeze v2 updates, record the reviewed commit and current production SHA, and open a PR from v2 to the current production branch.
 Any changes after review require another staging review. Merge only after John approves.
 Verify the production Pages build and live site after merge.
 
@@ -52,8 +52,8 @@ For production, revert the release merge on the production branch and verify Pag
 Do not deploy a staging artifact to production: its URLs and analytics settings differ.
 Validate rollback on staging before accepting #25.
 
-## Validation record
+## Validation remaining
 
-Pending: dependency resolution/build, isolated live change, DNS/HTTPS,
-local links/downloads, analytics/noindex verification, promotion and rollback rehearsal.
-Do not close #25 until these checks are complete.
+- [ ] GitHub Pages recognizes DNS and provisions a valid certificate; enable Enforce HTTPS (#28).
+- [ ] Complete a browser-level review of the staging site, including links/assets/navigation/downloads, responsive layout, and accessibility.
+- [ ] Safely rehearse promotion and rollback before v2 promotion.
