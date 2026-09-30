@@ -3,22 +3,25 @@
 Status: prepared; deployment, DNS, and review validation pending.
 
 Source: johnapaz/johnapaz.github.io, branch v2.
-Destination: johnapaz/johnapaz-staging, branch gh-pages (generated files only).
+Destination: johnapaz/johnapaz-staging, main holds the deployment workflow; generated files are uploaded as a Pages artifact.
 URL: https://staging.johnapaz.com.
 Production continues using its current publishing branch. Coordinate master → main via #20.
 
-## Initial account setup
+## Account setup and deployment
 
-1. Create public repository johnapaz-staging and initialize its gh-pages branch with a README.
-2. Create an SSH deploy key. Add its public key to staging repository Settings → Deploy keys with write access. Add the private key as STAGING_DEPLOY_KEY in the source repository Actions secrets. Never commit either secret.
-3. Set staging Pages publishing to gh-pages / root.
-4. Set staging Pages custom domain to staging.johnapaz.com.
-5. Add DNS CNAME: staging → johnapaz.github.io. Verify DNS and enable HTTPS once available.
-6. Run Deploy staging from the v2 branch. Confirm Actions succeeds, Pages deployment succeeds, and the URL serves the commit in build-info.json.
+Public staging repository created. Pages source: GitHub Actions.
+Custom domain saved: staging.johnapaz.com. DNS/HTTPS pending.
+No deploy key or repository secret is needed: staging Actions reads the public v2
+branch and uses its own temporary GITHUB_TOKEN/OIDC to publish only staging Pages.
+The workflow runs on changes to staging main, manually from Actions, and every
+30 minutes (GitHub schedules may be delayed). Source v2 pushes run build checks
+but do not instantly publish staging. Use the staging manual run for immediate review.
+The previously created gh-pages branch is unused.
 
-Use a repository-scoped deploy key; it grants no production repository write access.
+Required DNS: CNAME staging → johnapaz.github.io.
+After DNS resolves, verify the Pages certificate and enable Enforce HTTPS.
 Public Pages staging is publicly accessible. noindex is not authentication.
-Public repository Actions/Pages usage is subject to GitHub's current limits; verify account quotas.
+Public repository Actions/Pages usage is subject to GitHub's current limits.
 
 ## Build behavior
 
@@ -32,7 +35,7 @@ Source configuration lives here; the wiki should link this guide and record the 
 
 ## Review and promotion
 
-Push reviewed changes to v2; Actions publishes the full staging site.
+Push changes to v2; source Actions validates the build. Run the staging workflow manually or wait for the scheduled refresh to publish.
 John approves the exact source commit shown in build-info.json.
 Review responsive layouts, keyboard navigation/accessibility, internal links, redirects,
 canonical URLs, images, navigation, and downloads. Compare production behavior.
