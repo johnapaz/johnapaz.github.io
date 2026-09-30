@@ -3,34 +3,44 @@ resume:
 - label: Developer/API Tech Writer
   url: /assets/docs/John_Paz_Developer_API_Technical_Writer_resume_09292026.pdf
   type: PDF
-  updated: September 2026
+  updated: "09/29/26"
+  updated_iso: "2026-09-29"
 - label: Knowledge Manager
   url: /assets/docs/John_Paz_Knowledge_Manager-Technical_Writer_09122025.docx
   type: DOCX
-  updated: September 2025
+  updated: "09/12/25"
+  updated_iso: "2025-09-12"
 - label: Content Designer
   url: /assets/docs/John_Paz_Content_Designer_01082025.pdf
   type: PDF
-  updated: January 2025
+  updated: "01/08/25"
+  updated_iso: "2025-01-08"
 - label: People Leader
   url: /assets/docs/John_Paz_Documentation_Manager_resume_02092024.docx
   type: DOCX
-  updated: February 2024
+  updated: "02/09/24"
+  updated_iso: "2024-02-09"
 - label: Public Speaker/Presenter
 portfolio:
 - label: Developer Documentation Samples
   url: /assets/docs/John_Paz_API_Technical_Writer_work-samples_09152026_Bloomberg.docx
   type: DOCX
-  updated: September 2026 · Combined packet
+  updated: "09/15/26"
+  updated_iso: "2026-09-15"
+  note: Combined packet
 - label: Technical Writing Samples
   url: /assets/docs/John_Paz_Technical_Writing_Samples_03032021.docx
   type: DOCX
-  updated: March 2021
+  updated: "03/03/21"
+  updated_iso: "2021-03-03"
 - label: Content Design Samples
   url: /assets/docs/John_Paz_Content_Design_Samples_042424.pdf
   type: PDF
-  updated: April 2024
+  updated: "04/24/24"
+  updated_iso: "2024-04-24"
 - label: Coding/Automation Samples
   url: /assets/docs/John_Paz_API_Technical_Writer_work-samples_09152026_Bloomberg.docx
   type: DOCX
-  updated: September 2026 · Combined packet
+  updated: "09/15/26"
+  updated_iso: "2026-09-15"
+  note: Combined packet

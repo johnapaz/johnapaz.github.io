@@ -126,3 +126,13 @@ Supersedes the earlier all-pill navigation treatment at John's request. Primary 
 Review: compactness, text-action emphasis, and unified interaction styling are the current proposal; grid order/grouping, final tokens, and Work wording remain open. Physical Galaxy Z Fold 6 verification is still pending.
 
 Validation: safe Jekyll build and 17 responsive viewport checks passed after both removals, including Fold 6 cover/unfolded/landscape and desktop sticky behavior. Dropdown positioning, keyboard dismissal, and eight downloads passed at seven widths during this styling iteration.
+
+## Bootstrap-style buttons, badges, and centered spacing — September 30, 2026
+
+John clarified that small pill labels meant badges, and prefers Bootstrap-style continuity. Removed the J.Paz toolbar brand entirely. Primary links remain text navigation; Resume/Portfolio are a joined solid button-style control. Each available file has separate compact pill badges for its actual file type and MM/DD/YY date. Dates come from the selected document's dated version (not a later Drive copy timestamp), with semantic ISO datetime and a native title/accessible label “Updated: {date}”. The combined-packet disclosure remains beneath its file label. Pending speaker resume has no invented type/date.
+
+Spacing proposal: center the entire toolbar group and page in a shared 1200px maximum container, with 20–32px interior gutters and a 32–48px desktop column gap. Compared with the former 1520px container, this adds balanced outer breathing room and reduces the introduction's width. The desktop avatar is 64px, name 1.6rem, and welcome copy .92rem; mobile keeps readable text and full interaction targets. Stacked layouts remain centered in the existing 780px container. This is a reviewable spacing choice, not a final token decision.
+
+Recommendation: use Bootstrap conventions (button vs. badge semantics, shared radii, spacing scale, centered containers) now. A framework-wide import would overlap Editorial's global styles; evaluate a scoped Bootstrap Sass component layer if later pages need many reusable components. No platform/theme replacement or production configuration change. References: https://getbootstrap.com/docs/5.3/components/badge/ , https://getbootstrap.com/docs/5.3/components/buttons/ , https://getbootstrap.com/docs/5.3/layout/grid/ .
+
+Validation: safe Jekyll build and 17 viewport checks passed, including Fold 6 dimensions, sticky behavior, single-line tagline, text zoom and overflow. Dropdowns are centered against the joined button group to stay onscreen on narrow layouts; eight downloads and all date/type badges are checked at seven widths. Physical-device review remains pending.

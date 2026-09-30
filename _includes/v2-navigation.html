@@ -1,5 +1,4 @@
 <header class="v2-topbar">
-  <a class="v2-home-link" href="{{ '/' | relative_url }}" aria-label="John A. Paz — home">J<span>.</span> Paz</a>
   <nav aria-label="Primary navigation">
     <a href="{{ '/' | relative_url }}" aria-current="page">Home</a>
     <a href="#writing">Writing</a>
@@ -17,11 +16,14 @@
         <li>
           {% if document.url %}
           <a href="{{ document.url | relative_url }}" download>
-            <span>{{ document.label }}<small>{{ document.updated }}</small></span>
-            <span class="v2-file-type">{{ document.type }}<span class="v2-sr-only"> download</span></span>
+            <span class="v2-document-label">{{ document.label }}{% if document.note %}<small>{{ document.note }}</small>{% endif %}</span>
+            <span class="v2-document-badges">
+              <span class="v2-badge v2-file-type">{{ document.type }}<span class="v2-sr-only"> download</span></span>
+              <time class="v2-badge v2-file-date" datetime="{{ document.updated_iso }}" title="Updated: {{ document.updated }}" aria-label="Updated: {{ document.updated }}">{{ document.updated }}</time>
+            </span>
           </a>
           {% else %}
-          <span class="v2-download-pending" aria-disabled="true"><span>{{ document.label }}</span><span class="v2-file-type">Pending</span></span>
+          <span class="v2-download-pending" aria-disabled="true"><span>{{ document.label }}</span><span class="v2-badge v2-file-type">Pending</span></span>
           {% endif %}
         </li>
         {% endfor %}
