@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>John A. Paz | Writer, Speaker, Human</title>
+  <meta name="description" content="Curious, Creative, Clever. Explore John A. Paz’s projects, writing, and practical guides." />
+  {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}" />
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+</head>
+<body class="v2-home">
+  <a class="v2-skip" href="#main-content">Skip to content</a>
+  {% include v2-navigation.html %}
+  <main id="main-content" class="v2-shell">
+    {% include v2-introduction.html %}
+    <section class="v2-content" id="writing" aria-labelledby="content-title">
+      <header class="v2-content-heading">
+        <p class="v2-eyebrow">Projects · Writing · Life</p>
+        <h2 id="content-title">A few things to explore</h2>
+      </header>
+      <div class="v2-grid">
+        {% for card in site.data.home.cards %}
+        <article class="v2-card v2-card--{{ card.style }}">
+          <a href="{% if card.url contains '://' %}{{ card.url }}{% else %}{{ card.url | relative_url }}{% endif %}">
+            <div class="v2-card-art" aria-hidden="true">
+              {% if card.image %}<img src="{{ card.image | relative_url }}" alt="" loading="lazy" width="600" height="600" />{% else %}<span>{{ card.motif }}</span>{% endif %}
+            </div>
+            <div class="v2-card-text">
+              <p class="v2-eyebrow">{{ card.category }}</p>
+              <h3>{{ card.title }} <span class="v2-arrow" aria-hidden="true">↗</span></h3>
+              <p>{{ card.description }}</p>
+            </div>
+          </a>
+        </article>
+        {% endfor %}
+      </div>
+      <footer class="v2-bottom"><p>Have something in mind?</p><a href="mailto:{{ site.email }}">Let’s talk <span aria-hidden="true">↗</span></a></footer>
+    </section>
+  </main>
+</body>
+</html>

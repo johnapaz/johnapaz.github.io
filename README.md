@@ -29,6 +29,10 @@ bundle exec jekyll serve
 
 Open [http://localhost:4000](http://localhost:4000) to preview the site. Jekyll watches the source files and rebuilds after most changes.
 
+## V2 prototype
+
+The `v2` branch contains the first responsive homepage prototype. See [prototype choices and local review](docs/v2-homepage-prototype.md) and [staging workflow](docs/staging.md). Grid curation, visual tokens, and the Work label remain open for design review.
+
 ## Publishing
 
 GitHub Pages builds the repository root from the default branch and publishes it to [johnapaz.com](https://johnapaz.com). Changes to the deployment, release, CI, and branch strategy are tracked in the repository backlog.

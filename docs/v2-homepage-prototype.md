@@ -1,0 +1,72 @@
+# V2 homepage prototype — issue #23
+
+This is the first reviewable homepage implementation on `v2`, not an approved final design or production release. Requirements: [V2 Requirements](https://github.com/johnapaz/johnapaz.github.io/wiki/V2-Requirements). Reference: the supplied `johnapaz-concepts.pptx`, especially its Baleon landing-page screenshot.
+
+## Implementation
+
+Keep Jekyll and the Editorial theme. The homepage uses `_layouts/home-v2.html`, two dedicated includes, and `_sass/_home-v2.scss` compiled through `assets/css/home-v2.scss`. Other page layouts and theme styles remain intact. No frontend framework or runtime JavaScript is required.
+
+The top navigation stays visible. At desktop widths above 1000px, the introduction sticks beside a two-column square-card grid with one document scrollbar. On shorter screens (760px high or less), the introduction scrolls so its links remain reachable. At tablet/mobile widths it sits above the content; below 600px cards form one column and navigation wraps into two rows.
+
+The introduction uses the existing `John_smile.jpg` portrait, the exact approved identity/headline/supporting/welcome copy, and a contact link to the configured email. Instagram, LinkedIn, and GitHub reuse repository-configured destinations. Threads is explicitly marked “link pending”; confirm the profile URL before enabling it. No guessed profile destination.
+
+Resume download is in the persistent navigation; professional overview is in the introduction. Existing theme pages also gain professional overview and dated resume-download links. Downloads deliberately use the existing March 2025 PDF; refreshing resume content and versions remains #27. Work links to the existing `/resume/` web overview while its label and new page design remain unresolved. About links to the existing personal `/my-story/` page. Writing temporarily jumps to the homepage content grid; a dedicated Writing index with grid/list views is a subsequent task.
+
+Removed the competing `index.markdown` homepage source; `index.md` now explicitly owns `/`. Existing article links from the old homepage are retained in git history; the prototype curates a subset rather than approving deletion or migration of published writing.
+
+## Choices for design review
+
+| Area | Prototype choice | Decision still needed |
+| --- | --- | --- |
+| Palette | Charcoal background, warm white text, lime accent | Final palette and light/dark presentation |
+| Typography | System sans; large three-line headline | Final typefaces, scale, line breaks |
+| Cards | Six square cards, real links; existing images and typographic motifs | Imagery, grouping, card details, number, order |
+| Curation | Automation, UI copy, learning, Cuban coffee, portfolio, personal story | Which content best serves the homepage purpose |
+| Navigation | Home / Writing / Work / About | Work label, dedicated Writing destination, search placement (#26) |
+| Professional access | Current web overview and dated PDF | Professional overview redesign and updated downloads (#27) |
+| Social profiles | Existing configured URLs; Threads pending | Confirm Threads and review existing profile destinations |
+
+Card selection/order/text lives in `_data/home.yml`. All proposed headings and tokens beyond the exact introduction are provisional. The desktop introduction has no separate panel, border, or background.
+
+## Local review
+
+Use the existing locked dependencies (CI uses Ruby 2.7 and Bundler 2.4.22):
+
+```sh
+bundle install
+JEKYLL_ENV=staging bundle exec jekyll build --safe --config _config.yml,_config.staging.yml
+JEKYLL_ENV=staging bundle exec jekyll serve --safe --config _config.yml,_config.staging.yml --host 127.0.0.1
+```
+
+Visit `http://127.0.0.1:4000`. Check desktop scrolling, tablet stacking, narrow mobile navigation, keyboard focus/skip link, text zoom, card links, portrait, and downloads. Run the existing staging checker with the generated build-info fixture as documented in the staging workflow.
+
+Validation results are recorded below after the local review. Local validation does not certify a live staging preview. Staging deployment has passed previously, but custom-domain HTTPS remains pending under #28. Do not bypass certificate warnings. Production publishing settings, workflows, CNAME, and dependencies are unchanged; no production merge or deployment is part of this prototype.
+
+## Validation record — September 30, 2026
+
+- Jekyll 3.8.5 safe staging build passed with the unchanged lockfile. Local Ruby was 3.2.3; scratch-only REXML loading and Ruby compatibility shims handled legacy file-read keywords and removed taint methods. These are not site changes. CI's unmodified Ruby 2.7 build remains the canonical compatibility check.
+- Existing staging checker passed for 21 generated HTML pages (local build-info fixture), including noindex and analytics checks.
+- Chromium 134 rendered 1440×1000, 1280×800, 1024×768, 1000×900, 768×1024, 600×900, 390×844, 320×568, and 1440×600. Automated geometry checks verified no horizontal overflow, square cards without clipping, mobile introduction ordering, persistent navigation, and desktop introduction persistence. Short desktop screens intentionally use normal introduction scrolling.
+- Keyboard skip link and 200% root text sizing overflow checks passed. Local homepage destinations, generated images/styles, and resume PDF returned 200; no local resource failures or JavaScript errors. The coffee card points directly to the generated `.html` URL to work with a plain static local server as well as Pages.
+- Desktop and mobile screenshots were visually inspected. Local review served the real Jekyll-generated output over HTTP. External article/profile destinations were taken from repository content and were not independently availability-checked. A screen-reader audit and multi-browser testing remain future checks.
+- Production config, CNAME, staging workflows, Gemfile, and lockfile are unchanged. Live HTTPS validation remains #28.
+
+[Desktop screenshot](images/v2-homepage-desktop.webp) · [Mobile screenshot](images/v2-homepage-mobile.webp)
+
+## Foldable review matrix (retain for future design changes)
+
+Galaxy Z Fold is a required device class, with Z Fold6 the priority. The following are **representative CSS viewport simulations**, not claimed hardware browser measurements. Browser chrome, Android display scaling, font settings, and split-screen use change usable CSS dimensions. Samsung's [Fold6 display specifications](https://news.samsung.com/global/samsung-galaxy-z-fold-6-and-z-flip-6-elevate-galaxy-ai-to-new-heights) inform the aspect ratios; physical pixel resolution is not the browser viewport.
+
+| Design type | CSS viewport tested | Result |
+| --- | --- | --- |
+| Z Fold series narrow cover | 344×882 and 882×344 | Passed |
+| Z Fold6 cover, portrait/landscape | 360×884 and 884×360 | Passed |
+| Z Fold6 unfolded, portrait/landscape | 690×803 and 803×690 | Passed |
+| Z Fold series wider unfolded/scaled | 768×894 and 894×768 | Passed |
+| Narrow split-window stress case | 320×568 | Passed |
+
+These eight additional foldable viewports passed the same overflow, square-card, navigation persistence, and introduction-order checks. Resizing the same page from cover → unfolded → rotated → cover passed without reload or losing cards. The existing mobile-first CSS naturally stacks the introduction for unfolded widths in this range, with two grid columns above 600px. No device-name-specific breakpoint was needed.
+
+Keep these cases in prototype and subsequent page reviews. Physical Z Fold6 testing in Samsung Internet and Chrome, opening/closing transitions, browser toolbar changes, display/font scaling, split-window use, and keyboard operation remain to be checked on a device.
+
+[Fold6 cover simulation](images/v2-homepage-fold6-cover.webp) · [Fold6 unfolded simulation](images/v2-homepage-fold6-unfolded.webp)
