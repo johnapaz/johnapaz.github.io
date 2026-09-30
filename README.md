@@ -1,87 +1,53 @@
-# (WIP) Editorial - Jekyll Theme
+# johnapaz.com
 
-A Jekyll version of the "Editorial" theme by [HTML5 UP](https://html5up.net/).
+This repository contains the source for [johnapaz.com](https://johnapaz.com), John Paz's professional website, portfolio, and publishing home.
 
-![Editorial Theme](assets/images/screenshot.jpg "Editorial Theme")
+The current site presents John's background, selected work, technical-writing portfolio, and public resources. A broader Version 2 redesign is in planning to make hiring information easier to reach, support ongoing publishing, and document the site itself as a portfolio project.
 
-# How to Use
+## Current implementation
 
-For those unfamiliar with how Jekyll works, check out [https://jekyllrb.com/](https://jekyllrb.com/) for all the details,
-or read up on just the basics of [front matter](https://jekyllrb.com/docs/frontmatter/), [writing posts](https://jekyllrb.com/docs/posts/),
-and [creating pages](https://jekyllrb.com/docs/pages/).
+The production site is a static [Jekyll](https://jekyllrb.com/) site hosted by [GitHub Pages](https://pages.github.com/).
 
-- **GitLab**: Simply fork this repository and start editing the `_config.yml` file!
-- **GitHub**: Fork this reposity and create a branch named `gh-pages`, then start editing the `_config.yml` file!
+- **Site configuration:** `_config.yml`
+- **Page content:** Markdown files in the repository root
+- **Structured content:** `content/`
+- **Templates and reusable page sections:** `_layouts/` and `_includes/`
+- **Styles:** `_sass/`
+- **Images, downloads, JavaScript, and compiled CSS:** `assets/`
+- **Custom-domain configuration:** `CNAME`
 
-# Added Features
+The site is based on the Jekyll adaptation of the [Editorial theme](https://html5up.net/editorial) by HTML5 UP and has been customized for John's content and portfolio.
 
-* Add your **social profiles** easily in `_config.yml`.
+## Run locally
 
-# Configuration
+The site uses the GitHub Pages Ruby dependency set. Install Ruby and Bundler, then run:
 
-You can use the following custom parameters in `_config.yml`.
-
-## Site
-- `subtitle` sets the text for the lighter colored text next to your site's title.
-
-## Social
-- `500px_url`
-- `facebook_url`
-- `github_url`
-- `gitlab_url`
-- `googleplus_url`
-- `instagram_url`
-- `linkedin_url`
-- `pinterest_url`
-- `slack_url`
-- `twitter_url`
-
-# Issues
-
-If you would like to report a bug, ask a question, request a feature, feel free to do so on [the GitLab repository](https://gitlab.com/andrewbanchich/editorial-jekyll-theme) and I will be more than happy to help!
-
-Alternatively, you can open an issue via email by emailing [incoming+andrewbanchich/editorial-jekyll-theme@incoming.gitlab.com](mailto:incoming+andrewbanchich/editorial-jekyll-theme@incoming.gitlab.com).
-
-The GitHub repository is simply a mirror of the GitLab repository.
-
-# Credits
-
-Original README from HTML5 UP:
-
-```
-Editorial by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
-
-Say hello to Editorial, a blog/magazine-ish template built around a toggleable "locking"
-sidebar (scroll down to see what I mean) and an accordion-style menu. Not the usual landing
-page/portfolio affair you'd expect to see at HTML5 UP, but I figured for my 41st (!!!)
-template I'd change it up a little. Enjoy :)
-
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
-
-(* = not included)
-
-AJ
-aj@lkn.io | @ajlkn
-
-
-Credits:
-
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+```bash
+bundle install
+bundle exec jekyll serve
 ```
 
-Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
+Open [http://localhost:4000](http://localhost:4000) to preview the site. Jekyll watches the source files and rebuilds after most changes.
+
+## Publishing
+
+GitHub Pages currently builds the repository root from the default branch and publishes it to [johnapaz.com](https://johnapaz.com).
+
+The deployment, release, and CI process is being formalized in [issue #21](https://github.com/johnapaz/johnapaz.github.io/issues/21). The default branch is also scheduled to change from `master` to `main` in [issue #20](https://github.com/johnapaz/johnapaz.github.io/issues/20), so check the repository settings before following branch-specific instructions.
+
+## Roadmap and backlog
+
+Work is tracked in [GitHub Issues](https://github.com/johnapaz/johnapaz.github.io/issues). Current priorities include:
+
+- [Version 2 redesign and implementation](https://github.com/johnapaz/johnapaz.github.io/issues/22)
+- [Version 2 design exploration — in progress](https://github.com/johnapaz/johnapaz.github.io/issues/23)
+- [Deployment, release, and CI strategy](https://github.com/johnapaz/johnapaz.github.io/issues/21)
+- [Automated link validation and broken-link fixes](https://github.com/johnapaz/johnapaz.github.io/issues/19)
+- [Analytics, public status page, and outage alerts](https://github.com/johnapaz/johnapaz.github.io/issues/24)
+- [Default-branch rename](https://github.com/johnapaz/johnapaz.github.io/issues/20)
+
+New bugs, content problems, and proposed improvements should be documented as issues with enough context to reproduce or evaluate them.
+
+## Credits and license
+
+The visual foundation comes from [Editorial by HTML5 UP](https://html5up.net/editorial), adapted for Jekyll by [Andrew Banchich](https://github.com/andrewbanchich/editorial-jekyll-theme). Theme and repository licensing details are available in [LICENSE.md](LICENSE.md).
