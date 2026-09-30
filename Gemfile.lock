@@ -43,7 +43,8 @@ GEM
     gemoji (3.0.1)
     github-pages (204)
       github-pages-health-check (= 1.16.1)
-          jekyll-avatar (= 0.7.0)
+      jekyll (= 3.8.5)
+      jekyll-avatar (= 0.7.0)
       jekyll-coffeescript (= 1.1.1)
       jekyll-commonmark-ghpages (= 0.1.6)
       jekyll-default-layout (= 0.1.4)
@@ -266,7 +267,6 @@ PLATFORMS
 DEPENDENCIES
   editorial_jekyll_theme!
   github-pages (~> 204)
-  jekyll (= 3.8.5)
   wdm (~> 0.1.1)
 
 BUNDLED WITH
