@@ -185,3 +185,12 @@ Desktop above 1000px uses two columns and viewport-relative rectangular tile hei
 Published destinations are reused: About opens `/my-story/`; My Blog opens the existing Medium profile; Resume & Portfolio opens `/resume/` with portfolio/download access retained in the toolbar; Code & Projects opens the existing Confluence toolkit repository; Guides & Articles opens `/tutorials/`; Talks & Presentations opens `/presentations/`. Dedicated v2 section pages remain later work. No new blog index or inactive search control is added.
 
 Validation: six labels/order, HTML escaping, Liquid render and internal permalink declarations passed. Label contrast is 12.43:1 and 7.05:1 at the gradient endpoints; the subtle hover tint keeps contrast above 4.5:1. Local Sass compilation passed using a scratch-only wrapper for an existing legacy Sass `min()` incompatibility. This workspace has no Ruby runtime and browser downloads are blocked, so full Jekyll and visual/Fold checks are not claimed. The existing safe Jekyll staging workflow now also runs for pull requests targeting `v2`; its build and staging checks must pass before merge. PR changes are isolated from production and staging publication.
+
+
+## Palette correction — October 1, 2026
+
+John clarified that “gradient” means a sequence of solid tile colors, with each tile a different progressively darker shade, not a gradient within every tile. Six backgrounds in approved row-major order: #F2D8A8, #DDBD91, #BEA17F, #AD9271, #754116, #4B2911. First four use espresso labels; last two use pale-sand labels. Preserve Georgia italic.
+
+John also requested shorter tiles. Desktop heights are about 11% shorter than the initial preview (viewport divisor 2.8 instead of 2.5); tablet/mobile aspect ratios widen and minimum heights reduce. This gives more of the last row visibility and supersedes the exact half-row target where it conflicts with shorter height. Hover now applies directly without a hover-device media gate, with a darker shade derived individually from each tile color (Sass darken by 4 percentage points of HSL lightness), plus 3px lift. Keyboard outline and reduced-motion handling remain. The earlier shared 7% tint was too subtle, and the hover-device gate could suppress it on hybrid input devices; neither cause has been browser-verified.
+
+Keep this on PR #33 and staging for visual review before merging v2.

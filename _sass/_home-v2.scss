@@ -79,20 +79,29 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 // Six section tiles replace the image/metadata card treatment.
 .v2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .v2-card { container-type: inline-size; border-radius: 12px; position: relative;
-  background: linear-gradient(135deg, #F2D8A8, #BEA17F);
-  transition: transform 200ms ease;
-  &::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: $accent; opacity: 0; transition: opacity 200ms ease; }
-  > a { position: relative; display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 160px; aspect-ratio: 1.6 / 1; text-decoration: none; color: $foreground; border-radius: inherit; }
+  background: #F2D8A8;
+  color: $foreground;
+  transition: transform 200ms ease, background-color 200ms ease;
+  > a { position: relative; display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 140px; aspect-ratio: 1.9 / 1; text-decoration: none; color: inherit; border-radius: inherit; }
   h3 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; font-size: clamp(1.25rem, 7.5cqw, 2rem); line-height: 1.2; letter-spacing: -.035em; text-align: center; }
-  > a:hover { color: $foreground; }
+  > a:hover { color: inherit; }
   &:focus-within { transform: translateY(-3px); outline: 3px solid $accent; outline-offset: 4px; }
-  &:focus-within::before { opacity: .07; }
   a:focus-visible { outline: none; }
 }
-@media (hover: hover) { .v2-card:hover { transform: translateY(-3px); } .v2-card:hover::before { opacity: .07; } }
-// At desktop sizes two complete rows and half the final row fit below the toolbar.
+.v2-card:hover { transform: translateY(-3px); }
+// Each hover shade is derived from that tile's own solid color.
+$tile-colors: #F2D8A8, #DDBD91, #BEA17F, #AD9271, #754116, #4B2911;
+@for $i from 1 through length($tile-colors) {
+  $tile-color: nth($tile-colors, $i);
+  .v2-card:nth-child(#{$i}) {
+    background-color: $tile-color;
+    &:hover, &:focus-within { background-color: darken($tile-color, 4%); }
+  }
+}
+.v2-card:nth-child(n+5) { color: #F8EBD3; }
+// Shorter desktop tiles: about 11% less height than the first section-tile preview.
 @media (min-width: 1001px) {
-  .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 2.5); height: calc((100svh - 104px) / 2.5); }
+  .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 2.8); height: calc((100svh - 104px) / 2.8); }
 }
 .v2-bottom { padding: 3rem 0 1rem; color: $muted; font-size: .9rem; a { display: inline-flex; align-items: center; min-height: 44px; padding: .25rem .65rem; margin-top: .5rem; border: 0; background: $tonal-surface; border-radius: $control-radius; text-decoration: none; font-size: .85rem; font-weight: 600; color: $foreground; } }
 // On short screens, let the introduction scroll to keep every link reachable.
@@ -111,9 +120,9 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-identity { margin-bottom: .65rem; }
   .v2-name { font-size: 1.2rem; }
   .v2-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .v2-card > a { min-height: 150px; aspect-ratio: 1.8 / 1; }
+  .v2-card > a { min-height: 135px; aspect-ratio: 2.1 / 1; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .v2-card, .v2-card::before { transition: none; } .v2-card:hover, .v2-card:focus-within { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .v2-card { transition: none; } .v2-card:hover, .v2-card:focus-within { transform: none; } }
 
 @media (min-width: 601px) and (max-width: 780px) { .v2-topbar { gap: .25rem; } .v2-topbar nav { grid-column: 1 / -1; width: 100%; } .v2-downloads { margin-left: auto; } }
 
