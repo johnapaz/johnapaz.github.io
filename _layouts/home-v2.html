@@ -16,22 +16,12 @@
   <main id="main-content" class="v2-shell">
     {% include v2-introduction.html %}
     <section class="v2-content" id="writing" aria-labelledby="content-title">
-      <header class="v2-content-heading">
-        <p class="v2-eyebrow">Projects · Writing · Life</p>
-        <h2 id="content-title" class="v2-sr-only">Projects, writing, and life</h2>
-      </header>
+      <h2 id="content-title" class="v2-sr-only">Explore my work and writing</h2>
       <div class="v2-grid">
         {% for card in site.data.home.cards %}
-        <article class="v2-card v2-card--{{ card.style }}">
+        <article class="v2-card">
           <a href="{% if card.url contains '://' %}{{ card.url }}{% else %}{{ card.url | relative_url }}{% endif %}">
-            <div class="v2-card-art" aria-hidden="true">
-              {% if card.image %}<img src="{{ card.image | relative_url }}" alt="" loading="lazy" width="600" height="600" />{% else %}<span>{{ card.motif }}</span>{% endif %}
-            </div>
-            <div class="v2-card-text">
-              <p class="v2-eyebrow">{{ card.category }}</p>
-              <h3>{{ card.title }} <span class="v2-arrow" aria-hidden="true">↗</span></h3>
-              <p class="v2-sr-only">{{ card.description }}</p>
-            </div>
+            <h3>{{ card.title | escape }}</h3>
           </a>
         </article>
         {% endfor %}

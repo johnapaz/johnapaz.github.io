@@ -2,11 +2,13 @@ name: Validate staging build
 on:
   push:
     branches: [v2]
+  pull_request:
+    branches: [v2]
   workflow_dispatch:
 permissions:
   contents: read
 concurrency:
-  group: staging
+  group: staging-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   build:

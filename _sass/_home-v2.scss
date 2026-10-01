@@ -76,29 +76,24 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 .v2-social-icon { width: 20px; height: 20px; fill: currentColor; }
 .v2-pending { color: $muted; display: inline-flex; flex-direction: column; justify-content: center; min-height: 44px; line-height: 1.5; }
 .v2-pending-note { font-size: .65rem; }
-.v2-content-heading { margin-bottom: .75rem; }
-.v2-eyebrow { color: $muted; text-transform: uppercase; font-size: .66rem; font-weight: 650; letter-spacing: .13em; }
-.v2-content-heading h2 { font-size: clamp(1.5rem, 2vw, 2rem); letter-spacing: -.035em; margin-top: .35rem; }
+// Six section tiles replace the image/metadata card treatment.
 .v2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
-.v2-card { container-type: inline-size; background: #BEA17F; border-radius: 12px; overflow: hidden;
-  > a { display: flex; flex-direction: column; height: 100%; min-height: 100%; aspect-ratio: 1 / 1; text-decoration: none; }
-  > a:hover { color: $foreground; h3 { text-decoration: underline; text-underline-offset: .2em; } }
-  &:focus-within { outline: 3px solid $accent; outline-offset: 4px; }
+.v2-card { container-type: inline-size; border-radius: 12px; position: relative;
+  background: linear-gradient(135deg, #F2D8A8, #BEA17F);
+  transition: transform 200ms ease;
+  &::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: $accent; opacity: 0; transition: opacity 200ms ease; }
+  > a { position: relative; display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 160px; aspect-ratio: 1.6 / 1; text-decoration: none; color: $foreground; border-radius: inherit; }
+  h3 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; font-size: clamp(1.25rem, 7.5cqw, 2rem); line-height: 1.2; letter-spacing: -.035em; text-align: center; }
+  > a:hover { color: $foreground; }
+  &:focus-within { transform: translateY(-3px); outline: 3px solid $accent; outline-offset: 4px; }
+  &:focus-within::before { opacity: .07; }
   a:focus-visible { outline: none; }
 }
-.v2-card-art { position: relative; flex: 0 0 80%; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center;
-  img { position: absolute; inset: 0; height: 100%; width: 100%; object-fit: cover; }
-  > span { font: italic 4rem/1 Georgia, serif; letter-spacing: -.07em; }
+@media (hover: hover) { .v2-card:hover { transform: translateY(-3px); } .v2-card:hover::before { opacity: .07; } }
+// At desktop sizes two complete rows and half the final row fit below the toolbar.
+@media (min-width: 1001px) {
+  .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 2.5); height: calc((100svh - 104px) / 2.5); }
 }
-.v2-card--toolkit .v2-card-art { background: #754116; color: #F2D8A8; }
-.v2-card--coffee .v2-card-art { background: #92795D; color: #2B1605; }
-.v2-card--portfolio .v2-card-art { background: #F2D8A8; color: #2B1605; }
-.v2-card-text .v2-eyebrow { color: $foreground; font-size: .55rem; letter-spacing: .08em; }
-.v2-card-text { flex: 0 0 20%; min-height: 0; padding: .3rem .7rem; display: flex; flex-direction: column; justify-content: center; gap: .15rem;
-  h3 { font-size: clamp(.85rem, 5.3cqw, 1.4rem); line-height: 1.1; letter-spacing: -.02em; margin: 0; }
-  > p:last-child { font-size: .65rem; line-height: 1.3; color: $foreground; }
-}
-.v2-arrow { float: right; margin-left: .4rem; color: $accent; }
 .v2-bottom { padding: 3rem 0 1rem; color: $muted; font-size: .9rem; a { display: inline-flex; align-items: center; min-height: 44px; padding: .25rem .65rem; margin-top: .5rem; border: 0; background: $tonal-surface; border-radius: $control-radius; text-decoration: none; font-size: .85rem; font-weight: 600; color: $foreground; } }
 // On short screens, let the introduction scroll to keep every link reachable.
 @media (max-height: 450px) { .v2-introduction { position: static; } }
@@ -116,10 +111,9 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-identity { margin-bottom: .65rem; }
   .v2-name { font-size: 1.2rem; }
   .v2-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .v2-card-text .v2-eyebrow { color: $foreground; font-size: .55rem; letter-spacing: .08em; }
-.v2-card-text { flex-basis: 20%; padding: .3rem .7rem; }
+  .v2-card > a { min-height: 150px; aspect-ratio: 1.8 / 1; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .v2-card, .v2-card::before { transition: none; } .v2-card:hover, .v2-card:focus-within { transform: none; } }
 
 @media (min-width: 601px) and (max-width: 780px) { .v2-topbar { gap: .25rem; } .v2-topbar nav { grid-column: 1 / -1; width: 100%; } .v2-downloads { margin-left: auto; } }
 

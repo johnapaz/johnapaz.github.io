@@ -6,7 +6,7 @@ This is the first reviewable homepage implementation on `v2`, not an approved fi
 
 Keep Jekyll and the Editorial theme. The homepage uses `_layouts/home-v2.html`, two dedicated includes, and `_sass/_home-v2.scss` compiled through `assets/css/home-v2.scss`. Other page layouts and theme styles remain intact. No frontend framework or runtime JavaScript is required.
 
-The top navigation stays visible. At desktop widths above 1000px, the introduction sticks beside a two-column square-card grid with one document scrollbar. On shorter screens (760px high or less), the introduction scrolls so its links remain reachable. At tablet/mobile widths it sits above the content; below 600px cards form one column and navigation wraps into two rows.
+The top navigation stays visible. At desktop widths above 1000px, the introduction sticks beside a two-column section-tile grid with one document scrollbar. On shorter screens (760px high or less), the introduction scrolls so its links remain reachable. At tablet/mobile widths it sits above the content; below 600px cards form one column and navigation wraps into two rows.
 
 The introduction uses the existing `John_smile.jpg` portrait, the exact approved identity/headline/supporting/welcome copy, and a contact link to the configured email. Instagram, LinkedIn, and GitHub reuse repository-configured destinations. Threads is explicitly marked “link pending”; confirm the profile URL before enabling it. No guessed profile destination.
 
@@ -166,3 +166,22 @@ John requested no borders on primary navigation, just text; social icons return 
 Corrected dropdown button corner selectors to override Bootstrap's nested group rules: Resume rounds only its left corners and Portfolio only its right corners, all at 4px; inner corners remain square. The previous right-hand selector lost to Bootstrap specificity, producing the screenshot's square right edge. No production configuration changes.
 
 Validation: safe Jekyll build and seven-width menu checks passed, including exact four-corner values, borderless nav/social links, left social alignment, page-centered navigation, badges and all eight downloads. Physical-device verification remains pending.
+
+
+## Final landing-screen direction — October 1, 2026
+
+Implemented on `landing-screen-tiles`, branched from `v2` at db73fcb. This supersedes the earlier square image cards, 80/20 metadata, and provisional curation. The current toolbar, introduction, download controls, and social alignment are retained. Search is deferred to #26; Admin remains the subsequent #31 workstream.
+
+| Row | Left | Right |
+| --- | --- | --- |
+| 1 | About Me | My Blog |
+| 2 | Resume & Portfolio | Code & Projects |
+| 3 | Guides & Articles | Talks & Presentations |
+
+All tiles share a restrained canyon gradient from pale sand `#F2D8A8` to warm stone `#BEA17F`, with deep espresso `#2B1605` labels. Labels use the existing Georgia bold italic typography. Whole tiles are links; hover and keyboard focus add a subtle 7% rust tint and 3px lift over 200ms. Keyboard focus also has a visible outline. Reduced motion disables translation and transitions, preserving color and outline feedback.
+
+Desktop above 1000px uses two columns and viewport-relative rectangular tile heights, aiming to place half of the third row above the fold. Stacked tablet layouts retain two columns; below 600px the tiles form one column and scroll naturally. The fold treatment is a desktop target, not a mobile requirement; text scaling and browser UI can change the visible proportion.
+
+Published destinations are reused: About opens `/my-story/`; My Blog opens the existing Medium profile; Resume & Portfolio opens `/resume/` with portfolio/download access retained in the toolbar; Code & Projects opens the existing Confluence toolkit repository; Guides & Articles opens `/tutorials/`; Talks & Presentations opens `/presentations/`. Dedicated v2 section pages remain later work. No new blog index or inactive search control is added.
+
+Validation: six labels/order, HTML escaping, Liquid render and internal permalink declarations passed. Label contrast is 12.43:1 and 7.05:1 at the gradient endpoints; the subtle hover tint keeps contrast above 4.5:1. Local Sass compilation passed using a scratch-only wrapper for an existing legacy Sass `min()` incompatibility. This workspace has no Ruby runtime and browser downloads are blocked, so full Jekyll and visual/Fold checks are not claimed. The existing safe Jekyll staging workflow now also runs for pull requests targeting `v2`; its build and staging checks must pass before merge. PR changes are isolated from production and staging publication.

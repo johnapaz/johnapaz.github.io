@@ -1,38 +1,15 @@
-# Prototype curation and ordering; not approved information architecture.
+# Approved landing-screen sections, in row-major order (October 1, 2026).
+# Reuse published destinations while dedicated v2 section pages are developed.
 cards:
-  - title: Documentation, made easier
-    category: Projects
-    description: A toolkit for automating Confluence documentation workflows.
-    url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-    style: toolkit
-    motif: "{ / }"
-  - title: Words that work
-    category: Content design
-    description: Five rules for clearer, more useful UI copy.
-    url: https://medium.muz.li/5-rules-to-ensure-your-ui-copy-doesnt-suck-d0fb7487d84
-    image: /assets/images/procrastinate.png
-    style: copy
-  - title: Embrace your ignorance
-    category: Writing
-    description: Getting comfortable with what you don’t know.
-    url: https://medium.com/@SrContentDesign/embrace-ignorance-cb3e9da66573
-    image: /assets/images/ignorance.png
-    style: learning
-  - title: A little Cuban coffee
-    category: Practical guides
-    description: Make a small cup with a big personality.
-    url: /tutorials/how-to-make-cuban-coffee.html
-    style: coffee
-    motif: café
-  - title: The work behind the words
-    category: Professional work
-    description: Explore my writing samples and professional portfolio.
-    url: /portfolio/
-    style: portfolio
-    motif: Aa
-  - title: More than a job title
-    category: About
-    description: Get to know the person behind the projects.
+  - title: About Me
     url: /my-story/
-    image: /assets/images/santa-cruz-boardwalk-sunset.jpg
-    style: personal
+  - title: My Blog
+    url: https://medium.com/@SrContentDesign
+  - title: Resume & Portfolio
+    url: /resume/
+  - title: Code & Projects
+    url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  - title: Guides & Articles
+    url: /tutorials/
+  - title: Talks & Presentations
+    url: /presentations/
