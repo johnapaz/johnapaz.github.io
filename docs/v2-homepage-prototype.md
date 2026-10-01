@@ -194,3 +194,14 @@ John clarified that “gradient” means a sequence of solid tile colors, with e
 John also requested shorter tiles. Desktop heights are about 11% shorter than the initial preview (viewport divisor 2.8 instead of 2.5); tablet/mobile aspect ratios widen and minimum heights reduce. This gives more of the last row visibility and supersedes the exact half-row target where it conflicts with shorter height. Hover now applies directly without a hover-device media gate, with a darker shade derived individually from each tile color (Sass darken by 4 percentage points of HSL lightness), plus 3px lift. Keyboard outline and reduced-motion handling remain. The earlier shared 7% tint was too subtle, and the hover-device gate could suppress it on hybrid input devices; neither cause has been browser-verified.
 
 Keep this on PR #33 and staging for visual review before merging v2.
+
+
+## Soft raised tiles and featured content — October 1, 2026
+
+John found the high-contrast palette jarring and requested lighter related shades, subtle drop shadows, and a touchable Material-inspired feel. Keep all six section tiles above; add a polished quiet separator followed by three desktop rows of three compact featured-content cards.
+
+Section palette is now a narrow pale-canyon progression: #F4DFC0, #F0D9B9, #ECD3B1, #E7CCAA, #E2C6A3, #DDBF9C, with espresso labels throughout. Soft 2px ambient shadows plus an inset top highlight create shallow elevation; hover/focus darkens each tile's own color by 2 HSL lightness points, lifts 2px, and gently deepens the shadow. This supersedes the high-contrast palette and 3px/4% hover settings. Respect reduced motion.
+
+Featured content uses `featured` in `_data/home.yml`: nine real existing articles, a guide, the automation toolkit and a talk. This initial selection is for review; it is not presented as latest content. Reuse existing images and typographic motifs; no fabricated items or embedded third-party widgets. Compact titles may wrap; do not truncate them. Three columns on desktop, two at 780px or less, one at 480px or less. The divider and featured content follow the six section tiles in normal document flow, below the initial desktop screen.
+
+The source notes are historical. The canonical wiki and this newest section govern the current implementation; earlier palette and fold settings are superseded. Dark/Darker themes remain #34. Continue review on PR #33 before merging v2.

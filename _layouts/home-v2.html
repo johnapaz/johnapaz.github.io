@@ -26,6 +26,24 @@
         </article>
         {% endfor %}
       </div>
+      <section class="v2-featured" aria-labelledby="featured-title">
+        <h2 id="featured-title" class="v2-featured-heading">Featured content</h2>
+        <div class="v2-featured-grid">
+          {% for item in site.data.home.featured %}
+          <article class="v2-featured-card">
+            <a href="{% if item.url contains '://' %}{{ item.url }}{% else %}{{ item.url | relative_url }}{% endif %}">
+              <div class="v2-featured-art" aria-hidden="true">
+                {% if item.image %}<img src="{{ item.image | relative_url }}" alt="" loading="lazy" width="450" height="300" />{% else %}<span>{{ item.motif | escape }}</span>{% endif %}
+              </div>
+              <div class="v2-featured-text">
+                <p class="v2-featured-category">{{ item.category | escape }}</p>
+                <h3>{{ item.title | escape }}</h3>
+              </div>
+            </a>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
       <footer class="v2-bottom"><p>Have something in mind?</p><a href="mailto:{{ site.email }}">Let’s talk <span aria-hidden="true">↗</span></a></footer>
     </section>
   </main>

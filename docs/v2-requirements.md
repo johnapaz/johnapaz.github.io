@@ -171,3 +171,8 @@ Supersedes all earlier square-image/80–20 card requirements and provisional ho
 At typical desktop sizes, the final two tiles should be approximately half above and half below the fold. Mobile stacks normally without forcing this proportion. Retain responsive/Fold6 review requirements. Search is explicitly deferred (#26); no inactive search bar in this landing-screen scope. Admin implementation remains #31.
 
 Implementation is isolated on `landing-screen-tiles` from `v2`; production promotion is separate. See the branch's `docs/v2-homepage-prototype.md` for published destination mappings and validation limitations. Local label/order/Liquid/Sass/permalink checks passed; full Jekyll CI and browser/device review remain required before merge.
+
+
+## Current clarification — October 1, 2026
+
+The wiki is canonical; this file is a historical branch snapshot. John confirmed retaining the six section tiles above a subtle separator and a 3×3 desktop featured-content grid below. Soften section colors to closely related pale canyon shades, keep espresso labels throughout, and add subtle shallow shadows/top highlights. Each hover derives a slightly darker shade from its own tile color with a gentle lift and shadow change. This supersedes the earlier high-contrast palette. See the latest section of `docs/v2-homepage-prototype.md` for implementation details and the canonical wiki for current decisions.

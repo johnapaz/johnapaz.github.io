@@ -79,30 +79,53 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 // Six section tiles replace the image/metadata card treatment.
 .v2-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 .v2-card { container-type: inline-size; border-radius: 12px; position: relative;
-  background: #F2D8A8;
+  background: #F4DFC0;
   color: $foreground;
-  transition: transform 200ms ease, background-color 200ms ease;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 2px 5px rgba(43,22,5,.08);
+  transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
   > a { position: relative; display: flex; align-items: center; justify-content: center; padding: 1.5rem; min-height: 140px; aspect-ratio: 1.9 / 1; text-decoration: none; color: inherit; border-radius: inherit; }
   h3 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 700; font-size: clamp(1.25rem, 7.5cqw, 2rem); line-height: 1.2; letter-spacing: -.035em; text-align: center; }
   > a:hover { color: inherit; }
-  &:focus-within { transform: translateY(-3px); outline: 3px solid $accent; outline-offset: 4px; }
+  &:focus-within { transform: translateY(-2px); outline: 3px solid $accent; outline-offset: 4px; }
   a:focus-visible { outline: none; }
 }
-.v2-card:hover { transform: translateY(-3px); }
+.v2-card:hover { transform: translateY(-2px); }
 // Each hover shade is derived from that tile's own solid color.
-$tile-colors: #F2D8A8, #DDBD91, #BEA17F, #AD9271, #754116, #4B2911;
+$tile-colors: #F4DFC0, #F0D9B9, #ECD3B1, #E7CCAA, #E2C6A3, #DDBF9C;
 @for $i from 1 through length($tile-colors) {
   $tile-color: nth($tile-colors, $i);
   .v2-card:nth-child(#{$i}) {
     background-color: $tile-color;
-    &:hover, &:focus-within { background-color: darken($tile-color, 4%); }
+    &:hover, &:focus-within { background-color: darken($tile-color, 2%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 4px 9px rgba(43,22,5,.12); }
   }
 }
-.v2-card:nth-child(n+5) { color: #F8EBD3; }
+
 // Shorter desktop tiles: about 11% less height than the first section-tile preview.
 @media (min-width: 1001px) {
   .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 2.8); height: calc((100svh - 104px) / 2.8); }
 }
+// Featured content follows the six section tiles, separated by a quiet rule.
+.v2-featured { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(117,65,22,.2); }
+.v2-featured-heading { font-size: 1.25rem; line-height: 1.3; margin-bottom: 1.25rem !important; font-weight: 600; letter-spacing: -.02em; }
+.v2-featured-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.v2-featured-card { min-width: 0; border-radius: 10px; background: #F5E2C5; box-shadow: 0 2px 5px rgba(43,22,5,.07); transition: transform 200ms ease, box-shadow 200ms ease;
+  > a { display: flex; flex-direction: column; height: 100%; color: $foreground; text-decoration: none; border-radius: inherit; }
+  &:hover, &:focus-within { transform: translateY(-2px); box-shadow: 0 4px 9px rgba(43,22,5,.12); }
+  &:focus-within { outline: 3px solid $accent; outline-offset: 4px; }
+  a:focus-visible { outline: none; }
+  > a:hover { color: $foreground; }
+}
+.v2-featured-art { aspect-ratio: 3 / 2; border-radius: 10px 10px 0 0; background: #E8CFAD; display: flex; align-items: center; justify-content: center; overflow: hidden;
+  img { width: 100%; height: 100%; object-fit: cover; }
+  span { font: italic 2.5rem/1 Georgia, serif; color: $accent; }
+}
+.v2-featured-text { padding: .8rem;
+  .v2-featured-category { font-size: .66rem; color: $muted; margin-bottom: .3rem; }
+  h3 { font-size: .95rem; line-height: 1.35; font-weight: 650; overflow-wrap: break-word; }
+}
+@media (max-width: 780px) { .v2-featured-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .v2-featured-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .v2-featured-card { transition: none; } .v2-featured-card:hover, .v2-featured-card:focus-within { transform: none; } }
 .v2-bottom { padding: 3rem 0 1rem; color: $muted; font-size: .9rem; a { display: inline-flex; align-items: center; min-height: 44px; padding: .25rem .65rem; margin-top: .5rem; border: 0; background: $tonal-surface; border-radius: $control-radius; text-decoration: none; font-size: .85rem; font-weight: 600; color: $foreground; } }
 // On short screens, let the introduction scroll to keep every link reachable.
 @media (max-height: 450px) { .v2-introduction { position: static; } }
