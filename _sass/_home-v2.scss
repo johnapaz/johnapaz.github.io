@@ -180,7 +180,7 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   .v2-nav-link { display: inline-flex; align-items: center; justify-content: center; gap: .3rem; min-height: 36px; white-space: nowrap; line-height: 1.4; font-family: inherit; cursor: pointer; border-radius: .375rem; }
   .v2-nav-link:hover, .v2-download-toggle[aria-expanded="true"] { background: $state-layer; }
   .v2-download-menu { position: static; }
-  nav .v2-admin-link { margin-left: .35rem; padding: .15rem .65rem; min-height: 28px; border: 1px solid var(--theme-border); border-radius: 12px; font-size: .75rem; background: var(--theme-surface); }
+  nav .v2-admin-link { margin-left: .35rem; padding: .15rem .65rem; min-height: 28px; border: 1px solid var(--theme-border); border-radius: 6px; font-size: .75rem; background: var(--theme-surface); }
 }
 .v2-home .v2-download-options { right: 50%; transform: translateX(50%); top: calc(100% + .25rem); }
 @media (max-width: 539px) {

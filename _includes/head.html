@@ -11,5 +11,5 @@
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ 'assets/css/ie8.css' | relative_url }}" /><![endif]-->
   {% include analytics-loader.html %}
   {% include social-meta.html %}
-  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}?v={{ site.time | date: '%s' }}" />
 </head>

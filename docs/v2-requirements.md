@@ -189,7 +189,7 @@ Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while ret
 
 ## Dark / Darker appearance — October 2, 2026 (#34)
 
-John approved applying the preview palettes to staging. Appearance changes affect colors only: retain existing font families, sizes, weights, spacing, portraits, tile geometry and responsive page layouts. The new nav control uses the existing nav typography. Admin has a rounded rectangle with the same 12px corner radius as the section tiles, rather than a pill.
+John approved applying the preview palettes to staging. Appearance changes affect colors only: retain existing font families, sizes, weights, spacing, portraits, tile geometry and responsive page layouts. The new nav control uses the existing nav typography. Admin has a rounded rectangle with the 6px corner radius, proportionally echoing the larger section tiles, rather than a pill.
 
 Default is Dark (soft warm charcoal); Darker uses a near-black background. The six homepage tiles each have a distinct related dark hue: ochre, terracotta, olive, teal, slate violet and burgundy. Ivory lettering retains at least 6.8:1 contrast against Dark tile gradient endpoints and 10.3:1 in Darker; the name uses warm ivory at 13.9:1 and 17.3:1 respectively.
 
