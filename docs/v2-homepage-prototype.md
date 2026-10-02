@@ -205,3 +205,10 @@ Section palette is now a narrow pale-canyon progression: #F4DFC0, #F0D9B9, #ECD3
 Featured content uses `featured` in `_data/home.yml`: nine real existing articles, a guide, the automation toolkit and a talk. This initial selection is for review; it is not presented as latest content. Reuse existing images and typographic motifs; no fabricated items or embedded third-party widgets. Compact titles may wrap; do not truncate them. Three columns on desktop, two at 780px or less, one at 480px or less. The divider and featured content follow the six section tiles in normal document flow, below the initial desktop screen.
 
 The source notes are historical. The canonical wiki and this newest section govern the current implementation; earlier palette and fold settings are superseded. Dark/Darker themes remain #34. Continue review on PR #33 before merging v2.
+
+
+## Smaller left-aligned labels and column tones — October 1, 2026
+
+John requested section labels roughly half their previous size, left-aligned, with slightly different typography/dark shade and subtle texture. Section labels now use a lighter-weight Palatino/Book Antiqua italic stack with Georgia fallback, half the former preferred/max size (3.75cqw/1rem), and a 14px minimum for mobile readability. Cocoa #513923 replaces espresso on these labels. A faint light/dark text-shadow pair gives an embossed edge without a texture asset or reduced legibility. Featured titles and the introduction are unchanged.
+
+Differentiate the columns: sandy left shades #F5E1C1, #EFD7B2, #E7CAA6; warmer clay right shades #EFD2BE, #E7C6AE, #DFBAA0. Every tile remains distinct, with its own derived hover shade. Keep soft elevation and the featured-content grid. Font rendering depends on installed fonts; the actual preview may use Georgia fallback. Review on staging before v2 merge.

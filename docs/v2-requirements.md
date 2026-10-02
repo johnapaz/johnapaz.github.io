@@ -176,3 +176,6 @@ Implementation is isolated on `landing-screen-tiles` from `v2`; production promo
 ## Current clarification — October 1, 2026
 
 The wiki is canonical; this file is a historical branch snapshot. John confirmed retaining the six section tiles above a subtle separator and a 3×3 desktop featured-content grid below. Soften section colors to closely related pale canyon shades, keep espresso labels throughout, and add subtle shallow shadows/top highlights. Each hover derives a slightly darker shade from its own tile color with a gentle lift and shadow change. This supersedes the earlier high-contrast palette. See the latest section of `docs/v2-homepage-prototype.md` for implementation details and the canonical wiki for current decisions.
+
+
+Section-label refinement: roughly 50% smaller, left-aligned italic labels with a softer cocoa shade and faint embossed text shadow. Distinguish sandy left-column tiles from warmer clay right-column tiles; each tile remains a distinct shade. See the latest canonical wiki decision and implementation notes.
