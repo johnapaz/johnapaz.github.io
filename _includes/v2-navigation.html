@@ -1,5 +1,6 @@
 <header class="v2-topbar">
   <nav aria-label="Primary navigation"><div class="v2-primary-group" role="group" aria-label="Page links">
+    <div class="v2-nav-pages">
     <div class="v2-nav-search">
       <a class="v2-nav-link v2-search-toggle" href="{{ '/search/' | relative_url }}" aria-label="Search the site" aria-expanded="false" aria-controls="nav-search-panel"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
       <form id="nav-search-panel" class="v2-search-panel" action="{{ '/search/' | relative_url }}" role="search" hidden>
@@ -14,6 +15,8 @@
     <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' or page.url == '/coding/' or page.url == '/projects/' or page.url == '/presentations/' or page.url == '/media/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Work</a>
     <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
 
+    </div>
+    <div class="v2-nav-tools">
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
     {% for group in download_groups %}
     {% assign group_key = group | downcase %}
@@ -43,6 +46,7 @@
       <button class="v2-nav-link" type="button" data-theme-choice="original" aria-pressed="true">Original</button>
       <button class="v2-nav-link" type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
       <button class="v2-nav-link" type="button" data-theme-choice="darker" aria-pressed="false">Darker</button>
+    </div>
     </div>
   </div></nav>
 </header>

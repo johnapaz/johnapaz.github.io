@@ -256,3 +256,18 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 }
 @media (max-width: 539px) { .v2-topbar .v2-theme-switch button.v2-nav-link { font-size: .72rem; } }
 @media (prefers-reduced-motion: reduce) { .v2-topbar .v2-theme-switch button.v2-nav-link { transition: none; } }
+
+// Keep page links and utility controls together on every narrow viewport.
+.v2-nav-pages, .v2-nav-tools { display: contents; }
+@media (max-width: 780px) {
+  .v2-topbar { padding-inline: .65rem; }
+  .v2-topbar .v2-primary-group { gap: .15rem; }
+  .v2-nav-pages, .v2-nav-tools { display: flex; align-items: center; justify-content: center; width: 100%; gap: .1rem; flex-wrap: wrap; }
+  .v2-topbar nav .v2-nav-link { padding-inline: .4rem; font-size: .8rem; }
+  .v2-topbar .v2-nav-tools .v2-nav-link { min-height: 28px; font-size: .72rem; }
+  .v2-topbar nav .v2-admin-link { margin-left: .15rem; padding-inline: .45rem; }
+  .v2-topbar .v2-theme-switch { margin-left: .15rem; }
+  .v2-topbar .v2-theme-switch button.v2-nav-link { min-height: 0; font-size: .72rem; padding-inline: .3rem; }
+  .v2-search-panel input { font-size: .8rem; }
+  .v2-search-panel[hidden] input { clip-path: inset(-4px 100% -4px -4px round .375rem); }
+}

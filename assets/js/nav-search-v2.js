@@ -12,9 +12,11 @@
   const position = () => {
     const anchor = toggle.getBoundingClientRect();
     const gutter = 12, preferred = 280;
-    const left = Math.max(gutter, anchor.left - preferred - 6);
+    const compact = matchMedia("(max-width: 780px)").matches;
+    const row = root.closest(".v2-nav-pages").getBoundingClientRect();
+    const left = compact ? Math.max(gutter, row.left) : Math.max(gutter, anchor.left - preferred - 6);
     const available = Math.max(0, anchor.left - left - 6);
-    const width = Math.min(window.innerWidth - left - gutter, input.value.trim() ? preferred : Math.max(100, available));
+    const width = compact ? Math.min(row.right, window.innerWidth - gutter) - left : Math.min(window.innerWidth - left - gutter, input.value.trim() ? preferred : Math.max(100, available));
     form.style.left = `${left}px`;
     form.style.top = `${anchor.top + (anchor.height - (matchMedia('(pointer: coarse)').matches ? 44 : 36)) / 2}px`;
     form.style.width = `${width}px`;
