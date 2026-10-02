@@ -1,6 +1,6 @@
 # Résumé story prototype
 
-Status: draft for John's review on `resume-story-preview`. The integration branch is `v2`; do not merge this prototype until John approves it. `/resume/` remains the canonical path. The hero, capability blocks, sample cards, navigation and existing desktop layout are preserved.
+Status: approved by John on October 1, 2026 and merged into `v2` through PR #40 at `7b04338ababbfae33ed22cf80f223b7f4fa0811f`. John then requested a properly weighted Education section with UCF branding. `/resume/` remains the canonical path. The hero, capability blocks, sample cards, navigation and existing desktop layout are preserved.
 
 ## User direction
 
@@ -44,3 +44,10 @@ Liquid preview rendering, Sass compilation, JavaScript syntax and whitespace che
 ## Staging review
 
 Select `resume-story-preview` in the staging repository's `staging-source.txt` to retain this preview across scheduled updates. The staging URL is shared across branches. Restore that selection to `v2` after approval/integration or rejection. Production publishing remains separate.
+
+
+## Education follow-up — October 1, 2026
+
+John requested more appropriate visual weight for his degree and UCF icons. Education is now a separate full-width section with the same heading treatment as Experience, a restrained raised sand panel, the official UCF stacked black mark, University of Central Florida, Class of 2008, Bachelor of Arts in English and Technical Writing Track. Facts match the existing résumé; no additional honors or credentials are inferred. The mark retains its original geometry, black color and clear space. Source: https://www.ucf.edu/brand/logo-and-identity/ and https://www.ucf.edu/wp-content/blogs.dir/34/files/2026/08/UCF-LOGO-Stacked-Alt-SingleBlack-330x280-1.png . The logo is used to identify John's alma mater.
+
+Feature canonical CI and staging build/deploy passed (runs 36957806761 and 36957782584). Deployed desktop checks passed for views, combined facets, badges, empty state, reset, earlier experience, reload, Back and Copy view link. Mobile visual verification remains a physical-device release check. Staging selection has returned to v2.

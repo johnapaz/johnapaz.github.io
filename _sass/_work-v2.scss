@@ -125,3 +125,18 @@
     .career-job { break-inside: avoid; }
   }
 }
+
+// Education receives the same editorial weight as the professional sections.
+.v2-work {
+  .work-education-section { padding-bottom: 1rem; }
+  .work-degree { display: grid; grid-template-columns: 100px minmax(0, 1fr) minmax(0, 1.5fr); gap: 1.5rem; align-items: center; padding: 1.5rem; border-radius: 12px; background: #F2DFC0; box-shadow: 0 3px 10px rgba(43,22,5,.06); }
+  .work-ucf-mark { display: block; width: 100px; height: auto; }
+  .work-degree-school h3 { font-size: 1.1rem; line-height: 1.4; margin-bottom: .3rem; }
+  .work-degree-school p, .work-degree-credential > p + p { color: #754116; font-size: .9rem; }
+  .work-degree-title { font-size: 1.25rem; font-weight: 600; line-height: 1.4; color: #2B1605; margin-bottom: .25rem; }
+  @media(max-width: 600px) {
+    .work-degree { grid-template-columns: 76px minmax(0, 1fr); gap: .75rem 1rem; padding: 1.25rem; }
+    .work-ucf-mark { width: 76px; }
+    .work-degree-credential { grid-column: 1 / -1; padding-top: .35rem; }
+  }
+}
