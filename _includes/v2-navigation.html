@@ -42,10 +42,13 @@
     </div>
     {% endfor %}
     <a class="v2-nav-link v2-admin-link" href="{{ '/admin' | relative_url }}">Admin</a>
-    <div class="v2-theme-switch" role="group" aria-label="Appearance" hidden>
+    <div class="v2-theme-menu" hidden>
+      <button class="v2-nav-link v2-theme-toggle" type="button" aria-label="Appearance" title="Appearance" aria-expanded="false" aria-controls="theme-options"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 4v16M12 8h4M12 12h4M12 16h4"/></svg></button>
+    <div id="theme-options" class="v2-theme-switch" role="group" aria-label="Appearance" hidden>
       <button class="v2-nav-link" type="button" data-theme-choice="original" aria-pressed="true">Original</button>
       <button class="v2-nav-link" type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
       <button class="v2-nav-link" type="button" data-theme-choice="darker" aria-pressed="false">Darker</button>
+    </div>
     </div>
     </div>
   </div></nav>

@@ -20,6 +20,7 @@
   <a class="v2-skip" href="#main-content">Skip to content</a>
   {% include v2-navigation.html %}
   <main id="main-content" class="work-shell">
+    <nav class="writing-tabs work-section-nav" aria-label="Work sections"><a href="#experience">Experience</a><a href="#education">Education</a><a href="#selected-work">Selected work</a></nav>
     <header class="work-intro">
       <div>
         <p class="work-eyebrow">John A. Paz | Professional Work History</p>
@@ -29,35 +30,15 @@
       </div>
       <aside class="work-profile" aria-label="Professional background">
         <img src="{{ '/assets/images/John_smile.jpg' | relative_url }}" alt="John A. Paz" width="112" height="112" />
+        {% include v2-socials.html %}
         <p>Writer | Speaker | Human</p>
         <p class="work-profile-note">Experience across cloud, security, SaaS, and healthcare.</p>
-        <a href="{{ site.linkedin_url }}">Connect on LinkedIn</a>
       </aside>
     </header>
     <section class="work-capabilities" aria-label="What I do">
       {% for capability in site.data.work.capabilities %}
       <div><h2>{{ capability.title | escape }}</h2><p>{{ capability.description | escape }}</p></div>
       {% endfor %}
-    </section>
-    <section class="work-section" id="selected-work" aria-labelledby="selected-work-title">
-      <div class="work-section-heading"><h2 id="selected-work-title">Selected work</h2><p>A few ways I turn complexity into clarity.</p></div>
-      <div class="work-projects">
-        {% for project in site.data.work.projects %}
-        <article class="work-project">
-          <p class="work-eyebrow">{{ project.category | escape }}</p>
-          <h3>{{ project.title | escape }}</h3>
-          <p>{{ project.description | escape }}</p>
-          {% if project.url %}
-          <a href="{{ project.url }}">{{ project.action | escape }} <span aria-hidden="true">↗</span></a>
-          {% else %}
-          {% for document in site.data.downloads[project.download_group] %}{% if document.label == project.download_label %}
-          <a href="{{ document.url | relative_url }}" download>{{ project.action | escape }}</a>
-          <div class="work-file-meta"><span class="v2-badge v2-file-type">{{ document.type }}</span><time class="v2-badge v2-file-date" datetime="{{ document.updated_iso }}" title="Updated: {{ document.updated }}">{{ document.updated }}</time>{% if document.note %}<span>{{ document.note }}</span>{% endif %}</div>
-          {% endif %}{% endfor %}
-          {% endif %}
-        </article>
-        {% endfor %}
-      </div>
     </section>
     <section class="work-section work-career" id="experience" aria-labelledby="experience-title">
       {% include career-icons.html %}
@@ -97,6 +78,26 @@
         <img class="work-ucf-mark" src="{{ '/assets/images/ucf-stacked-black.png' | relative_url }}" alt="UCF" width="330" height="280" loading="lazy" />
         <div class="work-degree-school"><h3>University of Central Florida</h3><p>Class of 2008</p></div>
         <div class="work-degree-credential"><p class="work-degree-title">Bachelor of Arts in English</p><p>Technical Writing Track</p></div>
+      </div>
+    </section>
+    <section class="work-section" id="selected-work" aria-labelledby="selected-work-title">
+      <div class="work-section-heading"><h2 id="selected-work-title">Selected work</h2><p>A few ways I turn complexity into clarity.</p></div>
+      <div class="work-projects">
+        {% for project in site.data.work.projects %}
+        <article class="work-project">
+          <p class="work-eyebrow">{{ project.category | escape }}</p>
+          <h3>{{ project.title | escape }}</h3>
+          <p>{{ project.description | escape }}</p>
+          {% if project.url %}
+          <a href="{{ project.url }}">{{ project.action | escape }} <span aria-hidden="true">↗</span></a>
+          {% else %}
+          {% for document in site.data.downloads[project.download_group] %}{% if document.label == project.download_label %}
+          <a href="{{ document.url | relative_url }}" download>{{ project.action | escape }}</a>
+          <div class="work-file-meta"><span class="v2-badge v2-file-type">{{ document.type }}</span><time class="v2-badge v2-file-date" datetime="{{ document.updated_iso }}" title="Updated: {{ document.updated }}">{{ document.updated }}</time>{% if document.note %}<span>{{ document.note }}</span>{% endif %}</div>
+          {% endif %}{% endfor %}
+          {% endif %}
+        </article>
+        {% endfor %}
       </div>
     </section>
     <nav class="writing-tabs work-more" aria-label="More professional work"><a href="{{ '/coding/' | relative_url }}">Code & projects</a><a href="{{ '/presentations/' | relative_url }}">Talks & presentations</a><a href="{{ '/media/' | relative_url }}">Podcasts, interviews & press</a></nav>

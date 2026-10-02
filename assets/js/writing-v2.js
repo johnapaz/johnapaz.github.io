@@ -62,6 +62,11 @@
   });
   previous.addEventListener('click', () => { if (page > 1) { page--; render(); } });
   next.addEventListener('click', () => { if (!next.disabled) { page++; render(); } });
+  const toggle = catalog.querySelector('.writing-filter-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => { form.hidden = !form.hidden; toggle.setAttribute('aria-expanded', String(!form.hidden)); });
+    form.addEventListener('keydown', event => { if (event.key === 'Escape') { form.hidden = true; toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); } });
+  }
   discovery.hidden = false;
   pagination.hidden = false;
   render();

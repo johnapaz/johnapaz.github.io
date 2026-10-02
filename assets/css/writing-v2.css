@@ -54,3 +54,9 @@
   .writing-controls button { width: auto; }
   .writing-pagination { gap: .65rem; }
 }
+
+.v2-writing .writing-discovery { border: 0; }
+.v2-writing .writing-controls.career-filters { display: grid; grid-template-columns: minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) auto; padding: .85rem 1rem; margin-top: .6rem; background: var(--palette-f2dfc0, #F2DFC0); gap: .75rem; }
+.v2-writing .writing-controls.career-filters label { font-size: .75rem; font-weight: 600; }
+.v2-writing .writing-controls.career-filters input, .v2-writing .writing-controls.career-filters select { font-size: .85rem; font-weight: 400; }
+@media (max-width: 760px) { .v2-writing .writing-controls.career-filters { grid-template-columns: repeat(2,minmax(0,1fr)); } .v2-writing .writing-search { grid-column: 1 / -1; } }
