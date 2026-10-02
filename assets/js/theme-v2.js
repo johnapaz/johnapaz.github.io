@@ -1,11 +1,11 @@
-/* Explicit Dark/Darker selection; resilient to unavailable browser storage. */
+/* Explicit Original/Dark/Darker selection; resilient to unavailable browser storage. */
 (function () {
   'use strict';
   var root = document.documentElement;
   var controls = document.querySelectorAll('[data-theme-choice]');
-  var key = 'johnapaz-appearance-v1';
+  var key = 'johnapaz-appearance-v2';
   function apply(theme) {
-    root.dataset.theme = theme === 'darker' ? 'darker' : 'dark';
+    root.dataset.theme = ['original', 'dark', 'darker'].indexOf(theme) !== -1 ? theme : 'original';
     controls.forEach(function (button) {
       button.setAttribute('aria-pressed', String(button.dataset.themeChoice === root.dataset.theme));
     });

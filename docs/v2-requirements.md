@@ -187,12 +187,14 @@ The 50% reduction applies to the section tiles, not their titles. The earlier sm
 
 Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while retaining left alignment, the softer italic Palatino-family typeface, and the faint embossed text shadow. Each tile has its own cocoa text shade that darkens along the sand/clay palette. Keep the tile-specific shaded hover colors, subtle lift, and featured content below the six section tiles.
 
-## Dark / Darker appearance — October 2, 2026 (#34)
+## Original / Dark / Darker appearance — October 2, 2026 (#34)
 
-John approved applying the preview palettes to staging. Appearance changes affect colors only: retain existing font families, sizes, weights, spacing, portraits, tile geometry and responsive page layouts. The new nav control uses the existing nav typography. Admin has a rounded rectangle with the 6px corner radius, proportionally echoing the larger section tiles, rather than a pill.
+John clarified that the existing canyon coloring must be retained as **Original**, and Original must be the default. The navigation offers **Original | Dark | Darker**. Dark and Darker are optional alternatives, with six distinct related hues (ochre, terracotta, olive, teal, slate violet and burgundy). Preserve all existing page fonts, sizes, weights, spacing, portraits, tile geometry and responsive layouts.
 
-Default is Dark (soft warm charcoal); Darker uses a near-black background. The six homepage tiles each have a distinct related dark hue: ochre, terracotta, olive, teal, slate violet and burgundy. Ivory lettering retains at least 6.8:1 contrast against Dark tile gradient endpoints and 10.3:1 in Darker; the name uses warm ivory at 13.9:1 and 17.3:1 respectively.
+The appearance group must be no taller than Admin: 28px, matching the existing Admin control. Match Admin's compact label size. Keep the group visually quiet, with subtle raised shadows on unselected buttons and an inset shadow on the pressed selection; no bright selected accent fill. Admin is a rounded rectangle with 6px corners, proportionally echoing the section tiles.
 
-The compact Dark / Darker nav control announces selection through `aria-pressed`. Explicit preference is saved as `johnapaz-appearance-v1`, applied in the head before styles paint, and synchronized between tabs. Storage errors fall back to an operable in-page choice; without JavaScript the default Dark palette remains and the nonfunctional control is hidden. No system preference is inferred because both choices are dark.
+Original uses the exact historical solid colors, tile lettering, hover shades and paint values. Shared paint variables preserve each original value individually. The dark modes retain ivory labels: minimum endpoint contrast is 6.8:1 for Dark tiles and 10.3:1 for Darker; the name uses warm ivory at 13.9:1 and 17.3:1 respectively.
 
-Maintain shared tokens in `assets/css/theme-v2.css`. Component styles reference those tokens, including search overlays, download menus, résumé filters/badges, writing and project cards, article/disclosure surfaces, and analytics consent controls. Photography and brand artwork remain unchanged. Deployment is staging-only until separately approved for production.
+Original loads for new visitors, unavailable/invalid storage and disabled JavaScript. Explicit subsequent choices persist using `johnapaz-appearance-v2`, apply in the head before first paint and synchronize across tabs. The new key resets preferences created by the earlier two-theme preview. The controls communicate selection with `aria-pressed` and remain hidden without JavaScript. No system preference is inferred.
+
+Maintain shared palette tokens in `assets/css/theme-v2.css`. Component styles reference them for interior pages, search/download overlays, résumé controls and analytics consent surfaces. Photography and brand artwork remain unchanged. Deployment is staging-only until separately approved for production.

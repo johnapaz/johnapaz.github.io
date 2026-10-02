@@ -1,9 +1,9 @@
 <script>
   (function () {
-    var theme = 'dark';
+    var theme = 'original';
     try {
-      var saved = localStorage.getItem('johnapaz-appearance-v1');
-      if (saved === 'dark' || saved === 'darker') theme = saved;
+      var saved = localStorage.getItem('johnapaz-appearance-v2');
+      if (saved === 'original' || saved === 'dark' || saved === 'darker') theme = saved;
     } catch (_) {}
     document.documentElement.dataset.theme = theme;
   }());
