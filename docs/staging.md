@@ -29,7 +29,7 @@ Public repository Actions/Pages usage is subject to GitHub's current limits.
 The workflow uses the current Jekyll Pages dependency family and safe mode to match Pages.
 The theme's obsolete development dependencies were removed, Gemfile was aligned with the inherited Pages 204 dependency family, and the lockfile was retained with Bundler 2.4.22.
 Ruby 2.7 is a temporary legacy compatibility choice and should be upgraded with the dependency refresh.
-Staging config overrides the site URL and disables analytics. Generated CNAME is staging-only.
+Staging config overrides the site URL and uses separate, consent-gated staging analytics. Generated CNAME is staging-only.
 All HTML receives noindex through the shared head include; robots.txt discourages crawling.
 build-info.json identifies source commit, branch, and run.
 The source configuration and executable build checks live here. The Development-Workflow wiki page records the workflow decision and links to this guide.

@@ -62,7 +62,7 @@ AI has assisted with implementation, troubleshooting, documentation, and verific
 
 ## How changes reach the site
 
-Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, disables analytics, discourages indexing, and records the source commit in `build-info.json`.
+Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, uses separate, consent-gated staging analytics, discourages indexing, and records the source commit in `build-info.json`.
 
 Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
 
@@ -90,3 +90,7 @@ Open [http://localhost:4000](http://localhost:4000). For V2 staging configuratio
 The [wiki](https://github.com/johnapaz/johnapaz.github.io/wiki) holds requirements, architecture, decisions, the roadmap, and the development journal. [Issues](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc) provide the changing backlog; commits and pull requests connect that record to implementation.
 
 Theme and repository licensing details are in [LICENSE.md](LICENSE.md).
+
+## v2.1 development
+
+The next release is tracked on `v2.1`. See [the roadmap](docs/v2.1-roadmap.md), [Mentoring requirements](https://github.com/johnapaz/johnapaz.github.io/issues/54), and [branch audit](docs/branch-audit-2026-10-02.md). Run `npm test` for analytics consent/isolation, appearance controls, and protected admin regression checks. Jekyll build/link validation remains in CI.

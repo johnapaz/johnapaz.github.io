@@ -1,9 +1,9 @@
 name: Validate staging build
 on:
   push:
-    branches: [main, v2, "**-preview", launch-v2]
+    branches: [main, v2, v2.1, "**-preview", launch-v2]
   pull_request:
-    branches: [main, v2]
+    branches: [main, v2, v2.1]
   workflow_dispatch:
 permissions:
   contents: read
@@ -35,7 +35,7 @@ jobs:
         run: |
           bundle install
       - name: Verify consent and analytics isolation
-        run: node scripts/test-analytics.cjs
+        run: npm test
       - name: Build staging
         run: |
           bundle exec jekyll build --safe --config _config.yml,_config.staging.yml

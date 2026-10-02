@@ -8,7 +8,7 @@ Integration: `v2`; branch previews remain selectable through staging-source.txt.
 
 1. Build the reviewed source in CI with the inherited Ruby 2.7/Bundler 2.4.22 lockfile.
 2. Run `python3 scripts/check-site.py` against the generated output. It validates internal page links, downloads, images/srcset, fragment anchors, launch placement, and metadata.
-3. Build with `_config.yml,_config.staging.yml` and run the staging privacy checker. The artifact must contain noindex/no analytics and a build-info.json source revision.
+3. Build with `_config.yml,_config.staging.yml` and run the staging privacy checker. The artifact must contain noindex and environment-isolated, consent-gated analytics and a build-info.json source revision.
 4. Publish the reviewed ref to staging, compare build-info.json to the expected SHA, and review desktop/mobile layouts, menus, filters, search, and article disclosure.
 5. Record the previous production SHA and release source SHA. Open a PR into main; merge only after the checks and John’s release authorization.
 6. Verify the native production Pages workflow and live site separately. Check canonical URL, social image, robots/sitemap, launch placement, search, navigation, and downloads.
