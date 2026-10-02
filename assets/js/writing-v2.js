@@ -17,6 +17,7 @@
   const next = pagination.querySelector('[data-next]');
   const pageLabel = pagination.querySelector('[data-page-label]');
   const pageSize = Math.max(1, Number(catalog.dataset.pageSize) || 6);
+  const itemLabel = catalog.dataset.itemLabel || 'articles';
   let page = 1;
   Array.from(new Set(cards.map(card => card.dataset.topic)))
     .sort((a, b) => a.localeCompare(b))
@@ -46,7 +47,7 @@
     });
     empty.hidden = matches.length !== 0;
     filterState.textContent = query || topic.value || sort.value !== 'newest' ? '· Active' : ''; 
-    status.textContent = matches.length ? `Showing ${start + 1}–${Math.min(start + pageSize, matches.length)} of ${matches.length} articles` : '0 articles';
+    status.textContent = matches.length ? `Showing ${start + 1}–${Math.min(start + pageSize, matches.length)} of ${matches.length} ${itemLabel}` : `0 ${itemLabel}`;
     pageLabel.textContent = `Page ${page} of ${totalPages}`;
     previous.disabled = page === 1;
     next.disabled = page === totalPages || matches.length === 0;

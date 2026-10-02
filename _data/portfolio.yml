@@ -1,0 +1,361 @@
+# Sources and verification notes: docs/v2-coding-projects-speaking.md
+coding:
+- title: Confluence Automation Toolkit
+  category: Python
+  date: ''
+  description: 'A sanitized reconstruction of a migration workflow: version-aware REST calls, CSV batches, dry runs,
+    reversible edits, and operator documentation.'
+  source: GitHub
+  url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  action: Explore the repository
+  tags:
+  - REST APIs
+  - CLI
+  - Documentation
+  - AI-assisted
+- title: johnapaz.com
+  category: Jekyll & JavaScript
+  date: ''
+  description: 'The website you’re exploring: structured content, responsive layouts, accessible interactions, and
+    a separate staging workflow. I direct the design and review AI-assisted implementation.'
+  source: GitHub · V2 source
+  url: https://github.com/johnapaz/johnapaz.github.io/tree/v2
+  action: Explore the source
+  tags:
+  - Liquid
+  - Sass
+  - GitHub Actions
+  - AI-assisted
+projects:
+- id: confluence-migration
+  title: Making a documentation migration manageable
+  category: Airbnb · Documentation operations
+  description: An operational problem became a family of focused tools that teammates could use with confidence.
+  challenge: Thousands of repetitive Confluence changes would have taken hundreds of hours through the interface.
+  contribution: Defined requirements, operator workflows, safeguards, and documentation; directed AI-assisted implementation;
+    reviewed and tested the original tools in the working environment.
+  result: Six teammates used the original tool family. Together, the tools saved hundreds of hours and helped complete
+    the migration ahead of schedule. The linked public sample is a sanitized reconstruction of one workflow, with
+    offline tests; it has not been tested against a live Confluence instance.
+  tags:
+  - Python
+  - Confluence REST API
+  - CLI
+  - Knowledge migration
+  url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  action: Explore the repository
+  secondary_url: /coding/
+  secondary_action: See the coding view
+- id: portfolio-site
+  title: Building a publishing home that tells a story
+  category: johnapaz.com · Web design & development
+  description: A portfolio and publishing space designed to make a broad body of work easier to explore.
+  challenge: Bring writing, career history, projects, and speaking together without making every page compete for
+    attention.
+  contribution: Set the voice, canyon palette direction, spacing, section hierarchy, and Bootstrap-style controls;
+    direct and review AI-assisted development through successive prototypes.
+  result: A V2 site with paired views, structured catalogs, responsive layouts, and separate build validation and
+    staging publication. The repository and wiki preserve design decisions and implementation history.
+  tags:
+  - Jekyll
+  - Liquid
+  - Sass
+  - JavaScript
+  - GitHub Pages
+  url: https://github.com/johnapaz/johnapaz.github.io/tree/v2
+  action: Read the source & README
+  secondary_url: https://github.com/johnapaz/johnapaz.github.io/wiki
+  secondary_action: Explore the project wiki
+- id: developer-docs
+  title: Making an API concept easier to find
+  category: Atlassian · Developer documentation
+  description: Restructuring Bitbucket’s API proxy and object hydration documentation.
+  challenge: Object hydration was buried in a growing API proxy reference page, making the concept difficult to
+    find and understand.
+  contribution: Identified the need for a separate object hydration page, restructured the information architecture,
+    and partnered with an engineer on focused examples.
+  result: Separate reference pages clarified object hydration and its relationship to the broader API workflow.
+    The sample packet includes the context and deliverables.
+  tags:
+  - APIs
+  - Bitbucket
+  - Technical writing
+  url: /assets/docs/John_Paz_API_Technical_Writer_work-samples_09152026_Bloomberg.docx
+  action: Download the developer sample packet
+- id: content-design
+  title: Making complex products easier to understand
+  category: Content design · Product experience
+  description: Selected content design work from my portfolio.
+  challenge: Help users find the right information and understand what to do next in complex product experiences.
+  contribution: Apply information architecture, UX writing, content standards, and collaboration with product teams.
+  result: Selected artifacts collected in a content design portfolio, with context for the work and my contribution.
+  tags:
+  - UX writing
+  - Information architecture
+  - Content strategy
+  url: /assets/docs/John_Paz_Content_Design_Samples_042424.pdf
+  action: Download the content design portfolio
+talks:
+- title: The “Pipeline Problem” and Other Myths About Workplace Diversity
+  category: Conference talk
+  date: '2019'
+  date_label: '2019'
+  description: My experience of being Black in tech, and why hiring conversations need to move beyond a supposedly
+    empty pipeline.
+  source: Atlassian Summit
+  url: https://www.youtube.com/watch?v=iRljzL8Qx78
+  action: Watch the talk
+  tags:
+  - Belonging
+  - Diversity
+  belonging: true
+  video: iRljzL8Qx78
+- title: Building Belonging Into Any Team
+  category: Conference talk
+  date: '2019'
+  date_label: '2019'
+  description: Taking the conversation from recruiting to the everyday experience of being part of a team.
+  source: Atlassian Design Week
+  url: https://www.youtube.com/watch?v=DQKkYzL0sFM
+  action: Watch the talk
+  tags:
+  - Belonging
+  - Teams
+  belonging: true
+  video: DQKkYzL0sFM
+- title: The “Pipeline Problem” Is About Belonging
+  category: Keynote
+  date: '2020'
+  date_label: '2020'
+  description: The keynote adapted for the virtual Button conference in 2020.
+  source: Button
+  url: /my-story/
+  action: Read the talk history
+  tags:
+  - Belonging
+  - Diversity
+  belonging: true
+- title: The “Pipeline Problem” Is About Belonging
+  category: Keynote
+  date: '2021'
+  date_label: '2021'
+  description: Onboarding, inclusion, and building a team where people can bring their full selves to work.
+  source: Confab
+  url: https://www.confabevents.com/2021-segments/the-pipeline-problem-is-about-belonging
+  action: View the conference session
+  tags:
+  - Belonging
+  - Teams
+  belonging: true
+- title: Managing with empathy, for impact
+  category: Panel host
+  date: '2022'
+  date_label: '2022'
+  description: Hosting a conversation with content leaders from Lyft, Instacart, Meta, and Indeed about empathetic
+    leadership.
+  source: Perspectives · Working In Content
+  url: https://workingincontent.com/resources/managing-with-empathy
+  action: Watch or read the panel
+  tags:
+  - Leadership
+  - Content design
+- title: Unleashing Your Team’s Potential With the Atlassian Team Playbook
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: Practical team exercises for better collaboration and shared decisions.
+  source: SlideShare
+  url: https://www.slideshare.net/slideshow/unleashing-your-teams-potential-with-the-atlassian-team-playbook-by-john-paz/120718493
+  action: View the slides
+  tags:
+  - Teams
+  - Collaboration
+- title: Planning Atlassian Apps for Real-World Scale
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: Thinking about real-world use, customer needs, and the edge cases that matter.
+  source: SlideShare
+  url: https://www.slideshare.net/slideshow/planning-atlassian-apps-for-realworld-scale-by-john-paz/119653192
+  action: View the slides
+  tags:
+  - Developers
+  - Scale
+- title: Innovation at Atlassian
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: How culture and employee-driven experimentation support innovation.
+  source: SlideShare
+  url: https://www.slideshare.net/slideshow/innovation-at-atlassian/64188112
+  action: View the slides
+  tags:
+  - Innovation
+  - Culture
+- title: Tools for Tech Writers
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: A presentation deck from my technical writing archive.
+  source: SlideShare
+  url: https://www.slideshare.net/johnapaz
+  action: Browse the slide archive
+  tags:
+  - Technical writing
+  - Tools
+- title: Agile, not just for software
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: A presentation deck about applying Agile beyond software teams.
+  source: SlideShare
+  url: https://www.slideshare.net/johnapaz
+  action: Browse the slide archive
+  tags:
+  - Agile
+  - Teams
+- title: Becoming a Technical Writer
+  category: Slide deck
+  date: ''
+  date_label: ''
+  description: An introduction to a career in technical writing.
+  source: SlideShare
+  url: https://www.slideshare.net/johnapaz
+  action: Browse the slide archive
+  tags:
+  - Careers
+  - Technical writing
+- title: Technical Writing Q&A
+  category: Student session
+  date: '2022'
+  date_label: '2022'
+  description: A conversation with UCF students about entering the profession.
+  source: Future Technical Communicators · UCF
+  url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
+  action: Read the program recap
+  tags:
+  - Careers
+  - Mentorship
+- title: Resume Design
+  category: Student session
+  date: '2022'
+  date_label: '2022'
+  description: A student session on presenting your experience clearly.
+  source: Future Technical Communicators · UCF
+  url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
+  action: Read the program recap
+  tags:
+  - Careers
+  - Mentorship
+- title: Getting Your First Job in Tech Writing
+  category: Student session
+  date: '2022'
+  date_label: '2022'
+  description: Joining fellow professionals for a panel on finding a first role.
+  source: Future Technical Communicators · UCF
+  url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
+  action: Read the program recap
+  tags:
+  - Careers
+  - Mentorship
+- title: How to tell your boss they’re wrong—and why you should
+  category: Conference talk
+  date: '2022-10-10'
+  date_label: '2022'
+  description: A talk about speaking up and influencing the decisions around your work.
+  source: Button
+  url: https://button-2022.webflow.io/2022-segments/how-to-tell-your-boss-theyre-wrong-and-why-you-should
+  action: View the conference program
+  tags:
+  - Content design
+  - Leadership
+- title: How to be a content design rabble rouser
+  category: Workshop
+  date: '2022-10-11'
+  date_label: '2022'
+  description: A breakout session with Relly Annett-Baker. This session was not recorded.
+  source: Button
+  url: https://button-2022.webflow.io/2022-segments/how-to-be-a-content-design-rabble-rouser
+  action: View the conference program
+  tags:
+  - Content design
+  - Leadership
+media:
+- title: Building a career in Tech Writing
+  category: Podcast
+  date: '2021-03-17'
+  date_label: '2021'
+  description: Part one of my conversation about technical writing, career paths, and day-to-day work at Atlassian
+    and Menlo.
+  source: The Manuscript · Episode 18
+  url: https://www.ivoox.com/en/18-building-a-career-in-tech-writing-audios-mp3_rf_66952117_1.html
+  action: Listen to the episode
+  tags:
+  - Careers
+  - Technical writing
+- title: Training, mentorship and diversity for writers in tech
+  category: Podcast
+  date: '2021-03-30'
+  date_label: '2021'
+  description: 'Part two: mentoring junior writers and making the tech industry more inclusive.'
+  source: The Manuscript · Episode 19
+  url: https://www.ivoox.com/en/19-training-mentorship-and-diversity-for-writers-in-audios-mp3_rf_67582932_1.html
+  action: Listen to the episode
+  tags:
+  - Mentorship
+  - Diversity
+- title: Mentoring Prospective Tech Writers
+  category: Podcast
+  date: '2019'
+  date_label: '2019'
+  description: A conversation with Jacob Moses about supporting new writers and developing leadership through mentorship.
+  source: The Not-Boring Tech Writer · Skill 21
+  url: https://hackmamba.io/technical-writing/mentorship-platforms-for-technical-writers/
+  action: Read the episode discussion
+  tags:
+  - Mentorship
+  - Careers
+- title: Diversity in tech comm — Conversation with John Paz
+  category: Interview
+  date: '2020-06-12'
+  date_label: '2020'
+  description: A Q&A with Tom Johnson about access, hiring, and representation in technical communication.
+  source: I’d Rather Be Writing
+  url: https://idratherbewriting.com/blog/diversity-in-tech-comm-conversation-with-john-paz/
+  action: Read the interview
+  tags:
+  - Diversity
+  - Technical writing
+- title: 'Being a Technical Writer, a Young Parent, and a Fan of #BlackTechTwitter'
+  category: Interview
+  date: '2019-03-08'
+  date_label: '2019'
+  description: A profile of my path into tech, family life, community, and mentorship.
+  source: People of Color in Tech
+  url: https://peopleofcolorintech.com/writers/atlassians-john-a-paz-on-being-a-technical-writer-a-young-parent-and-a-fan-of-blacktechtwitter/
+  action: Read the interview
+  tags:
+  - Careers
+  - Diversity
+- title: Top 5 online mentorship platforms for technical writers
+  category: Press mention
+  date: '2024-07-10'
+  date_label: '2024'
+  description: An article drawing on my podcast conversation about mentorship and growing into leadership.
+  source: Hackmamba
+  url: https://hackmamba.io/technical-writing/mentorship-platforms-for-technical-writers/
+  action: Read the article
+  tags:
+  - Mentorship
+  - Leadership
+- title: Tech Comm Jobs and Where to Find Them
+  category: Press mention
+  date: '2022-02-07'
+  date_label: '2022'
+  description: UCF’s student publication shares job-search advice from my guest-speaker session.
+  source: Future Technical Communicators
+  url: https://futuretechnicalcommunicators.com/2022/02/tech-comm-jobs-and-where-to-find-them/
+  action: Read the article
+  tags:
+  - Careers
+  - Technical writing
