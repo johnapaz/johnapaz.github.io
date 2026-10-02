@@ -1,7 +1,10 @@
 # Applied after _config.yml; production never loads this file.
 url: "https://staging.johnapaz.com"
 baseurl: ""
-google_analytics: null
+# Dedicated staging GA4 property; never copy the production ID here.
+google_analytics: G-68CVWTTNZ4
+analytics_host: staging.johnapaz.com
+analytics_environment: staging
 staging: true
 exclude:
   - CNAME
