@@ -1,0 +1,15 @@
+<article class="work-job career-job" id="role-{{ job.id }}" data-career-id="{{ job.id }}">
+  <div class="career-identity">
+    <h3 class="career-company">{% if job.icon %}<svg class="career-company-icon" aria-hidden="true"><use href="#career-icon-{{ job.icon }}"></use></svg>{% else %}<span class="career-company-mark" aria-hidden="true">{{ job.mark }}</span>{% endif %}{{ job.company | escape }}</h3>
+    <p>{{ job.role | escape }}</p><p class="work-dates">{{ job.dates | escape }}</p>
+    <div class="career-context"><span title="Industry"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-industry"></use></svg><span class="v2-sr-only">Industry: </span>{{ job.industry | escape }}</span><span title="Department or team context"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-department"></use></svg><span class="v2-sr-only">Team: </span>{{ job.department | escape }}</span></div>
+  </div>
+  <div class="career-contribution">
+    <p><strong>{{ job.impact | escape }}</strong> {{ job.description | escape }}</p>
+    <div class="career-badges" aria-label="Work types and technologies">
+      {% for type in job.work_types %}<button type="button" class="career-badge career-type" data-career-facet="type" data-career-value="{{ type | escape }}" aria-label="Filter work type: {{ type | escape }}" aria-pressed="false" disabled>{{ type | escape }}</button>{% endfor %}
+      {% for tech in job.technologies %}<button type="button" class="career-badge career-tech" data-career-facet="technology" data-career-value="{{ tech | escape }}" aria-label="Filter technology: {{ tech | escape }}" aria-pressed="false" disabled>{% assign tech_icon = tech | downcase %}{% if tech_icon == 'python' or tech_icon == 'confluence' or tech_icon == 'jira' or tech_icon == 'bitbucket' or tech_icon == 'swagger' %}<svg class="career-icon" aria-hidden="true"><use href="#career-icon-{{ tech_icon }}"></use></svg>{% endif %}{{ tech | escape }}</button>{% endfor %}
+    </div>
+    <details class="career-details"><summary>Work details</summary><ul>{% for detail in job.details %}<li>{{ detail | escape }}</li>{% endfor %}</ul>{% if job.evidence_url %}<a href="{{ job.evidence_url }}">{{ job.evidence_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}</details>
+  </div>
+</article>
