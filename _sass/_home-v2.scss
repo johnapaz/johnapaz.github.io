@@ -228,3 +228,9 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 .v2-search-panel[hidden] { transition: width 340ms cubic-bezier(.22,1,.36,1), visibility 0s 320ms; }
 .v2-search-panel[hidden] input { clip-path: inset(-4px -4px -4px 100% round .375rem); transition-duration: 320ms; }
 @media (prefers-reduced-motion: reduce) { .v2-search-panel, .v2-search-panel[hidden], .v2-search-panel input { transition: none; } }
+
+// Search uses the same compact typography and height as the nav links.
+.v2-search-panel input { font-size: .85rem; font-weight: 500; line-height: 1.4; height: 36px; padding: .25rem .6rem; }
+@media (max-width: 539px) { .v2-search-panel input { font-size: .8rem; } }
+@media (pointer: coarse) { .v2-search-panel input { height: 44px; font-size: .85rem; } }
+@media (pointer: coarse) and (max-width: 539px) { .v2-search-panel input { font-size: .8rem; } }
