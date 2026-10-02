@@ -11,6 +11,6 @@ for path in html_files:
     html = path.read_text()
     if "<head" in html:
         assert 'content="noindex, nofollow"' in html, f"Missing noindex: {path}"
-    assert not re.search(r"google-analytics\\.com|googletagmanager\\.com|UA-165031992-2", html), f"Analytics in {path}"
+    assert not re.search(r"google-analytics\.com|googletagmanager\.com|UA-165031992-2", html), f"Analytics in {path}"
 assert json.loads((root / "build-info.json").read_text())["commit"], "Commit missing"
 print(f"Staging checks passed for {len(html_files)} HTML files")

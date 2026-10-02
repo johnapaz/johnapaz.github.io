@@ -1,9 +1,9 @@
 name: Validate staging build
 on:
   push:
-    branches: [v2, "**-preview"]
+    branches: [main, v2, "**-preview", launch-v2]
   pull_request:
-    branches: [v2]
+    branches: [main, v2]
   workflow_dispatch:
 permissions:
   contents: read
@@ -37,6 +37,14 @@ jobs:
           Path("_site/build-info.json").write_text(json.dumps({"branch": os.environ["GITHUB_REF_NAME"], "commit": os.environ["GITHUB_SHA"], "run": os.environ["GITHUB_RUN_ID"]}) + "\n")
           PYTHON
           python3 scripts/check-staging.py
+      - name: Validate internal links, assets, and launch metadata
+        run: python3 scripts/check-site.py
+      - name: Build and validate production configuration
+        env:
+          JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build --safe --destination _site-production
+          python3 scripts/check-site.py _site-production
       - uses: actions/upload-artifact@v4
         with:
           name: staging-site

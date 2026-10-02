@@ -1,8 +1,8 @@
 <head>
-  <title>John Paz | Mr. Content Design</title>
+  <title>{{ page.title | default: site.title | escape }} | John A. Paz</title>
   <meta charset="utf-8" />
   {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, " />
   <!--[if lte IE 8]><script src="{{ 'assets/js/ie/html5shiv.js' | relative_url }}"></script><![endif]-->
   <link rel="stylesheet" href="{{ 'assets/css/main.css' | relative_url }}" />
   <!-- <link rel="stylesheet" href="{{ 'assets/css/argon-design-system.css' | relative_url }}" /> -->
@@ -12,4 +12,6 @@
   {% if site.google_analytics and jekyll.environment == 'production' %}
   {% include analytics.html %}
   {% endif %}
+  {% include social-meta.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
 </head>

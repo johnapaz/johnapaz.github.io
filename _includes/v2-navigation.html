@@ -1,9 +1,10 @@
 <header class="v2-topbar">
   <nav aria-label="Primary navigation"><div class="v2-primary-group" role="group" aria-label="Page links">
     <a class="v2-nav-link" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
-    <a class="v2-nav-link" href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.url == '/blog/' %} aria-current="page"{% endif %}>Writing</a>
+    <a class="v2-nav-link" href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.url contains '/blog/' %} aria-current="page"{% endif %}>Writing</a>
     <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' or page.url == '/coding/' or page.url == '/projects/' or page.url == '/presentations/' or page.url == '/media/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Work</a>
     <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+    <a class="v2-nav-link" href="{{ '/search/' | relative_url }}" aria-label="Search the site"{% if page.url == '/search/' %} aria-current="page"{% endif %}><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
   </div></nav>
   <div class="btn-group btn-group-sm v2-downloads" role="group" aria-label="Download resumes and portfolios">
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
