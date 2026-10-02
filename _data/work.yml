@@ -1,14 +1,15 @@
 # Resume-story prototype: September 29, 2026 resume + September 8 LinkedIn export.
 capabilities:
-- title: Technical writing
+- title: Technical Writing
   description: API documentation, implementation guides, tutorials, and tested code samples that help people get
     things done.
-- title: Content design
+- title: Content Operations
+  description: Structured authoring, knowledge management, and automation that make good content easier to maintain.
+- title: Content Design
   description: Information architecture, product language, and content standards that make complex experiences easier
     to navigate.
-- title: Documentation operations
-  description: Structured authoring, knowledge management, team leadership, and automation that make good content
-    easier to maintain.
+- title: People Leadership
+  description: Building and coaching writing teams through hiring, onboarding, standards, and regular feedback.
 projects:
 - title: Confluence Automation Toolkit
   category: Python · Knowledge management
