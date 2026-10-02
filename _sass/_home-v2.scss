@@ -278,4 +278,6 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 .v2-theme-menu[hidden] { display: none; }
 .v2-topbar .v2-theme-toggle { width: 32px; min-height: 28px; padding: .25rem; }
 .v2-topbar .v2-theme-menu .v2-theme-switch { position: absolute; right: 0; top: calc(100% + .35rem); height: auto; padding: .35rem; margin: 0; background: var(--theme-bg, #F8EBD3); box-shadow: 0 3px 12px rgba(0,0,0,.12); gap: .2rem; z-index: 8; }
-@media (max-width: 600px) { .v2-card h3 { font-size: 1.5rem; } }
+@media (max-width: 600px) { .v2-card h3 { font-size: clamp(1rem, 6.6cqw, 1.5rem); } }
+.v2-home .btn-group > .btn, .v2-home .btn-group > .btn-group > .btn { border-radius: .375rem !important; }
+.v2-topbar .v2-theme-toggle svg { width: 18px; height: 18px; flex-shrink: 0; }

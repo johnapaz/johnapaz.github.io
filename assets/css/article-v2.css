@@ -16,8 +16,8 @@
 .ai-disclosure { margin: .65rem 0 1rem; font-size: .8rem; max-width: 48rem; }
 .ai-disclosure summary { cursor: pointer; list-style: none; display: inline-block; }
 .ai-disclosure summary::-webkit-details-marker { display: none; }
-.ai-pill { display: inline-flex; padding: .3rem .65rem; border: 1px solid var(--palette-b99d77, #b99d77); border-radius: 100rem; background: var(--palette-f5e7d0, #f5e7d0); color: var(--palette-513923, #513923); font: 600 .75rem/1.5 system-ui, sans-serif; }
-.ai-disclosure summary:focus-visible { outline: 3px solid var(--palette-74421e, #74421e); outline-offset: 3px; border-radius: 100rem; }
+.ai-pill { display: inline-flex; padding: .3rem .65rem; border: 1px solid var(--palette-b99d77, #b99d77); border-radius: .375rem; background: var(--palette-f5e7d0, #f5e7d0); color: var(--palette-513923, #513923); font: 600 .75rem/1.5 system-ui, sans-serif; }
+.ai-disclosure summary:focus-visible { outline: 3px solid var(--palette-74421e, #74421e); outline-offset: 3px; border-radius: .375rem; }
 .ai-disclosure p { padding: .7rem; background: var(--palette-f5e7d0, #f5e7d0); border-radius: .45rem; line-height: 1.6; }
 .writing-thumbnail { width: 100%; height: auto; aspect-ratio: 1.91; object-fit: cover; border-radius: .5rem; margin-bottom: 1rem; }
 .blog-entry .writing-thumbnail { max-height: 360px; }
