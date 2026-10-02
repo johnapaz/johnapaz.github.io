@@ -44,6 +44,7 @@ breadcrumbs:
 
 #Excludes
 exclude:
+  - backend
   - package.json
   - node_modules
   - gulpfile.js

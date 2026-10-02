@@ -1,0 +1,12 @@
+import {readFile,mkdir,writeFile,copyFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const here=path.dirname(fileURLToPath(import.meta.url));const site=path.resolve(here,'../..');
+const out=path.join(here,'public');await mkdir(out,{recursive:true});
+const dashboard=(await readFile(path.join(site,'_includes/admin-dashboard.html'),'utf8')).replace('data-mode="preview"','data-mode="live"').replace(/<div class="admin-preview-notice"[\s\S]*?<\/div>/,'');
+await writeFile(path.join(out,'index.html'),`<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Admin | John A. Paz</title><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/theme.css"><link rel="stylesheet" href="/admin.css"></head><body class="v2-home admin-page"><a class="admin-back" href="https://johnapaz.com/admin">← John A. Paz</a>${dashboard}<script src="/admin.js" defer></script></body></html>`);
+await copyFile(path.join(site,'assets/css/theme-v2.css'),path.join(out,'theme.css'));
+const css=await readFile(path.join(site,'assets/css/admin-v2.css'),'utf8');
+await writeFile(path.join(out,'admin.css'),`*{box-sizing:border-box}body{margin:0;background:var(--theme-bg);color:var(--theme-text);font:16px/1.6 system-ui,sans-serif}a{color:inherit}h1,h2,p{margin:0}a:focus-visible{outline:3px solid var(--theme-accent)}${css}`);
+await copyFile(path.join(site,'assets/js/admin-v2.js'),path.join(out,'admin.js'));await copyFile(path.join(site,'assets/images/favicon.png'),path.join(out,'favicon.png'));
+console.log('Built protected dashboard assets. Deploy only behind the Worker and Access.');

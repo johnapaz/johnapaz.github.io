@@ -1,9 +1,21 @@
 ---
+layout: admin-v2
 permalink: /admin
 title: Admin
 ---
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin | John A. Paz</title><meta name="robots" content="noindex, nofollow"><link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}"><link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}"></head><body class="v2-home">
-{% include v2-navigation.html %}
-<main style="max-width: 1200px; margin: auto; padding: 2rem;"><h1>Admin</h1><p>Coming soon.</p></main>
-<script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script></body></html>
+<main id="main-content" class="admin-login">
+<div class="admin-login-card">
+<span class="admin-monogram" aria-hidden="true">JP<span>.</span></span>
+<p class="admin-eyebrow">JOHN A. PAZ / ADMIN</p>
+<h1>A little perspective.</h1>
+<p class="admin-login-description">Your site, its audience, and what’s working.<br>Sign in to your private dashboard.</p>
+{% if site.admin_portal_url and site.admin_portal_url != '' %}
+<a class="admin-primary" href="{{ site.admin_portal_url | escape }}">Sign in <span aria-hidden="true">↗</span></a>
+{% else %}
+<button class="admin-primary" disabled aria-describedby="admin-setup">Sign in <span aria-hidden="true">↗</span></button>
+<p id="admin-setup" class="admin-setup">Secure sign-in is being connected.</p>
+{% endif %}
+{% if site.staging %}<a class="admin-preview-link" href="{{ '/admin/preview/' | relative_url }}">Preview dashboard <span aria-hidden="true">→</span></a><p class="admin-caption">Staging preview · illustrative data only</p>{% endif %}
+</div>
+<a class="admin-back" href="{{ '/' | relative_url }}">← Back to the site</a>
+</main>
