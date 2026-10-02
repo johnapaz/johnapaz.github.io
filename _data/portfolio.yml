@@ -7,7 +7,7 @@ coding:
     reversible edits, and operator documentation.'
   source: GitHub
   url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-  action: Explore the repository
+  action: Explore The Repository
   tags:
   - REST APIs
   - CLI
@@ -20,7 +20,7 @@ coding:
     a separate staging workflow. I direct the design and review AI-assisted implementation.'
   source: GitHub · V2 source
   url: https://github.com/johnapaz/johnapaz.github.io/tree/v2
-  action: Explore the source
+  action: Explore The Source
   tags:
   - Liquid
   - Sass
@@ -43,9 +43,9 @@ projects:
   - CLI
   - Knowledge migration
   url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-  action: Explore the repository
+  action: Explore The Repository
   secondary_url: /coding/
-  secondary_action: See the coding view
+  secondary_action: See The Coding View
 - id: portfolio-site
   title: Building a publishing home that tells a story
   category: johnapaz.com · Web design & development
@@ -63,9 +63,9 @@ projects:
   - JavaScript
   - GitHub Pages
   url: https://github.com/johnapaz/johnapaz.github.io/tree/v2
-  action: Read the source & README
+  action: Read The Source & README
   secondary_url: https://github.com/johnapaz/johnapaz.github.io/wiki
-  secondary_action: Explore the project wiki
+  secondary_action: Explore The Project Wiki
 - id: developer-docs
   title: Making an API concept easier to find
   category: Atlassian · Developer documentation
@@ -81,7 +81,7 @@ projects:
   - Bitbucket
   - Technical writing
   url: /assets/docs/John_Paz_API_Technical_Writer_work-samples_09152026_Bloomberg.docx
-  action: Download the developer sample packet
+  action: Download The Developer Sample Packet
 - id: content-design
   title: Making complex products easier to understand
   category: Content design · Product experience
@@ -94,7 +94,7 @@ projects:
   - Information architecture
   - Content strategy
   url: /assets/docs/John_Paz_Content_Design_Samples_042424.pdf
-  action: Download the content design portfolio
+  action: Download The Content Design Portfolio
 talks:
 - title: The “Pipeline Problem” and Other Myths About Workplace Diversity
   category: Conference talk
@@ -104,7 +104,7 @@ talks:
     empty pipeline.
   source: Atlassian Summit
   url: https://www.youtube.com/watch?v=iRljzL8Qx78
-  action: Watch the talk
+  action: Watch The Talk
   tags:
   - Belonging
   - Diversity
@@ -117,7 +117,7 @@ talks:
   description: Taking the conversation from recruiting to the everyday experience of being part of a team.
   source: Atlassian Design Week
   url: https://www.youtube.com/watch?v=DQKkYzL0sFM
-  action: Watch the talk
+  action: Watch The Talk
   tags:
   - Belonging
   - Teams
@@ -130,7 +130,7 @@ talks:
   description: The keynote adapted for the virtual Button conference in 2020.
   source: Button
   url: /my-story/
-  action: Read the talk history
+  action: Read The Talk History
   tags:
   - Belonging
   - Diversity
@@ -142,7 +142,7 @@ talks:
   description: Onboarding, inclusion, and building a team where people can bring their full selves to work.
   source: Confab
   url: https://www.confabevents.com/2021-segments/the-pipeline-problem-is-about-belonging
-  action: View the conference session
+  action: View The Conference Session
   tags:
   - Belonging
   - Teams
@@ -155,7 +155,7 @@ talks:
     leadership.
   source: Perspectives · Working In Content
   url: https://workingincontent.com/resources/managing-with-empathy
-  action: Watch or read the panel
+  action: Watch Or Read The Panel
   tags:
   - Leadership
   - Content design
@@ -166,7 +166,7 @@ talks:
   description: Practical team exercises for better collaboration and shared decisions.
   source: SlideShare
   url: https://www.slideshare.net/slideshow/unleashing-your-teams-potential-with-the-atlassian-team-playbook-by-john-paz/120718493
-  action: View the slides
+  action: View The Slides
   tags:
   - Teams
   - Collaboration
@@ -177,7 +177,7 @@ talks:
   description: Thinking about real-world use, customer needs, and the edge cases that matter.
   source: SlideShare
   url: https://www.slideshare.net/slideshow/planning-atlassian-apps-for-realworld-scale-by-john-paz/119653192
-  action: View the slides
+  action: View The Slides
   tags:
   - Developers
   - Scale
@@ -188,7 +188,7 @@ talks:
   description: How culture and employee-driven experimentation support innovation.
   source: SlideShare
   url: https://www.slideshare.net/slideshow/innovation-at-atlassian/64188112
-  action: View the slides
+  action: View The Slides
   tags:
   - Innovation
   - Culture
@@ -199,7 +199,7 @@ talks:
   description: A presentation deck from my technical writing archive.
   source: SlideShare
   url: https://www.slideshare.net/johnapaz
-  action: Browse the slide archive
+  action: Browse The Slide Archive
   tags:
   - Technical writing
   - Tools
@@ -210,7 +210,7 @@ talks:
   description: A presentation deck about applying Agile beyond software teams.
   source: SlideShare
   url: https://www.slideshare.net/johnapaz
-  action: Browse the slide archive
+  action: Browse The Slide Archive
   tags:
   - Agile
   - Teams
@@ -221,7 +221,7 @@ talks:
   description: An introduction to a career in technical writing.
   source: SlideShare
   url: https://www.slideshare.net/johnapaz
-  action: Browse the slide archive
+  action: Browse The Slide Archive
   tags:
   - Careers
   - Technical writing
@@ -232,7 +232,7 @@ talks:
   description: A conversation with UCF students about entering the profession.
   source: Future Technical Communicators · UCF
   url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
-  action: Read the program recap
+  action: Read The Program Recap
   tags:
   - Careers
   - Mentorship
@@ -243,7 +243,7 @@ talks:
   description: A student session on presenting your experience clearly.
   source: Future Technical Communicators · UCF
   url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
-  action: Read the program recap
+  action: Read The Program Recap
   tags:
   - Careers
   - Mentorship
@@ -254,7 +254,7 @@ talks:
   description: Joining fellow professionals for a panel on finding a first role.
   source: Future Technical Communicators · UCF
   url: https://futuretechnicalcommunicators.com/2022/06/ftcs-year-in-review-2021-2022/
-  action: Read the program recap
+  action: Read The Program Recap
   tags:
   - Careers
   - Mentorship
@@ -265,7 +265,7 @@ talks:
   description: A talk about speaking up and influencing the decisions around your work.
   source: Button
   url: https://button-2022.webflow.io/2022-segments/how-to-tell-your-boss-theyre-wrong-and-why-you-should
-  action: View the conference program
+  action: View The Conference Program
   tags:
   - Content design
   - Leadership
@@ -276,7 +276,7 @@ talks:
   description: A breakout session with Relly Annett-Baker. This session was not recorded.
   source: Button
   url: https://button-2022.webflow.io/2022-segments/how-to-be-a-content-design-rabble-rouser
-  action: View the conference program
+  action: View The Conference Program
   tags:
   - Content design
   - Leadership
@@ -289,7 +289,7 @@ media:
     and Menlo.
   source: The Manuscript · Episode 18
   url: https://www.ivoox.com/en/18-building-a-career-in-tech-writing-audios-mp3_rf_66952117_1.html
-  action: Listen to the episode
+  action: Listen To The Episode
   tags:
   - Careers
   - Technical writing
@@ -300,7 +300,7 @@ media:
   description: 'Part two: mentoring junior writers and making the tech industry more inclusive.'
   source: The Manuscript · Episode 19
   url: https://www.ivoox.com/en/19-training-mentorship-and-diversity-for-writers-in-audios-mp3_rf_67582932_1.html
-  action: Listen to the episode
+  action: Listen To The Episode
   tags:
   - Mentorship
   - Diversity
@@ -311,7 +311,7 @@ media:
   description: A conversation with Jacob Moses about supporting new writers and developing leadership through mentorship.
   source: The Not-Boring Tech Writer · Skill 21
   url: https://hackmamba.io/technical-writing/mentorship-platforms-for-technical-writers/
-  action: Read the episode discussion
+  action: Read The Episode Discussion
   tags:
   - Mentorship
   - Careers
@@ -322,7 +322,7 @@ media:
   description: A Q&A with Tom Johnson about access, hiring, and representation in technical communication.
   source: I’d Rather Be Writing
   url: https://idratherbewriting.com/blog/diversity-in-tech-comm-conversation-with-john-paz/
-  action: Read the interview
+  action: Read The Interview
   tags:
   - Diversity
   - Technical writing
@@ -333,7 +333,7 @@ media:
   description: A profile of my path into tech, family life, community, and mentorship.
   source: People of Color in Tech
   url: https://peopleofcolorintech.com/writers/atlassians-john-a-paz-on-being-a-technical-writer-a-young-parent-and-a-fan-of-blacktechtwitter/
-  action: Read the interview
+  action: Read The Interview
   tags:
   - Careers
   - Diversity
@@ -344,7 +344,7 @@ media:
   description: An article drawing on my podcast conversation about mentorship and growing into leadership.
   source: Hackmamba
   url: https://hackmamba.io/technical-writing/mentorship-platforms-for-technical-writers/
-  action: Read the article
+  action: Read The Article
   tags:
   - Mentorship
   - Leadership
@@ -355,7 +355,7 @@ media:
   description: UCF’s student publication shares job-search advice from my guest-speaker session.
   source: Future Technical Communicators
   url: https://futuretechnicalcommunicators.com/2022/02/tech-comm-jobs-and-where-to-find-them/
-  action: Read the article
+  action: Read The Article
   tags:
   - Careers
   - Technical writing

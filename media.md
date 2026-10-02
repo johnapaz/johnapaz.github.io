@@ -1,10 +1,10 @@
 ---
 layout: catalog-v2
-title: Podcasts, Interviews & Press
+title: Interviews & Press
 permalink: /media/
 description: Podcasts, interviews, and articles featuring John A. Paz.
 catalog: media
-heading: In Conversation
+heading: Interviews & press
 eyebrow: Podcasts, interviews & press
 intro: Conversations about writing, mentorship, and the people behind the work.
 item_label: appearances

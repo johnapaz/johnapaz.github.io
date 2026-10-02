@@ -24,18 +24,18 @@
       <p class="work-eyebrow">John A. Paz | Articles & Guides</p>
       <h1>Writing</h1>
       <p>Ideas, useful how-tos, and a little curiosity.</p>
-      <nav class="writing-tabs" aria-label="Writing sections"><a href="{{ '/writing/' | relative_url }}" aria-current="page">Articles & guides</a><a href="{{ '/blog/' | relative_url }}">Blog</a></nav>
+      <nav class="writing-tabs" aria-label="Writing sections"><a href="{{ '/writing/' | relative_url }}" aria-current="page">Articles & Guides</a><a href="{{ '/blog/' | relative_url }}">Blog Posts</a></nav>
     </header>
     <section aria-label="Article catalog" data-article-catalog data-page-size="6">
-      <details class="writing-discovery" hidden>
-        <summary>Search &amp; filter <span class="writing-filter-state"></span></summary>
-        <form class="writing-controls" role="search" aria-label="Find articles">
+      <div class="writing-discovery" hidden>
+        <div class="career-toolbar"><button type="button" class="career-text-button writing-filter-toggle" aria-expanded="false" aria-controls="writing-filters"><svg class="career-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>Search &amp; Filters <span class="writing-filter-state"></span></button></div>
+        <form id="writing-filters" hidden class="writing-controls career-filters" role="search" aria-label="Find articles">
         <label class="writing-search">Search articles<input type="search" name="search" placeholder="Search titles and topics" /></label>
         <label>Topic<select name="topic"><option value="">All topics</option></select></label>
         <label>Sort by<select name="sort"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option><option value="title-desc">Title Z–A</option></select></label>
         <button type="reset" class="btn btn-outline-primary">Reset</button>
         </form>
-      </details>
+      </div>
       <p class="writing-results" role="status" aria-live="polite" aria-atomic="true"></p>
       <div class="writing-grid">
         {% assign articles = site.data.writing.articles %}

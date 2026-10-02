@@ -21,22 +21,22 @@
   <a class="v2-skip" href="#main-content">Skip to content</a>
   {% include v2-navigation.html %}
   <main id="main-content" class="writing-shell">
+    {% include portfolio-tabs.html %}
     <header class="writing-intro">
       <p class="work-eyebrow">John A. Paz | {{ page.eyebrow | escape }}</p>
       <h1>{{ page.heading | escape }}</h1>
       <p>{{ page.intro | escape }}</p>
-      {% include portfolio-tabs.html %}
 
     </header>
     {% if page.feature %}
     <aside class="portfolio-feature" aria-label="Featured talk">
       <img src="{{ '/assets/images/john-button_750.jpg' | relative_url }}" alt="Button conference session card featuring John Paz" width="750" height="500" />
-      <div><p class="work-eyebrow">The story that started it</p><h2>The “Pipeline Problem”</h2><p>A talk about who gets a place in tech, and what it takes to build belonging. From Atlassian Summit to Button and Confab.</p><a class="blog-read" href="{{ '/my-story/' | relative_url }}">Explore the talks <span aria-hidden="true">→</span></a></div>
+      <div><p class="work-eyebrow">The story that started it</p><h2>The “Pipeline Problem”</h2><p>A talk about who gets a place in tech, and what it takes to build belonging. From Atlassian Summit to Button and Confab.</p><a class="blog-read" href="{{ '/my-story/' | relative_url }}">Explore the Talks <span aria-hidden="true">→</span></a></div>
     </aside>
     {% endif %}
     <section aria-label="{{ page.heading | escape }} catalog" data-article-catalog data-page-size="6" data-item-label="{{ page.item_label }}">
       <details class="writing-discovery" hidden>
-        <summary>Search &amp; filter <span class="writing-filter-state"></span></summary>
+        <summary>Search &amp; Filter <span class="writing-filter-state"></span></summary>
         <form class="writing-controls" role="search" aria-label="Find {{ page.heading | escape }}">
         <label class="writing-search">Search {{ page.heading | escape }}<input type="search" name="search" placeholder="Search titles, hosts, and topics" /></label>
         <label>{{ page.filter_label }}<select name="topic"><option value="">All</option></select></label>
@@ -47,11 +47,13 @@
       <p class="writing-results" role="status" aria-live="polite" aria-atomic="true"></p>
       <div class="writing-grid">
         {% assign articles = site.data.portfolio[page.catalog] %}
+        {% if page.catalog == 'coding' %}{% assign articles = site.data.portfolio.coding | concat: site.data.portfolio.projects %}{% endif %}
         {% for article in articles %}
-        <article class="writing-tile" data-title="{{ article.title | escape }}" data-topic="{{ article.category | escape }}" data-date="{{ article.date }}" data-description="{{ article.description | escape }} {{ article.source | escape }} {{ article.tags | join: ' ' | escape }}">
+        <article class="writing-tile{% if article.challenge %} project-tile{% endif %}"{% if article.id %} id="{{ article.id }}"{% endif %} data-title="{{ article.title | escape }}" data-topic="{{ article.category | escape }}" data-date="{{ article.date }}" data-description="{{ article.description | escape }} {{ article.source | escape }} {{ article.tags | join: ' ' | escape }} {{ article.challenge | escape }} {{ article.contribution | escape }} {{ article.result | escape }}">
           <p class="writing-meta">{{ article.category | escape }} {% if article.date != '' %}<span aria-hidden="true">·</span> <time datetime="{{ article.date }}">{{ article.date_label | default: article.date }}</time>{% endif %}</p>
           <h2><a href="{% if article.url contains '://' %}{{ article.url }}{% else %}{{ article.url | relative_url }}{% endif %}">{{ article.title | escape }}</a></h2>
           <p class="writing-description">{{ article.description | escape }}</p>
+          {% if article.challenge %}<details class="project-tile-details"><summary>Project Details</summary><dl><dt>Challenge</dt><dd>{{ article.challenge | escape }}</dd><dt>My contribution</dt><dd>{{ article.contribution | escape }}</dd><dt>Result</dt><dd>{{ article.result | escape }}</dd></dl></details>{% endif %}
           {% if article.tags %}<p class="portfolio-tags">{% for tag in article.tags %}<span class="v2-badge">{{ tag | escape }}</span>{% endfor %}</p>{% endif %}
           <p class="writing-source">{{ article.action | escape }} · {{ article.source | escape }} <span aria-hidden="true">{% if article.url contains '://' %}↗{% else %}→{% endif %}</span></p>
         </article>

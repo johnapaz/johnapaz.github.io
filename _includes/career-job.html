@@ -6,10 +6,10 @@
   </div>
   <div class="career-contribution">
     <p><strong>{{ job.impact | escape }}</strong> {{ job.description | escape }}</p>
-    <div class="career-badges" aria-label="Work types and technologies">
-      {% for type in job.work_types %}<button type="button" class="career-badge career-type" data-career-facet="type" data-career-value="{{ type | escape }}" aria-label="Filter work type: {{ type | escape }}" aria-pressed="false" disabled>{{ type | escape }}</button>{% endfor %}
-      {% for tech in job.technologies %}<button type="button" class="career-badge career-tech" data-career-facet="technology" data-career-value="{{ tech | escape }}" aria-label="Filter technology: {{ tech | escape }}" aria-pressed="false" disabled>{% assign tech_icon = tech | downcase %}{% if tech_icon == 'python' or tech_icon == 'confluence' or tech_icon == 'jira' or tech_icon == 'bitbucket' or tech_icon == 'swagger' %}<svg class="career-icon" aria-hidden="true"><use href="#career-icon-{{ tech_icon }}"></use></svg>{% endif %}{{ tech | escape }}</button>{% endfor %}
+    <div class="career-badges" aria-label="Work Types and technologies">
+      {% for type in job.work_types %}<button type="button" class="career-badge career-type{% if type == 'Leadership' %} career-leadership{% endif %}" data-career-facet="type" data-career-value="{{ type | escape }}" aria-label="Filter work type: {{ type | escape }}" aria-pressed="false" disabled>{% if type == 'Leadership' %}<span aria-hidden="true">★</span> {% endif %}{{ type | escape }}</button>{% endfor %}
+      {% for tech in job.technologies %}<button type="button" class="career-badge career-tech" data-career-facet="technology" data-career-value="{{ tech | escape }}" aria-label="Filter technology: {{ tech | escape }}" aria-pressed="false" disabled>{% assign tech_icon = tech | downcase | replace: ' ', '-' %}{% if tech_icon == 'agile-team' %}{% assign tech_icon = 'department' %}{% endif %}{% if tech_icon == 'python' or tech_icon == 'confluence' or tech_icon == 'jira' or tech_icon == 'bitbucket' or tech_icon == 'swagger' or tech_icon == 'department' %}<svg class="career-icon" aria-hidden="true"><use href="#career-icon-{{ tech_icon }}"></use></svg>{% endif %}{{ tech | escape }}</button>{% endfor %}
     </div>
-    <details class="career-details"><summary>Work details</summary><ul>{% for detail in job.details %}<li>{{ detail | escape }}</li>{% endfor %}</ul>{% if job.evidence_url %}<a href="{{ job.evidence_url }}">{{ job.evidence_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}</details>
+    <details class="career-details"><summary>Work Details</summary><ul>{% for detail in job.details %}<li>{{ detail | escape }}</li>{% endfor %}</ul>{% if job.evidence_url %}<a href="{{ job.evidence_url }}">{{ job.evidence_label | escape }} <span aria-hidden="true">↗</span></a>{% endif %}</details>
   </div>
 </article>

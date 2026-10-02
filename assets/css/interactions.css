@@ -1,0 +1,40 @@
+/* Share the landing tiles' 2px lift, 200ms easing, and soft shadow.
+   Only linked tiles participate; static content keeps its usual appearance. */
+:is(.v2-card, .v2-featured-card, .writing-tile):has(a[href]),
+.v2-socials a[href],
+#header .icons a[href] {
+  transition: transform 200ms ease, background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+}
+
+#header .icons a[href] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+}
+
+:is(.v2-card, .v2-featured-card, .writing-tile):has(a[href]):is(:hover, :focus-within),
+.v2-socials a[href]:is(:hover, :focus-visible),
+#header .icons a[href]:is(:hover, :focus-visible) {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 0 var(--palette-rgba-255-255-255-p4, rgba(255,255,255,.4)), 0 4px 9px var(--palette-rgba-43-22-5-p12, rgba(43,22,5,.12));
+}
+
+:is(.v2-socials a[href], #header .icons a[href]):focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(.v2-card, .v2-featured-card, .writing-tile):has(a[href]),
+  .v2-socials a[href],
+  #header .icons a[href] {
+    transition: none;
+  }
+
+  :is(.v2-card, .v2-featured-card, .writing-tile):has(a[href]):is(:hover, :focus-within),
+  .v2-socials a[href]:is(:hover, :focus-visible),
+  #header .icons a[href]:is(:hover, :focus-visible) {
+    transform: none;
+  }
+}
