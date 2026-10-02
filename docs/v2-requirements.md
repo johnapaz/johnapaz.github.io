@@ -179,3 +179,10 @@ The wiki is canonical; this file is a historical branch snapshot. John confirmed
 
 
 Section-label refinement: roughly 50% smaller, left-aligned italic labels with a softer cocoa shade and faint embossed text shadow. Distinguish sandy left-column tiles from warmer clay right-column tiles; each tile remains a distinct shade. See the latest canonical wiki decision and implementation notes.
+
+
+### Correction: smaller tiles, full-size styled labels — October 1, 2026
+
+The 50% reduction applies to the section tiles, not their titles. The earlier smaller-label interpretation is superseded. Desktop tile height is half the prior height at the same viewport, with the two column widths unchanged. Tablet and mobile aspect ratios also halve the nominal tile height, with a 90px minimum so full-size labels remain usable.
+
+Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while retaining left alignment, the softer italic Palatino-family typeface, and the faint embossed text shadow. Each tile has its own cocoa text shade that darkens along the sand/clay palette. Keep the tile-specific shaded hover colors, subtle lift, and featured content below the six section tiles.

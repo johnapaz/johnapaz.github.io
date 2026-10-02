@@ -83,8 +83,8 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   color: #513923;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.45), 0 2px 5px rgba(43,22,5,.08);
   transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
-  > a { position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 1.5rem; min-height: 140px; aspect-ratio: 1.9 / 1; text-decoration: none; color: inherit; border-radius: inherit; }
-  h3 { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(.875rem, 3.75cqw, 1rem); line-height: 1.35; letter-spacing: -.015em; text-align: left; text-shadow: 0 1px 0 rgba(255,255,255,.45), 0 -1px 0 rgba(81,57,35,.06); }
+  > a { position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 1.5rem; min-height: 90px; aspect-ratio: 3.8 / 1; text-decoration: none; color: inherit; border-radius: inherit; }
+  h3 { font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(1.25rem, 7.5cqw, 2rem); line-height: 1.35; letter-spacing: -.015em; text-align: left; text-shadow: 0 1px 0 rgba(255,255,255,.45), 0 -1px 0 rgba(81,57,35,.06); }
   > a:hover { color: inherit; }
   &:focus-within { transform: translateY(-2px); outline: 3px solid $accent; outline-offset: 4px; }
   a:focus-visible { outline: none; }
@@ -93,17 +93,20 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
 // Each hover shade is derived from that tile's own solid color.
 // Sandy left column and warmer clay right column, with distinct shades in every row.
 $tile-colors: #F5E1C1, #EFD2BE, #EFD7B2, #E7C6AE, #E7CAA6, #DFBAA0;
+// Cocoa lettering follows the six tile tones, with sufficient contrast on each.
+$tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 @for $i from 1 through length($tile-colors) {
   $tile-color: nth($tile-colors, $i);
   .v2-card:nth-child(#{$i}) {
     background-color: $tile-color;
+    color: nth($tile-ink-colors, $i);
     &:hover, &:focus-within { background-color: darken($tile-color, 2%); box-shadow: inset 0 1px 0 rgba(255,255,255,.4), 0 4px 9px rgba(43,22,5,.12); }
   }
 }
 
-// Shorter desktop tiles: about 11% less height than the first section-tile preview.
+// Half the previous tile height; preserve column widths and full-size labels.
 @media (min-width: 1001px) {
-  .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 2.8); height: calc((100svh - 104px) / 2.8); }
+  .v2-card > a { aspect-ratio: auto; min-height: 0; height: calc((100vh - 104px) / 5.6); height: calc((100svh - 104px) / 5.6); }
 }
 // Featured content follows the six section tiles, separated by a quiet rule.
 .v2-featured { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(117,65,22,.2); }
@@ -144,7 +147,7 @@ $tile-colors: #F5E1C1, #EFD2BE, #EFD7B2, #E7C6AE, #E7CAA6, #DFBAA0;
   .v2-identity { margin-bottom: .65rem; }
   .v2-name { font-size: 1.2rem; }
   .v2-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-  .v2-card > a { min-height: 135px; aspect-ratio: 2.1 / 1; }
+  .v2-card > a { min-height: 90px; aspect-ratio: 4.2 / 1; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .v2-card { transition: none; } .v2-card:hover, .v2-card:focus-within { transform: none; } }
 

@@ -212,3 +212,10 @@ The source notes are historical. The canonical wiki and this newest section gove
 John requested section labels roughly half their previous size, left-aligned, with slightly different typography/dark shade and subtle texture. Section labels now use a lighter-weight Palatino/Book Antiqua italic stack with Georgia fallback, half the former preferred/max size (3.75cqw/1rem), and a 14px minimum for mobile readability. Cocoa #513923 replaces espresso on these labels. A faint light/dark text-shadow pair gives an embossed edge without a texture asset or reduced legibility. Featured titles and the introduction are unchanged.
 
 Differentiate the columns: sandy left shades #F5E1C1, #EFD7B2, #E7CAA6; warmer clay right shades #EFD2BE, #E7C6AE, #DFBAA0. Every tile remains distinct, with its own derived hover shade. Keep soft elevation and the featured-content grid. Font rendering depends on installed fonts; the actual preview may use Georgia fallback. Review on staging before v2 merge.
+
+
+### Correction: smaller tiles, full-size styled labels — October 1, 2026
+
+The 50% reduction applies to the section tiles, not their titles. The earlier smaller-label interpretation is superseded. Desktop tile height is half the prior height at the same viewport, with the two column widths unchanged. Tablet and mobile aspect ratios also halve the nominal tile height, with a 90px minimum so full-size labels remain usable.
+
+Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while retaining left alignment, the softer italic Palatino-family typeface, and the faint embossed text shadow. Each tile has its own cocoa text shade that darkens along the sand/clay palette. Keep the tile-specific shaded hover colors, subtle lift, and featured content below the six section tiles.
