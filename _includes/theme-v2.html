@@ -1,0 +1,12 @@
+<script>
+  (function () {
+    var theme = 'dark';
+    try {
+      var saved = localStorage.getItem('johnapaz-appearance-v1');
+      if (saved === 'dark' || saved === 'darker') theme = saved;
+    } catch (_) {}
+    document.documentElement.dataset.theme = theme;
+  }());
+</script>
+<link rel="stylesheet" href="{{ '/assets/css/theme-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+<script src="{{ '/assets/js/theme-v2.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
