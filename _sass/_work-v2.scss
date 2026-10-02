@@ -55,3 +55,73 @@
     }
   }
 }
+
+// Résumé story prototype: preserve the established two-column row and gutters.
+.v2-work {
+  .career-icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .career-icon { width: .9rem; height: .9rem; fill: currentColor; flex-shrink: 0; vertical-align: -.12em; }
+  .career-explorer[hidden], .career-filters[hidden], .career-share-fallback[hidden], #career-empty[hidden], .career-text-button[hidden] { display: none; }
+  .career-toolbar { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; }
+  .career-views { display: inline-flex; }
+  .career-views .btn { font-size: .8rem; padding: .3rem .7rem; min-height: 36px; white-space: nowrap; }
+  .career-views [aria-pressed=true] { background: #754116; border-color: #754116; color: #F8EBD3; }
+  .career-actions { display: flex; align-items: center; gap: .6rem; }
+  .career-text-button { border: 0; background: transparent; color: #754116; padding: .3rem .4rem; min-height: 36px; cursor: pointer; font: 500 .8rem/1.3 system-ui,sans-serif; display: inline-flex; align-items: center; gap: .3rem; border-radius: .375rem; }
+  .career-text-button:hover { background: rgba(117,65,22,.08); }
+  .career-text-button:focus-visible, .career-badge:focus-visible, summary:focus-visible, select:focus-visible, .career-share-fallback input:focus-visible { outline: 2px solid #754116; outline-offset: 3px; }
+  #career-filter-count { border-radius: 50rem; background: #754116; color: #F8EBD3; padding: .12rem .35rem; font-size: .65rem; }
+  #career-filter-count[hidden] { display: none; }
+  .career-filters { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: .75rem; padding: .85rem 1rem; margin-top: .6rem; border-radius: 8px; background: #F2DFC0; }
+  .career-filters label { display: grid; gap: .25rem; min-width: 0; font-size: .75rem; font-weight: 600; color: #754116; }
+  .career-filters select { width: 100%; min-width: 0; min-height: 40px; border: 1px solid #92795D; border-radius: .375rem; padding: .35rem .55rem; font: inherit; font-weight: 400; background: #F8EBD3; color: #2B1605; }
+  .career-view-status { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .6rem; min-height: 32px; margin-top: .25rem; }
+  .career-view-status p { font-size: .75rem; color: #754116; }
+  #career-share-status { margin-left: auto; }
+  .career-view-status .career-text-button { font-size: .75rem; }
+  .career-job > div { min-width: 0; }
+  .career-company { display: flex; align-items: center; gap: .5rem; }
+  .career-company-icon { width: 1.15rem; height: 1.15rem; fill: currentColor; flex-shrink: 0; }
+  .career-company-mark { display: inline-flex; align-items: center; justify-content: center; font: 700 .65rem/1 system-ui,sans-serif; width: 1.4rem; height: 1.4rem; border-radius: .3rem; background: #EBD4B5; color: #754116; flex-shrink: 0; }
+  .career-context { display: flex; flex-wrap: wrap; gap: .2rem .7rem; margin-top: .5rem; font-size: .73rem; color: #754116; }
+  .career-context > span { display: inline-flex; align-items: center; gap: .25rem; }
+  .career-contribution strong { color: #2B1605; font-weight: 600; }
+  .career-badges { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .55rem; }
+  .career-badge { display: inline-flex; align-items: center; gap: .3rem; border: 0; border-radius: 50rem; padding: .25rem .65rem; min-height: 30px; font: 500 .73rem/1.25 system-ui,sans-serif; color: #5F3414; text-align: left; cursor: pointer; box-shadow: 0 1px 2px rgba(43,22,5,.05); }
+  .career-type { background: #E7C49B; }
+  .career-type:nth-child(2) { background: #EACBAF; }
+  .career-tech { background: #F2DFC0; color: #754116; }
+  .career-badge:hover { background: #DCB786; color: #2B1605; }
+  .career-badge[aria-pressed=true] { background: #754116; color: #F8EBD3; box-shadow: inset 0 0 0 1px #2B1605; }
+  .career-details { margin-top: .4rem; }
+  .career-details summary { cursor: pointer; color: #754116; font-size: .75rem; min-height: 30px; width: fit-content; padding-block: .3rem; }
+  .career-details ul { padding-left: 1.1rem; margin: .25rem 0 .5rem; color: #754116; font-size: .85rem; }
+  .career-details li + li { margin-top: .4rem; }
+  .career-details a { font-size: .8rem; }
+  .career-earlier { margin-top: 1rem; }
+  .career-earlier > summary { padding: .5rem 0; min-height: 44px; cursor: pointer; font-weight: 600; font-size: .85rem; color: #2B1605; }
+  .career-earlier > summary span { font-weight: 400; font-size: .75rem; color: #754116; margin-left: .5rem; }
+  .career-group-title { font-size: 1rem; margin-top: 1.4rem; padding-bottom: .4rem; color: #754116; border-bottom: 1px solid rgba(117,65,22,.18); }
+  .career-share-fallback { display: grid; gap: .3rem; font-size: .8rem; margin: .5rem 0; }
+  .career-share-fallback input { width: 100%; padding: .5rem; border: 1px solid #92795D; border-radius: .375rem; font: inherit; background: #F8EBD3; color: #2B1605; }
+  #career-empty { padding: 1.5rem 0; color: #754116; font-size: .9rem; }
+  @media(max-width: 760px) { .career-filters { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+  @media(max-width: 600px) {
+    .career-toolbar { align-items: stretch; gap: .35rem; }
+    .career-views { flex: 1 1 100%; }
+    .career-views .btn { flex: 1; min-height: 40px; padding-inline: .45rem; }
+    .career-actions { width: 100%; justify-content: space-between; gap: .4rem; }
+    .career-text-button, .career-view-status .career-text-button { min-height: 40px; }
+    .career-filters { padding: .75rem; gap: .65rem; }
+    .career-badge { min-height: 36px; padding: .3rem .65rem; }
+    .career-details summary { min-height: 40px; display: list-item; }
+    .career-context { margin-top: .3rem; }
+    .career-earlier > summary span { display: block; margin-left: 1rem; }
+    .career-job { position: relative; padding-left: .9rem; border-left: 2px solid #E7C49B; }
+    .career-job::before { content: ''; position: absolute; width: .5rem; height: .5rem; border-radius: 50%; background: #754116; left: -.3rem; top: 1.75rem; }
+  }
+  @media print {
+    .career-explorer, .career-badges button { box-shadow: none; }
+    .career-explorer { display: none; }
+    .career-job { break-inside: avoid; }
+  }
+}
