@@ -32,7 +32,7 @@ collections:
 collections_dir: content
 permalink: /:categories/:title:/
 # Separate GA4 properties. Set the verified G- ID before activation.
-google_analytics: null
+google_analytics: G-1ESYN701VR
 analytics_host: johnapaz.com
 analytics_environment: production
 

@@ -9,7 +9,14 @@ John approved separate GA4 properties on October 2, 2026:
 | Production | johnapaz.com — Production | https://johnapaz.com | `_config.yml` |
 | Staging | johnapaz.com — Staging | https://staging.johnapaz.com | `_config.staging.yml` |
 
-Both belong in the existing Paz Web Development account. Creation is blocked at the account Admin navigation because Analytics currently selects the unrelated Mia property and automatic approval review disallows opening its private settings. No new properties or measurement IDs have been created. Both configuration values remain null; do not invent IDs or copy Mia's ID.
+Both dedicated properties were created under Paz Web Development on October 2, 2026. Reporting timezone: New York; currency: USD. Mia's property was not changed.
+
+| Environment | Property ID | Stream ID | Measurement ID |
+| --- | --- | --- | --- |
+| Production | 557084016 | 15945486786 | G-1ESYN701VR |
+| Staging | 557077138 | 15945255148 | G-68CVWTTNZ4 |
+
+Enhanced measurement is off on both streams. User/event retention: 14 months; reset on new activity off. Google Signals: off. IDs are public tag identifiers, not credentials. Live receipt is pending release validation.
 
 ## Activation
 

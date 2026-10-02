@@ -2,7 +2,7 @@
 url: "https://staging.johnapaz.com"
 baseurl: ""
 # Dedicated staging GA4 property; never copy the production ID here.
-google_analytics: null
+google_analytics: G-68CVWTTNZ4
 analytics_host: staging.johnapaz.com
 analytics_environment: staging
 staging: true

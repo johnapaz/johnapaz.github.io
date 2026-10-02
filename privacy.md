@@ -15,6 +15,6 @@ The integration omits URL query strings, fragments, contact addresses, search te
 
 Your consent preference is stored in your browser separately from analytics cookies. If browser storage is unavailable, analytics remains disabled.
 
-Analytics activation and the provider's retention settings are pending configuration. This page will be updated when setup is verified.
+User and event data retention is set to 14 months, with automatic renewal on new user activity disabled. These settings do not govern most aggregated standard reports. Google Signals and enhanced measurement are disabled. Production and staging activation is verified separately.
 
 Questions? [Email John](mailto:johnapaz@gmail.com).
