@@ -43,6 +43,9 @@ experience:
   - Knowledge systems
   technologies:
   - Paligo
+  - Jira
+  - Confluence
+  - Agile Team
   impact: Reusable content for healthcare platforms.
   description: Create technical guides and training resources in Paligo, with shared content, taxonomy, and governance.
   details:
@@ -65,6 +68,8 @@ experience:
   - Confluence
   - RightAnswers
   - REST APIs
+  - Jira
+  - Agile Team
   impact: Built tools to make a large-scale migration manageable.
   description: Audited Confluence content for migration to RightAnswers; built Python tools for analysis, reports,
     review, and bulk editing.
@@ -89,6 +94,7 @@ experience:
   - Confluence
   - Bitbucket
   - Jira Service Management
+  - Notion
   impact: Connected documentation strategy with the tools behind it.
   description: Standardized documentation tooling, templates, and workflows; administered Atlassian products and
     knowledge-sharing practices.
@@ -107,6 +113,8 @@ experience:
   - Knowledge systems
   technologies:
   - Confluence
+  - Jira
+  - Agile Team
   impact: Turned engineering process gaps into actionable plans.
   description: Documented DevOps requirements, use cases, and workflows; improved Confluence organization and prioritized
     technical debt.
@@ -128,6 +136,9 @@ experience:
   - Developer documentation
   technologies:
   - Swagger
+  - Jira
+  - Confluence
+  - Agile Team
   impact: Established the first Documentation & Content Design department.
   description: Built and coached a distributed writing team, overhauled publishing infrastructure, and prototyped
     a Swagger developer portal.
@@ -151,6 +162,9 @@ experience:
   - Bitbucket
   - REST APIs
   - OAuth
+  - Jira
+  - Confluence
+  - Agile Team
   impact: Made complex Bitbucket APIs easier to implement.
   description: Wrote and tested API examples and OAuth guidance; reshaped information architecture and product copy
     through user research.
@@ -173,6 +187,7 @@ experience:
   - Jira
   - Confluence
   - Python
+  - Agile Team
   impact: Designed an internal wiki for 200+ users across two countries.
   description: Rolled out Atlassian tools, automated repetitive Jira tasks with Python, and trained engineering
     teams in Scrum and Agile.
@@ -196,6 +211,9 @@ experience:
   - DITA/XML
   - Hadoop
   - Pentaho Data Integration
+  - Jira
+  - Confluence
+  - Agile Team
   impact: Led documentation for data integration and big data projects.
   description: Created task-based DITA/XML procedures, worked with database and code samples, and supported three
     Agile product teams.
@@ -215,6 +233,9 @@ experience:
   - Knowledge systems
   technologies:
   - Wiki
+  - Jira
+  - Confluence
+  - Agile Team
   impact: Built a game development wiki with 250+ cross-referencing pages.
   description: Interviewed managers and directors to document the development lifecycle and adapt EA’s global processes
     for Tiburon.

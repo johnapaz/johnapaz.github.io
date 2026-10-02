@@ -295,6 +295,10 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 @media (pointer: coarse) { .v2-topbar nav .v2-icon-control { width: 44px; min-height: 44px; } }
 
 .v2-topbar nav .v2-admin-mobile { display: none; }
+@media (min-width: 781px) {
+  .v2-topbar nav .v2-theme-menu { order: 10; }
+  .v2-topbar nav .v2-admin-desktop { order: 11; }
+}
 @media (max-width: 780px) {
   .v2-topbar nav .v2-admin-desktop { display: none; }
   .v2-topbar nav .v2-admin-mobile { display: inline-flex; }

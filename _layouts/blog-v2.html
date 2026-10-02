@@ -23,9 +23,9 @@
     <div class="blog-column">
     <header class="writing-intro">
       <p class="work-eyebrow">John A. Paz | Stories & Reflections</p>
-      <h1>Blog</h1>
+      <h1>Blog Posts</h1>
       <p>Thoughts on work, culture, and whatever catches my curiosity.</p>
-      <nav class="writing-tabs" aria-label="Writing sections"><a href="{{ '/writing/' | relative_url }}">Articles & guides</a><a href="{{ '/blog/' | relative_url }}" aria-current="page">Blog</a></nav>
+      <nav class="writing-tabs" aria-label="Writing sections"><a href="{{ '/writing/' | relative_url }}">Articles & guides</a><a href="{{ '/blog/' | relative_url }}" aria-current="page">Blog Posts</a></nav>
     </header>
     <section class="blog-feed" aria-label="Blog entries">
       {% assign entries = site.data.writing.articles | where: 'kind', 'blog' %}
