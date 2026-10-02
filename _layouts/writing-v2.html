@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{ '/assets/css/work-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
   <link rel="stylesheet" href="{{ '/assets/css/writing-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  {% include social-meta.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
 </head>
 <body class="v2-home v2-work v2-writing">
   <a class="v2-skip" href="#main-content">Skip to content</a>
@@ -37,10 +39,12 @@
         {% assign articles = site.data.writing.articles %}
         {% for article in articles %}
         <article class="writing-tile" data-title="{{ article.title | escape }}" data-topic="{{ article.category | escape }}" data-date="{{ article.date }}" data-description="{{ article.description | escape }}">
+          {% if article.image %}<a href="{{ article.url | relative_url }}"><img class="writing-thumbnail" src="{{ article.image | relative_url }}" alt="V1 and V2 website comparison" width="1733" height="907" loading="lazy" /></a>{% endif %}
           <p class="writing-meta">{{ article.category | escape }} {% if article.date != '' %}<span aria-hidden="true">·</span> <time datetime="{{ article.date }}">{{ article.date | date: '%b %-d, %Y' }}</time>{% endif %}</p>
           <h2><a href="{% if article.url contains '://' %}{{ article.url }}{% else %}{{ article.url | relative_url }}{% endif %}">{{ article.title | escape }}</a></h2>
           <p class="writing-description">{{ article.description | escape }}</p>
-          <p class="writing-source">Read on {{ article.source | escape }} <span aria-hidden="true">{% if article.url contains '://' %}↗{% else %}→{% endif %}</span></p>
+          {% include ai-assistance.html item=article %}
+        <p class="writing-source">Read on {{ article.source | escape }} <span aria-hidden="true">{% if article.url contains '://' %}↗{% else %}→{% endif %}</span></p>
         </article>
         {% endfor %}
       </div>

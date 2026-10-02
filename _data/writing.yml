@@ -1,6 +1,17 @@
-# Initial catalog: repo drafts, existing featured links, and verified Medium articles.
-# Empty dates remain undated until verified. Descriptions are editorial summaries.
 articles:
+- title: A new home for my work, writing, and curiosity
+  url: /blog/website-v2-launch/
+  date: '2026-10-02'
+  category: Website & Projects
+  kind: blog
+  source: JohnAPaz.com
+  description: 'The V2 launch: a clearer home for my work, with a look at the design
+    process, AI collaboration, staging, CI, and what comes next.'
+  image: /assets/images/launch-v1-v2.png
+  ai_assistance:
+    level: Substantial drafting
+    detail: AI helped draft, structure, and refine this announcement from John’s directions
+      and project record. See the article for the full disclosure.
 - title: Resume Design Guide
   url: https://john-paz-stories.medium.com/resume-design-guide-860633bd4f
   date: '2022-02-12'

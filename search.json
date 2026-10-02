@@ -1,0 +1,10 @@
+---
+layout: null
+---
+[
+{% assign first = true %}
+{% for item in site.pages %}{% if item.layout contains '-v2' and item.url != '/search/' %}{% unless first %},{% endunless %}{% assign first = false %}{"title":{{ item.title | jsonify }},"url":{{ item.url | relative_url | jsonify }},"text":{{ item.content | strip_html | normalize_whitespace | jsonify }},"category":"Site page"}{% endif %}{% endfor %}
+{% for item in site.documents %}{% unless first %},{% endunless %}{% assign first = false %}{"title":{{ item.title | jsonify }},"url":{{ item.url | relative_url | jsonify }},"text":{{ item.content | strip_html | normalize_whitespace | jsonify }},"category":"Archive"}{% endfor %}
+{% for item in site.data.writing.articles %},{"title":{{ item.title | jsonify }},"url":{{ item.url | jsonify }},"text":{{ item.description | jsonify }},"category":{{ item.category | jsonify }}}{% endfor %}
+{% assign groups = 'coding,projects,talks,media' | split: ',' %}{% for group in groups %}{% for item in site.data.portfolio[group] %},{"title":{{ item.title | jsonify }},"url":{{ item.url | default: '/presentations/' | jsonify }},"text":{{ item.description | append: ' ' | append: item.challenge | append: ' ' | append: item.result | jsonify }},"category":{{ item.category | default: group | jsonify }}}{% endfor %}{% endfor %}
+]

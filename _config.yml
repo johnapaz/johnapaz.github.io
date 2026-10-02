@@ -2,8 +2,10 @@
 title: John Paz
 subtitle: Mr. Content Design
 email: johnapaz@gmail.com
-description: Just because you haven't heard of it, doesn't mean it's not awesome.
-url: "https://johnapaz.com/" # the base hostname & protocol for your site
+description: John A. Paz — technical writer, content designer, speaker, and curious builder.
+url: "https://johnapaz.com" # the base hostname & protocol for your site
+baseurl: ""
+repository: johnapaz/johnapaz.github.io
 author: John Paz
 city: Orlando
 state: FL
@@ -42,3 +44,10 @@ exclude:
   - package.json
   - node_modules
   - gulpfile.js
+  - docs
+  - scripts
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE.md
