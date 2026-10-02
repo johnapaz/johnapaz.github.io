@@ -221,14 +221,10 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 @media (pointer: coarse) { .v2-search-panel input { height: 44px; font-size: 16px; } }
 @media (prefers-reduced-motion: reduce) { .v2-search-panel, .v2-search-panel[hidden] { transition: none; transform: none; } }
 
-// Reveal the field from the search-button edge, then retract to that edge.
-.v2-search-panel, .v2-search-panel[hidden] {
-  transform: none;
-  clip-path: inset(-100vh -100vw -100vh -100vw);
-  transition: width 340ms cubic-bezier(.22,1,.36,1), clip-path 380ms cubic-bezier(.22,1,.36,1), opacity 160ms ease, visibility 0s;
-}
-.v2-search-panel[hidden] {
-  clip-path: inset(0 0 0 100%); opacity: 0;
-  transition: width 340ms cubic-bezier(.22,1,.36,1), clip-path 320ms cubic-bezier(.22,1,.36,1), opacity 100ms ease 220ms, visibility 0s 320ms;
-}
-@media (prefers-reduced-motion: reduce) { .v2-search-panel, .v2-search-panel[hidden] { transition: none; } }
+
+// Unroll the input itself; keep suggestions free to extend below it.
+.v2-search-panel, .v2-search-panel[hidden] { transform: none; clip-path: none; opacity: 1; transition: width 340ms cubic-bezier(.22,1,.36,1), visibility 0s; }
+.v2-search-panel input { clip-path: inset(-4px -4px -4px -4px round .375rem); transition: clip-path 380ms cubic-bezier(.22,1,.36,1); }
+.v2-search-panel[hidden] { transition: width 340ms cubic-bezier(.22,1,.36,1), visibility 0s 320ms; }
+.v2-search-panel[hidden] input { clip-path: inset(-4px -4px -4px 100% round .375rem); transition-duration: 320ms; }
+@media (prefers-reduced-motion: reduce) { .v2-search-panel, .v2-search-panel[hidden], .v2-search-panel input { transition: none; } }
