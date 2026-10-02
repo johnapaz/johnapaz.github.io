@@ -7,7 +7,7 @@
   .work-eyebrow { color: var(--palette-754116, #754116); font-size: .78rem; letter-spacing: .045em; margin-bottom: .75rem; }
   h1 { font: italic 700 clamp(2.5rem, 5vw, 4.5rem)/1.12 Georgia, serif; letter-spacing: -.045em; margin-bottom: .9rem; }
   .work-lead { font-size: 1.3rem; margin-bottom: .7rem; }
-  .work-summary { max-width: 62ch; color: var(--palette-754116, #754116); }
+  .work-summary { max-width: none; color: var(--palette-754116, #754116); }
   .work-profile { padding: 1.75rem; border-radius: 12px; background: var(--palette-f2d8a8, #F2D8A8); box-shadow: 0 3px 10px var(--palette-rgba-43-22-5-p06, rgba(43,22,5,.06)); }
   .work-profile img { border-radius: 50%; object-fit: cover; object-position: 50% 24%; margin-bottom: .75rem; }
   .work-profile-note { margin: .5rem 0 1rem; color: var(--palette-754116, #754116); font-size: .9rem; }
