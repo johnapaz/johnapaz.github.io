@@ -25,3 +25,5 @@ h.choices.accepted();assert.equal(h.requests.length,1);
 assert.equal(run({consent:'declined'}).requests.length,0);assert.equal(run({consent:'accepted'}).requests.length,1);
 const blocked=run({blockStorage:true});blocked.choices.accepted();assert.equal(blocked.requests.length,0);
 console.log('Passed consent, withdrawal, payload minimization and environment isolation checks');
+
+for (const file of fs.readdirSync('_layouts').filter(x => x.endsWith('-v2.html'))) { assert.ok(fs.readFileSync('_layouts/' + file,'utf8').includes('include analytics-loader.html'), 'Missing analytics loader: ' + file); }
