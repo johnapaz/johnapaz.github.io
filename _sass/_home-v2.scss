@@ -204,8 +204,19 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 .v2-search-suggestions a:hover { background: $state-layer; }
 .v2-search-suggestions small { color: $muted; }
 .v2-search-suggestions button { border: 0; background: $tonal-surface; color: $foreground; padding: .4rem .65rem; border-radius: .375rem; font: inherit; font-size: .8rem; cursor: pointer; }
-@media (max-width: 780px) {
-  .v2-nav-search:has(.v2-search-panel:not([hidden])) { flex-basis: 100%; justify-content: center; }
-  .v2-search-panel { flex: 1; max-width: 480px; }
-  .v2-search-panel input { width: 100%; }
+
+// Search floats over the navigation without changing its layout.
+.v2-nav-search { flex: 0 0 auto; }
+.v2-search-toggle { position: relative; z-index: 9; }
+.v2-search-panel, .v2-search-panel[hidden] {
+  display: flex; position: fixed; z-index: 8; flex: none; max-width: none;
+  opacity: 1; visibility: visible; transform: translateX(0);
+  clip-path: inset(-100vh -100vw -100vh -100vw);
+  transition: width 340ms cubic-bezier(.22,1,.36,1), opacity 240ms ease, transform 340ms cubic-bezier(.22,1,.36,1), visibility 0s;
 }
+.v2-search-panel[hidden] { opacity: 0; visibility: hidden; pointer-events: none; transform: translateX(14px); transition: width 340ms cubic-bezier(.22,1,.36,1), opacity 180ms ease, transform 280ms ease, visibility 0s 280ms; }
+.v2-search-panel input { width: 100%; height: 36px; padding-inline: .7rem; background: $background; border-color: rgba(117,65,22,.22); box-shadow: 0 2px 8px rgba(43,22,5,.07); outline: none; }
+.v2-search-panel input:focus { border-color: rgba(117,65,22,.35); box-shadow: 0 0 0 2px rgba(117,65,22,.08), 0 2px 8px rgba(43,22,5,.07); }
+.v2-search-suggestions { left: 0; transform: none; width: min(480px, var(--search-results-width, calc(100vw - 1.5rem))); border-color: rgba(117,65,22,.22); }
+@media (pointer: coarse) { .v2-search-panel input { height: 44px; font-size: 16px; } }
+@media (prefers-reduced-motion: reduce) { .v2-search-panel, .v2-search-panel[hidden] { transition: none; transform: none; } }

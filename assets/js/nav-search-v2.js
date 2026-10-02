@@ -9,6 +9,21 @@
   const list = form.querySelector('ul');
   const normalize = text => String(text || '').normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   let indexPromise, timer, request = 0;
+  const position = () => {
+    const anchor = toggle.getBoundingClientRect();
+    const gutter = 12, preferred = 280;
+    const left = Math.max(gutter, anchor.left - preferred - 6);
+    const available = Math.max(0, anchor.left - left - 6);
+    const width = Math.min(window.innerWidth - left - gutter, input.value.trim() ? preferred : Math.max(100, available));
+    form.style.left = `${left}px`;
+    form.style.top = `${anchor.top + (anchor.height - (matchMedia('(pointer: coarse)').matches ? 44 : 36)) / 2}px`;
+    form.style.width = `${width}px`;
+    form.style.setProperty('--search-results-width', `${window.innerWidth - left - gutter}px`);
+    // On narrow screens the field passes underneath the search icon.
+    input.style.paddingLeft = anchor.left < left + width && anchor.right > left ? `${anchor.right - left + 6}px` : '';
+  };
+  window.addEventListener('resize', () => { if (!form.hidden) position(); });
+  window.addEventListener('scroll', () => { if (!form.hidden) position(); }, { passive: true });
   const close = (focus = false) => {
     ++request; clearTimeout(timer); form.hidden = true; panel.hidden = true;
     toggle.setAttribute('aria-expanded', 'false');
@@ -17,7 +32,7 @@
   toggle.addEventListener('click', event => {
     event.preventDefault();
     if (!form.hidden) { close(true); return; }
-    form.hidden = false; toggle.setAttribute('aria-expanded', 'true'); input.focus();
+    position(); form.hidden = false; toggle.setAttribute('aria-expanded', 'true'); input.focus();
     if (input.value.trim()) search();
   });
   async function search() {
@@ -45,7 +60,7 @@
       });
     } catch (error) { if (run === request) status.textContent = 'Suggestions unavailable. Press Enter to open search.'; }
   }
-  input.addEventListener('input', () => { ++request; clearTimeout(timer); timer = setTimeout(search, 180); });
+  input.addEventListener('input', () => { position(); ++request; clearTimeout(timer); timer = setTimeout(search, 180); });
   root.addEventListener('keydown', event => {
     if (event.key === 'Escape') { event.preventDefault(); close(true); }
     if (event.key === 'ArrowDown' && event.target === input) { event.preventDefault(); list.querySelector('a')?.focus(); }
