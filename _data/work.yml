@@ -15,20 +15,20 @@ projects:
   description: A sample of the CLI tools I developed during a Confluence-to-RightAnswers migration at Airbnb, with
     safeguards, documentation, and debugging support.
   url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-  action: Explore the repository
+  action: Explore The Repository
 - title: Developer & API documentation
   category: APIs · Technical writing
   description: Selected documentation and automation samples, including work on the Bitbucket API proxy refactor.
   download_group: portfolio
   download_label: Developer Documentation Samples
-  action: Download the combined sample packet
+  action: Download The Combined Sample Packet
 - title: Content design samples
   category: UX writing · Content strategy
   description: A selection of my content design work, available as a portfolio to review alongside the developer
     documentation samples.
   download_group: portfolio
   download_label: Content Design Samples
-  action: Download the content design portfolio
+  action: Download The Content Design Portfolio
 experience:
 - id: rqi
   company: RQI Partners
@@ -78,7 +78,7 @@ experience:
   - Designed interactive CLI workflows for reviewing targeted page sections, using reusable authentication and UI
     components.
   evidence_url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-  evidence_label: See the automation toolkit
+  evidence_label: See The Automation Toolkit
 - id: tinubu
   company: Tinubu
   mark: T

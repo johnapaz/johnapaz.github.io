@@ -20,7 +20,7 @@
   <a class="v2-skip" href="#main-content">Skip to content</a>
   {% include v2-navigation.html %}
   <main id="main-content" class="work-shell">
-    <nav class="writing-tabs work-section-nav" aria-label="Work sections"><a href="#experience" aria-current="page">Work Experience</a><a href="{{ '/coding/' | relative_url }}">Code &amp; projects</a><a href="{{ '/presentations/' | relative_url }}">Talks &amp; presentations</a><a href="{{ '/media/' | relative_url }}">Interviews &amp; press</a></nav>
+    {% include portfolio-tabs.html %}
     <header class="work-intro">
       <div>
         <p class="work-eyebrow">John A. Paz | Professional Work History</p>
@@ -29,7 +29,7 @@
         <p class="work-summary">I’m a technical writer, content designer, and documentation leader with 15+ years of experience. I work across developer documentation, product experiences, and the systems that keep knowledge useful.</p>
       </div>
       <aside class="work-profile" aria-label="Professional background">
-        <div class="work-profile-identity"><img src="{{ '/assets/images/John_smile.jpg' | relative_url }}" alt="John A. Paz" width="112" height="112" /><strong>John A. Paz</strong></div>
+        <div class="work-profile-identity"><img src="{{ '/assets/images/John_smile.jpg' | relative_url }}" alt="John A. Paz" width="112" height="112" /><p class="v2-name">John A. Paz</p></div>
         {% include v2-socials.html %}
         <p>Writer | Speaker | Human</p>
         <p class="work-profile-note">Experience across cloud, security, SaaS, and healthcare.</p>
@@ -46,24 +46,24 @@
       <div class="career-explorer" hidden>
         <div class="career-toolbar">
           <div class="btn-group btn-group-sm career-views" role="group" aria-label="View experience by">
-            <button type="button" class="btn btn-outline-primary" data-career-view="chronology" aria-pressed="true">Chronology</button><button type="button" class="btn btn-outline-primary" data-career-view="type" aria-pressed="false">Work type</button><button type="button" class="btn btn-outline-primary" data-career-view="industry" aria-pressed="false">Industry</button>
+            <button type="button" class="btn btn-outline-primary" data-career-view="chronology" aria-pressed="true">Chronology</button><button type="button" class="btn btn-outline-primary" data-career-view="type" aria-pressed="false">Work Type</button><button type="button" class="btn btn-outline-primary" data-career-view="industry" aria-pressed="false">Industry</button>
           </div>
-          <div class="career-actions"><button type="button" class="career-text-button" id="career-filter-toggle" aria-controls="career-filters" aria-expanded="false"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-filter"></use></svg>Filters<span id="career-filter-count" hidden></span></button><button type="button" class="career-text-button" id="career-share"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-link"></use></svg>Copy view link</button></div>
+          <div class="career-actions"><button type="button" class="career-text-button" id="career-filter-toggle" aria-controls="career-filters" aria-expanded="false"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-filter"></use></svg>Filters<span id="career-filter-count" hidden></span></button><button type="button" class="career-text-button" id="career-share"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-link"></use></svg>Copy View Link</button></div>
         </div>
         <div id="career-filters" class="career-filters" hidden>
-          <label>Work type<select data-career-select="type"><option value="">All work types</option></select></label>
+          <label>Work Type<select data-career-select="type"><option value="">All work types</option></select></label>
           <label>Industry<select data-career-select="industry"><option value="">All industries</option></select></label>
           <label>Department / team<select data-career-select="department"><option value="">All teams</option></select></label>
           <label>Technology<select data-career-select="technology"><option value="">All technologies</option></select></label>
         </div>
-        <div class="career-view-status"><p id="career-count" role="status" aria-live="polite"></p><button type="button" class="career-text-button" id="career-reset" hidden>Clear filters</button><p id="career-share-status" role="status" aria-live="polite"></p></div>
+        <div class="career-view-status"><p id="career-count" role="status" aria-live="polite"></p><button type="button" class="career-text-button" id="career-reset" hidden>Clear Filters</button><p id="career-share-status" role="status" aria-live="polite"></p></div>
         <label class="career-share-fallback" hidden>Copy this URL<input type="text" readonly /></label>
       </div>
       <div id="career-results">
         <div class="work-experience">
         {% for job in site.data.work.experience %}{% unless job.earlier %}{% include career-job.html %}{% endunless %}{% endfor %}
         </div>
-        <details class="career-earlier" id="career-earlier"><summary>Earlier experience <span>Healthcare, data &amp; game development</span></summary><div class="work-experience">
+        <details class="career-earlier" id="career-earlier"><summary>Earlier Experience <span>Healthcare, data &amp; game development</span></summary><div class="work-experience">
         {% for job in site.data.work.experience %}{% if job.earlier %}{% include career-job.html %}{% endif %}{% endfor %}
         </div></details>
       </div>
@@ -100,7 +100,6 @@
         {% endfor %}
       </div>
     </section>
-    <nav class="writing-tabs work-more" aria-label="More professional work"><a href="{{ '/coding/' | relative_url }}">Code & projects</a><a href="{{ '/presentations/' | relative_url }}">Talks & presentations</a><a href="{{ '/media/' | relative_url }}">Podcasts, interviews & press</a></nav>
   </main>
   <script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
   <script src="{{ '/assets/js/career-v2.js' | relative_url }}" defer></script>

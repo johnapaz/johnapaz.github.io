@@ -1,4 +1,6 @@
-<nav class="writing-tabs" aria-label="{% if page.tabs == 'building' %}Code and project sections{% else %}Speaking and media sections{% endif %}">
-{% if page.tabs == 'building' %}<a href="{{ '/coding/' | relative_url }}"{% if page.url == '/coding/' %} aria-current="page"{% endif %}>Coding</a><a href="{{ '/projects/' | relative_url }}"{% if page.url == '/projects/' %} aria-current="page"{% endif %}>Projects</a>
-{% else %}<a href="{{ '/presentations/' | relative_url }}"{% if page.url == '/presentations/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Talks & presentations</a><a href="{{ '/media/' | relative_url }}"{% if page.url == '/media/' %} aria-current="page"{% endif %}>Podcasts, interviews & press</a>{% endif %}
+<nav class="writing-tabs work-section-nav" aria-label="Work sections">
+<a href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' %} aria-current="page"{% endif %}>Work Experience</a>
+<a href="{{ '/coding/' | relative_url }}"{% if page.url == '/coding/' or page.url == '/projects/' %} aria-current="page"{% endif %}>Code &amp; Projects</a>
+<a href="{{ '/presentations/' | relative_url }}"{% if page.url == '/presentations/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Talks &amp; Presentations</a>
+<a href="{{ '/media/' | relative_url }}"{% if page.url == '/media/' %} aria-current="page"{% endif %}>Interviews &amp; Press</a>
 </nav>

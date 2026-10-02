@@ -1,13 +1,13 @@
 ---
 layout: catalog-v2
-title: Coding
+title: Code & Projects
 permalink: /coding/
 description: Tools, automation, and code by John A. Paz.
 catalog: coding
-heading: Coding
+heading: Code & projects
 eyebrow: Code & Projects
 intro: Practical tools. Thoughtful safeguards. Clear documentation.
-item_label: repositories
-filter_label: Technology
+item_label: items
+filter_label: Category
 tabs: building
 ---

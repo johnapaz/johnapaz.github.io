@@ -64,6 +64,7 @@ body.v2-home { margin: 0; background: $background; color: $foreground; font: 16p
   img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 50% 24%; }
 }
 .v2-name { font-weight: 700; font-size: 1.6rem; line-height: 1.25; }
+.v2-home button, .v2-home summary, .v2-home .blog-read { text-transform: capitalize; }
 .v2-role { font-size: .85rem; color: $muted; }
 .v2-introduction h1 { font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-size: 7.1cqw; white-space: nowrap; line-height: 1.15; letter-spacing: -.045em; font-weight: 700; span { color: $accent; } }
 .v2-welcome { color: $muted; max-width: 39ch; margin-top: .35rem !important; font-size: .92rem; a { color: $foreground; white-space: nowrap; } }

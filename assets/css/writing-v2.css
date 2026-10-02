@@ -25,7 +25,7 @@
 .writing-pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; font-size: .85rem; }
 .writing-empty { padding: 3rem 0; text-align: center; }
 .v2-writing [hidden] { display: none !important; }
-.blog-column { max-width: 720px; margin: auto; }
+.blog-column { width: 100%; margin: 0; }
 .blog-entry { padding: 2.5rem 0; border-top: 1px solid var(--palette-rgba-117-65-22-p25, rgba(117,65,22,.25)); }
 .blog-entry h2 { font: italic 700 clamp(1.7rem, 4vw, 2.5rem)/1.2 Georgia, serif; letter-spacing: -.035em; margin: .75rem 0 1rem; }
 .blog-entry h2 a { text-decoration: none; }
