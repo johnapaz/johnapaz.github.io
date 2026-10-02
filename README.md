@@ -17,7 +17,7 @@ The production site uses the customized Editorial Jekyll theme. A V2 redesign is
 | [`landing-screen-tiles`](https://github.com/johnapaz/johnapaz.github.io/tree/landing-screen-tiles) | Latest six-section landing-screen iteration, isolated for review |
 | [`johnapaz-staging`](https://github.com/johnapaz/johnapaz-staging) | Separate repository that builds and publishes the staging site |
 
-The V2 decisions below describe the redesign, rather than features already released to production. The accepted homepage, professional Work page, Writing/Blog, and single-column About page are now integrated into `v2`. Future feature branches can be selected for review using staging-source.txt in the staging repository; restore that selection to `v2` after integration. Proper site-wide search (#26) and a shared toolbar design review (#38) are next.
+The V2 decisions below describe the redesign, rather than features already released to production. The homepage, professional Work page, Writing/Blog, single-column About page, paired Coding/Projects pages, and Talks/Media archive are integrated into `v2`. Future feature branches can be selected for review using staging-source.txt in the staging repository; restore that selection to `v2` after integration. Proper site-wide search (#26) and a shared toolbar design review (#38) are next.
 
 ## Technology and architecture
 

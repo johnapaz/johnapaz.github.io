@@ -17,7 +17,7 @@
   <a class="v2-skip" href="#main-content">Skip to content</a>
   {% include v2-navigation.html %}
   <main id="main-content" class="writing-shell">
-    <header class="writing-intro"><p class="work-eyebrow">John A. Paz | Code & Projects</p><h1>Projects</h1><p>The problem, the choices, and what changed.</p>{% assign building_page = true %}<nav class="writing-tabs" aria-label="Code and project sections"><a href="{{ '/coding/' | relative_url }}">Coding</a><a href="{{ '/projects/' | relative_url }}" aria-current="page">Projects</a></nav></header>
+    <header class="writing-intro"><p class="work-eyebrow">John A. Paz | Code & Projects</p><h1>Projects</h1><p>The problem, the choices, and what changed.</p><nav class="writing-tabs" aria-label="Code and project sections"><a href="{{ '/coding/' | relative_url }}">Coding</a><a href="{{ '/projects/' | relative_url }}" aria-current="page">Projects</a></nav></header>
     <div class="project-column">
     {% for project in site.data.portfolio.projects %}
     <article class="project-story" id="{{ project.id }}">
