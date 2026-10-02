@@ -5,13 +5,11 @@
     <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' or page.url == '/coding/' or page.url == '/projects/' or page.url == '/presentations/' or page.url == '/media/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Work</a>
     <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
     <a class="v2-nav-link" href="{{ '/search/' | relative_url }}" aria-label="Search the site"{% if page.url == '/search/' %} aria-current="page"{% endif %}><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
-  </div></nav>
-  <div class="btn-group btn-group-sm v2-downloads" role="group" aria-label="Download resumes and portfolios">
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
     {% for group in download_groups %}
     {% assign group_key = group | downcase %}
-    <div class="btn-group v2-download-menu" role="group">
-      <button class="btn btn-primary v2-download-toggle" type="button" aria-expanded="false" aria-controls="download-{{ group_key }}">{{ group }} <svg class="v2-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="v2-download-menu" role="group">
+      <button class="v2-nav-link v2-download-toggle" type="button" aria-expanded="false" aria-controls="download-{{ group_key }}">{{ group }} <svg class="v2-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <ul id="download-{{ group_key }}" class="dropdown-menu dropdown-menu-end v2-download-options" hidden aria-label="{{ group }} versions">
         {% for document in site.data.downloads[group_key] %}
         <li>
@@ -31,5 +29,6 @@
       </ul>
     </div>
     {% endfor %}
-  </div>
+    <a class="v2-nav-link v2-admin-link" href="{{ '/admin' | relative_url }}">Admin</a>
+  </div></nav>
 </header>

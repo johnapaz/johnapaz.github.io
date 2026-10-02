@@ -174,3 +174,21 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
   .v2-downloads { grid-column: 1; grid-row: 2; margin-left: 0; justify-self: center; }
   .v2-home .v2-download-options { right: 50%; transform: translateX(50%); }
 }
+
+// Unified centered navigation, including document menus and the Admin pill.
+.v2-topbar {
+  display: flex; justify-content: center;
+  nav { width: 100%; justify-content: center; }
+  .v2-primary-group { position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .1rem; width: 100%; }
+  .v2-nav-link { display: inline-flex; align-items: center; justify-content: center; gap: .3rem; min-height: 36px; white-space: nowrap; line-height: 1.4; font-family: inherit; cursor: pointer; border-radius: .375rem; }
+  .v2-nav-link:hover, .v2-download-toggle[aria-expanded="true"] { background: $state-layer; }
+  .v2-download-menu { position: static; }
+  nav .v2-admin-link { margin-left: .35rem; padding: .15rem .65rem; min-height: 28px; border: 1px solid #92795D; border-radius: 50rem; font-size: .75rem; background: rgba(242,216,168,.4); }
+}
+.v2-home .v2-download-options { right: 50%; transform: translateX(50%); top: calc(100% + .25rem); }
+@media (max-width: 539px) {
+  .v2-topbar { padding-inline: .65rem; }
+  .v2-topbar nav .v2-nav-link { padding-inline: .45rem; font-size: .8rem; }
+  .v2-topbar nav .v2-admin-link { font-size: .72rem; }
+}
+@media (pointer: coarse) { .v2-topbar .v2-nav-link { min-height: 44px; } }
