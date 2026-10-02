@@ -1,0 +1,57 @@
+// Interior-page draft. Reuses the existing V2 controls without styling legacy pages.
+.v2-work {
+  color: #2B1605;
+  h1, h2, h3, .work-lead { color: #2B1605; }
+  .work-shell { max-width: 1200px; margin: auto; padding: 3rem clamp(1.25rem, 3vw, 2rem); }
+  .work-intro { display: grid; grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); gap: 4rem; align-items: center; padding-bottom: 3rem; }
+  .work-eyebrow { color: #754116; font-size: .78rem; letter-spacing: .045em; margin-bottom: .75rem; }
+  h1 { font: italic 700 clamp(2.5rem, 5vw, 4.5rem)/1.12 Georgia, serif; letter-spacing: -.045em; margin-bottom: .9rem; }
+  .work-lead { font-size: 1.3rem; margin-bottom: .7rem; }
+  .work-summary { max-width: 62ch; color: #754116; }
+  .work-profile { padding: 1.75rem; border-radius: 12px; background: #F2D8A8; box-shadow: 0 3px 10px rgba(43,22,5,.06); }
+  .work-profile img { border-radius: 50%; object-fit: cover; object-position: 50% 24%; margin-bottom: .75rem; }
+  .work-profile-note { margin: .5rem 0 1rem; color: #754116; font-size: .9rem; }
+  .work-profile a { font-size: .85rem; }
+  .work-capabilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; padding: 1.75rem 0; border-block: 1px solid rgba(117,65,22,.18); }
+  .work-capabilities h2 { font-size: 1rem; margin-bottom: .5rem; }
+  .work-capabilities p { color: #754116; font-size: .9rem; }
+  .work-section { padding-top: 3rem; scroll-margin-top: 7rem; }
+  .work-section-heading { margin-bottom: 1.5rem; }
+  .work-section-heading h2 { font: italic 700 2rem/1.2 Georgia, serif; letter-spacing: -.025em; margin-bottom: .5rem; }
+  .work-section-heading p { color: #754116; font-size: .9rem; }
+  .work-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+  .work-project { display: flex; flex-direction: column; gap: .8rem; padding: 1.5rem; background: #F2DFC0; border-radius: 12px; box-shadow: 0 3px 10px rgba(43,22,5,.06); }
+  .work-project:nth-child(2) { background: #EBD4B5; }
+  .work-project:nth-child(3) { background: #E4CBA9; }
+  .work-project .work-eyebrow { margin: 0; }
+  .work-project h3 { font-size: 1.15rem; line-height: 1.35; }
+  .work-project > p:not(.work-eyebrow) { font-size: .9rem; color: #754116; flex: 1; }
+  .work-project > a { font-size: .85rem; font-weight: 600; min-height: 44px; display: flex; align-items: center; gap: .5rem; }
+  .work-file-meta { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; font-size: .75rem; color: #754116; }
+  .work-job { display: grid; grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr); gap: 2rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(117,65,22,.18); }
+  .work-job h3 { font-size: 1rem; }
+  .work-job p { font-size: .9rem; color: #754116; }
+  .work-job .work-dates { font-size: .8rem; margin-top: .3rem; }
+  .work-education { font-size: .85rem; color: #754116; margin-top: 1.25rem; }
+  @media(max-width: 900px) { .work-intro { gap: 2rem; } .work-projects { grid-template-columns: 1fr; } }
+  @media(max-width: 600px) { .work-shell { padding-top: 1.5rem; } .work-intro, .work-capabilities, .work-job { grid-template-columns: 1fr; gap: 1rem; } .work-profile { display: none; } .work-capabilities { gap: 1.5rem; } .work-intro { padding-bottom: 2rem; } .work-section { padding-top: 2rem; } .work-job { gap: .5rem; } }
+  @media(max-width: 780px) {
+    .v2-topbar { row-gap: .5rem; padding-block: .5rem; }
+    // Anchor the menu to the full toolbar, not the narrow centered button group.
+    .v2-downloads { justify-self: center; position: static; }
+    .v2-downloads .v2-download-menu > .btn {
+      white-space: nowrap; flex-wrap: nowrap; min-height: 36px; height: 36px;
+      font-size: .8rem; line-height: 1.25; padding: .25rem .65rem;
+    }
+    .v2-topbar .v2-download-options {
+      inset: 100% 1.25rem auto 1.25rem; width: auto; max-width: none;
+      a, .v2-download-pending {
+        display: grid; grid-template-columns: minmax(0, 1fr) auto;
+        min-height: 44px; white-space: normal; gap: .5rem;
+      }
+      .v2-document-label, .v2-download-pending > span:first-child {
+        white-space: normal; overflow: visible; text-overflow: clip; overflow-wrap: anywhere;
+      }
+    }
+  }
+}
