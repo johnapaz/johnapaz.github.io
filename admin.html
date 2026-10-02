@@ -1,0 +1,22 @@
+---
+layout: admin-v2
+analytics: false
+permalink: /admin
+title: Admin
+---
+<main id="main-content" class="admin-login">
+<div class="admin-login-card">
+<span class="admin-monogram" aria-hidden="true">JP<span>.</span></span>
+<p class="admin-eyebrow">JOHN A. PAZ / ADMIN</p>
+<h1>A little perspective.</h1>
+<p class="admin-login-description">Your site, its audience, and what’s working.<br>Sign in to your private dashboard.</p>
+{% if site.admin_portal_url and site.admin_portal_url != '' %}
+<a class="admin-primary" href="{{ site.admin_portal_url | escape }}">Sign in <span aria-hidden="true">↗</span></a>
+{% else %}
+<button class="admin-primary" disabled aria-describedby="admin-setup">Sign in <span aria-hidden="true">↗</span></button>
+<p id="admin-setup" class="admin-setup">Secure sign-in is being connected.</p>
+{% endif %}
+{% if site.staging %}<a class="admin-preview-link" href="{{ '/admin/preview/' | relative_url }}">Preview dashboard <span aria-hidden="true">→</span></a><p class="admin-caption">Staging preview · illustrative data only</p>{% endif %}
+</div>
+<a class="admin-back" href="{{ '/' | relative_url }}">← Back to the site</a>
+</main>

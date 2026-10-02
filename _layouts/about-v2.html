@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% include theme-v2.html %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ page.title | escape }} | John A. Paz</title>
@@ -12,7 +13,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/about-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
   {% include social-meta.html %}
-  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}?v={{ site.time | date: '%s' }}" />
 {% include analytics-loader.html %}
 </head>
 <body class="v2-home v2-work v2-about">

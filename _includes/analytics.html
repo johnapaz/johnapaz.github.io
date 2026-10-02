@@ -1,4 +1,4 @@
-<script defer src="{{ '/assets/js/analytics.js' | relative_url }}"
+<script defer src="{{ '/assets/js/analytics.js' | relative_url }}?v={{ site.time | date: '%s' }}"
   data-measurement-id="{{ site.google_analytics | escape }}"
   data-analytics-host="{{ site.analytics_host | escape }}"
   data-analytics-environment="{{ site.analytics_environment | escape }}"></script>

@@ -1,0 +1,12 @@
+---
+layout: admin-v2
+analytics: false
+permalink: /admin/preview/
+title: Dashboard preview
+---
+{% if site.staging %}
+{% include admin-dashboard.html %}
+<script src="{{ '/assets/js/admin-v2.js' | relative_url }}" defer></script>
+{% else %}
+<main id="main-content" class="admin-login"><h1>Admin</h1><p><a href="{{ '/admin' | relative_url }}">Continue to sign-in →</a></p></main>
+{% endif %}
