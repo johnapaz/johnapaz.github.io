@@ -293,3 +293,9 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
   .v2-topbar .v2-nav-pages > .v2-nav-link { padding-inline: .3rem; }
 }
 @media (pointer: coarse) { .v2-topbar nav .v2-icon-control { width: 44px; min-height: 44px; } }
+
+.v2-topbar nav .v2-admin-mobile { display: none; }
+@media (max-width: 780px) {
+  .v2-topbar nav .v2-admin-desktop { display: none; }
+  .v2-topbar nav .v2-admin-mobile { display: inline-flex; }
+}
