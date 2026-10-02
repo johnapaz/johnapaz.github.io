@@ -151,7 +151,7 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .v2-card { transition: none; } .v2-card:hover, .v2-card:focus-within { transform: none; } }
 
-@media (min-width: 601px) and (max-width: 780px) { .v2-topbar { gap: .25rem; } .v2-topbar nav { grid-column: 1 / -1; width: 100%; } .v2-downloads { margin-left: auto; } }
+
 
 @media (max-width: 380px) { .v2-topbar nav a { padding-inline: .55rem; font-size: .8rem; } }
 
@@ -162,8 +162,15 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 .v2-home .v2-downloads .v2-download-menu:last-child > .btn { border-radius: 0 .25rem .25rem 0; }
 .v2-home a.btn:hover { color: var(--bs-btn-hover-color); }
 @media (pointer: coarse) { .v2-home .v2-download-menu .btn { min-height: 44px; } }
-@media (max-width: 780px) {
-  .v2-topbar { grid-template-columns: minmax(0, 1fr); }
-  .v2-topbar nav { grid-column: 1; }
-  .v2-downloads { grid-column: 1; margin-left: 0; justify-self: end; }
+// Compact tablet/fold layout: avoid the empty desktop balancing column.
+@media (min-width: 540px) and (max-width: 1000px) {
+  .v2-topbar { grid-template-columns: minmax(0, 1fr) auto; gap: .5rem; }
+  .v2-topbar nav { grid-column: 1; grid-row: 1; width: auto; justify-content: flex-start; }
+  .v2-downloads { grid-column: 2; grid-row: 1; margin-left: 0; }
+}
+@media (max-width: 539px) {
+  .v2-topbar { grid-template-columns: minmax(0, 1fr); gap: .15rem; }
+  .v2-topbar nav { grid-column: 1; grid-row: 1; }
+  .v2-downloads { grid-column: 1; grid-row: 2; margin-left: 0; justify-self: center; }
+  .v2-home .v2-download-options { right: 50%; transform: translateX(50%); }
 }
