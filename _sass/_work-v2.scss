@@ -2,7 +2,7 @@
 .v2-work {
   color: var(--palette-2b1605, #2B1605);
   h1, h2, h3, .work-lead { color: var(--palette-2b1605, #2B1605); }
-  .work-shell { max-width: 1200px; margin: auto; padding: 3rem clamp(1.25rem, 3vw, 2rem); }
+  .work-shell { max-width: 1200px; margin: auto; padding: 2rem clamp(1.25rem, 3vw, 2rem) 4rem; }
   .work-intro { display: grid; grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr); gap: 4rem; align-items: center; padding-bottom: 3rem; }
   .work-eyebrow { color: var(--palette-754116, #754116); font-size: .78rem; letter-spacing: .045em; margin-bottom: .75rem; }
   h1 { font: italic 700 clamp(2.5rem, 5vw, 4.5rem)/1.12 Georgia, serif; letter-spacing: -.045em; margin-bottom: .9rem; }
