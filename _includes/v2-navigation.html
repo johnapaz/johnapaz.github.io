@@ -1,10 +1,19 @@
 <header class="v2-topbar">
   <nav aria-label="Primary navigation"><div class="v2-primary-group" role="group" aria-label="Page links">
+    <div class="v2-nav-search">
+      <a class="v2-nav-link v2-search-toggle" href="{{ '/search/' | relative_url }}" aria-label="Search the site" aria-expanded="false" aria-controls="nav-search-panel"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+      <form id="nav-search-panel" class="v2-search-panel" action="{{ '/search/' | relative_url }}" role="search" hidden>
+        <label class="v2-sr-only" for="nav-query">Search the site</label>
+        <input id="nav-query" name="q" type="search" placeholder="Search the site…" autocomplete="off" aria-controls="nav-search-results">
+        <div class="v2-search-suggestions" hidden><p class="v2-search-status" role="status" aria-live="polite"></p><ul id="nav-search-results"></ul><button type="submit">View all results</button></div>
+      </form>
+    </div>
+
     <a class="v2-nav-link" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
     <a class="v2-nav-link" href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.url contains '/blog/' %} aria-current="page"{% endif %}>Writing</a>
     <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' or page.url == '/coding/' or page.url == '/projects/' or page.url == '/presentations/' or page.url == '/media/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Work</a>
     <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
-    <a class="v2-nav-link" href="{{ '/search/' | relative_url }}" aria-label="Search the site"{% if page.url == '/search/' %} aria-current="page"{% endif %}><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
     {% for group in download_groups %}
     {% assign group_key = group | downcase %}
@@ -32,3 +41,4 @@
     <a class="v2-nav-link v2-admin-link" href="{{ '/admin' | relative_url }}">Admin</a>
   </div></nav>
 </header>
+<script src="{{ '/assets/js/nav-search-v2.js' | relative_url }}" defer></script>
