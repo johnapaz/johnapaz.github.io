@@ -21,9 +21,12 @@ instagram_url: https://www.instagram.com/SrContentDesign/
 # Build settings
 markdown: kramdown
 collections: 
-  - about
-  - reviews
-  - tutorials
+  about:
+    output: true
+  reviews:
+    output: true
+  tutorials:
+    output: true
 collections_dir: content
 permalink: /:categories/:title:/
 google_analytics: UA-165031992-2

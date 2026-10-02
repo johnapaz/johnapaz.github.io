@@ -1,0 +1,51 @@
+# Facts drawn from the September 29, 2026 Developer/API resume and published samples.
+capabilities:
+  - title: Technical writing
+    description: API documentation, implementation guides, tutorials, and tested code samples that help people get things done.
+  - title: Content design
+    description: Information architecture, product language, and content standards that make complex experiences easier to navigate.
+  - title: Documentation operations
+    description: Structured authoring, knowledge management, team leadership, and automation that make good content easier to maintain.
+projects:
+  - title: Confluence Automation Toolkit
+    category: Python · Knowledge management
+    description: A sample of the CLI tools I developed during a Confluence-to-RightAnswers migration at Airbnb, with safeguards, documentation, and debugging support.
+    url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+    action: Explore the repository
+  - title: Developer & API documentation
+    category: APIs · Technical writing
+    description: Selected documentation and automation samples, including work on the Bitbucket API proxy refactor.
+    download_group: portfolio
+    download_label: Developer Documentation Samples
+    action: Download the combined sample packet
+  - title: Content design samples
+    category: UX writing · Content strategy
+    description: A selection of my content design work, available as a portfolio to review alongside the developer documentation samples.
+    download_group: portfolio
+    download_label: Content Design Samples
+    action: Download the content design portfolio
+experience:
+  - company: RQI Partners
+    role: Technical Writer
+    dates: Jun 2026–Present
+    description: Technical documentation, user guides, and training content; reusable Paligo content, taxonomy, and governance.
+  - company: Airbnb
+    role: Contract Technical Writer
+    dates: Jun 2025–Jun 2026
+    description: Confluence content audits and migration to RightAnswers; Python tools for analysis, reporting, review, and bulk editing.
+  - company: Tinubu
+    role: Knowledge Manager
+    dates: Jul 2024–Nov 2024
+    description: Documentation tooling, templates, workflows, and organization-wide knowledge-sharing practices.
+  - company: SingleStore
+    role: System Analyst
+    dates: Aug 2023–Feb 2024
+    description: Technical requirements, DevOps processes, and internal systems in partnership with engineers.
+  - company: Menlo Security
+    role: Documentation Manager
+    dates: Dec 2020–May 2023
+    description: Distributed writing team leadership and cybersecurity documentation strategy; API standards and a Swagger-based developer portal prototype.
+  - company: Atlassian
+    role: Senior Technical Writer
+    dates: Jan 2015–Dec 2020
+    description: Bitbucket Cloud API documentation, tested code samples, tutorials, integrations, and OAuth guidance.

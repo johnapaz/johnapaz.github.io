@@ -1,7 +1,7 @@
 name: Validate staging build
 on:
   push:
-    branches: [v2]
+    branches: [v2, "**-preview"]
   pull_request:
     branches: [v2]
   workflow_dispatch:
@@ -31,7 +31,11 @@ jobs:
           bundle exec jekyll build --safe --config _config.yml,_config.staging.yml
           printf 'staging.johnapaz.com\n' > _site/CNAME
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
-          printf '{"branch":"v2","commit":"%s","run":"%s"}\n' "$GITHUB_SHA" "$GITHUB_RUN_ID" > _site/build-info.json
+          python3 - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          Path("_site/build-info.json").write_text(json.dumps({"branch": os.environ["GITHUB_REF_NAME"], "commit": os.environ["GITHUB_SHA"], "run": os.environ["GITHUB_RUN_ID"]}) + "\n")
+          PYTHON
           python3 scripts/check-staging.py
       - uses: actions/upload-artifact@v4
         with:

@@ -4,13 +4,13 @@ cards:
   - title: About Me
     url: /my-story/
   - title: My Blog
-    url: https://medium.com/@SrContentDesign
+    url: /blog/
   - title: Resume & Portfolio
     url: /resume/
   - title: Code & Projects
     url: https://github.com/johnapaz/confluence-automation-toolkit-sample
   - title: Guides & Articles
-    url: /tutorials/
+    url: /writing/
   - title: Talks & Presentations
     url: /presentations/
 
@@ -31,7 +31,7 @@ featured:
     image: /assets/images/ignorance.png
   - title: How to make Cuban coffee
     category: Guides
-    url: /tutorials/how-to-make-cuban-coffee.html
+    url: /tutorials/how-to-make-cuban-coffee
     motif: café
   - title: "Quora: A great way to get some Technical Writing experience"
     category: Technical Writing
