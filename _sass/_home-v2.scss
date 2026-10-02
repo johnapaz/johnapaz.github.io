@@ -281,3 +281,15 @@ $tile-ink-colors: #634832, #60412E, #5A412B, #573A28, #513923, #4E3323;
 @media (max-width: 600px) { .v2-card h3 { font-size: clamp(1rem, 6.6cqw, 1.5rem); } }
 .v2-home .btn-group > .btn, .v2-home .btn-group > .btn-group > .btn { border-radius: .375rem !important; }
 .v2-topbar .v2-theme-toggle svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+// Flat utility icons acquire a tactile surface only while pressed/open.
+.v2-topbar nav .v2-icon-control { width: 36px; min-height: 36px; padding: .25rem; margin: 0; border: 0; border-radius: .375rem; background: transparent; box-shadow: none; color: inherit; }
+.v2-topbar .v2-icon-control svg { width: 18px; height: 18px; flex-shrink: 0; }
+.v2-topbar nav .v2-icon-control:active,
+.v2-topbar nav .v2-theme-toggle[aria-expanded="true"] { background: rgba(var(--theme-accent-rgb), .09); box-shadow: inset 0 1px 3px rgba(0,0,0,.22); }
+.v2-topbar nav .v2-icon-control:focus-visible { outline: 2px solid var(--theme-accent, #754116); outline-offset: 2px; }
+@media (max-width: 780px) {
+  .v2-topbar .v2-nav-pages { flex-wrap: nowrap; }
+  .v2-topbar .v2-nav-pages > .v2-nav-link { padding-inline: .3rem; }
+}
+@media (pointer: coarse) { .v2-topbar nav .v2-icon-control { width: 44px; min-height: 44px; } }
