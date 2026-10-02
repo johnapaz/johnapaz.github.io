@@ -26,6 +26,8 @@ jobs:
       - name: Install dependencies
         run: |
           bundle install
+      - name: Verify consent and analytics isolation
+        run: node scripts/test-analytics.cjs
       - name: Build staging
         run: |
           bundle exec jekyll build --safe --config _config.yml,_config.staging.yml
