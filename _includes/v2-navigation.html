@@ -1,0 +1,35 @@
+<header class="v2-topbar">
+  <nav aria-label="Primary navigation"><div class="v2-primary-group" role="group" aria-label="Page links">
+    <a class="v2-nav-link" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+    <a class="v2-nav-link" href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.url contains '/blog/' %} aria-current="page"{% endif %}>Writing</a>
+    <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' or page.url == '/coding/' or page.url == '/projects/' or page.url == '/presentations/' or page.url == '/media/' or page.url == '/my-story/' %} aria-current="page"{% endif %}>Work</a>
+    <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
+    <a class="v2-nav-link" href="{{ '/search/' | relative_url }}" aria-label="Search the site"{% if page.url == '/search/' %} aria-current="page"{% endif %}><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m10 10 4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+  </div></nav>
+  <div class="btn-group btn-group-sm v2-downloads" role="group" aria-label="Download resumes and portfolios">
+    {% assign download_groups = 'Resume,Portfolio' | split: ',' %}
+    {% for group in download_groups %}
+    {% assign group_key = group | downcase %}
+    <div class="btn-group v2-download-menu" role="group">
+      <button class="btn btn-primary v2-download-toggle" type="button" aria-expanded="false" aria-controls="download-{{ group_key }}">{{ group }} <svg class="v2-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <ul id="download-{{ group_key }}" class="dropdown-menu dropdown-menu-end v2-download-options" hidden aria-label="{{ group }} versions">
+        {% for document in site.data.downloads[group_key] %}
+        <li>
+          {% if document.url %}
+          <a class="dropdown-item" href="{{ document.url | relative_url }}" download title="{{ document.label }}{% if document.note %} — {{ document.note }}{% endif %}">
+            <span class="v2-document-label">{{ document.label }}{% if document.note %}<span class="v2-sr-only"> — {{ document.note }}</span>{% endif %}</span>
+            <span class="v2-document-badges">
+              <span class="v2-badge v2-file-type">{{ document.type }}<span class="v2-sr-only"> download</span></span>
+              <time class="v2-badge v2-file-date" datetime="{{ document.updated_iso }}" title="Updated: {{ document.updated }}" aria-label="Updated: {{ document.updated }}">{{ document.updated }}</time>
+            </span>
+          </a>
+          {% else %}
+          <span class="v2-download-pending" aria-disabled="true"><span>{{ document.label }}</span><span class="v2-badge v2-file-type">Pending</span></span>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</header>

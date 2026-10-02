@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ page.title | escape }} | John A. Paz</title>
+<meta name="description" content="{{ page.description | escape }}" />
+{% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+{% include social-meta.html %}
+<link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/article-v2.css' | relative_url }}" />
+<link rel="icon" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+</head><body class="v2-home v2-article">
+<a class="v2-skip" href="#main-content">Skip to content</a>
+{% include v2-navigation.html %}
+<main id="main-content" class="article-shell"><article>
+<header class="article-header"><a href="{{ '/blog/' | relative_url }}">← Back to the blog</a>
+{% unless page.url == "/search/" %}<p class="article-meta">{{ page.category | escape }} · <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%B %-d, %Y' }}</time> · By John A. Paz</p>{% endunless %}
+<h1>{{ page.title | escape }}</h1><p class="article-deck">{{ page.description | escape }}</p>
+{% include ai-assistance.html item=page %}</header>
+{% if page.image %}<figure class="article-splash"><img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" width="1733" height="907" fetchpriority="high" /><figcaption>{{ page.image_caption | escape }}</figcaption></figure>{% endif %}
+<div class="article-body">{% if page.url == '/search/' %}
+<form role="search" class="site-search"><label for="site-query">Search writing, work, projects, and talks</label><input id="site-query" type="search" placeholder="Try API, Confluence, or diversity" autocomplete="off" /><button class="btn btn-primary" type="submit">Search</button></form>
+<p id="search-status" role="status" aria-live="polite">Enter a phrase to search.</p><ul id="search-results" class="search-results"></ul><noscript><p>Search requires JavaScript. Browse <a href="{{ '/writing/' | relative_url }}">Writing</a>, <a href="{{ '/resume/' | relative_url }}">Work</a>, or <a href="{{ '/presentations/' | relative_url }}">Talks</a>.</p></noscript>
+<script src="{{ '/assets/js/search-v2.js' | relative_url }}" defer></script>
+{% else %}{{ content }}{% endif %}</div>
+<footer class="article-footer"><a href="{{ '/blog/' | relative_url }}">More stories</a><a href="mailto:{{ site.email }}">Tell me what you think</a></footer>
+</article></main><script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script></body></html>

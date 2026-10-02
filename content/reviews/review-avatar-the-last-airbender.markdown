@@ -2,6 +2,7 @@
 layout: page
 title:  "TV Review - Avatar: The Last Airbender"
 date:   2020-04-24 20:06:16 -0700
+permalink: /reviews/avatar-the-last-airbender/
 categories: reviews
 ---
 

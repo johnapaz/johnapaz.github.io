@@ -6,18 +6,23 @@ My personal website brings together my work as a writer, speaker, and builder: p
 
 **“Curious, Creative, Clever”** is the voice I want the site to have. The goal is to help visitors learn something, explore my work, and find reasons to get in touch, while giving me a publishing home that remains useful beyond a job search.
 
-## Where the project stands
+## V2 is live
 
-The production site uses the customized Editorial Jekyll theme. A V2 redesign is being developed separately, with its own GitHub Pages staging repository.
+[Read the launch story](https://johnapaz.com/blog/website-v2-launch/) · [Browse staging](https://staging.johnapaz.com) · [Build checks](https://github.com/johnapaz/johnapaz.github.io/actions/workflows/staging.yml)
+
+V2 brings together Home, professional Work, Writing/Blog, About, Coding/Projects, Talks/Media, site-wide search, and a native article reading layout. The launch announcement includes a V1/V2 comparison, an actual homepage screenshot, and an expandable AI-assistance disclosure. It leads the Home featured content, Writing catalog, and Blog feed.
 
 | Source | Purpose |
 | --- | --- |
-| `master` | Current production source for [johnapaz.com](https://johnapaz.com) |
-| [`v2`](https://github.com/johnapaz/johnapaz.github.io/tree/v2) | Redesign integration branch and source for shared staging |
-| [`landing-screen-tiles`](https://github.com/johnapaz/johnapaz.github.io/tree/landing-screen-tiles) | Latest six-section landing-screen iteration, isolated for review |
-| [`johnapaz-staging`](https://github.com/johnapaz/johnapaz-staging) | Separate repository that builds and publishes the staging site |
+| `main` | Production source for [johnapaz.com](https://johnapaz.com) and the default branch |
+| `v2` | Integration branch and shared staging source |
+| Feature branches | Reviewable changes; selectable for the shared staging preview |
+| [johnapaz-staging](https://github.com/johnapaz/johnapaz-staging) | Independent Actions/Pages deployment controls |
 
-The V2 decisions below describe the redesign, rather than features already released to production. Individual feature branches need to be integrated into `v2` before appearing in shared staging.
+A build badge indicates build activity, not uptime. Monitoring, analytics, appearance modes, dependency modernization, and further toolbar refinement remain tracked in the [live backlog](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc).
+
+![Build checks](https://github.com/johnapaz/johnapaz.github.io/actions/workflows/staging.yml/badge.svg?branch=main)
+![Staging deployment](https://github.com/johnapaz/johnapaz-staging/actions/workflows/staging.yml/badge.svg)
 
 ## Technology and architecture
 
@@ -27,7 +32,7 @@ The V2 decisions below describe the redesign, rather than features already relea
 | **Markdown and YAML** | Store readable page content, configuration, and structured homepage data |
 | **Liquid** | Compose layouts and reusable includes |
 | **Sass/CSS** | Provide the theme styling and dedicated V2 layout, typography, responsive behavior, and interaction states |
-| **JavaScript** | Support V2 download-menu interactions such as dismissal and keyboard behavior |
+| **JavaScript** | Support download menus, filtering, pagination, résumé views, and a static site search index |
 | **Bootstrap-style controls and Bootstrap Icons** | Supply familiar visual conventions for grouped controls, badges, and social links in V2; the site is not a Bootstrap application |
 | **GitHub Pages and Actions** | Host the static site and validate/build the separate staging deployment |
 | **GitHub Issues and wiki** | Track tasks, requirements, decisions, configuration, and development history |
@@ -49,17 +54,17 @@ I use AI as a development collaborator. I set the purpose, content, and experien
 | **Interaction** | A subtle tile color change and slight movement on hover | Exact movement/timing, corresponding focus states, and reduced-motion handling |
 | **Development workflow** | Keep the project in GitHub, establish separate staging before the redesign, and use the wiki as the project record | Proposed workflow mechanics, build scripts, configuration, and implementation documentation |
 
-The latest landing-screen order is **About Me**, **My Blog**, **Resume & Portfolio**, **Code & Projects**, **Guides & Articles**, and **Talks & Presentations**. Search was considered and explicitly deferred so the landing screen could be finalized.
+The latest landing-screen order is **About Me**, **My Blog**, **Resume & Portfolio**, **Code & Projects**, **Guides & Articles**, and **Talks & Presentations**. A compact search icon now opens a site-wide index of pages, articles, projects, and the speaking/media archive.
 
-Earlier square image cards and several navigation treatments were explored and then superseded through review. The [V2 requirements](https://github.com/johnapaz/johnapaz.github.io/wiki/V2-Requirements) and [prototype implementation notes](https://github.com/johnapaz/johnapaz.github.io/blob/landing-screen-tiles/docs/v2-homepage-prototype.md) preserve that evolution, including validation results and limitations.
+Earlier square image cards and several navigation treatments were explored and then superseded through review. The [V2 requirements](https://github.com/johnapaz/johnapaz.github.io/wiki/V2-Requirements) and [prototype implementation notes](https://github.com/johnapaz/johnapaz.github.io/blob/main/docs/v2-homepage-prototype.md) preserve that evolution, including validation results and limitations.
 
 AI has assisted with implementation, troubleshooting, documentation, and verification. Its proposals are not automatically approved design requirements, and generated code is not evidence that an experience has been reviewed on a real device.
 
 ## How changes reach the site
 
-V2 source changes run a staging build validation workflow. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, disables analytics, discourages indexing, and records the source commit in `build-info.json`.
+Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, disables analytics, discourages indexing, and records the source commit in `build-info.json`.
 
-Production promotion is a separate review step: record the reviewed source commit, open a pull request into the production branch, and merge after my approval. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
+Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
 
 ## Explore or run the source
 

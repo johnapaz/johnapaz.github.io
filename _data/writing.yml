@@ -1,0 +1,88 @@
+articles:
+- title: A new home for my work, writing, and curiosity
+  url: /blog/website-v2-launch/
+  date: '2026-10-02'
+  category: Website & Projects
+  kind: blog
+  source: JohnAPaz.com
+  description: 'The V2 launch: a clearer home for my work, with a look at the design
+    process, AI collaboration, staging, CI, and what comes next.'
+  image: /assets/images/launch-v1-v2.png
+  ai_assistance:
+    level: Substantial drafting
+    detail: AI helped draft, structure, and refine this announcement from John’s directions
+      and project record. See the article for the full disclosure.
+- title: Resume Design Guide
+  url: https://john-paz-stories.medium.com/resume-design-guide-860633bd4f
+  date: '2022-02-12'
+  category: Careers
+  kind: guide
+  source: Medium
+  description: Practical guidance for creating a focused resume that helps you land
+    an interview.
+- title: 'TV Review — Avatar: The Last Airbender'
+  url: /reviews/avatar-the-last-airbender/
+  date: '2020-04-24'
+  category: Reviews
+  kind: blog
+  source: JohnAPaz.com
+  description: A cartoon that appeals to children and adults through its writing,
+    characters, and animation.
+- title: How to make Cuban Coffee
+  url: /tutorials/how-to-make-cuban-coffee
+  date: '2020-04-20'
+  category: Food & Culture
+  kind: guide
+  source: JohnAPaz.com
+  description: A Miami-Cuban coffee ritual, starting with the tools and ingredients
+    you need.
+- title: Tech companies should hire more non-techies…
+  url: https://medium.com/johnapaz/tech-companies-should-more-hire-non-techies-and-techies-should-start-looking-for-jobs-in-politics-1c3c4245face
+  date: '2019-01-08'
+  category: Tech & Society
+  kind: blog
+  source: Medium
+  description: Reflections on entering tech through an unconventional background and
+    making room for different perspectives.
+- title: 5 rules to ensure your UI copy doesn’t suck
+  url: https://medium.muz.li/5-rules-to-ensure-your-ui-copy-doesnt-suck-d0fb7487d84
+  date: ''
+  category: Content Design
+  kind: blog
+  source: Medium
+  description: ''
+- title: If you want to learn, embrace your ignorance
+  url: https://medium.com/@SrContentDesign/embrace-ignorance-cb3e9da66573
+  date: ''
+  category: Writing
+  kind: blog
+  source: Medium
+  description: ''
+- title: 'Quora: A great way to get some Technical Writing experience'
+  url: https://medium.com/johnapaz/quora-a-great-way-to-get-some-technical-writing-experience-9ee2daa116a7
+  date: ''
+  category: Technical Writing
+  kind: blog
+  source: Medium
+  description: ''
+- title: Where the Jobs Are in Technical Writing
+  url: https://medium.com/johnapaz/where-the-jobs-are-in-technical-writing-21bc6f50d695
+  date: ''
+  category: Careers
+  kind: blog
+  source: Medium
+  description: ''
+- title: What are you?
+  url: https://medium.com/johnapaz/what-are-you-ffd734c1c0c8
+  date: ''
+  category: Personal Writing
+  kind: blog
+  source: Medium
+  description: ''
+- title: 'Pronouncing My Name: You’re (probably) doing it wrong…'
+  url: https://medium.com/johnapaz/pronouncing-my-name-youre-probably-doing-it-wrong-8ad36a0fb57
+  date: ''
+  category: Personal Writing
+  kind: blog
+  source: Medium
+  description: ''

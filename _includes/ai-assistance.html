@@ -1,0 +1,2 @@
+{% assign disclosure = include.item.ai_assistance %}
+{% if disclosure %}<details class="ai-disclosure"><summary><span class="ai-pill">AI-assisted · {{ disclosure.level | escape }}</span></summary><p>{{ disclosure.detail | escape }}</p></details>{% endif %}

@@ -1,0 +1,223 @@
+# Resume-story prototype: September 29, 2026 resume + September 8 LinkedIn export.
+capabilities:
+- title: Technical writing
+  description: API documentation, implementation guides, tutorials, and tested code samples that help people get
+    things done.
+- title: Content design
+  description: Information architecture, product language, and content standards that make complex experiences easier
+    to navigate.
+- title: Documentation operations
+  description: Structured authoring, knowledge management, team leadership, and automation that make good content
+    easier to maintain.
+projects:
+- title: Confluence Automation Toolkit
+  category: Python · Knowledge management
+  description: A sample of the CLI tools I developed during a Confluence-to-RightAnswers migration at Airbnb, with
+    safeguards, documentation, and debugging support.
+  url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  action: Explore the repository
+- title: Developer & API documentation
+  category: APIs · Technical writing
+  description: Selected documentation and automation samples, including work on the Bitbucket API proxy refactor.
+  download_group: portfolio
+  download_label: Developer Documentation Samples
+  action: Download the combined sample packet
+- title: Content design samples
+  category: UX writing · Content strategy
+  description: A selection of my content design work, available as a portfolio to review alongside the developer
+    documentation samples.
+  download_group: portfolio
+  download_label: Content Design Samples
+  action: Download the content design portfolio
+experience:
+- id: rqi
+  company: RQI Partners
+  mark: RQI
+  role: Technical Writer
+  dates: Jun 2026–Present
+  industry: Healthcare
+  department: Product & engineering
+  primary_type: Structured content
+  work_types:
+  - Structured content
+  - Knowledge systems
+  technologies:
+  - Paligo
+  impact: Reusable content for healthcare platforms.
+  description: Create technical guides and training resources in Paligo, with shared content, taxonomy, and governance.
+  details:
+  - Partner with product managers, developers, and subject matter experts to document features, workflows, and business
+    processes.
+  - Build knowledge base content, tutorials, and self-service learning resources for internal and external audiences.
+- id: airbnb
+  company: Airbnb
+  icon: airbnb
+  role: Contract Technical Writer
+  dates: Jun 2025–Jun 2026
+  industry: Travel & hospitality
+  department: Business technology
+  primary_type: Automation
+  work_types:
+  - Automation
+  - Knowledge systems
+  technologies:
+  - Python
+  - Confluence
+  - RightAnswers
+  - REST APIs
+  impact: Built tools to make a large-scale migration manageable.
+  description: Audited Confluence content for migration to RightAnswers; built Python tools for analysis, reports,
+    review, and bulk editing.
+  details:
+  - Created utilities to scan spaces, detect and categorize macros, and generate advanced Excel reports.
+  - Designed interactive CLI workflows for reviewing targeted page sections, using reusable authentication and UI
+    components.
+  evidence_url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  evidence_label: See the automation toolkit
+- id: tinubu
+  company: Tinubu
+  mark: T
+  role: Knowledge Manager / Atlassian Administrator
+  dates: Jul 2024–Nov 2024
+  industry: Enterprise software
+  department: Knowledge management
+  primary_type: Knowledge systems
+  work_types:
+  - Knowledge systems
+  technologies:
+  - Jira
+  - Confluence
+  - Bitbucket
+  - Jira Service Management
+  impact: Connected documentation strategy with the tools behind it.
+  description: Standardized documentation tooling, templates, and workflows; administered Atlassian products and
+    knowledge-sharing practices.
+  details:
+  - Developed an internal documentation strategy covering tools, templates, and training.
+  - Customized Jira Service Management portals and supported Jira integrations with Notion and Teams.
+- id: singlestore
+  company: SingleStore
+  mark: S
+  role: System Analyst
+  dates: Aug 2023–Feb 2024
+  industry: Data & analytics
+  department: Platform engineering
+  primary_type: Knowledge systems
+  work_types:
+  - Knowledge systems
+  technologies:
+  - Confluence
+  impact: Turned engineering process gaps into actionable plans.
+  description: Documented DevOps requirements, use cases, and workflows; improved Confluence organization and prioritized
+    technical debt.
+  details:
+  - Reported to the Director of Infrastructure and Platform Engineering as an internal documentation systems analyst
+    and Confluence administrator.
+  - Worked with engineers to identify process gaps, recommend improvements, and maintain system documentation.
+- id: menlo
+  company: Menlo Security
+  mark: M
+  role: Documentation Manager
+  dates: Dec 2020–May 2023
+  industry: Cybersecurity
+  department: Product & UX
+  primary_type: Leadership
+  work_types:
+  - Leadership
+  - Content design
+  - Developer documentation
+  technologies:
+  - Swagger
+  impact: Established the first Documentation & Content Design department.
+  description: Built and coached a distributed writing team, overhauled publishing infrastructure, and prototyped
+    a Swagger developer portal.
+  details:
+  - Created recruitment requirements, onboarding processes, and regular coaching and performance feedback for writers
+    across time zones.
+  - Established UX writing routines, UI copy style guides, and API documentation standards; led stakeholder alignment
+    and planning.
+- id: atlassian
+  company: Atlassian
+  icon: atlassian
+  role: Senior Technical Writer & Content Designer
+  dates: Jan 2015–Dec 2020
+  industry: Developer tools
+  department: Product & UX
+  primary_type: Developer documentation
+  work_types:
+  - Developer documentation
+  - Content design
+  technologies:
+  - Bitbucket
+  - REST APIs
+  - OAuth
+  impact: Made complex Bitbucket APIs easier to implement.
+  description: Wrote and tested API examples and OAuth guidance; reshaped information architecture and product copy
+    through user research.
+  details:
+  - Paired with engineers on API proxy and response object hydration examples that build from simple to more complex
+    integration scenarios.
+  - Planned content usability tests, facilitated design sparring, and delivered more than 10 external presentations.
+- id: patientpoint
+  company: PatientPoint
+  mark: P
+  role: Technical Writer / Atlassian Administrator
+  dates: Apr 2013–Jan 2015
+  industry: Healthcare
+  department: R&D
+  primary_type: Knowledge systems
+  work_types:
+  - Knowledge systems
+  - Automation
+  technologies:
+  - Jira
+  - Confluence
+  - Python
+  impact: Designed an internal wiki for 200+ users across two countries.
+  description: Rolled out Atlassian tools, automated repetitive Jira tasks with Python, and trained engineering
+    teams in Scrum and Agile.
+  details:
+  - Designed Confluence information architecture and Jira workflows with executives, project managers, developers,
+    and QA.
+  - Served as interim Scrum Master for new R&D teams and supported new Scrum Masters during onboarding.
+  earlier: true
+- id: pentaho
+  company: Pentaho
+  mark: P
+  role: Technical Writer
+  dates: Jan 2012–Feb 2013
+  industry: Data & analytics
+  department: Product & engineering
+  primary_type: Structured content
+  work_types:
+  - Structured content
+  - Developer documentation
+  technologies:
+  - DITA/XML
+  - Hadoop
+  - Pentaho Data Integration
+  impact: Led documentation for data integration and big data projects.
+  description: Created task-based DITA/XML procedures, worked with database and code samples, and supported three
+    Agile product teams.
+  details:
+  - Owned documentation for Pentaho Data Integration (PDI/Kettle) and Big Data (Hadoop) projects.
+  - Maintained internal and public wikis and represented documentation in community feedback discussions.
+  earlier: true
+- id: ea
+  company: Electronic Arts · Tiburon
+  mark: EA
+  role: Technical Writer / Wiki Developer
+  dates: Jul 2007–Dec 2007
+  industry: Gaming
+  department: Game development
+  primary_type: Knowledge systems
+  work_types:
+  - Knowledge systems
+  technologies:
+  - Wiki
+  impact: Built a game development wiki with 250+ cross-referencing pages.
+  description: Interviewed managers and directors to document the development lifecycle and adapt EA’s global processes
+    for Tiburon.
+  details:
+  - Reported to the Director of Product Development and supported the lead project manager with lifecycle documentation.
+  earlier: true

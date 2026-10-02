@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | escape }} | John A. Paz</title>
+  <meta name="description" content="{{ page.description | escape }}" />
+  {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/work-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/writing-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/portfolio-v2.css' | relative_url }}" />
+  {% include social-meta.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
+</head>
+<body class="v2-home v2-work v2-writing">
+  <a class="v2-skip" href="#main-content">Skip to content</a>
+  {% include v2-navigation.html %}
+  <main id="main-content" class="writing-shell">
+    <header class="writing-intro"><p class="work-eyebrow">John A. Paz | A talk that grew</p><h1>The “Pipeline Problem”</h1><p>Finding my voice, and making room for more voices in tech.</p>{% include portfolio-tabs.html %}</header>
+    <div class="project-column">
+      <p class="project-deck">At Atlassian Summit in 2019, I brought my experience of being Black in tech to the stage. The conversation kept growing: into building belonging at Design Week, a Button keynote, and a Confab keynote.</p>
+      {% for talk in site.data.portfolio.talks %}{% if talk.belonging %}
+      <article class="project-story"><p class="writing-meta">{{ talk.source | escape }} · {{ talk.date_label }} · {{ talk.category }}</p><h2>{{ talk.title | escape }}</h2><p>{{ talk.description | escape }}</p>
+      {% if talk.video %}<div class="talk-video"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/{{ talk.video }}" title="{{ talk.title | escape }} — {{ talk.source | escape }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>{% endif %}
+      {% if talk.url and talk.url != '/my-story/' %}<a class="blog-read" href="{{ talk.url }}">{{ talk.action | escape }} <span aria-hidden="true">↗</span></a>{% else %}<p class="writing-meta">Recording not currently available.</p>{% endif %}
+      </article>{% endif %}{% endfor %}
+      <a class="blog-read" href="{{ '/presentations/' | relative_url }}">Browse all talks & presentations →</a>
+    </div>
+  </main><script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
+</body></html>

@@ -1,0 +1,50 @@
+cards:
+- title: About Me
+  url: /about/
+- title: My Blog
+  url: /blog/
+- title: Resume & Portfolio
+  url: /resume/
+- title: Code & Projects
+  url: /coding/
+- title: Guides & Articles
+  url: /writing/
+- title: Talks & Presentations
+  url: /presentations/
+featured:
+- title: A new home for my work, writing, and curiosity
+  url: /blog/website-v2-launch/
+  image: /assets/images/launch-v1-v2.png
+  category: V2 launch
+- title: Confluence Automation Toolkit
+  category: Code & Projects
+  url: https://github.com/johnapaz/confluence-automation-toolkit-sample
+  motif: '{ / }'
+- title: 5 rules to ensure your UI copy doesn’t suck
+  category: Content Design
+  url: https://medium.muz.li/5-rules-to-ensure-your-ui-copy-doesnt-suck-d0fb7487d84
+  image: /assets/images/procrastinate.png
+- title: If you want to learn, embrace your ignorance
+  category: Writing
+  url: https://medium.com/@SrContentDesign/embrace-ignorance-cb3e9da66573
+  image: /assets/images/ignorance.png
+- title: How to make Cuban coffee
+  category: Guides
+  url: /tutorials/how-to-make-cuban-coffee
+  motif: café
+- title: 'Quora: A great way to get some Technical Writing experience'
+  category: Technical Writing
+  url: https://medium.com/johnapaz/quora-a-great-way-to-get-some-technical-writing-experience-9ee2daa116a7
+  image: /assets/images/quora.png
+- title: Where the Jobs Are in Technical Writing
+  category: Careers
+  url: https://medium.com/johnapaz/where-the-jobs-are-in-technical-writing-21bc6f50d695
+  motif: Aa
+- title: What are you?
+  category: Personal Writing
+  url: https://medium.com/johnapaz/what-are-you-ffd734c1c0c8
+  motif: Paz
+- title: 'Pronouncing My Name: You’re (probably) doing it wrong…'
+  category: Personal Writing
+  url: https://medium.com/johnapaz/pronouncing-my-name-youre-probably-doing-it-wrong-8ad36a0fb57
+  motif: Paz

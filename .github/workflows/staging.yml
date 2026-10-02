@@ -1,0 +1,52 @@
+name: Validate staging build
+on:
+  push:
+    branches: [main, v2, "**-preview", launch-v2]
+  pull_request:
+    branches: [main, v2]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: staging-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    env:
+      JEKYLL_ENV: staging
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+          bundler: '2.4.22'
+      - name: Install dependencies
+        run: |
+          bundle install
+      - name: Build staging
+        run: |
+          bundle exec jekyll build --safe --config _config.yml,_config.staging.yml
+          printf 'staging.johnapaz.com\n' > _site/CNAME
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          python3 - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          Path("_site/build-info.json").write_text(json.dumps({"branch": os.environ["GITHUB_REF_NAME"], "commit": os.environ["GITHUB_SHA"], "run": os.environ["GITHUB_RUN_ID"]}) + "\n")
+          PYTHON
+          python3 scripts/check-staging.py
+      - name: Validate internal links, assets, and launch metadata
+        run: python3 scripts/check-site.py
+      - name: Build and validate production configuration
+        env:
+          JEKYLL_ENV: production
+        run: |
+          bundle exec jekyll build --safe --destination _site-production
+          python3 scripts/check-site.py _site-production
+      - uses: actions/upload-artifact@v4
+        with:
+          name: staging-site
+          path: _site
+          include-hidden-files: true

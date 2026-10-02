@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | escape }} | John A. Paz</title>
+  <meta name="description" content="{{ page.description | escape }}" />
+  {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/work-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+<link rel="stylesheet" href="{{ '/assets/css/writing-v2.css' | relative_url }}" />
+  {% include social-meta.html %}
+  <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}" />
+</head>
+<body class="v2-home v2-work">
+  <a class="v2-skip" href="#main-content">Skip to content</a>
+  {% include v2-navigation.html %}
+  <main id="main-content" class="work-shell">
+    <header class="work-intro">
+      <div>
+        <p class="work-eyebrow">John A. Paz | Professional Work History</p>
+        <h1>Clear Communication</h1>
+        <p class="work-lead">Curiosity-driven storyteller known for technical depth; tinkerer-developer</p>
+        <p class="work-summary">I’m a technical writer, content designer, and documentation leader with 15+ years of experience. I work across developer documentation, product experiences, and the systems that keep knowledge useful.</p>
+      </div>
+      <aside class="work-profile" aria-label="Professional background">
+        <img src="{{ '/assets/images/John_smile.jpg' | relative_url }}" alt="John A. Paz" width="112" height="112" />
+        <p>Writer | Speaker | Human</p>
+        <p class="work-profile-note">Experience across cloud, security, SaaS, and healthcare.</p>
+        <a href="{{ site.linkedin_url }}">Connect on LinkedIn</a>
+      </aside>
+    </header>
+    <section class="work-capabilities" aria-label="What I do">
+      {% for capability in site.data.work.capabilities %}
+      <div><h2>{{ capability.title | escape }}</h2><p>{{ capability.description | escape }}</p></div>
+      {% endfor %}
+    </section>
+    <section class="work-section" id="selected-work" aria-labelledby="selected-work-title">
+      <div class="work-section-heading"><h2 id="selected-work-title">Selected work</h2><p>A few ways I turn complexity into clarity.</p></div>
+      <div class="work-projects">
+        {% for project in site.data.work.projects %}
+        <article class="work-project">
+          <p class="work-eyebrow">{{ project.category | escape }}</p>
+          <h3>{{ project.title | escape }}</h3>
+          <p>{{ project.description | escape }}</p>
+          {% if project.url %}
+          <a href="{{ project.url }}">{{ project.action | escape }} <span aria-hidden="true">↗</span></a>
+          {% else %}
+          {% for document in site.data.downloads[project.download_group] %}{% if document.label == project.download_label %}
+          <a href="{{ document.url | relative_url }}" download>{{ project.action | escape }}</a>
+          <div class="work-file-meta"><span class="v2-badge v2-file-type">{{ document.type }}</span><time class="v2-badge v2-file-date" datetime="{{ document.updated_iso }}" title="Updated: {{ document.updated }}">{{ document.updated }}</time>{% if document.note %}<span>{{ document.note }}</span>{% endif %}</div>
+          {% endif %}{% endfor %}
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    <section class="work-section work-career" id="experience" aria-labelledby="experience-title">
+      {% include career-icons.html %}
+      <div class="work-section-heading"><h2 id="experience-title">Experience</h2><p>The work, the problems, and the tools behind it.</p></div>
+      <div class="career-explorer" hidden>
+        <div class="career-toolbar">
+          <div class="btn-group btn-group-sm career-views" role="group" aria-label="View experience by">
+            <button type="button" class="btn btn-outline-primary" data-career-view="chronology" aria-pressed="true">Chronology</button><button type="button" class="btn btn-outline-primary" data-career-view="type" aria-pressed="false">Work type</button><button type="button" class="btn btn-outline-primary" data-career-view="industry" aria-pressed="false">Industry</button>
+          </div>
+          <div class="career-actions"><button type="button" class="career-text-button" id="career-filter-toggle" aria-controls="career-filters" aria-expanded="false"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-filter"></use></svg>Filters<span id="career-filter-count" hidden></span></button><button type="button" class="career-text-button" id="career-share"><svg class="career-icon" aria-hidden="true"><use href="#career-icon-link"></use></svg>Copy view link</button></div>
+        </div>
+        <div id="career-filters" class="career-filters" hidden>
+          <label>Work type<select data-career-select="type"><option value="">All work types</option></select></label>
+          <label>Industry<select data-career-select="industry"><option value="">All industries</option></select></label>
+          <label>Department / team<select data-career-select="department"><option value="">All teams</option></select></label>
+          <label>Technology<select data-career-select="technology"><option value="">All technologies</option></select></label>
+        </div>
+        <div class="career-view-status"><p id="career-count" role="status" aria-live="polite"></p><button type="button" class="career-text-button" id="career-reset" hidden>Clear filters</button><p id="career-share-status" role="status" aria-live="polite"></p></div>
+        <label class="career-share-fallback" hidden>Copy this URL<input type="text" readonly /></label>
+      </div>
+      <div id="career-results">
+        <div class="work-experience">
+        {% for job in site.data.work.experience %}{% unless job.earlier %}{% include career-job.html %}{% endunless %}{% endfor %}
+        </div>
+        <details class="career-earlier" id="career-earlier"><summary>Earlier experience <span>Healthcare, data &amp; game development</span></summary><div class="work-experience">
+        {% for job in site.data.work.experience %}{% if job.earlier %}{% include career-job.html %}{% endif %}{% endfor %}
+        </div></details>
+      </div>
+      <p id="career-empty" hidden>No roles match this combination. Clear a filter to explore more work.</p>
+      <noscript><p>All selected roles are shown below; expand earlier experience for more. Filters work when JavaScript is enabled.</p></noscript>
+
+      <script type="application/json" id="career-data">{{ site.data.work.experience | jsonify }}</script>
+    </section>
+    <section class="work-section work-education-section" id="education" aria-labelledby="education-title">
+      <div class="work-section-heading"><h2 id="education-title">Education</h2></div>
+      <div class="work-degree">
+        <img class="work-ucf-mark" src="{{ '/assets/images/ucf-stacked-black.png' | relative_url }}" alt="UCF" width="330" height="280" loading="lazy" />
+        <div class="work-degree-school"><h3>University of Central Florida</h3><p>Class of 2008</p></div>
+        <div class="work-degree-credential"><p class="work-degree-title">Bachelor of Arts in English</p><p>Technical Writing Track</p></div>
+      </div>
+    </section>
+    <nav class="writing-tabs work-more" aria-label="More professional work"><a href="{{ '/coding/' | relative_url }}">Code & projects</a><a href="{{ '/presentations/' | relative_url }}">Talks & presentations</a><a href="{{ '/media/' | relative_url }}">Podcasts, interviews & press</a></nav>
+  </main>
+  <script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/career-v2.js' | relative_url }}" defer></script>
+</body>
+</html>
