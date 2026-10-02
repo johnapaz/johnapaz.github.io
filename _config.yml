@@ -31,7 +31,10 @@ collections:
     output: true
 collections_dir: content
 permalink: /:categories/:title:/
-google_analytics: UA-165031992-2
+# Separate GA4 properties. Set the verified G- ID before activation.
+google_analytics: null
+analytics_host: johnapaz.com
+analytics_environment: production
 
 # Breadcrumbs
 breadcrumbs:
