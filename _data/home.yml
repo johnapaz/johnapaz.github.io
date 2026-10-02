@@ -1,38 +1,55 @@
-# Prototype curation and ordering; not approved information architecture.
+# Approved landing-screen sections, in row-major order (October 1, 2026).
+# Reuse published destinations while dedicated v2 section pages are developed.
 cards:
-  - title: Documentation, made easier
-    category: Projects
-    description: A toolkit for automating Confluence documentation workflows.
+  - title: About Me
+    url: /my-story/
+  - title: My Blog
+    url: https://medium.com/@SrContentDesign
+  - title: Resume & Portfolio
+    url: /resume/
+  - title: Code & Projects
     url: https://github.com/johnapaz/confluence-automation-toolkit-sample
-    style: toolkit
+  - title: Guides & Articles
+    url: /tutorials/
+  - title: Talks & Presentations
+    url: /presentations/
+
+# Initial featured selection reuses titles/destinations already published in the repository.
+# This is a reviewable selection, not a claim these items are the newest content.
+featured:
+  - title: Confluence Automation Toolkit
+    category: Code & Projects
+    url: https://github.com/johnapaz/confluence-automation-toolkit-sample
     motif: "{ / }"
-  - title: Words that work
-    category: Content design
-    description: Five rules for clearer, more useful UI copy.
+  - title: 5 rules to ensure your UI copy doesn’t suck
+    category: Content Design
     url: https://medium.muz.li/5-rules-to-ensure-your-ui-copy-doesnt-suck-d0fb7487d84
     image: /assets/images/procrastinate.png
-    style: copy
-  - title: Embrace your ignorance
+  - title: If you want to learn, embrace your ignorance
     category: Writing
-    description: Getting comfortable with what you don’t know.
     url: https://medium.com/@SrContentDesign/embrace-ignorance-cb3e9da66573
     image: /assets/images/ignorance.png
-    style: learning
-  - title: A little Cuban coffee
-    category: Practical guides
-    description: Make a small cup with a big personality.
+  - title: How to make Cuban coffee
+    category: Guides
     url: /tutorials/how-to-make-cuban-coffee.html
-    style: coffee
     motif: café
-  - title: The work behind the words
-    category: Professional work
-    description: Explore my writing samples and professional portfolio.
-    url: /portfolio/
-    style: portfolio
+  - title: "Quora: A great way to get some Technical Writing experience"
+    category: Technical Writing
+    url: https://medium.com/johnapaz/quora-a-great-way-to-get-some-technical-writing-experience-9ee2daa116a7
+    image: /assets/images/quora.png
+  - title: Where the Jobs Are in Technical Writing
+    category: Careers
+    url: https://medium.com/johnapaz/where-the-jobs-are-in-technical-writing-21bc6f50d695
     motif: Aa
-  - title: More than a job title
-    category: About
-    description: Get to know the person behind the projects.
+  - title: "What are you?"
+    category: Personal Writing
+    url: https://medium.com/johnapaz/what-are-you-ffd734c1c0c8
+    motif: Paz
+  - title: "Pronouncing My Name: You’re (probably) doing it wrong…"
+    category: Personal Writing
+    url: https://medium.com/johnapaz/pronouncing-my-name-youre-probably-doing-it-wrong-8ad36a0fb57
+    motif: Paz
+  - title: The Pipeline Problem and Other Myths About Workplace Diversity
+    category: Talks
     url: /my-story/
-    image: /assets/images/santa-cruz-boardwalk-sunset.jpg
-    style: personal
+    image: /assets/images/john-button.jpg

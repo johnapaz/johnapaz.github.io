@@ -6,7 +6,7 @@ This is the first reviewable homepage implementation on `v2`, not an approved fi
 
 Keep Jekyll and the Editorial theme. The homepage uses `_layouts/home-v2.html`, two dedicated includes, and `_sass/_home-v2.scss` compiled through `assets/css/home-v2.scss`. Other page layouts and theme styles remain intact. No frontend framework or runtime JavaScript is required.
 
-The top navigation stays visible. At desktop widths above 1000px, the introduction sticks beside a two-column square-card grid with one document scrollbar. On shorter screens (760px high or less), the introduction scrolls so its links remain reachable. At tablet/mobile widths it sits above the content; below 600px cards form one column and navigation wraps into two rows.
+The top navigation stays visible. At desktop widths above 1000px, the introduction sticks beside a two-column section-tile grid with one document scrollbar. On shorter screens (760px high or less), the introduction scrolls so its links remain reachable. At tablet/mobile widths it sits above the content; below 600px cards form one column and navigation wraps into two rows.
 
 The introduction uses the existing `John_smile.jpg` portrait, the exact approved identity/headline/supporting/welcome copy, and a contact link to the configured email. Instagram, LinkedIn, and GitHub reuse repository-configured destinations. Threads is explicitly marked “link pending”; confirm the profile URL before enabling it. No guessed profile destination.
 
@@ -166,3 +166,56 @@ John requested no borders on primary navigation, just text; social icons return 
 Corrected dropdown button corner selectors to override Bootstrap's nested group rules: Resume rounds only its left corners and Portfolio only its right corners, all at 4px; inner corners remain square. The previous right-hand selector lost to Bootstrap specificity, producing the screenshot's square right edge. No production configuration changes.
 
 Validation: safe Jekyll build and seven-width menu checks passed, including exact four-corner values, borderless nav/social links, left social alignment, page-centered navigation, badges and all eight downloads. Physical-device verification remains pending.
+
+
+## Final landing-screen direction — October 1, 2026
+
+Implemented on `landing-screen-tiles`, branched from `v2` at db73fcb. This supersedes the earlier square image cards, 80/20 metadata, and provisional curation. The current toolbar, introduction, download controls, and social alignment are retained. Search is deferred to #26; Admin remains the subsequent #31 workstream.
+
+| Row | Left | Right |
+| --- | --- | --- |
+| 1 | About Me | My Blog |
+| 2 | Resume & Portfolio | Code & Projects |
+| 3 | Guides & Articles | Talks & Presentations |
+
+All tiles share a restrained canyon gradient from pale sand `#F2D8A8` to warm stone `#BEA17F`, with deep espresso `#2B1605` labels. Labels use the existing Georgia bold italic typography. Whole tiles are links; hover and keyboard focus add a subtle 7% rust tint and 3px lift over 200ms. Keyboard focus also has a visible outline. Reduced motion disables translation and transitions, preserving color and outline feedback.
+
+Desktop above 1000px uses two columns and viewport-relative rectangular tile heights, aiming to place half of the third row above the fold. Stacked tablet layouts retain two columns; below 600px the tiles form one column and scroll naturally. The fold treatment is a desktop target, not a mobile requirement; text scaling and browser UI can change the visible proportion.
+
+Published destinations are reused: About opens `/my-story/`; My Blog opens the existing Medium profile; Resume & Portfolio opens `/resume/` with portfolio/download access retained in the toolbar; Code & Projects opens the existing Confluence toolkit repository; Guides & Articles opens `/tutorials/`; Talks & Presentations opens `/presentations/`. Dedicated v2 section pages remain later work. No new blog index or inactive search control is added.
+
+Validation: six labels/order, HTML escaping, Liquid render and internal permalink declarations passed. Label contrast is 12.43:1 and 7.05:1 at the gradient endpoints; the subtle hover tint keeps contrast above 4.5:1. Local Sass compilation passed using a scratch-only wrapper for an existing legacy Sass `min()` incompatibility. This workspace has no Ruby runtime and browser downloads are blocked, so full Jekyll and visual/Fold checks are not claimed. The existing safe Jekyll staging workflow now also runs for pull requests targeting `v2`; its build and staging checks must pass before merge. PR changes are isolated from production and staging publication.
+
+
+## Palette correction — October 1, 2026
+
+John clarified that “gradient” means a sequence of solid tile colors, with each tile a different progressively darker shade, not a gradient within every tile. Six backgrounds in approved row-major order: #F2D8A8, #DDBD91, #BEA17F, #AD9271, #754116, #4B2911. First four use espresso labels; last two use pale-sand labels. Preserve Georgia italic.
+
+John also requested shorter tiles. Desktop heights are about 11% shorter than the initial preview (viewport divisor 2.8 instead of 2.5); tablet/mobile aspect ratios widen and minimum heights reduce. This gives more of the last row visibility and supersedes the exact half-row target where it conflicts with shorter height. Hover now applies directly without a hover-device media gate, with a darker shade derived individually from each tile color (Sass darken by 4 percentage points of HSL lightness), plus 3px lift. Keyboard outline and reduced-motion handling remain. The earlier shared 7% tint was too subtle, and the hover-device gate could suppress it on hybrid input devices; neither cause has been browser-verified.
+
+Keep this on PR #33 and staging for visual review before merging v2.
+
+
+## Soft raised tiles and featured content — October 1, 2026
+
+John found the high-contrast palette jarring and requested lighter related shades, subtle drop shadows, and a touchable Material-inspired feel. Keep all six section tiles above; add a polished quiet separator followed by three desktop rows of three compact featured-content cards.
+
+Section palette is now a narrow pale-canyon progression: #F4DFC0, #F0D9B9, #ECD3B1, #E7CCAA, #E2C6A3, #DDBF9C, with espresso labels throughout. Soft 2px ambient shadows plus an inset top highlight create shallow elevation; hover/focus darkens each tile's own color by 2 HSL lightness points, lifts 2px, and gently deepens the shadow. This supersedes the high-contrast palette and 3px/4% hover settings. Respect reduced motion.
+
+Featured content uses `featured` in `_data/home.yml`: nine real existing articles, a guide, the automation toolkit and a talk. This initial selection is for review; it is not presented as latest content. Reuse existing images and typographic motifs; no fabricated items or embedded third-party widgets. Compact titles may wrap; do not truncate them. Three columns on desktop, two at 780px or less, one at 480px or less. The divider and featured content follow the six section tiles in normal document flow, below the initial desktop screen.
+
+The source notes are historical. The canonical wiki and this newest section govern the current implementation; earlier palette and fold settings are superseded. Dark/Darker themes remain #34. Continue review on PR #33 before merging v2.
+
+
+## Smaller left-aligned labels and column tones — October 1, 2026
+
+John requested section labels roughly half their previous size, left-aligned, with slightly different typography/dark shade and subtle texture. Section labels now use a lighter-weight Palatino/Book Antiqua italic stack with Georgia fallback, half the former preferred/max size (3.75cqw/1rem), and a 14px minimum for mobile readability. Cocoa #513923 replaces espresso on these labels. A faint light/dark text-shadow pair gives an embossed edge without a texture asset or reduced legibility. Featured titles and the introduction are unchanged.
+
+Differentiate the columns: sandy left shades #F5E1C1, #EFD7B2, #E7CAA6; warmer clay right shades #EFD2BE, #E7C6AE, #DFBAA0. Every tile remains distinct, with its own derived hover shade. Keep soft elevation and the featured-content grid. Font rendering depends on installed fonts; the actual preview may use Georgia fallback. Review on staging before v2 merge.
+
+
+### Correction: smaller tiles, full-size styled labels — October 1, 2026
+
+The 50% reduction applies to the section tiles, not their titles. The earlier smaller-label interpretation is superseded. Desktop tile height is half the prior height at the same viewport, with the two column widths unchanged. Tablet and mobile aspect ratios also halve the nominal tile height, with a 90px minimum so full-size labels remain usable.
+
+Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while retaining left alignment, the softer italic Palatino-family typeface, and the faint embossed text shadow. Each tile has its own cocoa text shade that darkens along the sand/clay palette. Keep the tile-specific shaded hover colors, subtle lift, and featured content below the six section tiles.
