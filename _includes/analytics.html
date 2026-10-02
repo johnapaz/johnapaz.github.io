@@ -1,9 +1,4 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-165031992-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-165031992-2');
-</script>
+<script defer src="{{ '/assets/js/analytics.js' | relative_url }}"
+  data-measurement-id="{{ site.google_analytics | escape }}"
+  data-analytics-host="{{ site.analytics_host | escape }}"
+  data-analytics-environment="{{ site.analytics_environment | escape }}"></script>
