@@ -26,9 +26,9 @@ I like the process as much as the finished piece: noticing something, collecting
 
 ## Finding the funny
 
-Comedy is another way I’m exploring storytelling. I’m working on stand-up material, learning how to trim a setup, find another laugh, and leave room for an expression to do some of the talking.
+I put a lot of work into creating, practicing, and delivering presentations, including finding the right moments for a joke. Getting laughs at tech conferences inspired me to try stand-up.
 
-Sports provide plenty of material. There’s a lot to laugh about in the gap between looking athletic and actually being fast. I’ve had practice with that one.
+Now I’m exploring another side of storytelling: shaping a setup, refining a punchline, and practicing how to deliver it.
 
 ## A little dirt under my nails
 
@@ -40,6 +40,6 @@ It’s satisfying to spend time on something you can watch change. There’s alw
 
 Sports have been part of my life since childhood. Football and soccer are the big ones: I enjoy watching them, talking about them, and getting out to play.
 
-I played football in Florida, including at UCF, and soccer remains a sport I want to keep playing. Competition, teamwork, and the stories that follow a game all keep me interested. The UCF shirt in the photo is a clue.
+I’ve been to games around the world, including the World Cup, and spent years coaching my kids. Sports have given me a way to explore new places and share something I love with my family.
 
 I’m always happy to talk sports—or hear about something new I should try.
