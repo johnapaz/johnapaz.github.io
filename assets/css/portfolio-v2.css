@@ -1,15 +1,15 @@
 /* Portfolio pages extend the shared Writing/Blog design. */
 .portfolio-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin:0; }
-.portfolio-tags .v2-badge { background:rgba(248,235,211,.7); color:#754116; font-size:.7rem; white-space:normal; }
-.portfolio-feature { display:grid; grid-template-columns:minmax(180px, 1fr) 1.5fr; gap:clamp(1.25rem,3vw,2rem); align-items:center; margin:1.5rem 0 2rem; padding:1.25rem; border-radius:12px; background:#EBD4B5; }
+.portfolio-tags .v2-badge { background:var(--theme-surface-2); color:var(--theme-accent); font-size:.7rem; white-space:normal; }
+.portfolio-feature { display:grid; grid-template-columns:minmax(180px, 1fr) 1.5fr; gap:clamp(1.25rem,3vw,2rem); align-items:center; margin:1.5rem 0 2rem; padding:1.25rem; border-radius:12px; background:var(--theme-surface-2); }
 .portfolio-feature img { display:block; width:100%; height:220px; object-fit:cover; border-radius:8px; }
 .portfolio-feature h2, .project-story h2 { font:italic 700 clamp(1.6rem,3vw,2.2rem)/1.2 Georgia,serif; letter-spacing:-.025em; margin:.65rem 0 1rem; }
 .project-column { max-width:850px; margin:auto; }
-.project-story { padding:2.5rem 0; border-top:1px solid rgba(117,65,22,.25); scroll-margin-top:6rem; }
+.project-story { padding:2.5rem 0; border-top:1px solid rgba(var(--theme-accent-rgb),.25); scroll-margin-top:6rem; }
 .project-deck { font:1.15rem/1.7 Georgia,serif; margin-bottom:1.5rem; }
 .project-details { margin:1.5rem 0; }
 .project-details > div { display:grid; grid-template-columns:145px 1fr; gap:1rem; padding:.7rem 0; }
-.project-details dt { font-weight:700; color:#754116; }
+.project-details dt { font-weight:700; color:var(--theme-accent); }
 .project-details dd { margin:0; }
 .project-secondary { margin-left:1.5rem; }
 .talk-video { aspect-ratio:16/9; margin:1.25rem 0; }

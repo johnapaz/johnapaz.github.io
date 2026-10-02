@@ -35,6 +35,14 @@
       });
     } catch (error) { if (run === request) status.textContent = 'Search is unavailable. Please use the page links above.'; }
   }
-  form.addEventListener('submit', search);
+  input.name = 'q';
+  const initialQuery = new URLSearchParams(window.location.search).get('q');
+  if (initialQuery) { input.value = initialQuery; search(); }
+  form.addEventListener('submit', event => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('q', input.value.trim());
+    history.replaceState(null, '', url);
+    search(event);
+  });
   input.addEventListener('input', search);
 })();

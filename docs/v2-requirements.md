@@ -186,3 +186,13 @@ Section-label refinement: roughly 50% smaller, left-aligned italic labels with a
 The 50% reduction applies to the section tiles, not their titles. The earlier smaller-label interpretation is superseded. Desktop tile height is half the prior height at the same viewport, with the two column widths unchanged. Tablet and mobile aspect ratios also halve the nominal tile height, with a 90px minimum so full-size labels remain usable.
 
 Restore the previous label size rule (`clamp(1.25rem, 7.5cqw, 2rem)`), while retaining left alignment, the softer italic Palatino-family typeface, and the faint embossed text shadow. Each tile has its own cocoa text shade that darkens along the sand/clay palette. Keep the tile-specific shaded hover colors, subtle lift, and featured content below the six section tiles.
+
+## Dark / Darker appearance — October 2, 2026 (#34)
+
+John approved applying the preview palettes to staging. Appearance changes affect colors only: retain existing font families, sizes, weights, spacing, portraits, tile geometry and responsive page layouts. The new nav control uses the existing nav typography. Admin has a rounded rectangle with the same 12px corner radius as the section tiles, rather than a pill.
+
+Default is Dark (soft warm charcoal); Darker uses a near-black background. The six homepage tiles each have a distinct related dark hue: ochre, terracotta, olive, teal, slate violet and burgundy. Ivory lettering retains at least 6.8:1 contrast against Dark tile gradient endpoints and 10.3:1 in Darker; the name uses warm ivory at 13.9:1 and 17.3:1 respectively.
+
+The compact Dark / Darker nav control announces selection through `aria-pressed`. Explicit preference is saved as `johnapaz-appearance-v1`, applied in the head before styles paint, and synchronized between tabs. Storage errors fall back to an operable in-page choice; without JavaScript the default Dark palette remains and the nonfunctional control is hidden. No system preference is inferred because both choices are dark.
+
+Maintain shared tokens in `assets/css/theme-v2.css`. Component styles reference those tokens, including search overlays, download menus, résumé filters/badges, writing and project cards, article/disclosure surfaces, and analytics consent controls. Photography and brand artwork remain unchanged. Deployment is staging-only until separately approved for production.
