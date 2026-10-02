@@ -3,7 +3,7 @@
     <a class="v2-nav-link" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
     <a class="v2-nav-link" href="{{ '/writing/' | relative_url }}"{% if page.url == '/writing/' or page.url == '/blog/' %} aria-current="page"{% endif %}>Writing</a>
     <a class="v2-nav-link" href="{{ '/resume/' | relative_url }}"{% if page.url == '/resume/' %} aria-current="page"{% endif %}>Work</a>
-    <a class="v2-nav-link" href="{{ '/my-story/' | relative_url }}">About</a>
+    <a class="v2-nav-link" href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>About</a>
   </div></nav>
   <div class="btn-group btn-group-sm v2-downloads" role="group" aria-label="Download resumes and portfolios">
     {% assign download_groups = 'Resume,Portfolio' | split: ',' %}

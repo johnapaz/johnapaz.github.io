@@ -2,7 +2,7 @@
 # Reuse published destinations while dedicated v2 section pages are developed.
 cards:
   - title: About Me
-    url: /my-story/
+    url: /about/
   - title: My Blog
     url: /blog/
   - title: Resume & Portfolio
