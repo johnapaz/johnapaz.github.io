@@ -5,6 +5,7 @@ email: johnapaz@gmail.com
 description: John A. Paz — technical writer, content designer, speaker, and curious builder.
 url: "https://johnapaz.com" # the base hostname & protocol for your site
 baseurl: ""
+admin_portal_url: "https://admin.johnapaz.com/"
 repository: johnapaz/johnapaz.github.io
 author: John Paz
 city: Orlando
@@ -21,6 +22,8 @@ instagram_url: https://www.instagram.com/john.paz.stories/
 
 
 # Build settings
+plugins:
+  - jekyll-github-metadata
 markdown: kramdown
 collections: 
   about:

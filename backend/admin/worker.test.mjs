@@ -31,3 +31,34 @@ test('protected endpoints are read-only, environment inputs are constrained, and
  assert.equal((await worker.fetch(new Request('https://admin.example.com/api/reports',{headers,method:'POST'}),env,{})).status,405);
  assert.equal((await worker.fetch(new Request('https://admin.example.com/index.html'),env,{})).status,403);
 });
+
+test('health checks use Workers-supported manual redirects and keep failures Unknown',async()=>{
+ const owner=await request('owner@example.com');
+ await authorize(owner,env,fetcher);
+ const originalFetch=globalThis.fetch,originalCaches=globalThis.caches;
+ let responseFactory;
+ globalThis.caches={default:{match:async()=>new Response(JSON.stringify({refreshedAt:new Date().toISOString(),status:'fresh'}))}};
+ globalThis.fetch=async(url,options)=>{
+  // Model the deployed runtime rejecting unsupported redirect modes before networking.
+  if(!['manual','follow'].includes(options.redirect))throw new TypeError('Invalid redirect value');
+  assert.equal(options.redirect,'manual');
+  return responseFactory(url);
+ };
+ try {
+  for(const environment of ['production','staging']) {
+   const origin=environment==='production'?'https://johnapaz.com':'https://staging.johnapaz.com';
+   const load=async()=>{
+    const response=await worker.fetch(new Request(`https://admin.example.com/api/reports?environment=${environment}&days=7`,{headers:owner.headers}),env,{});
+    assert.equal(response.status,200);return (await response.json()).ops;
+   };
+   responseFactory=url=>{assert.equal(url,origin+'/build-info.json');return new Response(JSON.stringify({commit:'a'.repeat(40)}));};
+   const healthy=await load();assert.equal(healthy.status,'operational');assert.equal(healthy.commit,'a'.repeat(40));
+   for(const factory of [
+    ()=>new Response(null,{status:302,headers:{Location:'https://other-environment.example/build-info.json'}}),
+    ()=>new Response(null,{status:404}),
+    ()=>new Response('<html>not JSON</html>'),
+    ()=>{throw new TypeError('Network unavailable');}
+   ]) {responseFactory=factory;assert.equal((await load()).status,'unknown');}
+  }
+ } finally {globalThis.fetch=originalFetch;if(originalCaches===undefined)delete globalThis.caches;else globalThis.caches=originalCaches;}
+});

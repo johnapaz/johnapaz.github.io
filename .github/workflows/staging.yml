@@ -54,6 +54,18 @@ jobs:
           JEKYLL_ENV: production
         run: |
           bundle exec jekyll build --safe --destination _site-production
+          python3 - <<'PYTHON'
+          import json, os
+          from pathlib import Path
+          info = json.loads(Path("_site-production/build-info.json").read_text())
+          assert info["commit"] == os.environ["GITHUB_SHA"], "Wrong production build revision"
+          assert info["environment"] == "production", "Wrong metadata environment"
+          assert info["origin"] == "https://johnapaz.com", "Wrong metadata origin"
+          admin = Path("_site-production/admin/index.html")
+          if not admin.exists():
+              admin = Path("_site-production/admin.html")
+          assert 'href="https://admin.johnapaz.com/"' in admin.read_text(), "Admin sign-in destination missing"
+          PYTHON
           python3 scripts/check-site.py _site-production
       - uses: actions/upload-artifact@v4
         with:

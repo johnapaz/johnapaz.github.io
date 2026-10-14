@@ -21,7 +21,7 @@ Track the deletion inventory, evidence, and checks in the issue/PR (cleanup: #60
 3. Build with `_config.yml,_config.staging.yml` and run the staging privacy checker. The artifact must contain noindex/no analytics and a build-info.json source revision.
 4. Publish the reviewed ref to staging, compare build-info.json to the expected SHA, and review desktop/mobile layouts, menus, filters, search, and article disclosure.
 5. Record the previous production SHA and release source SHA. Open a PR into main; merge only after the checks and John’s release authorization.
-6. Verify the native production Pages workflow and live site separately. Check canonical URL, social image, robots/sitemap, launch placement, search, navigation, and downloads.
+6. Verify `/build-info.json` returns the actual release commit at the production origin (not just a passing CI revision). The endpoint uses GitHub Pages metadata; staging retains its own publisher-generated metadata. This is deployed revision evidence, not a deployment timestamp or uptime measurement. Verify the native production Pages workflow and live site separately. Check canonical URL, social image, robots/sitemap, launch placement, search, navigation, and downloads.
 
 CI is an automated build/link baseline. It does not claim physical-device, full accessibility, external-link, monitoring, or audience analytics verification. External archive links can disappear or block automation; their maintenance is tracked in #19.
 
