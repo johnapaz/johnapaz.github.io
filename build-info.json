@@ -1,0 +1,9 @@
+---
+layout: null
+permalink: /build-info.json
+---
+{
+  "commit": {{ site.github.build_revision | jsonify }},
+  "environment": {{ site.analytics_environment | jsonify }},
+  "origin": {{ site.url | jsonify }}
+}

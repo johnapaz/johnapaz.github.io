@@ -6,17 +6,21 @@
 
 The dashboard has Prod/Staging tabs, 7/28/90 completed-day periods with equal previous-period comparisons, a saved 1/2/3 widget-column preference, active users/sessions/page views/engagement rate, daily audience trends, traffic channels, top pages, four manual events, devices, country-level locations, site/deployment evidence and project shortcuts. Every widget includes a short definition. Responsive layouts reduce to two columns below 1020px and one below 650px; requested column preference is restored on a wider screen. Summary metrics remain four/two columns for readability.
 
-**Not live yet:** Authentication, revocable deployed sharing, embedded GA4 reports, deployed/source comparison, deployment timestamps/activity integration, independent site monitoring, GA4 reconciliation and physical Fold6 checks. Keep #31 open. Provider links are shortcuts, not embedded reporting completion.
+**Activation update — October 14, 2026:** John verified fresh authenticated GA4 reports for both properties at `admin.johnapaz.com`. The Cloudflare AI handoff records the production service as `johnapaz-github-io`, with the owner-only Access app “John Paz Admin”, team domain `johnapaz.cloudflareaccess.com`, a six-hour session, and no readers. It records clean script version `4ee05eed` deployed at 2026-10-14T19:55:04Z, preserving bindings and assets. This is handoff evidence, not an independent deployment audit. The exact cause/fix of the earlier 503 was not captured.
 
-## Proposed protected hosting
+The public sign-in link is configured to `https://admin.johnapaz.com/` in this candidate. A logged-out browser reaches the named Access sign-in screen. Command-line requests received Cloudflare error 1010, so those are not evidence of Worker authorization behavior. Full authenticated UI, protected asset/API denial, unknown identity and revocation tests remain outstanding.
 
-Retain Jekyll/GitHub Pages and the public `/admin` introduction. Host the private dashboard at a separate Cloudflare Worker hostname with Cloudflare Access; after verified deployment, configure `admin_portal_url` to its HTTPS URL. Exact private same-origin `/admin/*` routing requires a DNS/proxy change, which has **not** been made or authorized as a separate infrastructure decision. This subdomain/sign-in handoff avoids migrating the public site or implying GitHub Pages can enforce identity.
+**Still pending:** Health checks, revocable sharing, deployed/source comparison, deployment timestamps/activity integration, independent monitoring, GA4 reconciliation and physical Fold6 checks. Keep #31 open.
 
-`backend/admin/worker.mjs` is prepared, unit tested, and **not deployed**. It rejects requests unless configured Access JWTs pass signature, issuer, audience, expiration and identity checks. `OWNER_EMAIL` and `READ_ONLY_EMAILS` are checked on every request, including cache hits. All operations are GET-only. It authenticates the dashboard HTML/assets as well as `/api/reports`. Static assets use `run_worker_first: true`; `workers_dev` is disabled. Access protection must also cover the configured hostname and any alternate/preview hostname. Do not publish this asset directory through public Pages or a static host.
+## Protected hosting
+
+Retain Jekyll/GitHub Pages and the public `/admin` introduction. The private dashboard is hosted at `admin.johnapaz.com` with Cloudflare Access; `admin_portal_url` selects that HTTPS destination. Exact private same-origin `/admin/*` routing requires a DNS/proxy change, which has **not** been made or authorized as a separate infrastructure decision. This subdomain/sign-in handoff avoids migrating the public site or implying GitHub Pages can enforce identity.
+
+`backend/admin/worker.mjs` is the repository implementation. The live service was provisioned and edited separately through Cloudflare; do not assume the repository and deployed script are byte-identical or overwrite live health-check work without reconciling it. It rejects requests unless configured Access JWTs pass signature, issuer, audience, expiration and identity checks. `OWNER_EMAIL` and `READ_ONLY_EMAILS` are checked on every request, including cache hits. All operations are GET-only. It authenticates the dashboard HTML/assets as well as `/api/reports`. Static assets use `run_worker_first: true`; `workers_dev` is disabled. Access protection must also cover the configured hostname and any alternate/preview hostname. Do not publish this asset directory through public Pages or a static host.
 
 Cloudflare Access supplies the authentication flow (email PIN or a configured identity provider); no password database or custom client gate is introduced. Adding/removing allowed emails also requires updating the Access policy, but removing an email from the Worker allowlist immediately denies subsequent requests after the environment update deploys, even if an Access session remains valid. The dashboard does not persist reports in browser storage. Sharing is read-only; no guests are configured initially. Configure a short Access session duration and test revocation.
 
-## Account setup required
+## Recovery and deployment configuration
 
 1. Configure a Cloudflare Worker hostname and Access application, with an owner-only policy initially. Add `ACCESS_TEAM_DOMAIN` (hostname only) and `ACCESS_AUD` (application audience) as runtime configuration. Confirm owner email before live provisioning.
 2. Enable the Google Analytics Data API in a Google Cloud project. Create a reporting service account and grant **Viewer** access to only production property `557084016` and staging property `557077138`.
@@ -24,7 +28,9 @@ Cloudflare Access supplies the authentication flow (email PIN or a configured id
 4. From `backend/admin`, run `node --test worker.test.mjs`, `node build.mjs`, then authenticated Wrangler deployment after the hostname/Access configuration is ready. The repository does not include Cloudflare deployment credentials.
 5. Validate owner/reader access, logged-out denial for HTML/assets/API, signature tampering, unknown identity and revocation. Verify report totals against both GA4 properties, then set `admin_portal_url` in the site configuration and review staging before promotion.
 
-This account/infrastructure setup is the blocker to a working login and live reports; code preparation alone does not complete it. No paid service has been provisioned.
+The handoff confirms all six configuration names plus `ASSETS` are present. `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD`, `GA_CLIENT_EMAIL` and `GA_PRIVATE_KEY` are secret bindings; owner/readers are plain configuration. Do not put secret values in this document. Observability was enabled with 100% sampling and persistence during diagnosis; temporary report-error logging was removed.
+
+The checked-in Wrangler name `johnapaz-admin` is the original proposed name, while the existing live service is `johnapaz-github-io`. Before any Wrangler deployment, explicitly target and review the existing service, routes, bindings and asset settings; avoid creating a second Worker or replacing runtime configuration. Keep manual Cloudflare changes coordinated with repository work.
 
 ## Reporting contract and state handling
 
@@ -40,6 +46,9 @@ Availability currently means an HTTPS request to the selected environment’s bu
 
 - Five backend tests cover signed owner/read-only access, signature forgery, expiry, issuer/audience checks, revocation, logged-out asset/API denial, read-only methods, invalid periods/environments, year boundary/timezone math, named comparison periods, event mapping and threshold metadata.
 - Production/staging safe builds, internal-link checks and output exclusion checks are required before staging publication.
-- Live reports, deployed auth behavior and physical Fold6 verification remain pending account setup.
+- John supplied successful fresh 7-day production/staging API responses on October 14. This verifies reporting access, not GA4 UI reconciliation or all periods.
+- `/build-info.json` returned 404 on production and valid JSON without redirection on staging during direct checks. This candidate adds a production Jekyll metadata endpoint using `site.github.build_revision`, supplied by `jekyll-github-metadata`. Staging publication retains its existing generated branch/commit/run metadata. CI checks the production revision, environment and origin.
+- The Worker health catch covers fetch and JSON parsing. The reported Unknown state does not establish a redirect or same-zone routing cause. Cloudflare AI owns runtime diagnosis; retain `redirect: "error"` until the demonstrated cause is known. Following a cross-environment redirect could misattribute deployment metadata.
+- Full deployed authorization/UI, GA4 reconciliation and physical Fold6 verification remain pending.
 
 References: [GA4 API setup](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart), [named date ranges](https://developers.google.com/analytics/devguides/reporting/data/v1/rest/v1beta/DateRange), [Access JWT validation](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/authorization-cookie/validating-json/), [Worker-first assets](https://developers.cloudflare.com/workers/static-assets/routing/worker-script/).
