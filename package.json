@@ -1,23 +1,18 @@
 {
   "name": "johnapaz.github.io",
-  "version": "1.0.0",
   "description": "Code base for John Paz's website.",
-  "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "node scripts/test-analytics.cjs && node --test backend/admin/worker.test.mjs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnapaz/johnapaz.github.io.git"
   },
   "author": "John A. Paz",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/johnapaz/johnapaz.github.io/issues"
   },
   "homepage": "https://github.com/johnapaz/johnapaz.github.io#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "gulp": "^5.0.0"
-  }
+  "private": true
 }

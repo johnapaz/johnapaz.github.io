@@ -46,8 +46,8 @@ breadcrumbs:
 exclude:
   - backend
   - package.json
+  - package-lock.json
   - node_modules
-  - gulpfile.js
   - docs
   - scripts
   - vendor
