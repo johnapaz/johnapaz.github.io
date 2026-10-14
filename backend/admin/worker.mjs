@@ -85,7 +85,7 @@ async function reports(env,environment,days) {
 async function health(environment) {
   const origin=environment==='production'?'https://johnapaz.com':'https://staging.johnapaz.com';
   const checkedAt=new Date().toISOString();
-  try{const response=await fetch(origin+'/build-info.json',{redirect:'error',signal:AbortSignal.timeout(8000),cf:{cacheTtl:0}});if(!response.ok)return {status:'unknown',checkedAt,reason:'Build metadata unavailable; this is not proof the site is down.'};const info=await response.json();return {status:'operational',checkedAt,commit:info.commit,reason:'HTTPS build metadata responded. This is a point-in-time check, not measured uptime.',sourceStatus:'Source comparison not connected'};}catch(_){return {status:'unknown',checkedAt,reason:'Health check unavailable; no current availability evidence.'};}
+  try{const response=await fetch(origin+'/build-info.json',{redirect:'manual',signal:AbortSignal.timeout(8000),cf:{cacheTtl:0}});if(!response.ok)return {status:'unknown',checkedAt,reason:'Build metadata unavailable; this is not proof the site is down.'};const info=await response.json();return {status:'operational',checkedAt,commit:info.commit,reason:'HTTPS build metadata responded. This is a point-in-time check, not measured uptime.',sourceStatus:'Source comparison not connected'};}catch(_){return {status:'unknown',checkedAt,reason:'Health check unavailable; no current availability evidence.'};}
 }
 export default {
   async fetch(request,env,ctx) {
