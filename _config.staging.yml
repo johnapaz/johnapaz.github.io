@@ -14,7 +14,6 @@ exclude:
   - package.json
   - package-lock.json
   - node_modules
-  - gulpfile.js
   - docs
   - scripts
   - vendor

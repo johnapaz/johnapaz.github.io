@@ -4,6 +4,16 @@ Production: `main` → GitHub Pages, root → https://johnapaz.com.
 Staging: separate `johnapaz-staging` repo → GitHub Actions Pages → https://staging.johnapaz.com.
 Integration: `v2`; branch previews remain selectable through staging-source.txt.
 
+## Small maintenance patches
+
+For a focused cleanup or fix, branch from the latest `main` (for example, `chore/template-cleanup`) and open a PR back to `main`. Keep Mentoring work on `v2.1` separate; this maintenance patch does not retire or repoint existing integration branches.
+
+Classify behavior-preserving cleanup as the next available `v2.0.x` patch, checking existing tags before assigning the release tag. Reserve `v2.1.0` for the Mentoring feature release. Create a release tag only after the approved change ships; the private npm command manifest does not carry the website version.
+
+Use the existing dual-configuration CI and a brief staging smoke review for template/asset removal. In the staging repository, record the current `staging-source.txt` selection before previewing the candidate. Manually dispatch **Publish branch preview to staging** with `source_ref` set to the exact candidate commit; this is a one-run override and scheduled publication returns to the saved selection. Verify `/build-info.json` during review and restore/redeploy the recorded selection afterward if necessary. Do not change the saved selection or merge to production implicitly.
+
+Track the deletion inventory, evidence, and checks in the issue/PR (cleanup: #60). Update the wiki when a lasting architecture or workflow decision changes; routine file removals do not need a duplicate wiki inventory.
+
 ## Before release
 
 1. Build the reviewed source in CI with the inherited Ruby 2.7/Bundler 2.4.22 lockfile.

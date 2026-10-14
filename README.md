@@ -83,7 +83,15 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. The V2 workflow currently uses legacy Ruby 2.7 and Bundler 2.4.22; dependency modernization remains future work. The npm package is not the Jekyll build entry point.
+Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. The V2 workflow currently uses legacy Ruby 2.7 and Bundler 2.4.22; dependency modernization remains future work. Node.js 22 is used by CI for the analytics checks and protected admin backend; it is separate from the Jekyll build. No npm dependencies or Gulp tasks are needed. Run the existing checks without installing packages:
+
+```bash
+npm test
+node backend/admin/build.mjs
+node --check assets/js/admin-v2.js
+```
+
+The private `package.json` is a command wrapper, not a website release version. Website releases use Git tags. See [release and recovery instructions](docs/releasing.md) for maintenance branches and preview review.
 
 ## Project record and credits
 
