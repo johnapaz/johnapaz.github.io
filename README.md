@@ -1,6 +1,6 @@
 # johnapaz.com
 
-[Visit the website](https://johnapaz.com) · [Explore the V2 source](https://github.com/johnapaz/johnapaz.github.io/tree/v2) · [Read the project wiki](https://github.com/johnapaz/johnapaz.github.io/wiki) · [View the live backlog](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc)
+[Visit the website](https://johnapaz.com) · [Explore the source](https://github.com/johnapaz/johnapaz.github.io/tree/main) · [Read the project wiki](https://github.com/johnapaz/johnapaz.github.io/wiki) · [View the live backlog](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc)
 
 My personal website brings together my work as a writer, speaker, and builder: professional samples, practical guides, personal writing, and projects. It is also a project worth discussing in its own right—a record of how I turn an idea into requirements, direct AI-assisted development, review the results, and refine the experience.
 
@@ -19,7 +19,9 @@ V2 brings together Home, professional Work, Writing/Blog, About, Coding/Projects
 | Feature branches | Reviewable changes; selectable for the shared staging preview |
 | [johnapaz-staging](https://github.com/johnapaz/johnapaz-staging) | Independent Actions/Pages deployment controls |
 
-A build badge indicates build activity, not uptime. Monitoring, analytics, appearance modes, dependency modernization, and further toolbar refinement remain tracked in the [live backlog](https://github.com/johnapaz/johnapaz.github.io/issues?q=is%3Aissue%20state%3Aopen%20sort%3Aupdated-desc).
+The owner dashboard is live at [Admin](https://johnapaz.com/admin): Cloudflare Access protects the dashboard and its GA4 reporting backend. It has separate production/staging reports, comparisons, and point-in-time HTTPS/build-revision checks. Sharing/revocation verification, GA4 reconciliation, deployment activity, independent monitoring, and full device acceptance remain in [#31](https://github.com/johnapaz/johnapaz.github.io/issues/31). A build badge indicates build activity, not uptime.
+
+**In review — [#66](https://github.com/johnapaz/johnapaz.github.io/issues/66):** an **Exclude this browser** control stops future analytics collection on that browser and site, remembers the choice, and offers Undo. It preserves consent and earlier report data; configure each browser/device and production/staging separately. The change includes a public `/analytics-preferences/` page and dashboard shortcut. The protected dashboard assets require a separate, coordinated Worker deployment; publishing Pages alone does not update them.
 
 ![Build checks](https://github.com/johnapaz/johnapaz.github.io/actions/workflows/staging.yml/badge.svg?branch=main)
 ![Staging deployment](https://github.com/johnapaz/johnapaz-staging/actions/workflows/staging.yml/badge.svg)
@@ -62,9 +64,19 @@ AI has assisted with implementation, troubleshooting, documentation, and verific
 
 ## How changes reach the site
 
-Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, disables analytics, discourages indexing, and records the source commit in `build-info.json`.
+Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, uses its own consent-gated GA4 property, discourages indexing, and records the source commit in `build-info.json`. Local development and Admin are not tracked.
 
 Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
+
+## Versions and release notes
+
+Recommended site release convention: `vMAJOR.MINOR.PATCH`, with a short descriptive GitHub Release title. Major versions mark redesigns, minor versions mark named feature milestones, and patches cover focused fixes or small improvements within the current milestone. This is a site release convention rather than a package API compatibility promise.
+
+- **Proposed next release:** `v2.0.1 — Cleaner analytics`, after review and verified deployment. Recheck existing tags before assigning the final number.
+- **Reserved:** `v2.1.0 — Mentoring`, preserving the existing milestone.
+- **Preview labels:** `v2.0.1-rc.1`, `-rc.2` if useful; branch names describe the work, for example `feat/66-exclude-own-traffic`.
+
+[CHANGELOG.md](CHANGELOG.md) records Unreleased changes and verified past deliveries. At release, date the shipped entry and publish matching GitHub Release notes against the deployed commit. The private npm command wrapper stays unversioned. No tag or release is created just by opening a PR. See [releasing](docs/releasing.md) for the complete process.
 
 ## Explore or run the source
 
