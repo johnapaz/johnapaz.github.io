@@ -6,3 +6,5 @@ _site/
 _site-*/
 node_modules/
 .directory
+
+.bundle/

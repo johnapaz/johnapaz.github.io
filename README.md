@@ -30,7 +30,7 @@ The owner dashboard is live at [Admin](https://johnapaz.com/admin): Cloudflare A
 
 | Technology | Role in the site |
 | --- | --- |
-| **Jekyll and Ruby/Bundler** | Generate static pages from content, templates, and configuration; the GitHub Pages gem supplies the build dependency set |
+| **Jekyll and Ruby/Bundler** | Generate static pages from content, templates, and configuration; explicit Jekyll/metadata dependencies match the GitHub Pages Jekyll family |
 | **Markdown and YAML** | Store readable page content, configuration, and structured homepage data |
 | **Liquid** | Compose layouts and reusable includes |
 | **Sass/CSS** | Provide the theme styling and dedicated V2 layout, typography, responsive behavior, and interaction states |
@@ -66,9 +66,9 @@ AI has assisted with implementation, troubleshooting, documentation, and verific
 
 Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, uses its own consent-gated GA4 property, discourages indexing, and records the source commit in `build-info.json`. Local development and Admin are not tracked.
 
-Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
+Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after the appropriate review. Technical maintenance in #69 is authorized for Codex review/merge after verification; user-facing changes return to my review when reasonably scoped. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
 
-The wiki updates are now [published](https://github.com/johnapaz/johnapaz.github.io/wiki/Release%E2%80%90Notes). Separate protected admin staging is tracked in [#68](https://github.com/johnapaz/johnapaz.github.io/issues/68), estimated at 6–10 engineering hours once build/account prerequisites are ready. The first candidate staging run exposed a Ruby/lockfile mismatch; [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69) blocks live review. Green source CI re-resolved dependencies and is not proof of the committed lockfile's compatibility. See the [validation record](docs/admin-analytics-review-2026-10-21.md).
+The wiki updates are now [published](https://github.com/johnapaz/johnapaz.github.io/wiki/Release%E2%80%90Notes). Separate protected admin staging is tracked in [#68](https://github.com/johnapaz/johnapaz.github.io/issues/68), estimated at 6–10 engineering hours once build/account prerequisites are ready. The first candidate staging run exposed a Ruby/lockfile mismatch. The isolated [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69) fix now aligns declared Ruby and frozen dependencies in source CI and staging; exact-source runtime preview passed. This feature branch includes that prerequisite. See the [validation record](docs/admin-analytics-review-2026-10-21.md).
 
 ## Versions and release notes
 
@@ -90,14 +90,14 @@ Recommended site release convention: `vMAJOR.MINOR.PATCH`, with a short descript
 - V2 `docs/`, `scripts/`, and `.github/workflows/`: implementation notes and build checks
 - `CNAME`: custom-domain configuration
 
-Install Ruby and Bundler compatible with the checked-out branch's dependency lockfile, then run:
+Install the Ruby version in `.ruby-version` and Bundler 2.4.22, then run:
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. The V2 workflow currently uses legacy Ruby 2.7 and Bundler 2.4.22; dependency modernization remains future work. Node.js 22 is used by CI for the analytics checks and protected admin backend; it is separate from the Jekyll build. No npm dependencies or Gulp tasks are needed. Run the existing checks without installing packages:
+Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. Builds use the Ruby version committed in `.ruby-version` and Bundler 2.4.22. CI installs with `BUNDLE_FROZEN=true` and rejects any Gemfile.lock changes. Node.js 22 is used by CI for the analytics checks and protected admin backend; it is separate from the Jekyll build. No npm dependencies or Gulp tasks are needed. Run the existing checks without installing packages:
 
 ```bash
 npm test

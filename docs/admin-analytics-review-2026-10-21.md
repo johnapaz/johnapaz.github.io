@@ -10,7 +10,7 @@ Implementation: #66, [draft PR #67](https://github.com/johnapaz/johnapaz.github.
 - Published wiki Home, Roadmap, Development Workflow, Site Operations, Development Journal, sidebar and [Release Notes](https://github.com/johnapaz/johnapaz.github.io/wiki/Release%E2%80%90Notes) through authenticated GitHub UI. Removed the temporary wiki patch from the feature branch after publication; the wiki history is authoritative.
 - Added [#68](https://github.com/johnapaz/johnapaz.github.io/issues/68), an independent protected staging deployment of admin code/assets/backend. Estimate: 6–10 engineering hours, typically 1–2 working days once build/account prerequisites are ready. Existing live Admin already reports staging traffic. This issue creates no infrastructure.
 
-## Staging blocker
+## Historical staging blocker
 
 The manual one-run workflow override requested exact candidate `0370188cd6f37375873e21a37d79300d5a0f52a0` without changing `staging-source.txt`. [Staging run 39675317815](https://github.com/johnapaz/johnapaz-staging/actions/runs/39675317815), build job `119483526092`, failed before deployment. Frozen Bundler installation rejected rubyzip 3.4.0 because it requires Ruby >=3.0 and the publisher uses Ruby 2.7.8. Deployment was skipped. [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69) records the reproduced mismatch, source CI's silent downgrade and the required isolated maintenance fix.
 
@@ -18,7 +18,7 @@ The saved source remained exact `4fd49e45ea77bd59ed82ebb6b539e705a9b6c4de`. Live
 
 ## Remaining acceptance
 
-Resolve #69 with a reviewed compatible runtime/dependency set and frozen installation/lockfile enforcement in both CI and staging. Then rerun exact-candidate staging publication and UI/network, keyboard/narrow and device review. Do not bypass enforcement or downgrade dependencies solely to obtain a green preview.
+The #69 fix is merged through source PR #70 (`2f7bb8a13e7f36678014d533b70ed19a4f6c54cc`) and controller PR #1 (`707eafeeec477b11320670e3e44910fc31dcc2cf`). Frozen source CI 39678613800 and exact-source live staging run 39678798536 passed. Runtime selection, frozen installs and lockfile guards now agree. This branch integrates that prerequisite; rerun its exact-candidate publication and UI/keyboard review. Physical-device and network acceptance must be reported separately. Do not bypass enforcement or downgrade dependencies solely to obtain a green preview.
 
 Pages and private Worker assets release separately. Reconcile the live `johnapaz-github-io` Worker before shipping its dashboard link, preserving runtime bindings, secrets, Access policy and the manual redirect health fix. Record its current version and rollback. No production, Worker, DNS, access-policy, final tag or GitHub Release change was performed in this work. PR #67 remains draft; #66 remains open.
 

@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-22.04
     env:
       JEKYLL_ENV: staging
+      BUNDLE_FROZEN: "true"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -29,11 +30,12 @@ jobs:
           node --check assets/js/admin-v2.js
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.7'
+          ruby-version: .ruby-version
           bundler: '2.4.22'
       - name: Install dependencies
         run: |
           bundle install
+          git diff --exit-code -- Gemfile.lock
       - name: Verify consent and analytics isolation
         run: node scripts/test-analytics.cjs
       - name: Build staging

@@ -15,7 +15,7 @@ Changes are grouped by verified delivery. Unreleased entries describe branch wor
 - Exclusion affects future collection only. Earlier visits remain in reports; this does not identify John's historic sessions or add a report-level filter.
 - Set it separately on every browser/device and each environment. Clearing storage or private browsing can remove it. Undo preserves the separate consent decision.
 - Pages publication and protected Worker assets are separate deployments. The dashboard shortcut requires reconciling and deploying the existing Worker; preserve runtime configuration and the health fix. Review staging before release.
-- Live staging review is blocked by the Ruby/lockfile mismatch in [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69). Source CI passed after re-resolving rubyzip 3.4.0 to 2.4.1; the frozen publisher rejected the committed dependency set. No candidate was deployed.
+- The initial staging blocker [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69) has a merged, independently verified runtime fix. This branch includes it; the browser-exclusion candidate still needs its own exact-source live acceptance.
 - This version is proposed and untagged. Record the approved release date, exact production SHA, checks, Pages deployment, Worker version/asset status and rollback SHA before publishing a final GitHub Release.
 
 ## October 14, 2026 — Initial owner dashboard (unversioned delivery)
