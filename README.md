@@ -28,7 +28,7 @@ A build badge indicates build activity, not uptime. Monitoring, analytics, appea
 
 | Technology | Role in the site |
 | --- | --- |
-| **Jekyll and Ruby/Bundler** | Generate static pages from content, templates, and configuration; the GitHub Pages gem supplies the build dependency set |
+| **Jekyll and Ruby/Bundler** | Generate static pages from content, templates, and configuration; explicit Jekyll/metadata dependencies match the GitHub Pages Jekyll family |
 | **Markdown and YAML** | Store readable page content, configuration, and structured homepage data |
 | **Liquid** | Compose layouts and reusable includes |
 | **Sass/CSS** | Provide the theme styling and dedicated V2 layout, typography, responsive behavior, and interaction states |
@@ -64,7 +64,7 @@ AI has assisted with implementation, troubleshooting, documentation, and verific
 
 Pull requests and pushes to main, v2, and supported preview branches run CI checks for both production and staging configurations. The generated-site checker validates local links, assets, downloads, anchors, and launch metadata. The separate staging repository reads `v2` and publishes through GitHub Actions, either manually or on its scheduled refresh. Staging overrides the site URL, disables analytics, discourages indexing, and records the source commit in `build-info.json`.
 
-Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
+Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after the appropriate review. Technical maintenance in #69 is authorized for Codex review/merge after verification; user-facing changes return to my review when reasonably scoped. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
 
 ## Explore or run the source
 
@@ -76,14 +76,14 @@ Production promotion is a separate review step: record the reviewed source commi
 - V2 `docs/`, `scripts/`, and `.github/workflows/`: implementation notes and build checks
 - `CNAME`: custom-domain configuration
 
-Install Ruby and Bundler compatible with the checked-out branch's dependency lockfile, then run:
+Install the Ruby version in `.ruby-version` and Bundler 2.4.22, then run:
 
 ```bash
 bundle install
 bundle exec jekyll serve
 ```
 
-Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. The V2 workflow currently uses legacy Ruby 2.7 and Bundler 2.4.22; dependency modernization remains future work. Node.js 22 is used by CI for the analytics checks and protected admin backend; it is separate from the Jekyll build. No npm dependencies or Gulp tasks are needed. Run the existing checks without installing packages:
+Open [http://localhost:4000](http://localhost:4000). For V2 staging configuration and the build checker, follow the staging guide. Builds use the Ruby version committed in `.ruby-version` and Bundler 2.4.22. CI installs with `BUNDLE_FROZEN=true` and rejects any Gemfile.lock changes. Node.js 22 is used by CI for the analytics checks and protected admin backend; it is separate from the Jekyll build. No npm dependencies or Gulp tasks are needed. Run the existing checks without installing packages:
 
 ```bash
 npm test

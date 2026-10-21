@@ -65,3 +65,13 @@ Validate rollback on staging before accepting #25.
 - [x] GitHub Pages recognizes DNS and serves valid HTTPS; Enforce HTTPS is enabled.
 - [ ] Complete physical Fold6/mobile and full accessibility review beyond the verified desktop interactions.
 - [ ] Safely rehearse promotion and rollback before v2 promotion.
+
+## Frozen runtime — issue #69, October 21, 2026
+
+Current source declares Ruby in `.ruby-version`; source CI and the staging publisher use that version with Bundler 2.4.22 and `BUNDLE_FROZEN=true`. Both reject lockfile changes. Historical saved source revisions without `.ruby-version` retain the publisher's Ruby 2.7 fallback so preview restoration does not change their dependency/runtime combination.
+
+The build manifest pins Jekyll 3.10 and the metadata plugin used by `_config.yml`, matching the current Pages Jekyll family without the unused `github-pages` bootstrap/remote-theme plugin bundle. The ZIP library is constrained to patched 3.4.x. This removes the conflict between the bootstrap's remote-theme <3 ZIP requirement and the approved security floor. Pages hosting, routes, templates and content are unchanged.
+
+The controller has PR validation with deployment disabled for pull requests. Test an exact source SHA using workflow_dispatch on the controller candidate branch; preserve and restore staging-source.txt's saved revision. Deployment is allowed for explicit workflow_dispatch and existing scheduled/main publication, not PR checks.
+
+John authorized Codex review/merge of these technical PRs after checks and staging evidence; user-facing review remains separately scoped.
