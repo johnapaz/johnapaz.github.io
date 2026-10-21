@@ -1,0 +1,139 @@
+diff --git a/Development-Journal.md b/Development-Journal.md
+index 9391b77..b366305 100644
+--- a/Development-Journal.md
++++ b/Development-Journal.md
+@@ -66,3 +66,15 @@ Safe local Jekyll build and 21-page staging checks passed. Chromium passed 17 vi
+ Next: review card curation/grouping/order, typography, final palette roles, imagery, and Work label before extending other pages. Confirm Threads URL and refresh downloads (#27). Writing temporarily anchors to the grid; Work and About use existing pages. Broader accessibility/multi-browser testing and search remain open. #23 stays open; staging HTTPS remains #28. Production publishing configuration is untouched.
+ 
+ Writing angle: evolving a static-site foundation while accommodating concurrent requirements changes, and distinguishing responsive simulations from physical foldable validation.
++
++## October 21, 2026 — Browser exclusion and release discipline
++
++John reports the initial owner dashboard is working and authorized beginning #66 with branching/cleanup, README/wiki updates, and a version/release-note recommendation. [Draft PR #67](https://github.com/johnapaz/johnapaz.github.io/pull/67) starts from production `72042e2` on `feat/66-exclude-own-traffic`; first implementation commit `c1010eb57543d1e38b02e9a289f2660b6bb7f36f`.
++
++The first increment uses a local browser collection opt-out with Undo and independent consent. A separate untracked preferences page, normal consent panel and Admin/dashboard source links make it usable per browser and environment. Historical visits remain in reports. No identity marker, GA4 configuration, report/cache change or destructive exclusion was added.
++
++Local analytics/exclusion/consent/environment regressions, all six protected backend tests, asset generation, JS syntax and whitespace checks passed. Ruby and a local browser executable are unavailable; source CI and authenticated staging UI/network review remain separate. Saved staging remains exact `4fd49e45ea77bd59ed82ebb6b539e705a9b6c4de`. No production publication or Worker deployment was performed.
++
++README and source operating guides now distinguish delivered owner Admin from full #31 acceptance, and accurately describe staging's dedicated consent-gated analytics. Added an Unreleased changelog and branch audit. Proposed site release is **v2.0.1 — Cleaner analytics**; **v2.1.0 — Mentoring** stays reserved. These are recommendations, not release tags. Existing integrated branches were inventoried; unique/active work and integration branches are preserved. #55 retains remote retirement and dependency work.
++
++Next: finish source CI, publish/review the exact staging candidate and restore its prior selection, then coordinate the existing private Worker assets and John's production release review. Record exact release SHA, deployment/Worker version, rollback and final release notes only after shipping.
+diff --git a/Development-Workflow.md b/Development-Workflow.md
+index a8fc234..3d9a08a 100644
+--- a/Development-Workflow.md
++++ b/Development-Workflow.md
+@@ -11,15 +11,17 @@
+ 
+ John's current instructions govern the session. Wiki content provides project context; it does not independently authorize unrelated actions or override current instructions.
+ 
+-## Staging and releases
++## Staging and releases — current October 21, 2026
+ 
+-Staging setup began on September 30, 2026; live validation remains pending. John approved a GitHub-only workflow and public staging repository. [#25](https://github.com/johnapaz/johnapaz.github.io/issues/25) defines the prerequisite to resolve before v2 implementation. [#21](https://github.com/johnapaz/johnapaz.github.io/issues/21) owns the broader deployment, release, and CI strategy.
++`main` is the production source. Create scoped branches from the latest `main`, for example `feat/66-exclude-own-traffic`; open a PR back to `main`. Preserve `v2`, `v2.1`, and unique/active branch work. Check current remote history, open PRs, active sessions and the saved staging source before retirement; the [branch audit](https://github.com/johnapaz/johnapaz.github.io/blob/feat/66-exclude-own-traffic/docs/branch-audit-2026-10-21.md) records this inspection. No branches were deleted by the audit.
+ 
+-Source remains in [johnapaz.github.io on v2](https://github.com/johnapaz/johnapaz.github.io/tree/v2). [johnapaz-staging](https://github.com/johnapaz/johnapaz-staging) owns an Actions workflow that reads the public source and publishes a Pages artifact, without a deploy key or stored secret. Staging refreshes manually or on a 30-minute schedule (schedules can be delayed); v2 pushes run build validation.
++`johnapaz-staging` owns the independent Pages workflow. Read its current `staging-source.txt` before previewing. On October 21 it selected exact commit `4fd49e45ea77bd59ed82ebb6b539e705a9b6c4de`. Use the manual **Publish branch preview to staging** workflow with an exact candidate SHA as a one-run override; preserve and restore the saved selection. Staging is public/noindex with a separate consent-gated GA4 property. Local development and Admin remain untracked. DNS/HTTPS are established; old setup-pending wording is historical.
+ 
+-The intended URL is https://staging.johnapaz.com. Its custom domain is saved in Pages, but DNS and HTTPS remain pending. Required DNS: CNAME `staging` → `johnapaz.github.io`. Staging is public with noindex and analytics disabled. `build-info.json` records the source commit.
++Source PRs into main/v2 run production/staging builds, link/privacy/environment checks, analytics regressions and protected backend tests. Inspect CI results separately from actual Pages publication, exact deployed `build-info.json`, UI/network and device review. John reviews staging before production promotion. See [source release guide](https://github.com/johnapaz/johnapaz.github.io/blob/feat/66-exclude-own-traffic/docs/releasing.md).
+ 
+-[Executable workflow](https://github.com/johnapaz/johnapaz-staging/blob/main/.github/workflows/staging.yml) · [Source build and review guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md). John approves the displayed source revision before a PR to production. Validate links, responsive layout, accessibility, downloads, promotion and rollback before closing #25. Production remains on its current publishing branch; coordinate its rename through #20.
++The protected admin service is a separate Cloudflare Access/Worker deployment at `admin.johnapaz.com`; Pages does not publish its assets. Reconcile existing live `johnapaz-github-io` script/assets before updates, preserving Access, bindings/secrets and the manual redirect health fix. Record the current Worker version for recovery.
++
++Use [Release notes](Release-Notes) and the tracked changelog. Create a final tag and GitHub Release only after approved production publication and exact revision verification; do not mark an open PR as released. Production rollback is a revert and rebuild; a Worker asset/script change has its own recorded version rollback. [#21](https://github.com/johnapaz/johnapaz.github.io/issues/21) retains broader release strategy and [#55](https://github.com/johnapaz/johnapaz.github.io/issues/55) retains cross-session retirement/dependency modernization.
+ 
+ ## Editing this wiki with Git
+ 
+diff --git a/Home.md b/Home.md
+index f467e8e..6edb563 100644
+--- a/Home.md
++++ b/Home.md
+@@ -6,6 +6,12 @@ This wiki records the requirements, decisions, development history, and operatin
+ 
+ V2 is live on johnapaz.com from the renamed main branch. [V2 launch](V2-Launch) records content, source and deployment evidence, staging/CI checks, recovery, and remaining work. Earlier production holds are superseded by John’s explicit launch authorization.
+ 
++## Admin and next release — October 21, 2026
++
++The initial owner dashboard shipped October 14 (#62): protected sign-in, separate live production/staging analytics, and Operational health/build-revision widgets were verified. John reports it is working. Broader acceptance stays in #31.
++
++[PR #67](https://github.com/johnapaz/johnapaz.github.io/pull/67) implements browser analytics exclusion (#66) on `feat/66-exclude-own-traffic`, with an untracked preferences page, Undo and separate consent handling. This is **in review**, not a release. Historical visits remain in reports. [Release notes and version convention](Release-Notes) records the proposed `v2.0.1 — Cleaner analytics`, preserving `v2.1.0 — Mentoring`.
++
+ ## Start here
+ 
+ | Page | What it contains |
+diff --git a/Release-Notes.md b/Release-Notes.md
+new file mode 100644
+index 0000000..4bc737c
+--- /dev/null
++++ b/Release-Notes.md
+@@ -0,0 +1,28 @@
++# Release notes and versions
++
++## Recommended convention — October 21, 2026
++
++Use **vMAJOR.MINOR.PATCH** for site releases and a short descriptive GitHub Release title. Major marks a redesign/platform era; minor marks a named feature milestone; patch marks a focused fix or small improvement within the current milestone. This is a website release convention, not a package API compatibility promise. This recommendation awaits John's release review; it does not create a tag.
++
++| Item | Convention / recommendation |
++| --- | --- |
++| Browser exclusion #66 | **v2.0.1 — Cleaner analytics**, proposed next available patch |
++| Mentoring #54 | **v2.1.0 — Mentoring**, preserving its reservation |
++| Optional staging candidate | `v2.0.1-rc.1`, then `-rc.2` when useful |
++| Feature branch | `feat/66-exclude-own-traffic` from current `main` |
++| Fix / cleanup branches | `fix/<issue>-<short-name>` / `chore/<short-name>` |
++| Version source | Annotated Git release tag at the verified production commit; npm command manifest stays unversioned |
++
++Only the historical **Ver1** tag/release existed at inspection. Preserve it. October 2 V2 launch and October 14 initial dashboard are documented unversioned deliveries; do not invent old tags or dates.
++
++## Release notes workflow
++
++Maintain [CHANGELOG.md](https://github.com/johnapaz/johnapaz.github.io/blob/feat/66-exclude-own-traffic/CHANGELOG.md) in source. Add user-visible entries under Unreleased during feature work. At release, move only the shipped entries to the selected version/date and publish matching GitHub Release notes with the actual production SHA, previous SHA, validation/deployment evidence, limitations and rollback. Never move a published tag.
++
++CI build success, staging review, Pages deployment and the protected Cloudflare Worker are separate evidence. For #66, public Admin and the control page ship via Pages; the private dashboard shortcut needs a reconciled Worker asset deployment. If the shortcut is deferred, disclose that and keep its work open. No final tag or release is published by draft PR #67.
++
++## Current draft — Cleaner analytics
++
++Exclude this browser / Undo stops future collection while preserving consent. Available through the existing consent panel and an always-untracked preferences page. Mark each browser/device and production/staging separately. Clearing storage/private browsing can remove the setting. Earlier visits remain in reports; no owner identity or historical report filter is introduced.
++
++See [PR #67](https://github.com/johnapaz/johnapaz.github.io/pull/67), [#66](https://github.com/johnapaz/johnapaz.github.io/issues/66), and the [release guide](https://github.com/johnapaz/johnapaz.github.io/blob/feat/66-exclude-own-traffic/docs/releasing.md). Local analytics/exclusion regressions and all six protected backend tests passed. CI, staging UI/network, keyboard/narrow/device verification and release coordination remain to be recorded.
+diff --git a/Roadmap.md b/Roadmap.md
+index 27b8b4c..ab8cdc7 100644
+--- a/Roadmap.md
++++ b/Roadmap.md
+@@ -1,3 +1,5 @@
++> **Current work — October 21, 2026:** Initial owner Admin shipped October 14 (#62); full acceptance remains #31. Browser exclusion #66 is implemented in [draft PR #67](https://github.com/johnapaz/johnapaz.github.io/pull/67), pending CI, staging UI/network and coordinated release review. Proposed focused release: **v2.0.1 — Cleaner analytics**. **v2.1.0 — Mentoring** remains reserved. Later admin enhancements: #64 referrals/drilldowns and #65 Not John arcade. [Release convention](Release-Notes). Earlier dated plans below remain history.
++
+ > **Current status — October 2, 2026:** V2 is live from main after John’s explicit production authorization. Search, launch article, AI disclosure, social metadata, and dual-configuration CI are delivered. [V2 launch](V2-Launch) is the current release record. Earlier milestones and production holds below are historical. Next: share the launch, deeper implementation post, physical Fold6 review, and prioritize remaining operations/toolbar/appearance/dependency work from the backlog.
+ 
+ # Roadmap
+diff --git a/Site-Operations-and-Monitoring.md b/Site-Operations-and-Monitoring.md
+index fc12ce1..0be68d2 100644
+--- a/Site-Operations-and-Monitoring.md
++++ b/Site-Operations-and-Monitoring.md
+@@ -2,6 +2,14 @@
+ 
+ Owner: John Paz. Parent issue: [#24](https://github.com/johnapaz/johnapaz.github.io/issues/24).
+ 
++## Current delivery — October 21, 2026
++
++Initial owner dashboard is live after [#62](https://github.com/johnapaz/johnapaz.github.io/pull/62), production merge `905bbc30a08b6b3ba53d18552b65fb5bdd87a47d`. Native Pages deployment `38642716291` and validation `38642716512` passed October 14. Authenticated 28-day production/staging reports loaded; both health widgets were Operational and showed deployed revisions. John reports it is working. Earlier not-provisioned/pending-activation statements below are historical.
++
++#31 stays open for full deployed authorization, sharing/revocation, GA4 reconciliation, source/deployment activity integration, independent monitoring and full responsive/accessibility/physical Fold6 acceptance. #64 referrals/drilldowns and #65 Not John arcade are post-launch enhancements.
++
++[#66](https://github.com/johnapaz/johnapaz.github.io/issues/66) is in review in [PR #67](https://github.com/johnapaz/johnapaz.github.io/pull/67). The first increment stops future analytics collection on browsers John excludes; it preserves separate consent and provides Undo. It does not filter/delete historical sessions. The untracked `/analytics-preferences/` page works per browser/device/origin; production and staging each need a setting. Public Admin and protected dashboard source link to it. Pages and private Worker asset releases are separate; no live deployment is implied by this record.
++
+ ## Approved scope
+ 
+ - Public status and tested outage/recovery alerts: #30. Availability, build activity, and audience engagement are distinct signals. Show timestamps and Unknown/stale states.
+diff --git a/_Sidebar.md b/_Sidebar.md
+index ee10b58..4019bf0 100644
+--- a/_Sidebar.md
++++ b/_Sidebar.md
+@@ -2,6 +2,7 @@
+ 
+ - [Home](Home)
+ - [V2 launch](V2-Launch)
++- [Release notes and versions](Release-Notes)
+ - [Roadmap](Roadmap)
+ - [V2 requirements](V2-Requirements)
+ - [Decision log](Decision-Log)
