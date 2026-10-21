@@ -22,7 +22,7 @@ Track the deletion inventory, evidence, and checks in the issue/PR (cleanup: #60
 
 1. Build the reviewed source in CI with Ruby from `.ruby-version`, Bundler 2.4.22 and frozen installation of the committed lockfile.
 2. Run `python3 scripts/check-site.py` against the generated output. It validates internal page links, downloads, images/srcset, fragment anchors, launch placement, and metadata.
-3. Build with `_config.yml,_config.staging.yml` and run the staging privacy checker. The artifact must contain noindex/no analytics and a build-info.json source revision.
+3. Build with `_config.yml,_config.staging.yml` and run the staging privacy checker. The artifact must contain noindex, the separate consent-gated staging analytics property, and a build-info.json source revision.
 4. Publish the reviewed ref to staging, compare build-info.json to the expected SHA, and review desktop/mobile layouts, menus, filters, search, and article disclosure.
 5. Record the previous production SHA and release source SHA. Open a PR into main; merge technical maintenance after Codex review and passing checks under the authorization above; obtain John’s review for user-facing release scope.
 6. Verify `/build-info.json` returns the actual release commit at the production origin (not just a passing CI revision). The endpoint uses GitHub Pages metadata; staging retains its own publisher-generated metadata. This is deployed revision evidence, not a deployment timestamp or uptime measurement. Verify the native production Pages workflow and live site separately. Check canonical URL, social image, robots/sitemap, launch placement, search, navigation, and downloads.

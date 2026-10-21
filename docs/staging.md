@@ -27,9 +27,8 @@ Public repository Actions/Pages usage is subject to GitHub's current limits.
 ## Build behavior
 
 The workflow uses the current Jekyll Pages dependency family and safe mode to match Pages.
-The theme's obsolete development dependencies were removed, Gemfile was aligned with the inherited Pages 204 dependency family, and the lockfile was retained with Bundler 2.4.22.
-Ruby 2.7 is a temporary legacy compatibility choice and should be upgraded with the dependency refresh.
-Staging config overrides the site URL and disables analytics. Generated CNAME is staging-only.
+The source declares Ruby in `.ruby-version`, uses Bundler 2.4.22 and Jekyll 3.10, and installs the committed lockfile in frozen mode. Ruby 2.7 is retained only when restoring historical sources without a runtime file.
+Staging config overrides the site URL and uses a separate consent-gated analytics property. Generated CNAME is staging-only.
 All HTML receives noindex through the shared head include; robots.txt discourages crawling.
 build-info.json identifies source commit, branch, and run.
 The source configuration and executable build checks live here. The Development-Workflow wiki page records the workflow decision and links to this guide.
@@ -50,7 +49,7 @@ Source v2/preview pushes run build validation. The staging repository publishes 
 After HTTPS is valid, review the deployed site for links, redirects, canonical URLs, images, navigation, downloads, responsive layouts, and keyboard accessibility. Compare production behavior.
 Internal generated-page/link/asset/fragment checks run before deployment. External-link maintenance and fuller #19 coverage remain follow-up work; broader CI/release policy remains #21.
 Before promotion, freeze v2 updates, record the reviewed commit and current production SHA, and open a PR from v2 to main.
-Any changes after review require another staging review. Merge only after John approves.
+Any changes after review require another staging review. Codex reviews and merges the #69 technical maintenance under John’s explicit authorization; user-facing releases return to John’s review when reasonably scoped.
 Verify the production Pages build and live site after merge.
 
 ## Recovery
@@ -72,6 +71,6 @@ Current source declares Ruby in `.ruby-version`; source CI and the staging publi
 
 The build manifest pins Jekyll 3.10 and the metadata plugin used by `_config.yml`, matching the current Pages Jekyll family without the unused `github-pages` bootstrap/remote-theme plugin bundle. The ZIP library is constrained to patched 3.4.x. This removes the conflict between the bootstrap's remote-theme <3 ZIP requirement and the approved security floor. Pages hosting, routes, templates and content are unchanged.
 
-The controller has PR validation with deployment disabled for pull requests. Test an exact source SHA using workflow_dispatch on the controller candidate branch; preserve and restore staging-source.txt's saved revision. Deployment is allowed for explicit workflow_dispatch and existing scheduled/main publication, not PR checks.
+The controller has PR validation with deployment disabled for pull requests. Controller candidate branches can validate builds, but the protected Pages environment permits deployment only from controller main. After merging the checked controller PR, test an exact source SHA using workflow_dispatch on main; preserve and restore staging-source.txt's saved revision. Deployment is allowed for explicit workflow_dispatch and existing scheduled/main publication, not PR checks.
 
 John authorized Codex review/merge of these technical PRs after checks and staging evidence; user-facing review remains separately scoped.

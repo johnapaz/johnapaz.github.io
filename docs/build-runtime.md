@@ -10,7 +10,7 @@ Primary sources checked October 21, 2026: [Pages dependency family](https://page
 
 ## Staging controller
 
-The separate controller reads `.ruby-version` from the exact selected source revision and validates a numeric version before passing it to ruby/setup-ruby. Sources predating the file retain the prior Ruby 2.7 fallback to preserve saved-preview restoration. Both paths enforce frozen installation. PR checks build but do not deploy. Manual workflow dispatch on a controller feature branch can preview an exact source SHA; record and restore the saved selection without editing staging-source.txt.
+The separate controller reads `.ruby-version` from the exact selected source revision and validates a numeric version before passing it to ruby/setup-ruby. Sources predating the file retain the prior Ruby 2.7 fallback to preserve saved-preview restoration. Both paths enforce frozen installation. PR checks build but do not deploy. Controller feature branches validate builds; the existing protected Pages environment allows deployment only from controller main. Merge the checked controller PR first, then manually preview the exact source SHA from main; record and restore the saved selection without editing staging-source.txt.
 
 ## Local verification
 
