@@ -15,6 +15,8 @@ The integration omits URL query strings, fragments, contact addresses, search te
 
 Your consent preference is stored in your browser separately from analytics cookies. If browser storage is unavailable, analytics remains disabled.
 
+You can also [exclude this browser from future analytics](/analytics-preferences/) while keeping your consent preference. Set the exclusion separately in each browser, device, and environment. Undoing it resumes collection only if you previously allowed analytics. Clearing site storage or leaving a private browsing session can remove the exclusion. This setting does not identify or remove earlier visits from reports, and the preferences page is never tracked.
+
 User and event data retention is set to 14 months, with automatic renewal on new user activity disabled. These settings do not govern most aggregated standard reports. Google Signals and enhanced measurement are disabled. Production and staging activation is verified separately.
 
 Questions? [Email John](mailto:johnapaz@gmail.com).

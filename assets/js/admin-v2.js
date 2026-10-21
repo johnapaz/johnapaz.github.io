@@ -81,6 +81,9 @@
     $('report-dates').textContent=`${range.start} – ${range.end} · Compared with ${range.previousStart} – ${range.previousEnd}`;
     $('report-panel').setAttribute('aria-labelledby',environment==='production'?'tab-prod':'tab-staging');
     $('ga-link').href=`https://analytics.google.com/analytics/web/#/p${environment==='production'?'557084016':'557077138'}/reports/intelligenthome`;
+    const browserLink = $('browser-analytics-link');
+    browserLink.href = `https://${environment==='production'?'johnapaz.com':'staging.johnapaz.com'}/analytics-preferences/`;
+    browserLink.textContent = `Exclude this browser from future ${environment} analytics ↗`;
     $('ops-env').textContent=environment.toUpperCase();$('report-state').textContent='Loading…';$('report-panel').setAttribute('aria-busy','true');clear('Loading…');$('admin-refresh').disabled=true;
     try {
       let report;
