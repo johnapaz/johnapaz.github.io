@@ -68,6 +68,8 @@ Pull requests and pushes to main, v2, and supported preview branches run CI chec
 
 Production promotion is a separate review step: record the reviewed source commit, open a pull request into main, and merge after my approval. Native GitHub Pages publishes main at the production domain. [Release and recovery instructions](docs/releasing.md) record the rollback reference and clone updates for the master → main rename. The [staging guide](https://github.com/johnapaz/johnapaz.github.io/blob/v2/docs/staging.md) explains configuration, verification, and recovery. Build success, deployment success, and browser/device review are tracked separately.
 
+The wiki updates are now [published](https://github.com/johnapaz/johnapaz.github.io/wiki/Release%E2%80%90Notes). Separate protected admin staging is tracked in [#68](https://github.com/johnapaz/johnapaz.github.io/issues/68), estimated at 6–10 engineering hours once build/account prerequisites are ready. The first candidate staging run exposed a Ruby/lockfile mismatch; [#69](https://github.com/johnapaz/johnapaz.github.io/issues/69) blocks live review. Green source CI re-resolved dependencies and is not proof of the committed lockfile's compatibility. See the [validation record](docs/admin-analytics-review-2026-10-21.md).
+
 ## Versions and release notes
 
 Recommended site release convention: `vMAJOR.MINOR.PATCH`, with a short descriptive GitHub Release title. Major versions mark redesigns, minor versions mark named feature milestones, and patches cover focused fixes or small improvements within the current milestone. This is a site release convention rather than a package API compatibility promise.
