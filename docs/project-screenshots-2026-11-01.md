@@ -67,9 +67,32 @@ Ruby/Bundler are absent in this executor; the existing PR CI must run the frozen
 Jekyll staging/production builds and generated-site checks. Do not interpret local
 source inspection as a rendered Jekyll build.
 
+## Built-page inspection
+
+[CI run 41370102224](https://github.com/johnapaz/johnapaz.github.io/actions/runs/41370102224)
+passed both staging and production builds/checkers. Downloaded the `staging-site`
+artifact (ID 13109111781) and inspected its pages through the local preview.
+Artifact `build-info.json` records PR merge-test SHA
+`77a943afcaa5ab6f6c5fd4ffb6aab23b4e8460d0`, which includes implementation head
+`06093c3e50a52b1cbf7f3c0707dc41f6c815379a`. Re-running the generated-site checker
+passed 36 HTML pages and 1,123 internal links/assets/anchors.
+
+Opened the built homepage, directory and all four case studies in Chrome. Inspected
+WriMo in Light, Dark and Darker: images retain original colors, captions remain
+readable, and full-size links work. Keyboard Tab reached the source link with a
+3px solid focus outline. Desktop page had no horizontal overflow; the WriMo image
+loaded at its expected 1363×936 natural dimensions. Gallery animation is `none`.
+This does not replace actual mobile or reduced-motion preference testing.
+
+Before/after references are desktop screenshots, not product-source assets:
+
+| Before (live main) | After (CI-built preview) |
+| --- | --- |
+| ![WriMo case study before imagery](visual-evidence/projects-wrimo-before-2026-11-01.jpg) | ![WriMo case study with public editor screenshot](visual-evidence/projects-wrimo-after-2026-11-01.jpg) |
+
 ## Remaining acceptance gaps
 
-- Mobile captures and actual mobile/three-theme/reduced-motion visual inspection:
+- Mobile captures and actual mobile/reduced-motion visual inspection:
   the connected browser has no supported viewport/device-emulation API. Browser
   shortcuts did not enable emulation. No cropped desktop image is labeled mobile.
 - Working public Companion screen requires product publication or a verified public
@@ -84,6 +107,6 @@ than hotlink, preserving filenames, capture dates, qualifications and credits.
 Suggested replacements: WriMo editor for its review image; Listening Room lineup
 and Tracks search for its review images. Vamo's own homepage images are suitable
 for cross-project documentation, not as Companion product screenshots. Companion
-stays without product imagery until public evidence exists. The handoff issue links
+stays without product imagery until public evidence exists. [Vamo handoff issue #37](https://github.com/johnapaz/vamopr.com/issues/37) links
 the focused johnapaz.com PR and asset directory; it does not authorize publication
 or make changes to Vamo source. Recheck public screens before a later publication.
