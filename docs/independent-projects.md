@@ -16,7 +16,7 @@ Owner direction November 1, 2026, issues #71–#75: **Projects is a new first-cl
 - **Listening Room**: public artist browsing; don't promise public playlist release. Retain unofficial/non-affiliation note.
 - **Event Day Companion**: schedule/stage guide in development; don't claim map or a released planner.
 - **Vamo PR**: portfolio site; do not conflate it with an employer and don't promise its contact form is enabled.
-- No invented metrics, endorsements, product screenshots or employer consent. Real screenshots are deferred to #73 until captured and reviewed.
+- No invented metrics, endorsements, product screenshots or employer consent. Authentic public desktop captures and qualifications are recorded in [the screenshot evidence](project-screenshots-2026-11-01.md), pending owner review under #73.
 - AI-assisted implementation is distinguished from John's ideation, product decisions and review. No AI authorship percentages.
 
 ## Pre-release checks
@@ -28,5 +28,5 @@ Owner direction November 1, 2026, issues #71–#75: **Projects is a new first-cl
 6. Obtain owner editorial review before production promotion. Production PR into main, release tag/notes and issue closeout only after successful deployment and verification.
 
 ## Follow-up
-- #73: Replace text-first presentation with owner-approved real product screenshots and alt text. No false mockups.
+- #73: Review the authentic desktop screenshots and complete mobile evidence and Companion availability gaps. See [the inventory](project-screenshot-inventory.json). No false mockups.
 - Maintain project status and case study proof points as each independent application evolves.
