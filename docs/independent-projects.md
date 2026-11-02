@@ -1,7 +1,7 @@
-# Independent Projects — implementation and validation
+# Projects — implementation and validation
 
 ## Decision and ownership
-Owner direction November 1, 2026, issues #71–#75: **Independent Projects is a new first-class identity**, not a migration of code, samples, client work or the Work area. Nothing in `_data/portfolio.yml`, `_data/home.yml` or the six homepage tiles is reclassified or removed.
+Owner direction November 1, 2026, issues #71–#75: **Projects is a new first-class site section**, not a migration of code, samples, client work or the Work area. Nothing in `_data/portfolio.yml`, `_data/home.yml` or the six homepage tiles is reclassified or removed.
 
 ## Routes and sources
 - `/independent-projects/` — dedicated landing page with accessible product cards
