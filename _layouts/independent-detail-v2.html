@@ -34,7 +34,7 @@
       <section aria-labelledby="current-title"><h2 id="current-title">What works today</h2><p>{{ project.current | escape }}</p></section>
       <section aria-labelledby="next-title"><h2 id="next-title">What's next</h2><p>{{ project.next | escape }}</p></section>
       <section aria-labelledby="explore-title"><h2 id="explore-title">Explore the project</h2><p><a class="independent-link" href="{{ project.public_url }}">{{ project.public_label | escape }} <span aria-hidden="true">↗</span></a></p></section>
-      <aside class="independent-disclosure" aria-label="Project notes"><strong>Project note:</strong> {{ project.note | escape }} The status reflects the public-facing scope reviewed in November 2026; features may evolve.</aside>
+      <aside class="independent-disclosure" aria-label="Project notes"><strong>Project note:</strong> {{ project.note | escape }} This description was prepared in November 2026; features may evolve and public availability should be verified before release.</aside>
     </div>
     <p><a href="{{ '/independent-projects/' | relative_url }}">← All Independent Projects</a></p>
   </main>
