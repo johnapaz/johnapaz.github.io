@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include theme-v2.html %}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | escape }} | John A. Paz</title>
+  <meta name="description" content="{{ page.description | escape }}" />
+  {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/work-v2.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/independent-projects.css' | relative_url }}" />
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
+  {% include social-meta.html %}
+  {% include analytics-loader.html %}
+</head>
+<body class="v2-home v2-work">
+  <a class="v2-skip" href="#main-content">Skip to content</a>
+  {% include v2-navigation.html %}
+  <main id="main-content" class="independent-shell">
+    <header class="independent-intro">
+      <p class="independent-eyebrow">Built independently</p>
+      <h1>Independent Projects</h1>
+      <p class="independent-lede">Ideas I've started and products I'm directing outside of my employer work. These are experiments in turning a real problem into a useful experience—with design decisions, AI-assisted engineering, and plenty left to learn.</p>
+      <p>This is separate from my <a href="{{ '/resume/' | relative_url }}">professional work and experience</a>. The case studies explain my role, what works today, and what is still in development.</p>
+    </header>
+    <section aria-label="Independent projects">
+      <div class="independent-grid">
+      {% for project in site.data.independent_projects %}
+        <article class="independent-card">
+          <span class="independent-status">{{ project.status | escape }}</span>
+          <p class="independent-meta">{{ project.kind | escape }}</p>
+          <h2><a href="{{ '/independent-projects/' | append: project.slug | append: '/' | relative_url }}">{{ project.title | escape }}</a></h2>
+          <p>{{ project.summary | escape }}</p>
+          <a class="independent-card-link" href="{{ '/independent-projects/' | append: project.slug | append: '/' | relative_url }}">Read case study <span aria-hidden="true">→</span></a>
+        </article>
+      {% endfor %}
+      </div>
+    </section>
+    <hr class="independent-separator" />
+    <p>Looking for my employer and client work instead? <a href="{{ '/coding/' | relative_url }}">Explore Code &amp; Projects</a> or <a href="{{ '/resume/' | relative_url }}">view my work experience</a>.</p>
+  </main>
+  <script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
+</body>
+</html>
