@@ -9,6 +9,7 @@
   {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}" />
   <link rel="stylesheet" href="{{ '/assets/css/home-v2.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/independent-projects.css' | relative_url }}?v={{ site.time | date: '%s' }}" />
   <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}" />
   {% include social-meta.html %}
   <link rel="stylesheet" href="{{ "/assets/css/article-v2.css" | relative_url }}?v={{ site.time | date: '%s' }}" />
@@ -30,6 +31,24 @@
         </article>
         {% endfor %}
       </div>
+      <section class="independent-home" aria-labelledby="independent-home-title">
+        <div class="independent-home-header">
+          <h2 id="independent-home-title">Independent Projects</h2>
+          <a class="independent-home-link" href="{{ '/independent-projects/' | relative_url }}">Explore all independent projects <span aria-hidden="true">→</span></a>
+        </div>
+        <p>Products I'm building outside of my professional and employer work.</p>
+        <div class="independent-home-grid">
+          {% for project in site.data.independent_projects limit:3 %}
+          <article class="independent-home-card">
+            <a href="{{ '/independent-projects/' | append: project.slug | append: '/' | relative_url }}">
+              <span class="independent-status">{{ project.status | escape }}</span>
+              <h3>{{ project.title | escape }}</h3>
+              <p>{{ project.summary | escape }}</p>
+            </a>
+          </article>
+          {% endfor %}
+        </div>
+      </section>
       <section class="v2-featured" aria-labelledby="featured-title">
         <h2 id="featured-title" class="v2-featured-heading">Featured content</h2>
         <div class="v2-featured-grid">
