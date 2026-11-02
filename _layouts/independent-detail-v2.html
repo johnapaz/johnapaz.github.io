@@ -27,6 +27,24 @@
       <span class="independent-status">Status: {{ project.status | escape }}</span>
       <p class="independent-lede">{{ project.summary | escape }}</p>
     </header>
+    <section class="independent-evidence" aria-labelledby="screens-title">
+      <div class="independent-evidence-heading">
+        <h2 id="screens-title">{% if project.screenshots %}The public experience{% else %}Availability{% endif %}</h2>
+        <p>Checked November 1, 2026 · {{ project.capture_note | escape }}</p>
+      </div>
+      {% for shot in project.screenshots %}
+      <figure class="independent-shot">
+        <a class="independent-shot-image" href="{{ shot.file | relative_url }}" aria-label="Open full-size image: {{ shot.title | escape }}">
+          <img src="{{ shot.file | relative_url }}" width="{{ shot.width }}" height="{{ shot.height }}" alt="{{ shot.alt | escape }}" loading="lazy" decoding="async" />
+        </a>
+        <figcaption>
+          <strong>{{ shot.title | escape }}</strong>
+          <p>{{ shot.caption | escape }}</p>
+          <p class="independent-shot-source">Desktop screenshot · November 1, 2026 · <a href="{{ shot.source | escape }}">View source page</a> · <a href="{{ shot.file | relative_url }}">Open full-size image</a></p>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </section>
     <div class="independent-story">
       <section aria-labelledby="problem-title"><h2 id="problem-title">The problem</h2><p>{{ project.problem | escape }}</p></section>
       <section aria-labelledby="direction-title"><h2 id="direction-title">What I designed and decided</h2><p>{{ project.direction | escape }}</p></section>
@@ -34,7 +52,7 @@
       <section aria-labelledby="current-title"><h2 id="current-title">What works today</h2><p>{{ project.current | escape }}</p></section>
       <section aria-labelledby="next-title"><h2 id="next-title">What's next</h2><p>{{ project.next | escape }}</p></section>
       <section aria-labelledby="explore-title"><h2 id="explore-title">Explore the project</h2><p><a class="independent-link" href="{{ project.public_url }}">{{ project.public_label | escape }} <span aria-hidden="true">↗</span></a></p></section>
-      <aside class="independent-disclosure" aria-label="Project notes"><strong>Project note:</strong> {{ project.note | escape }} This description was prepared in November 2026; features may evolve and public availability should be verified before release.</aside>
+      <aside class="independent-disclosure" aria-label="Project notes"><strong>Project note:</strong> {{ project.note | escape }} Public screens were checked November 1, 2026. Screenshots document that date, not a guarantee of future availability.</aside>
     </div>
     <p><a href="{{ '/independent-projects/' | relative_url }}">← All Projects</a></p>
   </main>

@@ -1,52 +1,105 @@
-- slug: "wrimo"
-  title: "WriMo"
-  kind: "Writing software"
-  status: "Active development"
-  summary: "A writing workspace built around creative ownership, reliable drafts, and returning to a story without losing context."
-  problem: "Writing software should help people keep their words and momentum, not put their work behind confusing storage or backup decisions."
-  direction: "I defined the writing journeys, trust and recovery model, adaptable workspace, and the long-term collaboration vision. Local-first ownership and a quiet, focused writing experience guide the product. Its official tagline is “WriMo: Write more, together.”"
-  ai: "I set the product direction and review design and technical choices; AI-assisted engineering helps implement, document, and test those decisions. This does not mean I personally wrote every line of the application."
-  current: "An early browser writing experience supports persistent local drafts, GitHub-backed backup and recovery; a desktop writing foundation is also under evaluation. The product is still in active development."
-  next: "Improve onboarding, preservation and writing workflows. Flexible planning, richer customization and collaboration are part of the roadmap, not claims about the current release."
-  public_url: "https://wrimo.app"
-  public_label: "Explore WriMo"
-  note: "The source repository and internal design records are private. Public case study content does not disclose them."
-- slug: "listening-room"
-  title: "Listening Room"
-  kind: "Music discovery"
-  status: "Public MVP evolving"
-  summary: "A way to get acquainted with the artists at a festival by finding their music and listening to reviewed recordings."
-  problem: "A large festival lineup can be hard to discover one artist at a time, especially when unfamiliar performers are scattered across genres and stages."
-  direction: "I set the discovery goals, artist-first experience, metadata and playlist rules, verification gates, and the boundaries between what is public and what is still experimental."
-  ai: "AI-assisted development has supported research workflows, data organization, frontend work, testing, and release coordination. I guide scope, product decisions, and review."
-  current: "The public no-login experience lets visitors explore festival artists and follow links to reviewed recordings. Playlist ranking and broader public playlist publication are separate work, not implied by the current experience."
-  next: "Continue expanding artist discovery, validated listening options, and the usefulness of the public experience while respecting API quotas and music rights."
-  public_url: "https://listeningroom.app"
-  public_label: "Open Listening Room"
-  note: "An independent, unofficial project. Not affiliated with EDC, Insomniac, or the featured artists."
-- slug: "event-day-companion"
-  title: "Event Day Companion"
-  kind: "Event planning"
-  status: "In development"
-  summary: "A practical festival guide centered on stages, artists, and the schedule so attendees can make better decisions on the day."
-  problem: "Festival attendees often switch between lineup lists, stage information and schedules just to answer simple questions about who is playing where."
-  direction: "I separated the event-planning problem from Listening Room’s music-discovery role, and prioritized an accessible stage and schedule guide over a more ambitious interactive map."
-  ai: "AI-assisted teams are working across frontend, backend and quality checks within the scope and milestones I direct. Descriptions of planned work are not release claims."
-  current: "The stage-and-schedule guide is in development. Features and availability will be confirmed against the public build before being described as released."
-  next: "After the foundational guide, explore personal planning and richer location-based views without promising a map as part of the initial release."
-  public_url: "https://vamopr.com/projects/event-day-companion/"
-  public_label: "See the project overview"
-  note: "Related to Listening Room, but intentionally a separate planning product."
-- slug: "vamo-pr"
-  title: "Vamo PR"
-  kind: "Independent project portfolio"
-  status: "Public website"
-  summary: "A public home for independent software projects and experiments developed through owner-led, AI-assisted engineering."
-  problem: "Independent projects need a common place to explain what they do, how they were made, and where collaborators can learn more."
-  direction: "I repurposed the Vamo PR name as a home for independent software and shaped how each project should communicate its problem, decisions, outcomes and AI assistance."
-  ai: "AI-assisted engineering contributed site implementation and deployment workflows; I directed scope, presentation, editorial boundaries and project priorities."
-  current: "The public portfolio includes individual project overviews. Some contact and publishing features are still being prepared or validated."
-  next: "Add stronger project documentation, real visual evidence, and clearer ways for potential collaborators to get in touch."
-  public_url: "https://vamopr.com"
-  public_label: "Visit Vamo PR"
-  note: "A portfolio for my independent work, not an employer or client project."
+- slug: wrimo
+  title: WriMo
+  kind: Writing software
+  status: Active development
+  summary: A writing workspace built around creative ownership, reliable drafts, and returning to a story without losing context.
+  problem: Writing software should help people keep their words and momentum, not put their work behind confusing storage or backup decisions.
+  direction: 'I defined the writing journeys, trust and recovery model, adaptable workspace, and the long-term collaboration vision. Local-first ownership and a quiet, focused writing
+    experience guide the product. Its official tagline is “WriMo: Write more, together.”'
+  ai: I set the product direction and review design and technical choices; AI-assisted engineering helps implement, document, and test those decisions. This does not mean I personally
+    wrote every line of the application.
+  current: The public browser app lets a visitor create a local project, add a chapter, write and save locally without signing in. The screenshot shows a saved demo draft. GitHub backup
+    and recovery require a separate sign-in and were not exercised for this case study. Full offline startup and collaboration are not demonstrated.
+  next: Improve onboarding, preservation and writing workflows. Flexible planning, richer customization and collaboration are part of the roadmap, not claims about the current release.
+  public_url: https://wrimo.app
+  public_label: Explore WriMo
+  note: The source repository and internal design records are private. Public case study content does not disclose them.
+  capture_note: Local writing with original sample text created only for this demonstration. No account or private repository was opened.
+  screenshots:
+  - file: /assets/images/projects/wrimo-desktop-2026-11-01.jpg
+    width: 1363
+    height: 936
+    title: A draft, saved locally
+    alt: WriMo editor with a chapter sidebar, formatting toolbar, original lighthouse sample text and a Saved locally status.
+    caption: The live browser editor with a named chapter and 44 words of original demo text. The status explicitly distinguishes local saving from GitHub backup. The current interface
+      spells the name WriteMo; the product name here remains WriMo.
+    source: https://wrimo.app/
+- slug: listening-room
+  title: Listening Room
+  kind: Music discovery
+  status: Public MVP evolving
+  summary: A way to get acquainted with the artists at a festival by finding their music and listening to reviewed recordings.
+  problem: A large festival lineup can be hard to discover one artist at a time, especially when unfamiliar performers are scattered across genres and stages.
+  direction: I set the discovery goals, artist-first experience, metadata and playlist rules, verification gates, and the boundaries between what is public and what is still experimental.
+  ai: AI-assisted development has supported research workflows, data organization, frontend work, testing, and release coordination. I guide scope, product decisions, and review.
+  current: Visitors can browse by festival day, select an artist to see stage and poster-transcribed set times, search tracks, and follow YouTube or available Spotify links without signing
+    in. The screenshots show an artist panel and a track search. Poster times carry a verification caveat; the project’s own shared event playlist is not yet available. Outbound playback
+    was not tested in this capture session.
+  next: Continue expanding artist discovery, validated listening options, and the usefulness of the public experience while respecting API quotas and music rights.
+  public_url: https://listeningroom.app
+  public_label: Open Listening Room
+  note: An independent, unofficial project. Not affiliated with EDC, Insomniac, or the featured artists.
+  capture_note: Live, no-login artist discovery and track search. Music artwork and service marks belong to their respective rights holders.
+  screenshots:
+  - file: /assets/images/projects/listening-room-desktop-2026-11-01.jpg
+    width: 1348
+    height: 926
+    title: From lineup to artist
+    alt: Listening Room Friday lineup beside Sloth’s artist panel, showing stage, caveated set time and YouTube and Spotify links.
+    caption: Selecting Sloth keeps the lineup visible alongside the artist panel. The interface marks the set time as poster-transcribed and not yet cross-checked. Artwork is credited
+      to “RUSH” on YouTube.
+    source: https://listeningroom.app/listening-room/#/artist/edco26%3A2026-11-06%3Asloth?day=2026-11-06
+  - file: /assets/images/projects/listening-room-tracks-2026-11-01.jpg
+    width: 1348
+    height: 926
+    title: Find the recordings
+    alt: Tracks search for Sloth returns RUSH, Orgasmic - Sloth Remix and Woozy with outbound music links.
+    caption: A live search returns three recordings and links to music services. The playlist notice distinguishes Insomniac’s official Spotify playlist from Listening Room’s unfinished
+      shared event playlist.
+    source: https://listeningroom.app/listening-room/#/listen?day=2026-11-06&tq=Sloth
+- slug: event-day-companion
+  title: Event Day Companion
+  kind: Event planning
+  status: In development
+  summary: A practical festival guide centered on stages, artists, and the schedule so attendees can make better decisions on the day.
+  problem: Festival attendees often switch between lineup lists, stage information and schedules just to answer simple questions about who is playing where.
+  direction: I separated the event-planning problem from Listening Room’s music-discovery role, and prioritized an accessible stage and schedule guide over a more ambitious interactive
+    map.
+  ai: AI-assisted teams are working across frontend, backend and quality checks within the scope and milestones I direct. Descriptions of planned work are not release claims.
+  current: No working public Companion interface was verified on November 1, 2026. The related public /companion/ route returns “Nothing here”; Vamo’s project story labels the product
+    in development and its public product link pending verification. Listening Room’s existing schedule details are not evidence that this separate planner has launched.
+  next: After the foundational guide, explore personal planning and richer location-based views without promising a map as part of the initial release.
+  public_url: https://vamopr.com/projects/event-day-companion/
+  public_label: See the project overview
+  note: Related to Listening Room, but intentionally a separate planning product.
+  capture_note: 'No product screenshot is published: a working public Companion screen is not available at the checked route. The linked Vamo page is a project overview, not the app.'
+- slug: vamo-pr
+  title: Vamo PR
+  kind: Independent project portfolio
+  status: Public website
+  summary: A public home for independent software projects and experiments developed through owner-led, AI-assisted engineering.
+  problem: Independent projects need a common place to explain what they do, how they were made, and where collaborators can learn more.
+  direction: I repurposed the Vamo PR name as a home for independent software and shaped how each project should communicate its problem, decisions, outcomes and AI assistance.
+  ai: AI-assisted engineering contributed site implementation and deployment workflows; I directed scope, presentation, editorial boundaries and project priorities.
+  current: The public website presents project stories, links to live products, collaboration interests and a contact form. The screenshots show the homepage and project directory. Form
+    submission and email delivery were not tested, so they are not claimed as verified.
+  next: Keep project documentation and visual evidence current, and validate the contact flow end to end.
+  public_url: https://vamopr.com
+  public_label: Visit Vamo PR
+  note: A portfolio for my independent work, not an employer or client project.
+  capture_note: Live homepage and project directory. Some source copy still describes Companion’s earlier map-first direction; it does not establish a released map.
+  screenshots:
+  - file: /assets/images/projects/vamo-pr-desktop-2026-11-01.jpg
+    width: 1348
+    height: 926
+    title: A home for independent work
+    alt: Vamo homepage with Useful ideas, made real headline, project introduction and navigation to Projects, Collaborate and Contact.
+    caption: The public homepage introduces the independent product practice and offers routes to projects and collaboration.
+    source: https://vamopr.com/
+  - file: /assets/images/projects/vamo-pr-projects-2026-11-01.jpg
+    width: 1348
+    height: 926
+    title: The projects, together
+    alt: Vamo project directory with separate cards for johnapaz.com, WriMo, Listening Room and the in-development Event Day Companion.
+    caption: Project cards connect visitors to individual stories and available products. Companion is explicitly in development; its map-first wording reflects an earlier direction.
+    source: https://vamopr.com/#projects-heading
