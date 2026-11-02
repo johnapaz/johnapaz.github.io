@@ -5,7 +5,7 @@
   {% include theme-v2.html %}
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title | escape }} | Independent Projects | John A. Paz</title>
+  <title>{{ page.title | escape }} | Projects | John A. Paz</title>
   <meta name="description" content="{{ page.description | escape }}" />
   {% if site.staging %}<meta name="robots" content="noindex, nofollow" />{% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/bootstrap-controls-v2.css' | relative_url }}" />
@@ -20,7 +20,7 @@
   <a class="v2-skip" href="#main-content">Skip to content</a>
   {% include v2-navigation.html %}
   <main id="main-content" class="independent-shell">
-    <nav class="independent-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/independent-projects/' | relative_url }}">Independent Projects</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ project.title | escape }}</span></nav>
+    <nav class="independent-breadcrumb" aria-label="Breadcrumb"><a href="{{ '/independent-projects/' | relative_url }}">Projects</a> <span aria-hidden="true">/</span> <span aria-current="page">{{ project.title | escape }}</span></nav>
     <header class="independent-intro">
       <p class="independent-eyebrow">{{ project.kind | escape }} · Independently directed</p>
       <h1>{{ project.title | escape }}</h1>
@@ -36,7 +36,7 @@
       <section aria-labelledby="explore-title"><h2 id="explore-title">Explore the project</h2><p><a class="independent-link" href="{{ project.public_url }}">{{ project.public_label | escape }} <span aria-hidden="true">↗</span></a></p></section>
       <aside class="independent-disclosure" aria-label="Project notes"><strong>Project note:</strong> {{ project.note | escape }} This description was prepared in November 2026; features may evolve and public availability should be verified before release.</aside>
     </div>
-    <p><a href="{{ '/independent-projects/' | relative_url }}">← All Independent Projects</a></p>
+    <p><a href="{{ '/independent-projects/' | relative_url }}">← All Projects</a></p>
   </main>
   <script src="{{ '/assets/js/home-v2.js' | relative_url }}" defer></script>
 </body>

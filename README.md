@@ -24,11 +24,11 @@ A build badge indicates build activity, not uptime. Monitoring, analytics, appea
 ![Build checks](https://github.com/johnapaz/johnapaz.github.io/actions/workflows/staging.yml/badge.svg?branch=main)
 ![Staging deployment](https://github.com/johnapaz/johnapaz-staging/actions/workflows/staging.yml/badge.svg)
 
-## Independent Projects (proposed v2.2)
+## Projects — independent work (v2.2 candidate)
 
 [Implementation backlog #71](https://github.com/johnapaz/johnapaz.github.io/issues/71) · [Information architecture #75](https://github.com/johnapaz/johnapaz.github.io/issues/75)
 
-The new **Independent Projects** section at `/independent-projects/` and its four case studies are distinct from employer/client projects, professional work samples and existing Code & Projects. The current six homepage tiles, Work views, writing, talks and media remain intact. The homepage gets an additional feature section, and the primary navigation gets a new destination.
+The new **Projects** section at `/independent-projects/` and its four case studies are distinct from employer/client projects, professional work samples and existing Code & Projects. The current six homepage tiles, Work views, writing, talks and media remain intact. The homepage gets an additional feature section, and the primary navigation gets a new destination.
 
 Independent product profiles are maintained in `_data/independent_projects.yml`, rendered through `_layouts/independent-index-v2.html` and `_layouts/independent-detail-v2.html`. Routes live in `independent-projects/`. Public links do not expose the private WriMo repository. No fake screenshots are shipped; real, reviewed media can be added under #73. Product status statements must be verified and revised as releases change.
 
