@@ -1,0 +1,20 @@
+---
+layout: admin-v2
+analytics: false
+permalink: /analytics-preferences/
+title: Browser analytics preferences
+---
+<main id="main-content" class="admin-login">
+<div class="admin-login-card">
+<p class="admin-eyebrow">JOHN A. PAZ / ANALYTICS</p>
+<h1>Leave your visits out.</h1>
+<p class="admin-login-description">Exclude this browser from future analytics on {% if site.staging %}staging.johnapaz.com{% else %}johnapaz.com{% endif %}. This is useful when checking your own site.</p>
+<div id="browser-analytics-controls"><p>Preferences could not be loaded. Enable JavaScript and allow browser storage to use this control.</p></div>
+<p class="admin-caption">Your analytics consent stays as it is. Undoing exclusion only resumes collection if you previously allowed analytics. This page is never tracked.</p>
+<p class="admin-caption">Set this separately in each browser, device, and environment. Private browsing and clearing site storage can remove the setting. Earlier visits stay in reports.</p>
+<p><a href="https://{% if site.staging %}johnapaz.com{% else %}staging.johnapaz.com{% endif %}/analytics-preferences/">Manage {% if site.staging %}production{% else %}staging{% endif %} in this browser ↗</a></p>
+<p><a href="{{ '/privacy/' | relative_url }}">Privacy details</a></p>
+</div>
+<a class="admin-back" href="{{ '/admin' | relative_url }}">← Back to Admin</a>
+</main>
+{% include analytics.html preferences_only=true %}

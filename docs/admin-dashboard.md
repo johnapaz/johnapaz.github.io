@@ -1,5 +1,13 @@
 # Admin dashboard — issue #31
 
+## Current delivery — October 21, 2026
+
+The initial owner dashboard shipped in #62 on October 14. Production merge `905bbc30a08b6b3ba53d18552b65fb5bdd87a47d` passed Pages deployment `38642716291` and validation `38642716512`. Authenticated 28-day production/staging reports loaded and both health widgets were Operational with deployed commit metadata. John reports the dashboard continues to work. Earlier candidate/pending statements below are historical and superseded for owner activation and production health.
+
+#31 remains open for full deployed authorization/asset/API and sharing/revocation verification, GA4 reconciliation, source/deployment activity integration, independent monitoring, and full device/accessibility acceptance. Follow-ups: #64 referrals/drilldowns, #65 Not John arcade, #66 browser exclusion.
+
+**#66 in review:** dashboard source adds an environment-aware link to the public, untracked `/analytics-preferences/` page. It stops future collection in that browser/environment; reports retain earlier visits. No report-level toggle is claimed. Pages release alone cannot update this link in the private dashboard: the existing live Worker/asset deployment must be reconciled and coordinated as described below.
+
 ## Delivered staging review
 
 `/admin` is the minimal branded entry screen. `/admin/preview/` presents **illustrative, synthetic data only on staging**. The production build renders a sign-in link rather than the preview dashboard. Neither Pages build includes `backend/`. No sign-in simulation, access token, reporting secret, or private GA4 report is in public output. The Admin toolbar link and the current navigation/themes are preserved.

@@ -16,3 +16,8 @@
 @media(max-width:1020px){.admin-dashboard[data-columns="3"] .admin-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.admin-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-widget-grid,.admin-dashboard[data-columns="3"] .admin-widget-grid{grid-template-columns:minmax(0,1fr)}.admin-heading{align-items:start;flex-direction:column}.admin-view-controls{gap:.5rem}.admin-column-group span{display:none}.admin-refresh span{display:none}.admin-preview-notice a{margin-left:0}.admin-widget{padding:1rem}.admin-heading{margin-bottom:1rem}.admin-metric{padding:.8rem}.admin-metric-value{font-size:1.8rem}}
 @media(prefers-reduced-motion:no-preference){.admin-tabs button,.admin-column-group button{transition:background .15s,box-shadow .15s}}
+
+/* Browser exclusion is a local preference; report history remains unchanged. */
+#browser-analytics-controls {margin:1.5rem 0}
+#browser-analytics-controls button {padding:.7rem 1rem;border:1px solid var(--theme-accent);border-radius:.5rem;background:var(--theme-surface);color:var(--theme-text);white-space:normal;line-height:1.5;height:auto}
+#browser-analytics-controls [role=status] {font-size:.85rem;line-height:1.6;margin-bottom:1rem}
